@@ -6,16 +6,21 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (32 ms)
+  ✓ renders the course name somewhere (55 ms)
 
-----------|---------|----------|---------|---------|-------------------
-File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------|---------|----------|---------|---------|-------------------
-All files |     100 |      100 |     100 |     100 |                   
- App.tsx  |     100 |      100 |     100 |     100 |                   
-----------|---------|----------|---------|---------|-------------------
+------------------------|---------|----------|---------|---------|-------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------|---------|----------|---------|---------|-------------------
+All files               |      50 |       50 |      50 |      50 |                   
+ src                    |     100 |      100 |     100 |     100 |                   
+  App.tsx               |     100 |      100 |     100 |     100 |                   
+ src/Components         |   33.33 |       50 |      40 |   33.33 |                   
+  UserDropdown.tsx      |      50 |      100 |      50 |      50 | 14                
+  UserSelect.tsx        |       0 |      100 |       0 |       0 | 5-9               
+  UserTypeIndicator.tsx |     100 |       50 |     100 |     100 | 13-35             
+------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        1.374 s
+Time:        1.92 s
 Ran all test suites.
