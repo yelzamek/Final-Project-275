@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
+import { UserTypeIndicator } from "./Components/UserTypeIndicator";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
 
@@ -19,17 +20,10 @@ function App(): JSX.Element {
                 userType={userType}
                 setUserType={setUserType}
             ></UserDropDown>
-            <div
-                data-testid="colored-box"
-                style={{
-                    width: "50px",
-                    height: "50px",
-                    backgroundColor: "red",
-                    display: userType === "Admin" ? "inline-block" : "none",
-                    verticalAlign: "bottom",
-                    marginLeft: "5px"
-                }}
-            ></div>
+            <UserTypeIndicator
+                userType={userType}
+                setUserType={setUserType}
+            ></UserTypeIndicator>
         </div>
     );
 }
