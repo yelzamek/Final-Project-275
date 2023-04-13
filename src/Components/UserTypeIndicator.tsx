@@ -37,6 +37,7 @@ export function UserTypeIndicator({ userType }: userTypeProps): JSX.Element {
                     marginLeft: "5px"
                 }}
             ></div>
+            <div>{userType}</div>
         </div>
     );
 }
