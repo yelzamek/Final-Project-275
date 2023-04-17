@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
+import { Counter } from "./Components/SuperUserButton";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
 
@@ -13,8 +14,8 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
+                Team 12 Joshua Martinez, Yasmeen Elzamek, Devin Cummings,
+                Annanya Venkataraman, Sreya Venkatesh.
             </p>
             <UserDropDown
                 userType={userType}
@@ -24,6 +25,7 @@ function App(): JSX.Element {
                 userType={userType}
                 setUserType={setUserType}
             ></UserTypeIndicator>
+            <Counter userType={userType} setUserType={setUserType}></Counter>
         </div>
     );
 }
