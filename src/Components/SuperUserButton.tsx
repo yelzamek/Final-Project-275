@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { userTypeProps } from "./UserDropdown";
 
-export function Counter({ userType, setUserType }: userTypeProps): JSX.Element {
+export function Counter({ userType }: userTypeProps): JSX.Element {
     const [value, setValue] = useState<number>(0);
     return (
         <span
