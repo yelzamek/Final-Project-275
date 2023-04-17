@@ -5,6 +5,17 @@ import { useDrag } from "react-dnd";
 export function CenterList(): JSX.Element {
     const [CenterList, setCenterList] = useState<[]>([]);
 
+    function addItemToCenterList(event: React.ChangeEvent<HTMLSelectElement>) {
+        CenterList.push(event.target.value);
+    }
+
+    function subtractFromCenterList(
+        event: React.ChangeEvent<HTMLSelectElement>
+    ) {
+        const index = CenterList.indexOf(event.target.value);
+        CenterList.splice(index, 1);
+    }
+
     const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
         // "type" is required. It is used by the "accept" specification of drop targets.
         type: "BOX",
