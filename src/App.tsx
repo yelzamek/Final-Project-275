@@ -14,8 +14,8 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
+                Team 12 Joshua Martinez, Yasmeen Elzamek, Devin Cummings,
+                Annanya Venkataraman, Sreya Venkatesh.
             </p>
             <UserDropDown
                 userType={userType}
