@@ -3,6 +3,7 @@ import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
 import { Counter } from "./Components/SuperUserButton";
+import { UserSelect } from "./Components/UserSelect";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
 
@@ -26,6 +27,7 @@ function App(): JSX.Element {
                 setUserType={setUserType}
             ></UserTypeIndicator>
             <Counter userType={userType} setUserType={setUserType}></Counter>
+            <UserSelect></UserSelect>
         </div>
     );
 }
