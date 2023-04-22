@@ -9,7 +9,15 @@ export function UserSelect(): JSX.Element {
         setNewName(event.target.value);
     }
     function updateUserList(newName: string) {
-        setUserList([...userList, { name: newName, list_of_items: [] }]);
+        setUserList([
+            ...userList.map(
+                (user: User): User => ({
+                    name: user.name,
+                    list_of_items: [...user.list_of_items]
+                })
+            ),
+            { name: newName, list_of_items: [] }
+        ]);
         setNewName("");
     }
     return (
