@@ -47,7 +47,7 @@ export function UserSelect({
             }}
         >
             <Form.Group controlId="formCheckAnswer">
-                <Form.Label>Name:</Form.Label>
+                <Form.Label>Enter New Users Name:</Form.Label>
                 <Form.Control value={newName} onChange={updateNewName} />
             </Form.Group>
             <Button onClick={() => updateUserList(newName)}>Add User</Button>

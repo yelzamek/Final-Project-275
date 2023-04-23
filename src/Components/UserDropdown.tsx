@@ -13,6 +13,7 @@ export function UserDropDown({
     setCurrentUser
 }: userTypeProps & userListProps & currentUserProps): JSX.Element {
     function updateCurrentUser(event: React.ChangeEvent<HTMLSelectElement>) {
+        setUserType("User");
         const userIndex = userList.findIndex(
             (user: User): boolean => user.name === event.target.value
         );
