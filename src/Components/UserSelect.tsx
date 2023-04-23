@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { Ingredient } from "./IngredientObject";
 import { User } from "./UserObject";
+import { userTypeProps } from "./UserDropdown";
 
-export function UserSelect(): JSX.Element {
+export function UserSelect({ userType }: userTypeProps): JSX.Element {
     const [userList, setUserList] = useState<User[]>([]);
     const [newName, setNewName] = useState<string>("");
     function updateNewName(event: React.ChangeEvent<HTMLInputElement>) {
@@ -13,7 +15,21 @@ export function UserSelect(): JSX.Element {
             ...userList.map(
                 (user: User): User => ({
                     name: user.name,
-                    list_of_items: [...user.list_of_items]
+                    list_of_items: [
+                        ...user.list_of_items.map(
+                            (ingrediant: Ingredient): Ingredient => ({
+                                name: ingrediant.name,
+                                serving_size: ingrediant.serving_size,
+                                calories: ingrediant.calories,
+                                total_fat: ingrediant.total_fat,
+                                cholesterol: ingrediant.cholesterol,
+                                sodium: ingrediant.sodium,
+                                total_carbs: ingrediant.total_carbs,
+                                total_sugars: ingrediant.total_sugars,
+                                protein: ingrediant.protein
+                            })
+                        )
+                    ]
                 })
             ),
             { name: newName, list_of_items: [] }
@@ -21,7 +37,11 @@ export function UserSelect(): JSX.Element {
         setNewName("");
     }
     return (
-        <div>
+        <div
+            style={{
+                display: userType === "superUser" ? "inLine-block" : "none"
+            }}
+        >
             <Form.Group controlId="formCheckAnswer">
                 <Form.Label>Name:</Form.Label>
                 <Form.Control value={newName} onChange={updateNewName} />
