@@ -8,7 +8,7 @@ import {
     SuperUserSelectButton,
     AdminSelectButton
 } from "./Components/UserTypeSelectButtons";
-import { User } from "./Components/UserObject";
+import { User } from "./Interfaces/UserObject";
 import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
@@ -29,6 +29,10 @@ function App(): JSX.Element {
                 Team 12 Joshua Martinez, Yasmeen Elzamek, Devin Cummings,
                 Annanya Venkataraman, Sreya Venkatesh.
             </p>
+            <UserTypeIndicator
+                userType={userType}
+                setUserType={setUserType}
+            ></UserTypeIndicator>
             <UserDropDown
                 userType={userType}
                 setUserType={setUserType}
@@ -37,10 +41,6 @@ function App(): JSX.Element {
                 currentUser={currentUser}
                 setCurrentUser={setCurrentUser}
             ></UserDropDown>
-            <UserTypeIndicator
-                userType={userType}
-                setUserType={setUserType}
-            ></UserTypeIndicator>
             <Counter userType={userType} setUserType={setUserType}></Counter>
             <UserSelect
                 userType={userType}
