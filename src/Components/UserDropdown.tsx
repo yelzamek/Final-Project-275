@@ -2,9 +2,9 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import { userTypeProps } from "../Interfaces/userTypeProps";
 import { userListProps } from "../Interfaces/userListProps";
-import { User } from "./UserObject";
+import { User } from "../Interfaces/UserObject";
 import { currentUserProps } from "../Interfaces/currentUserProps";
-import { Ingredient } from "./IngredientObject";
+import { Ingredient } from "../Interfaces/IngredientObject";
 export function UserDropDown({
     userType,
     setUserType,

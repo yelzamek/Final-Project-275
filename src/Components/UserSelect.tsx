@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Ingredient } from "./IngredientObject";
-import { User } from "./UserObject";
+import { Ingredient } from "../Interfaces/IngredientObject";
+import { User } from "../Interfaces/UserObject";
 import { userTypeProps } from "../Interfaces/userTypeProps";
 import { userListProps } from "../Interfaces/userListProps";
 

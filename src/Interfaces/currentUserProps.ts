@@ -1,4 +1,4 @@
-import { User } from "../Components/UserObject";
+import { User } from "./UserObject";
 import { userListProps } from "./userListProps";
 export interface currentUserProps extends userListProps {
     currentUser: User;
