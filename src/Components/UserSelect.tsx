@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Ingredient } from "./IngredientObject";
 import { User } from "./UserObject";
-import { userTypeProps } from "./UserDropdown";
+import { userTypeProps } from "../Interfaces/userTypeProps";
 
 export function UserSelect({ userType }: userTypeProps): JSX.Element {
     const [userList, setUserList] = useState<User[]>([]);

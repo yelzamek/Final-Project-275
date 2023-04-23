@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import { userTypeProps } from "./UserDropdown";
+import { userTypeProps } from "../Interfaces/userTypeProps";
 import React from "react";
 
 export function SuperUserSelectButton({
