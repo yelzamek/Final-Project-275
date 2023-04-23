@@ -3,9 +3,13 @@ import { Button, Form } from "react-bootstrap";
 import { Ingredient } from "./IngredientObject";
 import { User } from "./UserObject";
 import { userTypeProps } from "../Interfaces/userTypeProps";
+import { userListProps } from "../Interfaces/userListProps";
 
-export function UserSelect({ userType }: userTypeProps): JSX.Element {
-    const [userList, setUserList] = useState<User[]>([]);
+export function UserSelect({
+    userType,
+    userList,
+    setUserList
+}: userListProps & userTypeProps): JSX.Element {
     const [newName, setNewName] = useState<string>("");
     function updateNewName(event: React.ChangeEvent<HTMLInputElement>) {
         setNewName(event.target.value);

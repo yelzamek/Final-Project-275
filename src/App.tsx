@@ -8,11 +8,18 @@ import {
     SuperUserSelectButton,
     AdminSelectButton
 } from "./Components/UserTypeSelectButtons";
+import { User } from "./Components/UserObject";
+import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("superUser");
+    const [currentUser, setCurrentUser] = useState<User>({
+        name: "None",
+        list_of_items: []
+    });
+    const [userList, setUserList] = useState<User[]>([currentUser]);
     return (
         <div className="App">
             <header className="App-header">
@@ -25,6 +32,10 @@ function App(): JSX.Element {
             <UserDropDown
                 userType={userType}
                 setUserType={setUserType}
+                userList={userList}
+                setUserList={setUserList}
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
             ></UserDropDown>
             <UserTypeIndicator
                 userType={userType}
@@ -34,6 +45,8 @@ function App(): JSX.Element {
             <UserSelect
                 userType={userType}
                 setUserType={setUserType}
+                userList={userList}
+                setUserList={setUserList}
             ></UserSelect>
             <AdminSelectButton
                 userType={userType}
