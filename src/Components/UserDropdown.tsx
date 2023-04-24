@@ -1,3 +1,4 @@
+/* eslint-disable no-extra-parens */
 import React from "react";
 import { Form } from "react-bootstrap";
 import { userTypeProps } from "../Interfaces/userTypeProps";
@@ -6,7 +7,7 @@ import { User } from "../Interfaces/UserObject";
 import { currentUserProps } from "../Interfaces/currentUserProps";
 import { Ingredient } from "../Interfaces/IngredientObject";
 export function UserDropDown({
-    userType,
+    //userType,
     setUserType,
     userList,
     currentUser,
