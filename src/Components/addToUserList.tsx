@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 import React, { useState } from "react";
-import { currentUserProps } from "../Interfaces/currentUserProps";
-import { Ingredient } from "../Interfaces/IngredientObject";
+//import { currentUserProps } from "../Interfaces/currentUserProps";
+//import { Ingredient } from "../Interfaces/IngredientObject";
 
 export function addToUserList() {
     //So when current user is passed to here we can update current user with the new item but we also have to updtae the user in user list
