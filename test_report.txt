@@ -6,24 +6,31 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (57 ms)
+  ✓ renders the course name somewhere (95 ms)
 
-------------------------|---------|----------|---------|---------|-------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-------------------------|---------|----------|---------|---------|-------------------
-All files               |   54.54 |       50 |      50 |   54.54 |                   
- src                    |     100 |      100 |     100 |     100 |                   
-  App.tsx               |     100 |      100 |     100 |     100 |                   
- src/Components         |   44.44 |       50 |   42.85 |   44.44 |                   
-  IngredientObject.tsx  |       0 |        0 |       0 |       0 |                   
-  SuperUserButton.tsx   |   66.66 |       50 |      50 |   66.66 | 13                
-  UserDropdown.tsx      |      50 |      100 |      50 |      50 | 14                
-  UserObject.tsx        |       0 |        0 |       0 |       0 |                   
-  UserSelect.tsx        |       0 |      100 |       0 |       0 | 5-9               
-  UserTypeIndicator.tsx |     100 |       50 |     100 |     100 | 13-35             
-------------------------|---------|----------|---------|---------|-------------------
+----------------------------|---------|----------|---------|---------|-------------------
+File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------------|---------|----------|---------|---------|-------------------
+All files                   |   34.14 |    41.66 |      30 |   36.84 |                   
+ src                        |     100 |      100 |     100 |     100 |                   
+  App.tsx                   |     100 |      100 |     100 |     100 |                   
+ src/Components             |   27.02 |    41.66 |   27.58 |   29.41 |                   
+  AddUser.tsx               |   33.33 |       50 |   28.57 |   33.33 | 16-42,54          
+  SuperUserButton.tsx       |   66.66 |       50 |      50 |   66.66 | 13                
+  UserDropdown.tsx          |   28.57 |      100 |      40 |   28.57 | 17-25             
+  UserSelect.tsx            |       0 |        0 |       0 |       0 | 14-56             
+  UserTypeIndicator.tsx     |     100 |       50 |     100 |     100 | 13-35             
+  UserTypeSelectButtons.tsx |      50 |      100 |      50 |     100 |                   
+  addToUserList.tsx         |       0 |      100 |       0 |       0 | 12-16             
+ src/Interfaces             |       0 |        0 |       0 |       0 |                   
+  IngredientObject.tsx      |       0 |        0 |       0 |       0 |                   
+  UserObject.tsx            |       0 |        0 |       0 |       0 |                   
+  currentUserProps.ts       |       0 |        0 |       0 |       0 |                   
+  userListProps.ts          |       0 |        0 |       0 |       0 |                   
+  userTypeProps.ts          |       0 |        0 |       0 |       0 |                   
+----------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.084 s
+Time:        3.002 s
 Ran all test suites.
