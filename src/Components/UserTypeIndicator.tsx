@@ -1,5 +1,5 @@
 import React from "react";
-import { userTypeProps } from "./UserDropdown";
+import { userTypeProps } from "../Interfaces/userTypeProps";
 
 export function UserTypeIndicator({ userType }: userTypeProps): JSX.Element {
     return (
