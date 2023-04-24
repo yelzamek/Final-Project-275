@@ -3,13 +3,13 @@ import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
 import { Counter } from "./Components/SuperUserButton";
-import { UserSelect } from "./Components/UserSelect";
+import { UserSelect } from "./Components/AddUser";
 import {
     SuperUserSelectButton,
     AdminSelectButton
 } from "./Components/UserTypeSelectButtons";
 import { User } from "./Interfaces/UserObject";
-import { userListProps } from "./Interfaces/userListProps";
+//import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
 
