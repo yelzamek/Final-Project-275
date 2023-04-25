@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
+import { CenterList } from "./Components/CenterList";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
 
@@ -24,6 +25,7 @@ function App(): JSX.Element {
                 userType={userType}
                 setUserType={setUserType}
             ></UserTypeIndicator>
+            <CenterList></CenterList>
         </div>
     );
 }
