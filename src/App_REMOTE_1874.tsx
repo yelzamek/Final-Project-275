@@ -12,6 +12,7 @@ import { User } from "./Interfaces/UserObject";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
+
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("superUser");
     const [currentUser, setCurrentUser] = useState<User>({
@@ -21,11 +22,7 @@ function App(): JSX.Element {
     const [userList, setUserList] = useState<User[]>([currentUser]);
     return (
         <div className="App">
-            <header className="header">
-                <a href="#" className="logo">
-                    {" "}
-                    <i className="fa fa-shopping-basket"></i> grocery
-                </a>
+            <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <p>
@@ -59,11 +56,6 @@ function App(): JSX.Element {
                 userType={userType}
                 setUserType={setUserType}
             ></SuperUserSelectButton>
-            <Counter userType={userType} setUserType={setUserType}></Counter>
-            <UserTypeIndicator
-                userType={userType}
-                setUserType={setUserType}
-            ></UserTypeIndicator>
         </div>
     );
 }

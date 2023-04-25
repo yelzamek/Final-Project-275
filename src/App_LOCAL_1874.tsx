@@ -3,22 +3,11 @@ import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
 import { Counter } from "./Components/SuperUserButton";
-import { UserSelect } from "./Components/AddUser";
-import {
-    SuperUserSelectButton,
-    AdminSelectButton
-} from "./Components/UserTypeSelectButtons";
-import { User } from "./Interfaces/UserObject";
-//import { userListProps } from "./Interfaces/userListProps";
+import "./Components/HomePage.css";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("superUser");
-    const [currentUser, setCurrentUser] = useState<User>({
-        name: "None",
-        list_of_items: []
-    });
-    const [userList, setUserList] = useState<User[]>([currentUser]);
     return (
         <div className="App">
             <header className="header">
@@ -32,33 +21,20 @@ function App(): JSX.Element {
                 Team 12 Joshua Martinez, Yasmeen Elzamek, Devin Cummings,
                 Annanya Venkataraman, Sreya Venkatesh.
             </p>
+
+            <nav className="navbar">
+                <a href="#home">home</a>
+                <a href="#aboutus">aboutus</a>
+            </nav>
+
+            <UserDropDown
+                userType={userType}
+                setUserType={setUserType}
+            ></UserDropDown>
             <UserTypeIndicator
                 userType={userType}
                 setUserType={setUserType}
             ></UserTypeIndicator>
-            <UserDropDown
-                userType={userType}
-                setUserType={setUserType}
-                userList={userList}
-                setUserList={setUserList}
-                currentUser={currentUser}
-                setCurrentUser={setCurrentUser}
-            ></UserDropDown>
-            <Counter userType={userType} setUserType={setUserType}></Counter>
-            <UserSelect
-                userType={userType}
-                setUserType={setUserType}
-                userList={userList}
-                setUserList={setUserList}
-            ></UserSelect>
-            <AdminSelectButton
-                userType={userType}
-                setUserType={setUserType}
-            ></AdminSelectButton>
-            <SuperUserSelectButton
-                userType={userType}
-                setUserType={setUserType}
-            ></SuperUserSelectButton>
             <Counter userType={userType} setUserType={setUserType}></Counter>
             <UserTypeIndicator
                 userType={userType}
