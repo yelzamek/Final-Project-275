@@ -58,7 +58,7 @@ function App(): JSX.Element {
             <SuperUserSelectButton
                 userType={userType}
                 setUserType={setUserType}
-            ></UserTypeIndicator>
+            ></SuperUserSelectButton>
             <Counter userType={userType} setUserType={setUserType}></Counter>
             <UserTypeIndicator
                 userType={userType}
