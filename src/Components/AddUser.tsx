@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Ingredient } from "../Interfaces/IngredientObject";
 import { User } from "../Interfaces/UserObject";
-import { userTypeProps } from "../Interfaces/userTypeProps";
-import { userListProps } from "../Interfaces/userListProps";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { UserListProps } from "../Interfaces/UserListProps";
 
 export function UserSelect({
     userType,
     userList,
     setUserList
-}: userListProps & userTypeProps): JSX.Element {
+}: UserListProps & UserTypeProps): JSX.Element {
     const [newName, setNewName] = useState<string>("");
     function updateNewName(event: React.ChangeEvent<HTMLInputElement>) {
         setNewName(event.target.value);

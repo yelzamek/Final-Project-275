@@ -1,13 +1,13 @@
 import { Button } from "react-bootstrap";
-import { userTypeProps } from "../Interfaces/userTypeProps";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import React from "react";
 
 export function SuperUserSelectButton({
     setUserType
-}: userTypeProps): JSX.Element {
+}: UserTypeProps): JSX.Element {
     return <Button onClick={() => setUserType("superUser")}>superUser</Button>;
 }
 
-export function AdminSelectButton({ setUserType }: userTypeProps): JSX.Element {
+export function AdminSelectButton({ setUserType }: UserTypeProps): JSX.Element {
     return <Button onClick={() => setUserType("Admin")}>Admin</Button>;
 }

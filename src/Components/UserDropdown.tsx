@@ -1,10 +1,10 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
 import { Form } from "react-bootstrap";
-import { userTypeProps } from "../Interfaces/userTypeProps";
-import { userListProps } from "../Interfaces/userListProps";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
-import { currentUserProps } from "../Interfaces/currentUserProps";
+import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
 import { Ingredient } from "../Interfaces/IngredientObject";
 export function UserDropDown({
     //userType,
@@ -12,7 +12,7 @@ export function UserDropDown({
     userList,
     currentUser,
     setCurrentUser
-}: userTypeProps & userListProps & currentUserProps): JSX.Element {
+}: UserTypeProps & UserListProps & CurrentUserProps): JSX.Element {
     function updateCurrentUser(event: React.ChangeEvent<HTMLSelectElement>) {
         setUserType("User");
         const userIndex = userList.findIndex(

@@ -12,3 +12,17 @@ export interface Ingredient {
     total_sugars: number;
     protein: number;
 }
+
+export const ING_LIST: Ingredient[] = [
+    {
+        name: "granola bar",
+        serving_size: 1,
+        calories: 100,
+        total_fat: 3,
+        cholesterol: 0,
+        sodium: 13,
+        total_carbs: 7,
+        total_sugars: 10,
+        protein: 18
+    }
+];
