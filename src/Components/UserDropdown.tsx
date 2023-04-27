@@ -5,7 +5,7 @@ import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
-import { Ingredient } from "../Interfaces/IngredientObject";
+import { Meal } from "../Interfaces/MealObject";
 export function UserDropDown({
     //userType,
     setUserType,
@@ -22,16 +22,16 @@ export function UserDropDown({
             name: userList[userIndex].name,
             list_of_items: [
                 ...userList[userIndex].list_of_items.map(
-                    (ingrediant: Ingredient): Ingredient => ({
-                        name: ingrediant.name,
-                        serving_size: ingrediant.serving_size,
-                        calories: ingrediant.calories,
-                        total_fat: ingrediant.total_fat,
-                        cholesterol: ingrediant.cholesterol,
-                        sodium: ingrediant.sodium,
-                        total_carbs: ingrediant.total_carbs,
-                        total_sugars: ingrediant.total_sugars,
-                        protein: ingrediant.protein
+                    (meal: Meal): Meal => ({
+                        name: meal.name,
+                        serving_size: meal.serving_size,
+                        calories: meal.calories,
+                        total_fat: meal.total_fat,
+                        cholesterol: meal.cholesterol,
+                        sodium: meal.sodium,
+                        total_carbs: meal.total_carbs,
+                        total_sugars: meal.total_sugars,
+                        protein: meal.protein
                     })
                 )
             ]
