@@ -1,6 +1,6 @@
-import { Ingredient } from "./IngredientObject";
+import { Meal } from "./MealObject";
 
 export interface User {
     name: string;
-    list_of_items: Ingredient[];
+    list_of_items: Meal[];
 }

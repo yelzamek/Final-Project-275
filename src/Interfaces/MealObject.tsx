@@ -1,4 +1,4 @@
-export interface Ingredient {
+export interface Meal {
     name: string;
     serving_size: number;
     //should we have a units var for every number?
@@ -13,7 +13,7 @@ export interface Ingredient {
     protein: number;
 }
 
-export const ING_LIST: Ingredient[] = [
+export const MEAL_LIST: Meal[] = [
     {
         name: "granola bar",
         serving_size: 1,
