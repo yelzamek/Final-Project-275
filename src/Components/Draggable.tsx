@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { DndProvider, useDrag, useDrop } from "react-dnd";
-import { JsxElement } from "typescript";
+import { useDrag, useDrop } from "react-dnd";
 //import { HTML5Backend } from "react-dnd-html5-backend";
 
 export const ItemTypes = {
@@ -54,6 +53,7 @@ export function DropBox(): JSX.Element {
     function updateVisible() {
         setVisible(!visible);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [{ isOver }, drop] = useDrop({
         accept: ItemTypes.KNIGHT,
         drop: () => updateVisible(),
