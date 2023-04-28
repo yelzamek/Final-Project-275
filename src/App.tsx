@@ -9,7 +9,7 @@ import {
     AdminSelectButton
 } from "./Components/UserTypeSelectButtons";
 import { User } from "./Interfaces/UserObject";
-import { Knight, Square, Colors, Board, DropBox } from "./Components/Draggable";
+import { Board, DropBox } from "./Components/Draggable";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 //import { userListProps } from "./Interfaces/userListProps";
