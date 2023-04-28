@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { UserTypeProps } from "../Interfaces/userTypeProps";
 
 export function Counter({ userType }: UserTypeProps): JSX.Element {
     const [value, setValue] = useState<number>(0);
