@@ -1,4 +1,4 @@
-export interface Ingredient {
+export interface Meal {
     name: string;
     serving_size: number;
     //should we have a units var for every number?
@@ -12,3 +12,17 @@ export interface Ingredient {
     total_sugars: number;
     protein: number;
 }
+
+export const MEAL_LIST: Meal[] = [
+    {
+        name: "granola bar",
+        serving_size: 1,
+        calories: 100,
+        total_fat: 3,
+        cholesterol: 0,
+        sodium: 13,
+        total_carbs: 7,
+        total_sugars: 10,
+        protein: 18
+    }
+];

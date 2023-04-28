@@ -1,5 +1,5 @@
 import { User } from "./UserObject";
-export interface userListProps {
+export interface UserListProps {
     userList: User[];
     setUserList: (newUserList: User[]) => void;
 }
