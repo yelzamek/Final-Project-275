@@ -34,7 +34,7 @@ function App(): JSX.Element {
                 </header>
                 <p>
                     Team 12 Joshua Martinez, Yasmeen Elzamek, Devin Cummings,
-                    Annanya Venkataraman, Sreya Venkatesh.
+                    Annanya Venkataraman, Sreya Venkatesh. IT WORKS PLS?
                 </p>
                 <UserTypeIndicator
                     userType={userType}
