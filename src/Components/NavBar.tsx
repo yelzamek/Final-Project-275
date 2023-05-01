@@ -14,7 +14,6 @@ export function Navbar() {
                 >
                     Balanced Bytes
                 </Nav>
-                <Button className="m-3">Hello</Button>
                 <Button
                     onClick={() => setCart(true)}
                     style={{
