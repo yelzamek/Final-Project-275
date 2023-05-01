@@ -9,9 +9,11 @@ import {
     AdminSelectButton
 } from "./Components/UserTypeSelectButtons";
 import { User } from "./Interfaces/UserObject";
+import { Navbar } from "react-bootstrap";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
+
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("superUser");
     const [currentUser, setCurrentUser] = useState<User>({
@@ -64,6 +66,7 @@ function App(): JSX.Element {
                 userType={userType}
                 setUserType={setUserType}
             ></UserTypeIndicator>
+            <Navbar></Navbar>
         </div>
     );
 }
