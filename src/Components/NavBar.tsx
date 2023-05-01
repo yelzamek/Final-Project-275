@@ -10,28 +10,28 @@ export function Navbar() {
             <Container>
                 <Nav
                     className="me-auto"
-                    style={{ fontSize: "2.7rem", fontStyle: "italic" }}
+                    style={{ fontSize: "2.7rem", fontStyle: "" }}
                 >
-                    Home
+                    Balanced Bytes
                 </Nav>
                 <Button className="m-3">Hello</Button>
                 <Button
                     onClick={() => setCart(true)}
                     style={{
-                        width: "4rem",
-                        height: "4rem",
+                        width: "6rem",
+                        height: "6rem",
                         position: "relative"
                     }}
                     variant="outline-primary"
                     className="rounded-circle"
                 >
-                    Store
+                    About Us
                     <div
                         className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
                         style={{
                             color: "white",
-                            width: "1.5rem",
-                            height: "1.5rem",
+                            width: "2 rem",
+                            height: "2 rem",
                             position: "absolute",
                             bottom: 0,
                             right: 0,
@@ -46,7 +46,9 @@ export function Navbar() {
                         closeButton
                         onClick={() => setCart(false)}
                     >
-                        <Offcanvas.Title>Cart</Offcanvas.Title>
+                        <Offcanvas.Title>
+                            Annanya, Josh, Yasmeen, Sreya, Devin
+                        </Offcanvas.Title>
                     </Offcanvas.Header>
                 </Offcanvas>
             </Container>

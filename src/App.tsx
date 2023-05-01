@@ -9,7 +9,7 @@ import {
     AdminSelectButton
 } from "./Components/UserTypeSelectButtons";
 import { User } from "./Interfaces/UserObject";
-import { Navbar } from "react-bootstrap";
+import { Navbar } from "./Components/NavBar";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
@@ -30,7 +30,7 @@ function App(): JSX.Element {
                 </a>
                 UD CISC275 with React Hooks and TypeScript
             </header>
-            <p>
+            <p className="App-header">
                 Team 12 Joshua Martinez, Yasmeen Elzamek, Devin Cummings,
                 Annanya Venkataraman, Sreya Venkatesh.
             </p>
