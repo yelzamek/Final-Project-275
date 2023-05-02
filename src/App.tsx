@@ -42,25 +42,25 @@ function App(): JSX.Element {
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
-            <header className="header">
-                <header className="header"></header>
-                <a href="#" className="logo">
-                    {" "}
-                    <i className="fa fa-shopping-basket"></i>
-                </a>
-                <nav className="NavBar">
-                    <a href="#Home"> Home</a>
-                    <a href="#About Us"> About Us</a>
-                </nav>
-                <div className="icons"></div>
-                <div className="fa fa-bars" id="menu-btn"></div>
-                <a href="#" className="logo">
-                    {" "}
-                    <i className="fa fa-shopping-basket"></i> grocery
-                </a>
-            </header>
-            <p className="App-header">Team 12</p>
-            <Navbar></Navbar>
+                <header className="header">
+                    <header className="header"></header>
+                    <a href="#" className="logo">
+                        {" "}
+                        <i className="fa fa-shopping-basket"></i>
+                    </a>
+                    <nav className="NavBar">
+                        <a href="#Home"> Home</a>
+                        <a href="#About Us"> About Us</a>
+                    </nav>
+                    <div className="icons"></div>
+                    <div className="fa fa-bars" id="menu-btn"></div>
+                    <a href="#" className="logo">
+                        {" "}
+                        <i className="fa fa-shopping-basket"></i> grocery
+                    </a>
+                </header>
+                <p className="App-header">Team 12</p>
+                <Navbar></Navbar>
                 <UserTypeIndicator
                     userType={userType}
                     setUserType={setUserType}
