@@ -12,6 +12,10 @@ import { User } from "./Interfaces/UserObject";
 import { Board, DropBox } from "./Components/Draggable";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import {
+    ExampleDragableMealItemForTesting,
+    UserList
+} from "./Components/UserList";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
@@ -19,7 +23,19 @@ function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("superUser");
     const [currentUser, setCurrentUser] = useState<User>({
         name: "None",
-        list_of_items: []
+        list_of_items: [
+            {
+                name: "granola bar",
+                serving_size: 1,
+                calories: 100,
+                total_fat: 3,
+                cholesterol: 0,
+                sodium: 13,
+                total_carbs: 7,
+                total_sugars: 10,
+                protein: 18
+            }
+        ]
     });
     const [userList, setUserList] = useState<User[]>([currentUser]);
     return (
@@ -74,8 +90,13 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></UserTypeIndicator>
-                <Board></Board>
-                <DropBox></DropBox>
+                <ExampleDragableMealItemForTesting></ExampleDragableMealItemForTesting>
+                <UserList
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    setUserList={setUserList}
+                ></UserList>
             </div>
         </DndProvider>
     );
