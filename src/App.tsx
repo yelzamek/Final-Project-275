@@ -9,7 +9,6 @@ import {
     AdminSelectButton
 } from "./Components/UserTypeSelectButtons";
 import { User } from "./Interfaces/UserObject";
-import { Board, DropBox } from "./Components/Draggable";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import {

@@ -1,12 +1,11 @@
 /* eslint-disable no-extra-parens */
-import React, { useState } from "react";
+import React from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { CurrentUserProps } from "../Interfaces/currentUserProps";
 import { UserListProps } from "../Interfaces/userListProps";
-import { User } from "../Interfaces/UserObject";
+//import { User } from "../Interfaces/UserObject";
 import { Meal } from "../Interfaces/MealObject";
 import { AddToUserList } from "./addToUserList";
-import { Button } from "react-bootstrap";
 
 export function ExampleDragableMealItemForTesting() {
     const ExampleMeal: Meal = {
@@ -48,6 +47,7 @@ export function UserList({
     userList,
     setUserList
 }: UserListProps & CurrentUserProps): JSX.Element {
+    //Delete after center list
     const ExampMeal: Meal = {
         name: "Tasty Test",
         serving_size: 1,
@@ -60,6 +60,8 @@ export function UserList({
         protein: 18
     };
     function getFoodItem(name: string): Meal {
+        //This is going to become a function to retrieve the meal from the center list
+        name;
         return ExampMeal;
     }
     const [{ isOver }, drop] = useDrop({
@@ -84,21 +86,6 @@ export function UserList({
             {currentUser.list_of_items.map((item: Meal) => (
                 <div key={item.name}>{item.name}</div>
             ))}
-            <Button
-                onClick={() =>
-                    AddToUserList(
-                        {
-                            currentUser,
-                            setCurrentUser,
-                            userList,
-                            setUserList
-                        },
-                        ExampMeal
-                    )
-                }
-            >
-                Add Test
-            </Button>
         </div>
     );
 }
