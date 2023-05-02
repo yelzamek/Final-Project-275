@@ -39,12 +39,8 @@ function App(): JSX.Element {
                     {" "}
                     <i className="fa fa-shopping-basket"></i> grocery
                 </a>
-                UD CISC275 with React Hooks and TypeScript
             </header>
-            <p>
-                Team 12 Joshua Martinez, Yasmeen Elzamek, Devin Cummings,
-                Annanya Venkataraman, Sreya Venkatesh.
-            </p>
+            <p className="App-header">Team 12</p>
             <Navbar></Navbar>
             <UserTypeIndicator
                 userType={userType}

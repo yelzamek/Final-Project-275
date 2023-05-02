@@ -4,31 +4,30 @@ import { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
 
 export function Navbar() {
-    const [cart, setCart] = useState<boolean>(false);
+    const [info, setState] = useState<boolean>(false);
     return (
         <NavbarBS sticky="top" className="bg-white shadow-sm mb-3 p-3">
             <Container>
                 <Nav
                     className="me-auto"
-                    style={{ fontSize: "2rem", fontStyle: "" }}
+                    style={{ fontSize: "1.5rem", fontStyle: "" }}
                 >
                     Balanced Bytes
                 </Nav>
                 <Button
-                    onClick={() => setCart(true)}
+                    onClick={() => setState(true)}
                     style={{
-                        width: "2rem",
-                        height: "2rem"
+                        width: "4rem",
+                        height: "4rem"
                     }}
                     variant="outline-primary"
-                    className="rounded-circle"
                 >
                     About Us
                     <div
                         style={{
                             color: "white",
-                            width: "2 rem",
-                            height: "2 rem",
+                            width: "1.5 rem",
+                            height: "1.5 rem",
                             position: "absolute",
                             bottom: 0,
                             right: 0,
@@ -38,10 +37,10 @@ export function Navbar() {
                         3
                     </div>
                 </Button>
-                <Offcanvas show={cart} placement="end">
+                <Offcanvas show={info} placement="end">
                     <Offcanvas.Header
                         closeButton
-                        onClick={() => setCart(false)}
+                        onClick={() => setState(false)}
                     >
                         <Offcanvas.Body>
                             Annanya, Josh, Devin, Yasmeen, Sreya
