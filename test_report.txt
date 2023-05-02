@@ -6,26 +6,27 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (100 ms)
+  ✓ renders the course name somewhere (78 ms)
 
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |   46.55 |       45 |   41.02 |   48.14 |                   
+All files                   |    33.8 |    29.16 |    32.6 |   34.32 |                   
  src                        |     100 |      100 |     100 |     100 |                   
   App.tsx                   |     100 |      100 |     100 |     100 |                   
- src/Components             |   43.39 |       45 |   39.47 |   44.89 |                   
+ src/Components             |    30.3 |    29.16 |   31.11 |   30.64 |                   
   AddUser.tsx               |   33.33 |       50 |   28.57 |   33.33 | 16-42,54          
-  Draggable.tsx             |   86.66 |       50 |   77.77 |   85.71 | 54,59             
+  Draggable.tsx             |       0 |        0 |       0 |       0 | 5-82              
   MealItem.tsx              |       0 |      100 |     100 |       0 | 12                
   SuperUserButton.tsx       |   66.66 |       50 |      50 |   66.66 | 13                
   UserDropdown.tsx          |   28.57 |      100 |      40 |   28.57 | 17-25             
+  UserList.tsx              |   76.92 |       50 |      75 |      75 | 64-65,70          
   UserSelect.tsx            |       0 |        0 |       0 |       0 | 14-56             
   UserTypeIndicator.tsx     |     100 |       50 |     100 |     100 | 13-35             
   UserTypeSelectButtons.tsx |      50 |      100 |      50 |     100 |                   
-  addToUserList.tsx         |       0 |      100 |       0 |       0 | 12-16             
+  addToUserList.tsx         |       0 |      100 |       0 |       0 | 17-24             
  src/Interfaces             |       0 |      100 |     100 |       0 |                   
-  MealObject.tsx            |       0 |      100 |     100 |       0 | 16                
+  MealObject.tsx            |       0 |      100 |     100 |       0 | 23                
   UserObject.tsx            |       0 |        0 |       0 |       0 |                   
   currentUserProps.ts       |       0 |        0 |       0 |       0 |                   
   userListProps.ts          |       0 |        0 |       0 |       0 |                   
@@ -34,5 +35,5 @@ All files                   |   46.55 |       45 |   41.02 |   48.14 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.428 s
+Time:        2.499 s
 Ran all test suites.
