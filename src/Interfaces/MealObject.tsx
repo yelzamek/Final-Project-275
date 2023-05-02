@@ -13,9 +13,40 @@ export interface Meal {
     protein: number;
 }
 
+export interface MealListProps {
+    mealList: Meal[];
+    setMealList: (newMealList: Meal[]) => void;
+}
+
+export interface MealProps2 {
+    meal2: Meal;
+}
+
 export const MEAL_LIST: Meal[] = [
     {
         name: "granola bar",
+        serving_size: 1,
+        calories: 100,
+        total_fat: 3,
+        cholesterol: 0,
+        sodium: 13,
+        total_carbs: 7,
+        total_sugars: 10,
+        protein: 18
+    },
+    {
+        name: "banana",
+        serving_size: 1,
+        calories: 100,
+        total_fat: 3,
+        cholesterol: 0,
+        sodium: 13,
+        total_carbs: 7,
+        total_sugars: 10,
+        protein: 18
+    },
+    {
+        name: "pizza",
         serving_size: 1,
         calories: 100,
         total_fat: 3,
