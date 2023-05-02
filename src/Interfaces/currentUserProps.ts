@@ -1,6 +1,6 @@
 import { User } from "./UserObject";
-import { userListProps } from "./userListProps";
-export interface currentUserProps extends userListProps {
+import { UserListProps } from "./userListProps";
+export interface CurrentUserProps extends UserListProps {
     currentUser: User;
     setCurrentUser: (newCurrentUser: User) => void;
 }

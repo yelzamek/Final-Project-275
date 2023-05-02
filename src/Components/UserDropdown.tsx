@@ -1,18 +1,18 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
 import { Form } from "react-bootstrap";
-import { userTypeProps } from "../Interfaces/userTypeProps";
-import { userListProps } from "../Interfaces/userListProps";
+import { UserTypeProps } from "../Interfaces/userTypeProps";
+import { UserListProps } from "../Interfaces/userListProps";
 import { User } from "../Interfaces/UserObject";
-import { currentUserProps } from "../Interfaces/currentUserProps";
-import { Ingredient } from "../Interfaces/IngredientObject";
+import { CurrentUserProps } from "../Interfaces/currentUserProps";
+import { Meal } from "../Interfaces/MealObject";
 export function UserDropDown({
     //userType,
     setUserType,
     userList,
     currentUser,
     setCurrentUser
-}: userTypeProps & userListProps & currentUserProps): JSX.Element {
+}: UserTypeProps & UserListProps & CurrentUserProps): JSX.Element {
     function updateCurrentUser(event: React.ChangeEvent<HTMLSelectElement>) {
         setUserType("User");
         const userIndex = userList.findIndex(
@@ -22,16 +22,16 @@ export function UserDropDown({
             name: userList[userIndex].name,
             list_of_items: [
                 ...userList[userIndex].list_of_items.map(
-                    (ingrediant: Ingredient): Ingredient => ({
-                        name: ingrediant.name,
-                        serving_size: ingrediant.serving_size,
-                        calories: ingrediant.calories,
-                        total_fat: ingrediant.total_fat,
-                        cholesterol: ingrediant.cholesterol,
-                        sodium: ingrediant.sodium,
-                        total_carbs: ingrediant.total_carbs,
-                        total_sugars: ingrediant.total_sugars,
-                        protein: ingrediant.protein
+                    (meal: Meal): Meal => ({
+                        name: meal.name,
+                        serving_size: meal.serving_size,
+                        calories: meal.calories,
+                        total_fat: meal.total_fat,
+                        cholesterol: meal.cholesterol,
+                        sodium: meal.sodium,
+                        total_carbs: meal.total_carbs,
+                        total_sugars: meal.total_sugars,
+                        protein: meal.protein
                     })
                 )
             ]

@@ -10,6 +10,12 @@ import {
 } from "./Components/UserTypeSelectButtons";
 import { User } from "./Interfaces/UserObject";
 import { Navbar } from "./Components/NavBar";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import {
+    ExampleDragableMealItemForTesting,
+    UserList
+} from "./Components/UserList";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
@@ -18,11 +24,24 @@ function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("superUser");
     const [currentUser, setCurrentUser] = useState<User>({
         name: "None",
-        list_of_items: []
+        list_of_items: [
+            {
+                name: "granola bar",
+                serving_size: 1,
+                calories: 100,
+                total_fat: 3,
+                cholesterol: 0,
+                sodium: 13,
+                total_carbs: 7,
+                total_sugars: 10,
+                protein: 18
+            }
+        ]
     });
     const [userList, setUserList] = useState<User[]>([currentUser]);
     return (
-        <div className="App">
+        <DndProvider backend={HTML5Backend}>
+            <div className="App">
             <header className="header">
                 <header className="header"></header>
                 <a href="#" className="logo">
@@ -42,39 +61,53 @@ function App(): JSX.Element {
             </header>
             <p className="App-header">Team 12</p>
             <Navbar></Navbar>
-            <UserTypeIndicator
-                userType={userType}
-                setUserType={setUserType}
-            ></UserTypeIndicator>
-            <UserDropDown
-                userType={userType}
-                setUserType={setUserType}
-                userList={userList}
-                setUserList={setUserList}
-                currentUser={currentUser}
-                setCurrentUser={setCurrentUser}
-            ></UserDropDown>
-            <Counter userType={userType} setUserType={setUserType}></Counter>
-            <UserSelect
-                userType={userType}
-                setUserType={setUserType}
-                userList={userList}
-                setUserList={setUserList}
-            ></UserSelect>
-            <AdminSelectButton
-                userType={userType}
-                setUserType={setUserType}
-            ></AdminSelectButton>
-            <SuperUserSelectButton
-                userType={userType}
-                setUserType={setUserType}
-            ></SuperUserSelectButton>
-            <Counter userType={userType} setUserType={setUserType}></Counter>
-            <UserTypeIndicator
-                userType={userType}
-                setUserType={setUserType}
-            ></UserTypeIndicator>
-        </div>
+                <UserTypeIndicator
+                    userType={userType}
+                    setUserType={setUserType}
+                ></UserTypeIndicator>
+                <UserDropDown
+                    userType={userType}
+                    setUserType={setUserType}
+                    userList={userList}
+                    setUserList={setUserList}
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                ></UserDropDown>
+                <Counter
+                    userType={userType}
+                    setUserType={setUserType}
+                ></Counter>
+                <UserSelect
+                    userType={userType}
+                    setUserType={setUserType}
+                    userList={userList}
+                    setUserList={setUserList}
+                ></UserSelect>
+                <AdminSelectButton
+                    userType={userType}
+                    setUserType={setUserType}
+                ></AdminSelectButton>
+                <SuperUserSelectButton
+                    userType={userType}
+                    setUserType={setUserType}
+                ></SuperUserSelectButton>
+                <Counter
+                    userType={userType}
+                    setUserType={setUserType}
+                ></Counter>
+                <UserTypeIndicator
+                    userType={userType}
+                    setUserType={setUserType}
+                ></UserTypeIndicator>
+                <ExampleDragableMealItemForTesting></ExampleDragableMealItemForTesting>
+                <UserList
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    setUserList={setUserList}
+                ></UserList>
+            </div>
+        </DndProvider>
     );
 }
 export default App;
