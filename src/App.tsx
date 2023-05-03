@@ -15,32 +15,57 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
-
+import { Navbar } from "./Components/NavBar";
+import {
+    ExampleDragableMealItemForTesting,
+    UserList
+} from "./Components/UserList";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
+
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("superUser");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
     const [currentUser, setCurrentUser] = useState<User>({
         name: "None",
-        list_of_items: []
+        list_of_items: [
+            {
+                name: "greanola bar",
+                serving_size: 1,
+                calories: 100,
+                total_fat: 3,
+                cholesterol: 0,
+                sodium: 13,
+                total_carbs: 7,
+                total_sugars: 10,
+                protein: 18
+            }
+        ]
     });
     const [userList, setUserList] = useState<User[]>([currentUser]);
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
                 <header className="header">
+                    <header className="header"></header>
+                    <a href="#" className="logo">
+                        {" "}
+                        <i className="fa fa-shopping-basket"></i>
+                    </a>
+                    <nav className="NavBar">
+                        <a href="#Home"> Home</a>
+                        <a href="#About Us"> About Us</a>
+                    </nav>
+                    <div className="icons"></div>
+                    <div className="fa fa-bars" id="menu-btn"></div>
                     <a href="#" className="logo">
                         {" "}
                         <i className="fa fa-shopping-basket"></i> grocery
                     </a>
-                    UD CISC275 with React Hooks and TypeScript
                 </header>
-                <p>
-                    Team 12 Joshua Martinez, Yasmeen Elzamek, Devin Cummings,
-                    Annanya Venkataraman, Sreya Venkatesh. IT WORKS PLS?
-                </p>
+                <p className="App-header">Team 12</p>
+                <Navbar></Navbar>
                 <UserTypeIndicator
                     userType={userType}
                     setUserType={setUserType}
@@ -84,9 +109,15 @@ function App(): JSX.Element {
                     setMealList={setMealList}
                 ></CenterList>
                 <DropBox></DropBox>
+                <ExampleDragableMealItemForTesting></ExampleDragableMealItemForTesting>
+                <UserList
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    setUserList={setUserList}
+                ></UserList>
             </div>
         </DndProvider>
     );
 }
-
 export default App;

@@ -22,6 +22,14 @@ export interface MealProps2 {
     meal2: Meal;
 }
 
+export interface MealProps {
+    meal: string;
+}
+export interface mealList {
+    mealList: Meal[];
+    setMealList: (newUserList: Meal[]) => void;
+}
+
 export const MEAL_LIST: Meal[] = [
     {
         name: "granola bar",
