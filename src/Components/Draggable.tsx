@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { useDrag, useDrop } from "react-dnd";
+import { Meal } from "../Interfaces/MealObject";
 //import { HTML5Backend } from "react-dnd-html5-backend";
 
 export const ItemTypes = {
-    KNIGHT: "knight"
+    MEAL: "meal"
 };
 
 export interface Colors {
     black: string;
     children: React.ReactNode;
 }
-export function Knight() {
+export function MealDraggable(object: Meal): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
-        type: ItemTypes.KNIGHT,
+        type: ItemTypes.MEAL,
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging()
         })
@@ -27,7 +28,7 @@ export function Knight() {
                 cursor: "move"
             }}
         >
-            ♘
+            {object.name}
         </div>
     );
 }
@@ -55,7 +56,7 @@ export function DropBox(): JSX.Element {
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [{ isOver }, drop] = useDrop({
-        accept: ItemTypes.KNIGHT,
+        accept: ItemTypes.MEAL,
         drop: () => updateVisible(),
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
@@ -75,15 +76,6 @@ export function DropBox(): JSX.Element {
                     marginLeft: "5px"
                 }}
             ></div>
-        </div>
-    );
-}
-export function Board(): JSX.Element {
-    return (
-        <div>
-            <Square black="black">
-                <Knight></Knight>
-            </Square>
         </div>
     );
 }

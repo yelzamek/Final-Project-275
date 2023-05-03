@@ -9,9 +9,13 @@ import {
     AdminSelectButton
 } from "./Components/UserTypeSelectButtons";
 import { User } from "./Interfaces/UserObject";
-import { Navbar } from "./Components/NavBar";
+import { DropBox } from "./Components/Draggable";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { CenterList } from "./Components/Centerlist";
+import { MEAL_LIST } from "./Interfaces/MealObject";
+import { Meal } from "./Interfaces/MealObject";
+import { Navbar } from "./Components/NavBar";
 import {
     ExampleDragableMealItemForTesting,
     UserList
@@ -22,6 +26,7 @@ import {
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("superUser");
+    const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
     const [currentUser, setCurrentUser] = useState<User>({
         name: "None",
         list_of_items: [
@@ -99,6 +104,11 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></UserTypeIndicator>
+                <CenterList
+                    mealList={mealList}
+                    setMealList={setMealList}
+                ></CenterList>
+                <DropBox></DropBox>
                 <ExampleDragableMealItemForTesting></ExampleDragableMealItemForTesting>
                 <UserList
                     currentUser={currentUser}
