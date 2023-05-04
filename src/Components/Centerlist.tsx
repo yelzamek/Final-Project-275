@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useDrag, useDrop } from "react-dnd";
-import { MealListProps, Meal, MealProps2 } from "../Interfaces/MealObject";
-import { nameProps } from "../Interfaces/MealObject";
+/* eslint-disable no-extra-parens */
+import React from "react";
+import { useDrag } from "react-dnd";
+import { MealListProps, Meal } from "../Interfaces/MealObject";
 export const ItemTypes = {
     MEAL: "meal"
 };
@@ -29,13 +29,7 @@ export function MealDraggable({ name }: Meal): JSX.Element {
     );
 }
 
-export function CenterList({ mealList, setMealList }: MealListProps) {
-    const [{ isDragging }, drag] = useDrag(() => ({
-        type: "Meal",
-        collect: (monitor) => ({
-            isDragging: !!monitor.isDragging()
-        })
-    }));
+export function CenterList({ mealList }: MealListProps) {
     return (
         <div>
             <div>Center List</div>

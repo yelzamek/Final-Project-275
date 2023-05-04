@@ -1,19 +1,15 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
-import { useDrag, useDrop } from "react-dnd";
+import { useDrop } from "react-dnd";
 import { CurrentUserProps } from "../Interfaces/currentUserProps";
 import { UserListProps } from "../Interfaces/userListProps";
 //import { User } from "../Interfaces/UserObject";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
-import { AddToUserList } from "./addToUserList";
 
 export function UserList({
     currentUser,
     setCurrentUser,
-    userList,
-    setUserList,
-    mealList,
-    setMealList
+    mealList
 }: UserListProps & CurrentUserProps & MealListProps): JSX.Element {
     function addToUserList(name: nameProps) {
         const mealIndex = mealList.findIndex(
