@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { MealListProps, Meal, MealProps2 } from "../Interfaces/MealObject";
-
+import { nameProps } from "../Interfaces/MealObject";
 export const ItemTypes = {
     MEAL: "meal"
 };
@@ -9,6 +9,7 @@ export const ItemTypes = {
 export function MealDraggable({ meal2 }: MealProps2): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: ItemTypes.MEAL,
+        item: {name: }
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging()
         })
