@@ -15,7 +15,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
-import { Navbar } from "./Components/NavBar";
+import { NavBar } from "./Components/NavBar";
 import {
     ExampleDragableMealItemForTesting,
     UserList
@@ -65,7 +65,7 @@ function App(): JSX.Element {
                     </a>
                 </header>
                 <p className="App-header">Team 12</p>
-                <Navbar></Navbar>
+                <NavBar></NavBar>
                 <UserTypeIndicator
                     userType={userType}
                     setUserType={setUserType}
