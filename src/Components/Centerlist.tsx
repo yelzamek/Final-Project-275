@@ -8,7 +8,7 @@ export const ItemTypes = {
 
 export function MealDraggable({ name }: Meal): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
-        type: ItemTypes.MEAL,
+        type: "Meal",
         item: { name: name },
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging()
@@ -31,7 +31,7 @@ export function MealDraggable({ name }: Meal): JSX.Element {
 
 export function CenterList({ mealList, setMealList }: MealListProps) {
     const [{ isDragging }, drag] = useDrag(() => ({
-        type: ItemTypes.MEAL,
+        type: "Meal",
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging()
         })

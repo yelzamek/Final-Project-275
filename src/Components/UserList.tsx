@@ -15,13 +15,18 @@ export function UserList({
     mealList,
     setMealList
 }: UserListProps & CurrentUserProps & MealListProps): JSX.Element {
-    function addToUserList(name: nameProps){
-        const mealIndex = mealList.findIndex((meal: Meal): boolean => meal.name === name.name)
-        setCurrentUser({name:currentUser.name, list_of_items: [...currentUser.list_of_items, mealList[mealIndex]]})
+    function addToUserList(name: nameProps) {
+        const mealIndex = mealList.findIndex(
+            (meal: Meal): boolean => meal.name === name.name
+        );
+        setCurrentUser({
+            name: currentUser.name,
+            list_of_items: [...currentUser.list_of_items, mealList[mealIndex]]
+        });
     }
     const [{ isOver }, drop] = useDrop({
         accept: "Meal",
-        drop: (meal: string) => addToUserList(meal)
+        drop: (name: nameProps) => addToUserList(name),
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })
