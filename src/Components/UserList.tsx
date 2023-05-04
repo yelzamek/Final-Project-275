@@ -10,6 +10,7 @@ import { AddToUserList } from "./addToUserList";
 export function ExampleDragableMealItemForTesting() {
     const ExampleMeal: Meal = {
         name: "Tasty Test",
+        image: "https://www.tasteofhome.com/wp-content/uploads/2018/01/Honey-Oat-Granola-Bars_EXPS_BOBBZ22_38126_B10_06_1b-6.jpg?fit=700,1024",
         serving_size: 1,
         calories: 100,
         total_fat: 3,
@@ -50,6 +51,7 @@ export function UserList({
     //Delete after center list
     const ExampMeal: Meal = {
         name: "Tasty Test",
+        image: "https://www.tasteofhome.com/wp-content/uploads/2018/01/Honey-Oat-Granola-Bars_EXPS_BOBBZ22_38126_B10_06_1b-6.jpg?fit=700,1024",
         serving_size: 1,
         calories: 100,
         total_fat: 3,
