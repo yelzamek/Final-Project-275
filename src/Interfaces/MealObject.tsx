@@ -13,6 +13,9 @@ export interface Meal {
     protein: number;
 }
 
+export interface nameProps {
+    name: string;
+}
 export interface MealListProps {
     mealList: Meal[];
     setMealList: (newMealList: Meal[]) => void;
