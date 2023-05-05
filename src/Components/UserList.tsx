@@ -2,7 +2,7 @@
 import React from "react";
 import { useDrop } from "react-dnd";
 import { CurrentUserProps } from "../Interfaces/currentUserProps";
-import { UserListProps } from "../Interfaces/UserListProps";
+import { UserListProps } from "../Interfaces/userListProps";
 //import { User } from "../Interfaces/UserObject";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 
