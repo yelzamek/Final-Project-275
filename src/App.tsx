@@ -17,6 +17,7 @@ import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
 import { Navbar } from "./Components/NavBar";
 import { UserList } from "./Components/UserList";
+import { Grid } from "./Components/grid";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
@@ -114,6 +115,7 @@ function App(): JSX.Element {
                     mealList={mealList}
                     setMealList={setMealList}
                 ></UserList>
+                <Grid></Grid>
             </div>
         </DndProvider>
     );
