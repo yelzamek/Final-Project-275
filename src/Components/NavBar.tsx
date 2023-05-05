@@ -1,47 +1,53 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Button, Container, Nav, Navbar as NavbarBS } from "react-bootstrap";
+import { useState } from "react";
+import { Offcanvas } from "react-bootstrap";
 
-export default function NavBar() {
+export function Navbar() {
+    const [info, setState] = useState<boolean>(false);
     return (
-        <Box
-            as="nav"
-            display="flex"
-            justifyContent="center"
-            py={4}
-            bg="red.400"
-        >
-            <Link to="/">
-                <Box
-                    as="span"
-                    fontSize="lg"
-                    fontWeight="bold"
-                    color="white"
-                    px={4}
-                    py={2}
-                    transition="background-color 0.3s ease"
-                    _hover={{ bgColor: "red.600", color: "white" }}
-                    borderRadius="md"
-                    mr={4}
+        <NavbarBS sticky="top" className="bg-white shadow-sm mb-3 p-3">
+            <Container>
+                <Nav
+                    className="me-auto"
+                    style={{ fontSize: "1.5rem", fontStyle: "" }}
                 >
-                    menu
-                </Box>
-            </Link>
-            <Link to="/aboutus">
-                <Box
-                    as="span"
-                    fontSize="lg"
-                    fontWeight="bold"
-                    color="white"
-                    px={4}
-                    py={2}
-                    transition="background-color 0.3s ease"
-                    _hover={{ bgColor: "red.600", color: "white" }}
-                    borderRadius="md"
+                    Balanced Bytes
+                </Nav>
+                <Button
+                    onClick={() => setState(true)}
+                    style={{
+                        width: "4rem",
+                        height: "4rem"
+                    }}
+                    variant="outline-primary"
                 >
-                    about us
-                </Box>
-            </Link>
-        </Box>
+                    About Us
+                    <div
+                        style={{
+                            color: "white",
+                            width: "1.5 rem",
+                            height: "1.5 rem",
+                            position: "absolute",
+                            bottom: 0,
+                            right: 0,
+                            transform: "translate(25%, 25%)"
+                        }}
+                    >
+                        3
+                    </div>
+                </Button>
+                <Offcanvas show={info} placement="end">
+                    <Offcanvas.Header
+                        closeButton
+                        onClick={() => setState(false)}
+                    >
+                        <Offcanvas.Body>
+                            Annanya, Josh, Devin, Yasmeen, Sreya
+                        </Offcanvas.Body>
+                    </Offcanvas.Header>
+                </Offcanvas>
+            </Container>
+        </NavbarBS>
     );
 }
