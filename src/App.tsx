@@ -20,6 +20,8 @@ import {
     ExampleDragableMealItemForTesting,
     UserList
 } from "./Components/UserList";
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
+
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
@@ -65,7 +67,7 @@ function App(): JSX.Element {
                     </a>
                 </header>
                 <p className="App-header">Team 12</p>
-                <NavBar></NavBar>
+                {/* <NavBar></NavBar> */}
                 <UserTypeIndicator
                     userType={userType}
                     setUserType={setUserType}

@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-export function NavBar() {
+export default function NavBar() {
     return (
         <Box
             as="nav"
