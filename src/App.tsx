@@ -3,7 +3,7 @@ import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
 import { Counter } from "./Components/SuperUserButton";
-import { UserSelect } from "./Components/AddUser";
+import { AddUser } from "./Components/AddUser";
 import {
     SuperUserSelectButton,
     AdminSelectButton
@@ -22,13 +22,14 @@ import { UserList } from "./Components/UserList";
 //import { userType, setUserType } from "./Components/UserSelect";
 
 function App(): JSX.Element {
-    const [userType, setUserType] = useState<string>("superUser");
+    const [userType, setUserType] = useState<string>("User");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
     const [currentUser, setCurrentUser] = useState<User>({
         name: "User1",
         list_of_items: []
     });
-    const [userList, setUserList] = useState<User[]>([currentUser]);
+    const noneUser: User = { name: "None", list_of_items: [] };
+    const [userList, setUserList] = useState<User[]>([noneUser, currentUser]);
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
@@ -67,19 +68,27 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
-                <UserSelect
+                <AddUser
                     userType={userType}
                     setUserType={setUserType}
                     userList={userList}
                     setUserList={setUserList}
-                ></UserSelect>
+                ></AddUser>
                 <AdminSelectButton
                     userType={userType}
                     setUserType={setUserType}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    currentUser={currentUser}
+                    setUserList={setUserList}
                 ></AdminSelectButton>
                 <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    currentUser={currentUser}
+                    setUserList={setUserList}
                 ></SuperUserSelectButton>
                 <Counter
                     userType={userType}

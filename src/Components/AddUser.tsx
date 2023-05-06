@@ -6,7 +6,7 @@ import { User } from "../Interfaces/UserObject";
 import { UserTypeProps } from "../Interfaces/userTypeProps";
 import { UserListProps } from "../Interfaces/userListProps";
 
-export function UserSelect({
+export function AddUser({
     userType,
     userList,
     setUserList
