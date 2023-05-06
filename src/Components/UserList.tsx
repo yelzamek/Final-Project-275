@@ -1,5 +1,5 @@
 /* eslint-disable no-extra-parens */
-import React from "react";
+import React, { useState } from "react";
 import { useDrop } from "react-dnd";
 import { CurrentUserProps } from "../Interfaces/currentUserProps";
 import { UserListProps } from "../Interfaces/userListProps";
@@ -62,7 +62,7 @@ export function UserList({
         >
             Title
             {currentUser.list_of_items.map((item: Meal, index: number) => (
-                <div key={item.name}>
+                <div key={index}>
                     {item.name}{" "}
                     <Button onClick={() => RemoveItem(item, index)}>X</Button>
                 </div>
