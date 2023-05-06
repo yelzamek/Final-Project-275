@@ -24,6 +24,7 @@ export function UserDropDown({
                 ...userList[userIndex].list_of_items.map(
                     (meal: Meal): Meal => ({
                         name: meal.name,
+                        image: meal.image,
                         serving_size: meal.serving_size,
                         calories: meal.calories,
                         total_fat: meal.total_fat,

@@ -29,6 +29,7 @@ function App(): JSX.Element {
         list_of_items: [
             {
                 name: "greanola bar",
+                image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.foodnetwork.com%2Frecipes%2Falton-brown%2Fgranola-bars-recipe-1944513&psig=AOvVaw2W8RETYnAlt8C_w4IUYCll&ust=1683317486759000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJjV1bi83P4CFQAAAAAdAAAAABAE",
                 serving_size: 1,
                 calories: 100,
                 total_fat: 3,
