@@ -11,9 +11,17 @@ export function AddUser({
     userList,
     setUserList
 }: UserListProps & UserTypeProps): JSX.Element {
-    const [newName, setNewName] = useState<string>("");
+    const [newName, setNewName] = useState<string>("Type New User Name Here");
+    const [working, setWorking] = useState<boolean>(false);
     function updateNewName(event: React.ChangeEvent<HTMLInputElement>) {
-        setNewName(event.target.value);
+        working ? setNewName(event.target.value) : undefined;
+    }
+    function startWorkingHelper() {
+        setNewName("");
+        setWorking(true);
+    }
+    function startWorking() {
+        working ? undefined : startWorkingHelper();
     }
     function updateUserList(newName: string) {
         setUserList([
@@ -39,7 +47,8 @@ export function AddUser({
             ),
             { name: newName, list_of_items: [] }
         ]);
-        setNewName("");
+        setWorking(false);
+        setNewName("Type New User Name Here");
     }
     return (
         <div
@@ -47,9 +56,20 @@ export function AddUser({
                 display: userType === "superUser" ? "inLine-block" : "none"
             }}
         >
-            <Form.Group controlId="formCheckAnswer">
+            <Form.Group
+                controlId="formCheckAnswer"
+                onClick={() => startWorking()}
+            >
                 <Form.Label>Enter New Users Name:</Form.Label>
-                <Form.Control value={newName} onChange={updateNewName} />
+                <Form.Control
+                    style={{
+                        width: "300px",
+                        color: working ? "black" : "lightgray",
+                        fontWeight: working ? "normal" : "bold"
+                    }}
+                    value={newName}
+                    onChange={updateNewName}
+                />
             </Form.Group>
             <Button onClick={() => updateUserList(newName)}>Add User</Button>
             {userList.map((user: User) => (
