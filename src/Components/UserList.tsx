@@ -7,12 +7,15 @@ import { UserListProps } from "../Interfaces/userListProps";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 import { Button } from "react-bootstrap";
 import { UserTypeProps } from "../Interfaces/userTypeProps";
+import { User } from "../Interfaces/UserObject";
 
 export function UserList({
     currentUser,
     setCurrentUser,
     mealList,
-    userType
+    userType,
+    userList,
+    setUserList
 }: UserListProps &
     CurrentUserProps &
     MealListProps &
@@ -25,6 +28,14 @@ export function UserList({
             name: currentUser.name,
             list_of_items: [...currentUser.list_of_items, mealList[mealIndex]]
         });
+        const userIndex = userList.findIndex(
+            (user: User): boolean => user.name === currentUser.name
+        );
+        setUserList([
+            ...userList.slice(0, userIndex),
+            currentUser,
+            ...userList.slice(userIndex + 1)
+        ]);
     }
     function RemoveItem(item: Meal, index: number) {
         const updatedList = [...currentUser.list_of_items];
