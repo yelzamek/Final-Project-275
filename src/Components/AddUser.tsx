@@ -5,7 +5,6 @@ import { Meal } from "../Interfaces/MealObject";
 import { User } from "../Interfaces/UserObject";
 import { UserTypeProps } from "../Interfaces/userTypeProps";
 import { UserListProps } from "../Interfaces/userListProps";
-import { NameAndWorkingProps } from "../Interfaces/NameAndWorkingProps";
 export function AddUser({
     userType,
     userList,
