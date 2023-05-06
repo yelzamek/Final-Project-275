@@ -1,5 +1,5 @@
 /* eslint-disable no-extra-parens */
-import React, { useState } from "react";
+import React from "react";
 import { useDrop } from "react-dnd";
 import { CurrentUserProps } from "../Interfaces/currentUserProps";
 import { UserListProps } from "../Interfaces/userListProps";
