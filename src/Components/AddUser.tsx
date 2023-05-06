@@ -70,7 +70,7 @@ export function AddUser({
         >
             {error && (
                 <div style={{ color: "red", fontWeight: "bold" }}>
-                    Please provide unique UserName
+                    Please provide a unique UserName
                 </div>
             )}
             <Form.Group
