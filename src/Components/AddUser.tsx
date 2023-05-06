@@ -5,7 +5,7 @@ import { Meal } from "../Interfaces/MealObject";
 import { User } from "../Interfaces/UserObject";
 import { UserTypeProps } from "../Interfaces/userTypeProps";
 import { UserListProps } from "../Interfaces/userListProps";
-
+import { NameAndWorkingProps } from "../Interfaces/NameAndWorkingProps";
 export function AddUser({
     userType,
     userList,
@@ -13,17 +13,24 @@ export function AddUser({
 }: UserListProps & UserTypeProps): JSX.Element {
     const [newName, setNewName] = useState<string>("Type New User Name Here");
     const [working, setWorking] = useState<boolean>(false);
+    const [error, setError] = useState<boolean>(false);
+    function displayError() {
+        setWorking(false);
+        setNewName("Type New User Name Here");
+        setError(true);
+    }
     function updateNewName(event: React.ChangeEvent<HTMLInputElement>) {
         working ? setNewName(event.target.value) : undefined;
     }
     function startWorkingHelper() {
         setNewName("");
         setWorking(true);
+        setError(false);
     }
     function startWorking() {
         working ? undefined : startWorkingHelper();
     }
-    function updateUserList(newName: string) {
+    function updateUserListHelper(newName: string) {
         setUserList([
             ...userList.map(
                 (user: User): User => ({
@@ -50,12 +57,23 @@ export function AddUser({
         setWorking(false);
         setNewName("Type New User Name Here");
     }
+    function updateUserList(newName: string) {
+        const alreadyInList: boolean = userList.some(
+            (user: User): boolean => user.name === newName
+        );
+        alreadyInList ? displayError() : updateUserListHelper(newName);
+    }
     return (
         <div
             style={{
                 display: userType === "superUser" ? "inLine-block" : "none"
             }}
         >
+            {error && (
+                <div style={{ color: "red", fontWeight: "bold" }}>
+                    Please provide unique UserName
+                </div>
+            )}
             <Form.Group
                 controlId="formCheckAnswer"
                 onClick={() => startWorking()}
