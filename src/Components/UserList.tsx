@@ -6,12 +6,17 @@ import { UserListProps } from "../Interfaces/userListProps";
 //import { User } from "../Interfaces/UserObject";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 import { Button } from "react-bootstrap";
+import { UserTypeProps } from "../Interfaces/userTypeProps";
 
 export function UserList({
     currentUser,
     setCurrentUser,
-    mealList
-}: UserListProps & CurrentUserProps & MealListProps): JSX.Element {
+    mealList,
+    userType
+}: UserListProps &
+    CurrentUserProps &
+    MealListProps &
+    UserTypeProps): JSX.Element {
     function addToUserList(name: nameProps) {
         const mealIndex = mealList.findIndex(
             (meal: Meal): boolean => meal.name === name.name
@@ -37,7 +42,13 @@ export function UserList({
         })
     });
     return (
-        <div ref={drop} style={{ backgroundColor: isOver ? "green" : "white" }}>
+        <div
+            ref={drop}
+            style={{
+                display: userType === "User" ? "inline-block" : "none",
+                backgroundColor: isOver ? "green" : "white"
+            }}
+        >
             Title
             {currentUser.list_of_items.map((item: Meal, index: number) => (
                 <div key={item.name}>

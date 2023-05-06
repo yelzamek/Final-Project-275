@@ -101,6 +101,8 @@ function App(): JSX.Element {
                     setUserList={setUserList}
                     mealList={mealList}
                     setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
                 ></UserList>
             </div>
         </DndProvider>
