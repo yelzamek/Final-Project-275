@@ -48,20 +48,18 @@ File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered
 ----------------------------|---------|----------|---------|---------|-------------------
 All files                   |       0 |        0 |       0 |       0 |                   
  src                        |       0 |      100 |       0 |       0 |                   
-  App.tsx                   |       0 |      100 |       0 |       0 | 25-45             
+  App.tsx                   |       0 |      100 |       0 |       0 | 25-33             
  src/Components             |       0 |        0 |       0 |       0 |                   
-  AddUser.tsx               |       0 |        0 |       0 |       0 | 14-57             
+  AddUser.tsx               |       0 |        0 |       0 |       0 | 13-94             
   Centerlist.tsx            |       0 |        0 |       0 |       0 | 19-68             
   Draggable.tsx             |       0 |        0 |       0 |       0 | 6-65              
-  MealItem.tsx              |       0 |      100 |     100 |       0 | 12                
   NavBar.tsx                |       0 |      100 |       0 |       0 | 7-43              
   SuperUserButton.tsx       |       0 |        0 |       0 |       0 | 6-13              
-  UserDropdown.tsx          |       0 |      100 |       0 |       0 | 17-51             
-  UserList.tsx              |       0 |        0 |       0 |       0 | 15-34             
-  UserSelect.tsx            |       0 |        0 |       0 |       0 | 14-57             
+  UserDropdown.tsx          |       0 |        0 |       0 |       0 | 17-53             
+  UserList.tsx              |       0 |        0 |       0 |       0 | 24-67             
   UserTypeIndicator.tsx     |       0 |        0 |       0 |       0 | 5                 
-  UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 8-12              
-  addToUserList.tsx         |       0 |      100 |       0 |       0 | 17-24             
+  UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-28             
+  addToUserList.tsx         |       0 |      100 |       0 |       0 | 17-29             
  src/Interfaces             |       0 |      100 |     100 |       0 |                   
   MealObject.tsx            |       0 |      100 |     100 |       0 | 37                
   UserObject.tsx            |       0 |        0 |       0 |       0 |                   
@@ -72,5 +70,5 @@ All files                   |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.658 s
+Time:        3.122 s
 Ran all test suites.
