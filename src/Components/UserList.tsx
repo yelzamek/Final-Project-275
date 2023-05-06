@@ -6,13 +6,11 @@ import { UserListProps } from "../Interfaces/userListProps";
 //import { User } from "../Interfaces/UserObject";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 
-
 export function UserList({
     currentUser,
     setCurrentUser,
-    userList,
-    setUserList
-}: UserListProps & CurrentUserProps): JSX.Element {
+    mealList
+}: UserListProps & CurrentUserProps & MealListProps): JSX.Element {
     function addToUserList(name: nameProps) {
         const mealIndex = mealList.findIndex(
             (meal: Meal): boolean => meal.name === name.name
