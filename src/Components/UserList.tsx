@@ -1,46 +1,11 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
-import { useDrag, useDrop } from "react-dnd";
+import { useDrop } from "react-dnd";
 import { CurrentUserProps } from "../Interfaces/currentUserProps";
 import { UserListProps } from "../Interfaces/userListProps";
 //import { User } from "../Interfaces/UserObject";
-import { Meal } from "../Interfaces/MealObject";
-import { AddToUserList } from "./addToUserList";
+import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 
-export function ExampleDragableMealItemForTesting() {
-    const ExampleMeal: Meal = {
-        name: "Tasty Test",
-        image: "https://www.tasteofhome.com/wp-content/uploads/2018/01/Honey-Oat-Granola-Bars_EXPS_BOBBZ22_38126_B10_06_1b-6.jpg?fit=700,1024",
-        serving_size: 1,
-        calories: 100,
-        total_fat: 3,
-        cholesterol: 0,
-        sodium: 13,
-        total_carbs: 7,
-        total_sugars: 10,
-        protein: 18
-    };
-    const [{ isDragging }, drag] = useDrag(() => ({
-        type: "Meal",
-        item: { mealName: ExampleMeal.name },
-        collect: (monitor) => ({
-            isDragging: !!monitor.isDragging()
-        })
-    }));
-    return (
-        <div
-            ref={drag}
-            style={{
-                opacity: isDragging ? 0.5 : 1,
-                fontSize: 25,
-                fontWeight: "bold",
-                cursor: "move"
-            }}
-        >
-            {ExampleMeal.name}
-        </div>
-    );
-}
 
 export function UserList({
     currentUser,
@@ -48,36 +13,18 @@ export function UserList({
     userList,
     setUserList
 }: UserListProps & CurrentUserProps): JSX.Element {
-    //Delete after center list
-    const ExampMeal: Meal = {
-        name: "Tasty Test",
-        image: "https://www.tasteofhome.com/wp-content/uploads/2018/01/Honey-Oat-Granola-Bars_EXPS_BOBBZ22_38126_B10_06_1b-6.jpg?fit=700,1024",
-        serving_size: 1,
-        calories: 100,
-        total_fat: 3,
-        cholesterol: 0,
-        sodium: 13,
-        total_carbs: 7,
-        total_sugars: 10,
-        protein: 18
-    };
-    function getFoodItem(name: string): Meal {
-        //This is going to become a function to retrieve the meal from the center list
-        name;
-        return ExampMeal;
+    function addToUserList(name: nameProps) {
+        const mealIndex = mealList.findIndex(
+            (meal: Meal): boolean => meal.name === name.name
+        );
+        setCurrentUser({
+            name: currentUser.name,
+            list_of_items: [...currentUser.list_of_items, mealList[mealIndex]]
+        });
     }
     const [{ isOver }, drop] = useDrop({
         accept: "Meal",
-        drop: (meal: string) =>
-            AddToUserList(
-                {
-                    currentUser,
-                    setCurrentUser,
-                    userList,
-                    setUserList
-                },
-                getFoodItem(meal)
-            ),
+        drop: (name: nameProps) => addToUserList(name),
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })

@@ -16,10 +16,7 @@ import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
 import { Navbar } from "./Components/NavBar";
-import {
-    ExampleDragableMealItemForTesting,
-    UserList
-} from "./Components/UserList";
+import { UserList } from "./Components/UserList";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
@@ -110,12 +107,13 @@ function App(): JSX.Element {
                     setMealList={setMealList}
                 ></CenterList>
                 <DropBox></DropBox>
-                <ExampleDragableMealItemForTesting></ExampleDragableMealItemForTesting>
                 <UserList
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
                     userList={userList}
                     setUserList={setUserList}
+                    mealList={mealList}
+                    setMealList={setMealList}
                 ></UserList>
             </div>
         </DndProvider>
