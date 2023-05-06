@@ -3,7 +3,7 @@ import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
 import { Counter } from "./Components/SuperUserButton";
-import { UserSelect } from "./Components/AddUser";
+import { AddUser } from "./Components/AddUser";
 import {
     SuperUserSelectButton,
     AdminSelectButton
@@ -22,26 +22,14 @@ import { UserList } from "./Components/UserList";
 //import { userType, setUserType } from "./Components/UserSelect";
 
 function App(): JSX.Element {
-    const [userType, setUserType] = useState<string>("superUser");
+    const [userType, setUserType] = useState<string>("User");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
     const [currentUser, setCurrentUser] = useState<User>({
-        name: "None",
-        list_of_items: [
-            {
-                name: "greanola bar",
-                image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.foodnetwork.com%2Frecipes%2Falton-brown%2Fgranola-bars-recipe-1944513&psig=AOvVaw2W8RETYnAlt8C_w4IUYCll&ust=1683317486759000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJjV1bi83P4CFQAAAAAdAAAAABAE",
-                serving_size: 1,
-                calories: 100,
-                total_fat: 3,
-                cholesterol: 0,
-                sodium: 13,
-                total_carbs: 7,
-                total_sugars: 10,
-                protein: 18
-            }
-        ]
+        name: "User1",
+        list_of_items: []
     });
-    const [userList, setUserList] = useState<User[]>([currentUser]);
+    const noneUser: User = { name: "None", list_of_items: [] };
+    const [userList, setUserList] = useState<User[]>([noneUser, currentUser]);
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
@@ -80,19 +68,27 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
-                <UserSelect
+                <AddUser
                     userType={userType}
                     setUserType={setUserType}
                     userList={userList}
                     setUserList={setUserList}
-                ></UserSelect>
+                ></AddUser>
                 <AdminSelectButton
                     userType={userType}
                     setUserType={setUserType}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    currentUser={currentUser}
+                    setUserList={setUserList}
                 ></AdminSelectButton>
                 <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    currentUser={currentUser}
+                    setUserList={setUserList}
                 ></SuperUserSelectButton>
                 <Counter
                     userType={userType}
@@ -114,6 +110,8 @@ function App(): JSX.Element {
                     setUserList={setUserList}
                     mealList={mealList}
                     setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
                 ></UserList>
             </div>
         </DndProvider>

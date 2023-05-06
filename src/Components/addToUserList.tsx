@@ -26,4 +26,5 @@ export function AddToUserList(
         currentUser,
         ...userList.slice(userIndex + 1)
     ]);
+    console.log(userList);
 }
