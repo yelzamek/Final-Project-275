@@ -33,22 +33,23 @@ FAIL src/App.test.tsx
 
     SyntaxError: Unexpected token 'export'
 
-      1 | import React, { useState } from "react";
-    > 2 | import { useDrag, useDrop } from "react-dnd";
-        | ^
-      3 | import { Meal } from "../Interfaces/MealObject";
-      4 | //import { HTML5Backend } from "react-dnd-html5-backend";
-      5 |
+      10 | } from "./Components/UserTypeSelectButtons";
+      11 | import { User } from "./Interfaces/UserObject";
+    > 12 | import { DndProvider } from "react-dnd";
+         | ^
+      13 | import { HTML5Backend } from "react-dnd-html5-backend";
+      14 | import { CenterList } from "./Components/Centerlist";
+      15 | import { MEAL_LIST } from "./Interfaces/MealObject";
 
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
-      at Object.<anonymous> (src/Components/Draggable.tsx:2:1)
+      at Object.<anonymous> (src/App.tsx:12:1)
 
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
 All files                   |       0 |        0 |       0 |       0 |                   
  src                        |       0 |      100 |       0 |       0 |                   
-  App.tsx                   |       0 |      100 |       0 |       0 | 25-33             
+  App.tsx                   |       0 |      100 |       0 |       0 | 24-32             
  src/Components             |       0 |        0 |       0 |       0 |                   
   AddUser.tsx               |       0 |        0 |       0 |       0 | 13-94             
   Centerlist.tsx            |       0 |        0 |       0 |       0 | 19-68             
@@ -59,7 +60,6 @@ All files                   |       0 |        0 |       0 |       0 |
   UserList.tsx              |       0 |        0 |       0 |       0 | 24-67             
   UserTypeIndicator.tsx     |       0 |        0 |       0 |       0 | 5                 
   UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-28             
-  addToUserList.tsx         |       0 |      100 |       0 |       0 | 17-29             
  src/Interfaces             |       0 |      100 |     100 |       0 |                   
   MealObject.tsx            |       0 |      100 |     100 |       0 | 37                
   UserObject.tsx            |       0 |        0 |       0 |       0 |                   
@@ -70,5 +70,5 @@ All files                   |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.122 s
+Time:        3.662 s
 Ran all test suites.
