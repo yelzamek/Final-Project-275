@@ -25,20 +25,8 @@ function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("superUser");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
     const [currentUser, setCurrentUser] = useState<User>({
-        name: "None",
-        list_of_items: [
-            {
-                name: "greanola bar",
-                serving_size: 1,
-                calories: 100,
-                total_fat: 3,
-                cholesterol: 0,
-                sodium: 13,
-                total_carbs: 7,
-                total_sugars: 10,
-                protein: 18
-            }
-        ]
+        name: "User1",
+        list_of_items: []
     });
     const [userList, setUserList] = useState<User[]>([currentUser]);
     return (
