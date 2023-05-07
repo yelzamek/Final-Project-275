@@ -1,8 +1,8 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
 import { Form } from "react-bootstrap";
-import { UserTypeProps } from "../Interfaces/userTypeProps";
-import { UserListProps } from "../Interfaces/userListProps";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
 import { CurrentUserProps } from "../Interfaces/currentUserProps";
 import { Meal } from "../Interfaces/MealObject";

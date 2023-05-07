@@ -1,8 +1,8 @@
 import { Button } from "react-bootstrap";
-import { UserTypeProps } from "../Interfaces/userTypeProps";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import React from "react";
 import { CurrentUserProps } from "../Interfaces/currentUserProps";
-import { UserListProps } from "../Interfaces/userListProps";
+import { UserListProps } from "../Interfaces/UserListProps";
 
 export function SuperUserSelectButton({
     setUserType,
