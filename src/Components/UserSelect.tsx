@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Meal } from "../Interfaces/MealObject";
 import { User } from "../Interfaces/UserObject";
-import { UserTypeProps } from "../Interfaces/userTypeProps";
-import { UserListProps } from "../Interfaces/userListProps";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { UserListProps } from "../Interfaces/UserListProps";
 
 export function UserSelect({
     userType,
@@ -24,6 +24,7 @@ export function UserSelect({
                         ...user.list_of_items.map(
                             (meal: Meal): Meal => ({
                                 name: meal.name,
+                                image: meal.image,
                                 serving_size: meal.serving_size,
                                 calories: meal.calories,
                                 total_fat: meal.total_fat,

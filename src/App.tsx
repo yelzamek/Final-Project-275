@@ -9,39 +9,28 @@ import {
     AdminSelectButton
 } from "./Components/UserTypeSelectButtons";
 import { User } from "./Interfaces/UserObject";
-import { DropBox } from "./Components/Draggable";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
 import { Navbar } from "./Components/NavBar";
-import { UserList } from "./Components/UserList";
+//import { UserList } from "./Components/UserList";
 import { Grid } from "./Components/grid";
+import MealListUI from "./Components/MealListUI";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
 
 function App(): JSX.Element {
-    const [userType, setUserType] = useState<string>("superUser");
+    const [userType, setUserType] = useState<string>("User");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
     const [currentUser, setCurrentUser] = useState<User>({
-        name: "None",
-        list_of_items: [
-            {
-                name: "greanola bar",
-                serving_size: 1,
-                calories: 100,
-                total_fat: 3,
-                cholesterol: 0,
-                sodium: 13,
-                total_carbs: 7,
-                total_sugars: 10,
-                protein: 18
-            }
-        ]
+        name: "User1",
+        list_of_items: []
     });
-    const [userList, setUserList] = useState<User[]>([currentUser]);
+    const noneUser: User = { name: "None", list_of_items: [] };
+    const [userList, setUserList] = useState<User[]>([noneUser, currentUser]);
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
@@ -89,10 +78,18 @@ function App(): JSX.Element {
                 <AdminSelectButton
                     userType={userType}
                     setUserType={setUserType}
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    setUserList={setUserList}
                 ></AdminSelectButton>
                 <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    setUserList={setUserList}
                 ></SuperUserSelectButton>
                 <Counter
                     userType={userType}
@@ -106,16 +103,17 @@ function App(): JSX.Element {
                     mealList={mealList}
                     setMealList={setMealList}
                 ></CenterList>
-                <DropBox></DropBox>
+                {/*
                 <UserList
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
+                    mealList={mealList}
                     userList={userList}
                     setUserList={setUserList}
-                    mealList={mealList}
                     setMealList={setMealList}
-                ></UserList>
+    ></UserList> */}
                 <Grid></Grid>
+                <MealListUI mealData={MEAL_LIST}></MealListUI>
             </div>
         </DndProvider>
     );

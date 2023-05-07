@@ -1,7 +1,7 @@
 //import React, { useState } from "react";
 //import { currentUserProps } from "../Interfaces/currentUserProps";
 //import { Ingredient } from "../Interfaces/IngredientObject";
-import { UserListProps } from "../Interfaces/userListProps";
+import { UserListProps } from "../Interfaces/UserListProps";
 import { CurrentUserProps } from "../Interfaces/currentUserProps";
 import { User } from "../Interfaces/UserObject";
 import { Meal } from "../Interfaces/MealObject";

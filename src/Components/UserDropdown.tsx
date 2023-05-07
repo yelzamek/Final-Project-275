@@ -14,7 +14,9 @@ export function UserDropDown({
     setCurrentUser
 }: UserTypeProps & UserListProps & CurrentUserProps): JSX.Element {
     function updateCurrentUser(event: React.ChangeEvent<HTMLSelectElement>) {
-        setUserType("User");
+        event.target.value === "None"
+            ? setUserType("superUser")
+            : setUserType("User");
         const userIndex = userList.findIndex(
             (user: User): boolean => user.name === event.target.value
         );
@@ -24,6 +26,7 @@ export function UserDropDown({
                 ...userList[userIndex].list_of_items.map(
                     (meal: Meal): Meal => ({
                         name: meal.name,
+                        image: meal.image,
                         serving_size: meal.serving_size,
                         calories: meal.calories,
                         total_fat: meal.total_fat,
