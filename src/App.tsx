@@ -3,7 +3,7 @@ import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
 import { Counter } from "./Components/SuperUserButton";
-import { AddUser } from "./Components/AddUser";
+import { UserSelect } from "./Components/AddUser";
 import {
     SuperUserSelectButton,
     AdminSelectButton
@@ -15,7 +15,8 @@ import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
 import { Navbar } from "./Components/NavBar";
-import { UserList } from "./Components/UserList";
+//import { UserList } from "./Components/UserList";
+import { Grid } from "./Components/grid";
 import MealListUI from "./Components/MealListUI";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
@@ -68,26 +69,26 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
-                <AddUser
+                <UserSelect
                     userType={userType}
                     setUserType={setUserType}
                     userList={userList}
                     setUserList={setUserList}
-                ></AddUser>
+                ></UserSelect>
                 <AdminSelectButton
                     userType={userType}
                     setUserType={setUserType}
+                    currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
                     userList={userList}
-                    currentUser={currentUser}
                     setUserList={setUserList}
                 ></AdminSelectButton>
                 <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}
+                    currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
                     userList={userList}
-                    currentUser={currentUser}
                     setUserList={setUserList}
                 ></SuperUserSelectButton>
                 <Counter
@@ -102,16 +103,16 @@ function App(): JSX.Element {
                     mealList={mealList}
                     setMealList={setMealList}
                 ></CenterList>
+                {/*
                 <UserList
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
+                    mealList={mealList}
                     userList={userList}
                     setUserList={setUserList}
-                    mealList={mealList}
                     setMealList={setMealList}
-                    userType={userType}
-                    setUserType={setUserType}
-                ></UserList>
+    ></UserList> */}
+                <Grid></Grid>
                 <MealListUI mealData={MEAL_LIST}></MealListUI>
             </div>
         </DndProvider>

@@ -5,31 +5,17 @@ import { Meal } from "../Interfaces/MealObject";
 import { User } from "../Interfaces/UserObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { UserListProps } from "../Interfaces/UserListProps";
-export function AddUser({
+
+export function UserSelect({
     userType,
     userList,
     setUserList
 }: UserListProps & UserTypeProps): JSX.Element {
-    const [newName, setNewName] = useState<string>("Type New User Name Here");
-    const [working, setWorking] = useState<boolean>(false);
-    const [error, setError] = useState<boolean>(false);
-    function displayError() {
-        setWorking(false);
-        setNewName("Type New User Name Here");
-        setError(true);
-    }
+    const [newName, setNewName] = useState<string>("");
     function updateNewName(event: React.ChangeEvent<HTMLInputElement>) {
-        working ? setNewName(event.target.value) : undefined;
+        setNewName(event.target.value);
     }
-    function startWorkingHelper() {
-        setNewName("");
-        setWorking(true);
-        setError(false);
-    }
-    function startWorking() {
-        working ? undefined : startWorkingHelper();
-    }
-    function updateUserListHelper(newName: string) {
+    function updateUserList(newName: string) {
         setUserList([
             ...userList.map(
                 (user: User): User => ({
@@ -54,14 +40,7 @@ export function AddUser({
             ),
             { name: newName, list_of_items: [] }
         ]);
-        setWorking(false);
-        setNewName("Type New User Name Here");
-    }
-    function updateUserList(newName: string) {
-        const alreadyInList: boolean = userList.some(
-            (user: User): boolean => user.name === newName
-        );
-        alreadyInList ? displayError() : updateUserListHelper(newName);
+        setNewName("");
     }
     return (
         <div
@@ -69,25 +48,9 @@ export function AddUser({
                 display: userType === "superUser" ? "inLine-block" : "none"
             }}
         >
-            {error && (
-                <div style={{ color: "red", fontWeight: "bold" }}>
-                    Please provide a unique UserName
-                </div>
-            )}
-            <Form.Group
-                controlId="formCheckAnswer"
-                onClick={() => startWorking()}
-            >
+            <Form.Group controlId="formCheckAnswer">
                 <Form.Label>Enter New Users Name:</Form.Label>
-                <Form.Control
-                    style={{
-                        width: "300px",
-                        color: working ? "black" : "lightgray",
-                        fontWeight: working ? "normal" : "bold"
-                    }}
-                    value={newName}
-                    onChange={updateNewName}
-                />
+                <Form.Control value={newName} onChange={updateNewName} />
             </Form.Group>
             <Button onClick={() => updateUserList(newName)}>Add User</Button>
             {userList.map((user: User) => (
