@@ -1,7 +1,7 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { useDrag } from "react-dnd";
-import { Button } from "react-bootstrap";
+import { Button, Dropdown, Form } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
 
 export function MealDraggable({
@@ -54,15 +54,45 @@ export function MealDraggable({
                 <div>Total Sugars: {total_sugars} g</div>
                 <div>Protein: {protein} g</div>
             </div>
-            {name}
         </div>
     );
 }
 
-export function CenterList({ mealList }: MealListProps) {
+export function CenterList({ mealList, setMealList }: MealListProps) {
+    const [sortOption, setSortOption] = useState<string>("None");
+    function updateSortOption(event: React.ChangeEvent<HTMLSelectElement>) {
+        setSortOption(event.target.value);
+    }
+    const SORT_LIST: string[] = [
+        "None",
+        "Alphabetical",
+        "Reverse Alphabetical",
+        "Calories: Lowest to Highest",
+        "Calories: Highest to Lowest"
+    ];
+
+    if (sortOption === "Alphabetical") {
+        setMealList([...mealList].sort((a, b) => a.name.localeCompare(b.name)));
+    } else if (sortOption === "Reverse Alphabetical") {
+        setMealList(
+            [...mealList].sort((a, b) => a.name.localeCompare(b.name)).reverse()
+        );
+    }
     return (
         <div>
             <div>Center List</div>
+            <div>
+                <Form.Group controlId="sortOption">
+                    <Form.Label>Sort by:</Form.Label>
+                    <Form.Select value={sortOption} onChange={updateSortOption}>
+                        {SORT_LIST.map((chosenOption: string) => (
+                            <option key={chosenOption} value={chosenOption}>
+                                {chosenOption}
+                            </option>
+                        ))}
+                    </Form.Select>
+                </Form.Group>
+            </div>
             <div>
                 {mealList.map((MealObject: Meal) => (
                     <div key={MealObject.name}>
