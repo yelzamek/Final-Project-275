@@ -52,7 +52,7 @@ All files                   |       0 |        0 |       0 |       0 |
   App.tsx                   |       0 |      100 |       0 |       0 | 25-33             
  src/Components             |       0 |        0 |       0 |       0 |                   
   AddUser.tsx               |       0 |        0 |       0 |       0 | 13-94             
-  Centerlist.tsx            |       0 |        0 |       0 |       0 | 19-68             
+  Centerlist.tsx            |       0 |        0 |       0 |       0 | 20-78             
   Draggable.tsx             |       0 |        0 |       0 |       0 | 6-65              
   MealItem.tsx              |       0 |        0 |       0 |       0 | 44-67             
   MealListUI.tsx            |       0 |        0 |       0 |       0 | 11-33             
@@ -73,5 +73,5 @@ All files                   |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.334 s
+Time:        3.05 s
 Ran all test suites.
