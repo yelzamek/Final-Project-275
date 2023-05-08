@@ -1,18 +1,29 @@
+/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
-import { useDrag, useDrop } from "react-dnd";
-import { MealListProps, Meal, MealProps2 } from "../Interfaces/MealObject";
+import { useDrag } from "react-dnd";
+import { Button } from "react-bootstrap";
+import { MealListProps, Meal } from "../Interfaces/MealObject";
 
-export const ItemTypes = {
-    MEAL: "meal"
-};
-
-export function MealDraggable({ meal2 }: MealProps2): JSX.Element {
+export function MealDraggable({
+    name,
+    image,
+    serving_size,
+    calories,
+    total_fat,
+    cholesterol,
+    sodium,
+    total_carbs,
+    total_sugars,
+    protein
+}: Meal): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
-        type: ItemTypes.MEAL,
+        type: "Meal",
+        item: { name: name },
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging()
         })
     }));
+    const [DetailsHidden, setDetailsHidden] = useState<boolean>(true);
     return (
         <div
             ref={drag}
@@ -23,25 +34,50 @@ export function MealDraggable({ meal2 }: MealProps2): JSX.Element {
                 cursor: "move"
             }}
         >
-            {meal2.name}
+            <div>{name}</div>
+            <img src={image} width="100" height="100"></img>
+            <Button onClick={() => setDetailsHidden(!DetailsHidden)}>
+                More
+            </Button>
+            <div
+                hidden={DetailsHidden}
+                style={{
+                    fontSize: 10
+                }}
+            >
+                <div>Serving Size: {serving_size}</div>
+                <div>Calories: {calories}</div>
+                <div>Total Fat:{total_fat} g</div>
+                <div>Cholesterol: {cholesterol} mg</div>
+                <div>Sodium: {sodium} mg</div>
+                <div>Total Carbs: {total_carbs} g</div>
+                <div>Total Sugars: {total_sugars} g</div>
+                <div>Protein: {protein} g</div>
+            </div>
+            {name}
         </div>
     );
 }
 
-export function CenterList({ mealList, setMealList }: MealListProps) {
-    const [{ isDragging }, drag] = useDrag(() => ({
-        type: ItemTypes.MEAL,
-        collect: (monitor) => ({
-            isDragging: !!monitor.isDragging()
-        })
-    }));
+export function CenterList({ mealList }: MealListProps) {
     return (
         <div>
             <div>Center List</div>
             <div>
                 {mealList.map((MealObject: Meal) => (
                     <div key={MealObject.name}>
-                        <MealDraggable meal2={MealObject}></MealDraggable>
+                        <MealDraggable
+                            name={MealObject.name}
+                            image={MealObject.image}
+                            serving_size={MealObject.serving_size}
+                            calories={MealObject.calories}
+                            total_fat={MealObject.total_fat}
+                            cholesterol={MealObject.cholesterol}
+                            sodium={MealObject.sodium}
+                            total_carbs={MealObject.total_carbs}
+                            total_sugars={MealObject.total_sugars}
+                            protein={MealObject.protein}
+                        ></MealDraggable>
                     </div>
                 ))}
             </div>

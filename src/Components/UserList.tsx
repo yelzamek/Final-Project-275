@@ -1,90 +1,71 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
-import { useDrag, useDrop } from "react-dnd";
-import { CurrentUserProps } from "../Interfaces/currentUserProps";
-import { UserListProps } from "../Interfaces/userListProps";
+import { useDrop } from "react-dnd";
+import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
+import { UserListProps } from "../Interfaces/UserListProps";
 //import { User } from "../Interfaces/UserObject";
-import { Meal } from "../Interfaces/MealObject";
-import { AddToUserList } from "./addToUserList";
-
-export function ExampleDragableMealItemForTesting() {
-    const ExampleMeal: Meal = {
-        name: "Tasty Test",
-        serving_size: 1,
-        calories: 100,
-        total_fat: 3,
-        cholesterol: 0,
-        sodium: 13,
-        total_carbs: 7,
-        total_sugars: 10,
-        protein: 18
-    };
-    const [{ isDragging }, drag] = useDrag(() => ({
-        type: "Meal",
-        item: { mealName: ExampleMeal.name },
-        collect: (monitor) => ({
-            isDragging: !!monitor.isDragging()
-        })
-    }));
-    return (
-        <div
-            ref={drag}
-            style={{
-                opacity: isDragging ? 0.5 : 1,
-                fontSize: 25,
-                fontWeight: "bold",
-                cursor: "move"
-            }}
-        >
-            {ExampleMeal.name}
-        </div>
-    );
-}
+import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
+import { Button } from "react-bootstrap";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { User } from "../Interfaces/UserObject";
 
 export function UserList({
     currentUser,
     setCurrentUser,
+    mealList,
+    userType,
     userList,
     setUserList
-}: UserListProps & CurrentUserProps): JSX.Element {
-    //Delete after center list
-    const ExampMeal: Meal = {
-        name: "Tasty Test",
-        serving_size: 1,
-        calories: 100,
-        total_fat: 3,
-        cholesterol: 0,
-        sodium: 13,
-        total_carbs: 7,
-        total_sugars: 10,
-        protein: 18
-    };
-    function getFoodItem(name: string): Meal {
-        //This is going to become a function to retrieve the meal from the center list
-        name;
-        return ExampMeal;
+}: UserListProps &
+    CurrentUserProps &
+    MealListProps &
+    UserTypeProps): JSX.Element {
+    function addToUserList(name: nameProps) {
+        const mealIndex = mealList.findIndex(
+            (meal: Meal): boolean => meal.name === name.name
+        );
+        setCurrentUser({
+            name: currentUser.name,
+            list_of_items: [...currentUser.list_of_items, mealList[mealIndex]]
+        });
+        const userIndex = userList.findIndex(
+            (user: User): boolean => user.name === currentUser.name
+        );
+        setUserList([
+            ...userList.slice(0, userIndex),
+            currentUser,
+            ...userList.slice(userIndex + 1)
+        ]);
+    }
+    function RemoveItem(item: Meal, index: number) {
+        const updatedList = [...currentUser.list_of_items];
+        updatedList.splice(index, 1);
+        setCurrentUser({
+            name: currentUser.name,
+            list_of_items: updatedList
+        });
     }
     const [{ isOver }, drop] = useDrop({
         accept: "Meal",
-        drop: (meal: string) =>
-            AddToUserList(
-                {
-                    currentUser,
-                    setCurrentUser,
-                    userList,
-                    setUserList
-                },
-                getFoodItem(meal)
-            ),
+        drop: (name: nameProps) => addToUserList(name),
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })
     });
     return (
-        <div ref={drop} style={{ backgroundColor: isOver ? "green" : "white" }}>
+        <div
+            ref={drop}
+            style={{
+                display: userType === "User" ? "inline-block" : "none",
+                backgroundColor: isOver ? "green" : "white"
+            }}
+        >
             Title
-            {currentUser.list_of_items.map((item: Meal) => (
-                <div key={item.name}>{item.name}</div>
+            {currentUser.list_of_items.map((item: Meal, index: number) => (
+                <div key={index}>
+                    {item.name}{" "}
+                    <Button onClick={() => RemoveItem(item, index)}>X</Button>
+                </div>
             ))}
         </div>
     );
