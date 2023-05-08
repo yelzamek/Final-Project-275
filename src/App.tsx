@@ -15,7 +15,6 @@ import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
 import { Navbar } from "./Components/NavBar";
 //import { UserList } from "./Components/UserList";
-import { Grid } from "./Components/grid";
 import MealListUI from "./Components/MealListUI";
 import { AddUser } from "./Components/AddUser";
 import { UserList } from "./Components/UserList";
@@ -108,7 +107,6 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></UserList>
-                <Grid></Grid>
                 <MealListUI mealData={MEAL_LIST}></MealListUI>
             </div>
         </DndProvider>

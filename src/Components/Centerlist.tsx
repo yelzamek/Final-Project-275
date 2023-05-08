@@ -17,7 +17,9 @@ import {
     Divider,
     Image,
     GridItem,
-    Grid
+    Grid,
+    ChakraProvider,
+    Avatar
 } from "@chakra-ui/react";
 
 export function MealDraggable({
@@ -40,73 +42,76 @@ export function MealDraggable({
         })
     }));
 
-    function RootLayout() {
-        return (
-            <Grid templateColumns="repeat(6, 1fr)" bg="gray.50">
-                <GridItem
-                    as="aside"
-                    colSpan={{ base: 6, lg: 2, xl: 1 }}
-                    bg="purple.400"
-                    minHeight={{ lg: "100vh" }}
-                    p={{ base: "20px", lg: "30px" }}
-                ></GridItem>
-            </Grid>
-        );
-    }
-
-    const [DetailsHidden, setDetailsHidden] = useState<boolean>(true);
+    const [showNutrition, setShowNutrition] = useState<boolean>(true);
     return (
-        <Card
-            ref={drag}
-            style={{
-                opacity: isDragging ? 0.5 : 1,
-                fontSize: 25,
-                fontWeight: "bold",
-                cursor: "move"
-            }}
-            borderTop="8px"
-            borderColor="purple.400"
-            bg="white"
-        >
-            <CardHeader color="gray.700">
-                <Flex gap={5}>
-                    <Box
-                        as="aside"
-                        bg="purple.400"
-                        minHeight={{ lg: "100vh" }}
-                        p={{ base: "20px", lg: "30px" }}
-                        w="50px"
-                        h="50px"
-                    >
-                        <Image
-                            borderRadius="full"
-                            boxSize="50px"
-                            src={image}
-                            alt={name}
-                        />
-                    </Box>
-                    <Box>
-                        <Heading as="h3" size="sm">
-                            {name}
-                        </Heading>
-                        <Text>placeholder</Text>
-                    </Box>
-                </Flex>
-            </CardHeader>
+        <ChakraProvider>
+            <Card
+                ref={drag}
+                style={{
+                    opacity: isDragging ? 0.5 : 1,
+                    fontSize: 25,
+                    fontWeight: "bold",
+                    cursor: "move"
+                }}
+                borderTop="8px"
+                borderColor="purple.400"
+                bg="white"
+            >
+                <CardHeader color="gray.700">
+                    <Flex gap={3}>
+                        <Avatar src={image} size="lg" />
+                        <Box>
+                            <Heading as="h3" size="xl">
+                                {name}
+                            </Heading>
+                        </Box>
+                    </Flex>
+                </CardHeader>
 
-            <CardBody color="gray.500">
-                <Text>destextholder</Text>
-            </CardBody>
+                <CardBody
+                    color="gray.500"
+                    style={{ columnCount: 2 }}
+                    marginTop="0"
+                >
+                    {showNutrition && (
+                        <Text whiteSpace="pre-line" fontSize="md">
+                            Serving Size: {serving_size}
+                            {"\n"} Calories: {calories}
+                            {"\n"}
+                            Total Fat: {total_fat}
+                            {"\n"} Cholesterol: {cholesterol} mg{"\n"} Sodium:{" "}
+                            {sodium} mg{"\n"} Total Carbs: {total_carbs} g{"\n"}{" "}
+                            Total Sugars: {total_sugars} g{"\n"} Protein:{" "}
+                            {protein} g{"\n"}
+                        </Text>
+                    )}
+                    {!showNutrition && (
+                        <Text whiteSpace="pre-line" fontSize="md">
+                            Placeholder Ingrediantes text
+                        </Text>
+                    )}
+                </CardBody>
 
-            <Divider borderColor="gray.200" />
+                <Divider borderColor="gray.200" />
 
-            <CardFooter>
-                <HStack>
-                    <Button variant="ghost">Ingredients</Button>
-                    <Button variant="ghost">Nutrition</Button>
-                </HStack>
-            </CardFooter>
-        </Card>
+                <CardFooter>
+                    <HStack>
+                        <Button
+                            variant={showNutrition ? "primary" : "ghost"}
+                            onClick={() => setShowNutrition(true)}
+                        >
+                            Nutrition
+                        </Button>
+                        <Button
+                            variant={!showNutrition ? "primary" : "ghost"}
+                            onClick={() => setShowNutrition(false)}
+                        >
+                            Ingredients
+                        </Button>
+                    </HStack>
+                </CardFooter>
+            </Card>
+        </ChakraProvider>
         // <Box
         //     ref={drag}
         //     style={{
@@ -146,33 +151,33 @@ export function MealDraggable({
 
 export function CenterList({ mealList }: MealListProps) {
     return (
-        <div>
+        <div style={{ padding: "20px" }}>
             <div>Center List</div>
-            <div>
-                <SimpleGrid
-                    p="10px"
-                    columns={4}
-                    spacing={10}
-                    minChildWidth={250}
-                >
+            <ChakraProvider>
+                <SimpleGrid columns={4} spacing={10}>
                     {mealList.map((MealObject: Meal) => (
-                        <div key={MealObject.name}>
-                            <MealDraggable
-                                name={MealObject.name}
-                                image={MealObject.image}
-                                serving_size={MealObject.serving_size}
-                                calories={MealObject.calories}
-                                total_fat={MealObject.total_fat}
-                                cholesterol={MealObject.cholesterol}
-                                sodium={MealObject.sodium}
-                                total_carbs={MealObject.total_carbs}
-                                total_sugars={MealObject.total_sugars}
-                                protein={MealObject.protein}
-                            ></MealDraggable>
-                        </div>
+                        <GridItem
+                            key={MealObject.name}
+                            colSpan={{ base: 6, lg: 2, xl: 1 }}
+                        >
+                            <div>
+                                <MealDraggable
+                                    name={MealObject.name}
+                                    image={MealObject.image}
+                                    serving_size={MealObject.serving_size}
+                                    calories={MealObject.calories}
+                                    total_fat={MealObject.total_fat}
+                                    cholesterol={MealObject.cholesterol}
+                                    sodium={MealObject.sodium}
+                                    total_carbs={MealObject.total_carbs}
+                                    total_sugars={MealObject.total_sugars}
+                                    protein={MealObject.protein}
+                                ></MealDraggable>
+                            </div>
+                        </GridItem>
                     ))}
                 </SimpleGrid>
-            </div>
+            </ChakraProvider>
         </div>
     );
 }
