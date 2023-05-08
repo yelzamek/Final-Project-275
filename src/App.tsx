@@ -117,7 +117,6 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></UserList>
-                <Grid></Grid>
                 <MealListUI mealData={MEAL_LIST}></MealListUI>
             </div>
         </DndProvider>

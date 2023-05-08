@@ -164,30 +164,14 @@ export function CenterList({
                                 total_sugars={MealObject.total_sugars}
                                 protein={MealObject.protein}
                             ></MealDraggable>
+                            <div hidden={!(userType === "superUser")}>
+                                <Button onClick={() => RemoveMeal(MealObject)}>
+                                    X
+                                </Button>
+                            </div>
                         </div>
                     ))}
                 </SimpleGrid>
-                {mealList.map((MealObject: Meal) => (
-                    <div key={MealObject.name}>
-                        <MealDraggable
-                            name={MealObject.name}
-                            image={MealObject.image}
-                            serving_size={MealObject.serving_size}
-                            calories={MealObject.calories}
-                            total_fat={MealObject.total_fat}
-                            cholesterol={MealObject.cholesterol}
-                            sodium={MealObject.sodium}
-                            total_carbs={MealObject.total_carbs}
-                            total_sugars={MealObject.total_sugars}
-                            protein={MealObject.protein}
-                        ></MealDraggable>
-                        <div hidden={!(userType === "superUser")}>
-                            <Button onClick={() => RemoveMeal(MealObject)}>
-                                X
-                            </Button>
-                        </div>
-                    </div>
-                ))}
             </div>
         </div>
     );
