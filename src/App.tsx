@@ -17,6 +17,7 @@ import { Navbar } from "./Components/NavBar";
 //import { UserList } from "./Components/UserList";
 import { Grid } from "./Components/grid";
 import MealListUI from "./Components/MealListUI";
+import { AddUser } from "./Components/AddUser";
 //import { userListProps } from "./Interfaces/userListProps";
 
 function App(): JSX.Element {
@@ -74,6 +75,12 @@ function App(): JSX.Element {
                     userList={userList}
                     setUserList={setUserList}
                 ></AdminSelectButton>
+                <AddUser
+                    userType={userType}
+                    setUserType={setUserType}
+                    userList={userList}
+                    setUserList={setUserList}
+                ></AddUser>
                 <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}
