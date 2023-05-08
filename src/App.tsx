@@ -18,6 +18,7 @@ import { Navbar } from "./Components/NavBar";
 //import { UserList } from "./Components/UserList";
 import { Grid } from "./Components/grid";
 import MealListUI from "./Components/MealListUI";
+import { UserList } from "./Components/UserList";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
@@ -103,15 +104,16 @@ function App(): JSX.Element {
                     mealList={mealList}
                     setMealList={setMealList}
                 ></CenterList>
-                {/*
                 <UserList
+                    userType={userType}
+                    setUserType={setUserType}
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
-                    mealList={mealList}
                     userList={userList}
                     setUserList={setUserList}
+                    mealList={mealList}
                     setMealList={setMealList}
-    ></UserList> */}
+                ></UserList>
                 <Grid></Grid>
                 <MealListUI mealData={MEAL_LIST}></MealListUI>
             </div>
