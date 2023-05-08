@@ -3,7 +3,6 @@ import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
 import { Counter } from "./Components/SuperUserButton";
-import { UserSelect } from "./Components/AddUser";
 import {
     SuperUserSelectButton,
     AdminSelectButton
@@ -18,10 +17,9 @@ import { Navbar } from "./Components/NavBar";
 //import { UserList } from "./Components/UserList";
 import { Grid } from "./Components/grid";
 import MealListUI from "./Components/MealListUI";
+import { AddUser } from "./Components/AddUser";
 import { UserList } from "./Components/UserList";
 //import { userListProps } from "./Interfaces/userListProps";
-//import { User } from "./Components/UserSelect";
-//import { userType, setUserType } from "./Components/UserSelect";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
@@ -70,12 +68,6 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
-                <UserSelect
-                    userType={userType}
-                    setUserType={setUserType}
-                    userList={userList}
-                    setUserList={setUserList}
-                ></UserSelect>
                 <AdminSelectButton
                     userType={userType}
                     setUserType={setUserType}
@@ -84,6 +76,12 @@ function App(): JSX.Element {
                     userList={userList}
                     setUserList={setUserList}
                 ></AdminSelectButton>
+                <AddUser
+                    userType={userType}
+                    setUserType={setUserType}
+                    userList={userList}
+                    setUserList={setUserList}
+                ></AddUser>
                 <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}
@@ -96,23 +94,19 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
-                <UserTypeIndicator
-                    userType={userType}
-                    setUserType={setUserType}
-                ></UserTypeIndicator>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
                 ></CenterList>
                 <UserList
-                    userType={userType}
-                    setUserType={setUserType}
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
                     userList={userList}
                     setUserList={setUserList}
                     mealList={mealList}
                     setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
                 ></UserList>
                 <Grid></Grid>
                 <MealListUI mealData={MEAL_LIST}></MealListUI>
