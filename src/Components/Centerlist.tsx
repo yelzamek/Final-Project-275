@@ -62,6 +62,43 @@ export function CenterList({ mealList, setMealList }: MealListProps) {
     const [sortOption, setSortOption] = useState<string>("None");
     function updateSortOption(event: React.ChangeEvent<HTMLSelectElement>) {
         setSortOption(event.target.value);
+        if (sortOption === "Alphabetical") {
+            const copy = [...mealList];
+            setMealList(
+                copy.sort((a, b) => a.name.localeCompare(b.name)).reverse()
+            );
+        } else if (sortOption === "Reverse Alphabetical") {
+            const copy = [...mealList];
+            setMealList(copy.sort((a, b) => a.name.localeCompare(b.name)));
+        } else if (sortOption === "Calories: Lowest to Highest") {
+            const copy = [...mealList];
+            setMealList(
+                copy
+                    .sort(function (a, b) {
+                        if (a.calories < b.calories) {
+                            return -1;
+                        }
+                        if (a.calories > b.calories) {
+                            return 1;
+                        }
+                        return 0;
+                    })
+                    .reverse()
+            );
+        } else if (sortOption === "Calories: Highest to Lowest") {
+            const copy = [...mealList];
+            setMealList(
+                copy.sort(function (a, b) {
+                    if (a.calories < b.calories) {
+                        return -1;
+                    }
+                    if (a.calories > b.calories) {
+                        return 1;
+                    }
+                    return 0;
+                })
+            );
+        }
     }
     const SORT_LIST: string[] = [
         "None",
@@ -71,13 +108,6 @@ export function CenterList({ mealList, setMealList }: MealListProps) {
         "Calories: Highest to Lowest"
     ];
 
-    if (sortOption === "Alphabetical") {
-        setMealList([...mealList].sort((a, b) => a.name.localeCompare(b.name)));
-    } else if (sortOption === "Reverse Alphabetical") {
-        setMealList(
-            [...mealList].sort((a, b) => a.name.localeCompare(b.name)).reverse()
-        );
-    }
     return (
         <div>
             <div>Center List</div>
