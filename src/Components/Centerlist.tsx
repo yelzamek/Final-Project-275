@@ -15,9 +15,7 @@ import {
     CardFooter,
     HStack,
     Divider,
-    Image,
     GridItem,
-    Grid,
     ChakraProvider,
     Avatar
 } from "@chakra-ui/react";
