@@ -63,7 +63,6 @@ All files                   |       0 |        0 |       0 |       0 |
   UserSelect.tsx            |       0 |        0 |       0 |       0 | 14-57             
   UserTypeIndicator.tsx     |       0 |        0 |       0 |       0 | 5                 
   UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-28             
-  addToUserList.tsx         |       0 |      100 |       0 |       0 | 17-24             
   grid.tsx                  |       0 |      100 |       0 |       0 | 5                 
  src/Interfaces             |       0 |      100 |     100 |       0 |                   
   CurrentUserProps.ts       |       0 |        0 |       0 |       0 |                   
@@ -75,5 +74,5 @@ All files                   |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        4.43 s
+Time:        3.226 s
 Ran all test suites.
