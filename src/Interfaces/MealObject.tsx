@@ -354,28 +354,28 @@ export const MEAL_LIST: Meal[] = [
     {
         //26
         name: "Oats",
-        image: "https://image.similarpng.com/very-thumbnail/2020/08/Illustration-of-Sweet-corn-on-transparent-background-PNG.png",
+        image: "https://p7.hiclipart.com/preview/908/453/76/oatmeal-whole-grain-bran-cereal-oats.jpg",
         serving_size: 1,
-        calories: 88,
-        total_fat: 1.4,
+        calories: 606.84,
+        total_fat: 10.76,
         cholesterol: 0,
-        sodium: 2,
-        total_carbs: 19,
+        sodium: 3.12,
+        total_carbs: 103.38,
         total_sugars: 6.4,
-        protein: 3.3
+        protein: 26.35
     },
     {
         //27
         name: "White rice",
-        image: "https://image.similarpng.com/very-thumbnail/2020/08/Illustration-of-Sweet-corn-on-transparent-background-PNG.png",
+        image: "https://p7.hiclipart.com/preview/662/463/668/chinese-cuisine-cooked-rice-white-rice-boiling-rice.jpg",
         serving_size: 1,
-        calories: 88,
-        total_fat: 1.4,
+        calories: 242,
+        total_fat: 0.4,
         cholesterol: 0,
-        sodium: 2,
-        total_carbs: 19,
-        total_sugars: 6.4,
-        protein: 3.3
+        sodium: 0,
+        total_carbs: 41.16,
+        total_sugars: 0,
+        protein: 4.4
     },
     {
         //28
