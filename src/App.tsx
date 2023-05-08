@@ -15,9 +15,9 @@ import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
 import { Navbar } from "./Components/NavBar";
 //import { UserList } from "./Components/UserList";
-import MealListUI from "./Components/MealListUI";
 import { AddUser } from "./Components/AddUser";
 import { UserList } from "./Components/UserList";
+import { AddMeal } from "./Components/AddMeal";
 //import { userListProps } from "./Interfaces/userListProps";
 
 function App(): JSX.Element {
@@ -96,7 +96,15 @@ function App(): JSX.Element {
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
                 ></CenterList>
+                <AddMeal
+                    mealList={mealList}
+                    setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
+                ></AddMeal>
                 <UserList
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
@@ -107,7 +115,6 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></UserList>
-                <MealListUI mealData={MEAL_LIST}></MealListUI>
             </div>
         </DndProvider>
     );
