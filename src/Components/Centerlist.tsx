@@ -70,7 +70,14 @@ export function MealDraggable({
         >
             <CardHeader color="gray.700">
                 <Flex gap={5}>
-                    <Box w="50px" h="50px">
+                    <Box
+                        as="aside"
+                        bg="purple.400"
+                        minHeight={{ lg: "100vh" }}
+                        p={{ base: "20px", lg: "30px" }}
+                        w="50px"
+                        h="50px"
+                    >
                         <Image
                             borderRadius="full"
                             boxSize="50px"
