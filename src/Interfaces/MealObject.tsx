@@ -37,7 +37,7 @@ export interface mealList {
 export const MEAL_LIST: Meal[] = [
     {
         name: "Granola Bar",
-        image: "https://www.tasteofhome.com/wp-content/uploads/2018/01/Honey-Oat-Granola-Bars_EXPS_BOBBZ22_38126_B10_06_1b-6.jpg?fit=700,1024",
+        image: "https://www.cascadianfarm.com/wp-content/uploads/2018/12/Product-ImagesArtboard-2-1x-1.png",
         serving_size: 1,
         calories: 100,
         total_fat: 3,
@@ -49,7 +49,7 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         name: "Banana",
-        image: "https://target.scene7.com/is/image/Target/GUEST_f5d0cfc3-9d02-4ee0-a6c6-ed5dc09971d1?wid=740&hei=740&qlt=80&fmt=webp",
+        image: "https://purepng.com/public/uploads/large/purepng.com-bananafruitsyellowfruitbanana-981524754691bawpo.png",
         serving_size: 1,
         calories: 110,
         total_fat: 0.4,
@@ -61,7 +61,7 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         name: "Pizza",
-        image: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2014%2F07%2F10%2Fpepperoni-pizza-ck-x.jpg",
+        image: "https://png.pngtree.com/png-clipart/20220712/ourmid/pngtree-pizza-sliced-illustration-clipart-png-transparent-png-image_5894769.png",
         serving_size: 1,
         calories: 600,
         total_fat: 3,
@@ -73,7 +73,7 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         name: "Steak",
-        image: "https://whitneybond.com/wp-content/uploads/2021/06/steak-marinade-17.jpg",
+        image: "https://www.pngmart.com/files/22/Steak-PNG-Isolated-HD.png",
         serving_size: 1,
         calories: 160,
         total_fat: 8,
@@ -85,7 +85,7 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         name: "Apple",
-        image: "https://static.libertyprim.com/files/varietes/pomme-akane-large.jpg?1569320193",
+        image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25d45014-8cc3-4c98-b02c-5a0cf3a55ddd/dcrjbvx-b5078bbf-03ff-4625-b214-35c3f9fefc4c.png/v1/fill/w_900,h_900/red_apple_on_a_transparent_background__by_prussiaart_dcrjbvx-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTAwIiwicGF0aCI6IlwvZlwvMjVkNDUwMTQtOGNjMy00Yzk4LWIwMmMtNWEwY2YzYTU1ZGRkXC9kY3JqYnZ4LWI1MDc4YmJmLTAzZmYtNDYyNS1iMjE0LTM1YzNmOWZlZmM0Yy5wbmciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.Y0-7z3OBNt3CbKeZrPiWJFD-4LhVF7I9iC2wADeZEAU",
         serving_size: 1,
         calories: 110,
         total_fat: 0.4,
@@ -97,7 +97,7 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         name: "Spaghetti",
-        image: "https://media.istockphoto.com/id/185211679/photo/standing-spaghetti.jpg?s=612x612&w=0&k=20&c=KxQPQjvWIu_RUFjhnY1umtugD6i8up6n1zBMTqbgfjc=",
+        image: "https://www.pngall.com/wp-content/uploads/13/Spaghetti-PNG-Picture.png",
         serving_size: 1,
         calories: 110,
         total_fat: 0.4,
@@ -109,7 +109,7 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         name: "Bagel",
-        image: "https://target.scene7.com/is/image/Target/GUEST_f5d0cfc3-9d02-4ee0-a6c6-ed5dc09971d1?wid=740&hei=740&qlt=80&fmt=webp",
+        image: "https://images.squarespace-cdn.com/content/v1/58a21d2ee3df281cfde6e815/1506536337547-RR6FYE2ZTERS37N911LB/whole+wheat+bagel.png?format=1000w",
         serving_size: 1,
         calories: 110,
         total_fat: 0.4,
@@ -121,7 +121,7 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         name: "Cheese Danish",
-        image: "https://target.scene7.com/is/image/Target/GUEST_f5d0cfc3-9d02-4ee0-a6c6-ed5dc09971d1?wid=740&hei=740&qlt=80&fmt=webp",
+        image: "https://harvestbakery.com/wp-content/uploads/2016/04/CheeseDanishRound_1_clipped_rev_1.png",
         serving_size: 1,
         calories: 110,
         total_fat: 0.4,
@@ -133,7 +133,7 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         name: "BBQ Sauce",
-        image: "https://target.scene7.com/is/image/Target/GUEST_f5d0cfc3-9d02-4ee0-a6c6-ed5dc09971d1?wid=740&hei=740&qlt=80&fmt=webp",
+        image: "https://w7.pngwing.com/pngs/876/194/png-transparent-hot-sauce-barbecue-sauce-salsa-pasta-barbeque-sauce-barbecue-food-baking.png",
         serving_size: 1,
         calories: 110,
         total_fat: 0.4,
