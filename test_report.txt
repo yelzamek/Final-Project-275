@@ -60,7 +60,6 @@ All files                   |       0 |        0 |       0 |       0 |
   SuperUserButton.tsx       |       0 |        0 |       0 |       0 | 6-13              
   UserDropdown.tsx          |       0 |        0 |       0 |       0 | 17-53             
   UserList.tsx              |       0 |        0 |       0 |       0 | 24-67             
-  UserSelect.tsx            |       0 |        0 |       0 |       0 | 14-57             
   UserTypeIndicator.tsx     |       0 |        0 |       0 |       0 | 5                 
   UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-28             
   grid.tsx                  |       0 |      100 |       0 |       0 | 5                 
@@ -74,5 +73,5 @@ All files                   |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.226 s
+Time:        3.149 s
 Ran all test suites.
