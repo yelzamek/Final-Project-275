@@ -19,7 +19,7 @@ import { Grid } from "./Components/grid";
 import MealListUI from "./Components/MealListUI";
 import { AddUser } from "./Components/AddUser";
 import { UserList } from "./Components/UserList";
-import { AddMeal } from "./Components/AndAndRemoveMeal";
+import { AddMeal } from "./Components/AddMeal";
 //import { userListProps } from "./Interfaces/userListProps";
 
 function App(): JSX.Element {
@@ -98,6 +98,8 @@ function App(): JSX.Element {
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
                 ></CenterList>
                 <AddMeal
                     mealList={mealList}

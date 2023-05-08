@@ -216,13 +216,3 @@ export function AddMeal({
         </div>
     );
 }
-
-export function RemoveMeal(
-    { mealList, setMealList }: MealListProps,
-    removedMeal: Meal
-) {
-    const copy = [...mealList];
-    const index = copy.indexOf(removedMeal);
-    copy.splice(index, 1);
-    setMealList(copy);
-}

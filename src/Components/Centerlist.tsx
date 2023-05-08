@@ -4,23 +4,19 @@ import { useDrag } from "react-dnd";
 import { Button, Form } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
-import { RemoveMeal } from "./AndAndRemoveMeal";
 
-export function MealDraggable(
-    {
-        name,
-        image,
-        serving_size,
-        calories,
-        total_fat,
-        cholesterol,
-        sodium,
-        total_carbs,
-        total_sugars,
-        protein
-    }: Meal,
-    { userType }: UserTypeProps
-): JSX.Element {
+export function MealDraggable({
+    name,
+    image,
+    serving_size,
+    calories,
+    total_fat,
+    cholesterol,
+    sodium,
+    total_carbs,
+    total_sugars,
+    protein
+}: Meal): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "Meal",
         item: { name: name },
@@ -63,7 +59,11 @@ export function MealDraggable(
     );
 }
 
-export function CenterList({ mealList, setMealList }: MealListProps) {
+export function CenterList({
+    mealList,
+    setMealList,
+    userType
+}: MealListProps & UserTypeProps) {
     const [sortOption, setSortOption] = useState<string>("None");
     function updateSortOption(event: React.ChangeEvent<HTMLSelectElement>) {
         setSortOption(event.target.value);
@@ -116,6 +116,13 @@ export function CenterList({ mealList, setMealList }: MealListProps) {
         "Calories: Highest to Lowest"
     ];
 
+    function RemoveMeal(removedMeal: Meal) {
+        const copy = [...mealList];
+        const index = copy.indexOf(removedMeal);
+        copy.splice(index, 1);
+        setMealList(copy);
+    }
+
     return (
         <div>
             <div>Center List</div>
@@ -146,6 +153,11 @@ export function CenterList({ mealList, setMealList }: MealListProps) {
                             total_sugars={MealObject.total_sugars}
                             protein={MealObject.protein}
                         ></MealDraggable>
+                        <div hidden={!(userType === "superUser")}>
+                            <Button onClick={() => RemoveMeal(MealObject)}>
+                                X
+                            </Button>
+                        </div>
                     </div>
                 ))}
             </div>
