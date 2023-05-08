@@ -259,5 +259,57 @@ export const MEAL_LIST: Meal[] = [
         total_carbs: 2.3,
         total_sugars: 1.4,
         protein: 2.2
+    },
+    {
+        //19
+        name: "Garlic",
+        image: "https://p7.hiclipart.com/preview/432/966/414/5bbc0391d6b6d.jpg",
+        serving_size: 1,
+        calories: 203,
+        total_fat: 0.7,
+        cholesterol: 0,
+        sodium: 23,
+        total_carbs: 2.3,
+        total_sugars: 0.09,
+        protein: 2.16
+    },
+    {
+        //20
+        name: "Cucumber",
+        image: "https://www.pngmart.com/files/5/Cucumbers-Transparent-PNG.png",
+        serving_size: 1,
+        calories: 16,
+        total_fat: 0,
+        cholesterol: 0,
+        sodium: 2,
+        total_carbs: 4,
+        total_sugars: 2,
+        protein: 0.6
+    },
+    {
+        //21
+        name: "Cucumber",
+        image: "https://www.pngmart.com/files/5/Cucumbers-Transparent-PNG.png",
+        serving_size: 1,
+        calories: 16,
+        total_fat: 0,
+        cholesterol: 0,
+        sodium: 2,
+        total_carbs: 4,
+        total_sugars: 2,
+        protein: 0.6
+    },
+    {
+        //21
+        name: "Cucumber",
+        image: "https://www.pngmart.com/files/5/Cucumbers-Transparent-PNG.png",
+        serving_size: 1,
+        calories: 16,
+        total_fat: 0,
+        cholesterol: 0,
+        sodium: 2,
+        total_carbs: 4,
+        total_sugars: 2,
+        protein: 0.6
     }
 ];
