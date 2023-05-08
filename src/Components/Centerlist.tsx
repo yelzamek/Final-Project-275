@@ -1,21 +1,26 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { useDrag } from "react-dnd";
-import { Button, Dropdown, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { RemoveMeal } from "./AndAndRemoveMeal";
 
-export function MealDraggable({
-    name,
-    image,
-    serving_size,
-    calories,
-    total_fat,
-    cholesterol,
-    sodium,
-    total_carbs,
-    total_sugars,
-    protein
-}: Meal): JSX.Element {
+export function MealDraggable(
+    {
+        name,
+        image,
+        serving_size,
+        calories,
+        total_fat,
+        cholesterol,
+        sodium,
+        total_carbs,
+        total_sugars,
+        protein
+    }: Meal,
+    { userType }: UserTypeProps
+): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "Meal",
         item: { name: name },
@@ -67,10 +72,12 @@ export function CenterList({ mealList, setMealList }: MealListProps) {
             setMealList(
                 copy.sort((a, b) => a.name.localeCompare(b.name)).reverse()
             );
-        } else if (sortOption === "Reverse Alphabetical") {
+        }
+        if (sortOption === "Reverse Alphabetical") {
             const copy = [...mealList];
             setMealList(copy.sort((a, b) => a.name.localeCompare(b.name)));
-        } else if (sortOption === "Calories: Lowest to Highest") {
+        }
+        if (sortOption === "Calories: Lowest to Highest") {
             const copy = [...mealList];
             setMealList(
                 copy
@@ -85,7 +92,8 @@ export function CenterList({ mealList, setMealList }: MealListProps) {
                     })
                     .reverse()
             );
-        } else if (sortOption === "Calories: Highest to Lowest") {
+        }
+        if (sortOption === "Calories: Highest to Lowest") {
             const copy = [...mealList];
             setMealList(
                 copy.sort(function (a, b) {
