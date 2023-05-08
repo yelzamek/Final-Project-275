@@ -3,7 +3,22 @@ import React, { useState } from "react";
 import { useDrag } from "react-dnd";
 import { Button } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import {
+    Box,
+    SimpleGrid,
+    Text,
+    Flex,
+    Heading,
+    Card,
+    CardHeader,
+    CardBody,
+    CardFooter,
+    HStack,
+    Divider,
+    Image,
+    GridItem,
+    Grid
+} from "@chakra-ui/react";
 
 export function MealDraggable({
     name,
@@ -24,9 +39,24 @@ export function MealDraggable({
             isDragging: !!monitor.isDragging()
         })
     }));
+
+    function RootLayout() {
+        return (
+            <Grid templateColumns="repeat(6, 1fr)" bg="gray.50">
+                <GridItem
+                    as="aside"
+                    colSpan={{ base: 6, lg: 2, xl: 1 }}
+                    bg="purple.400"
+                    minHeight={{ lg: "100vh" }}
+                    p={{ base: "20px", lg: "30px" }}
+                ></GridItem>
+            </Grid>
+        );
+    }
+
     const [DetailsHidden, setDetailsHidden] = useState<boolean>(true);
     return (
-        <Box
+        <Card
             ref={drag}
             style={{
                 opacity: isDragging ? 0.5 : 1,
@@ -34,32 +64,76 @@ export function MealDraggable({
                 fontWeight: "bold",
                 cursor: "move"
             }}
+            borderTop="8px"
+            borderColor="purple.400"
             bg="white"
-            height="200px"
-            border="1px solid"
         >
-            <div>{name}</div>
-            <img src={image} width="100" height="100"></img>
-            <Button onClick={() => setDetailsHidden(!DetailsHidden)}>
-                More
-            </Button>
-            <div
-                hidden={DetailsHidden}
-                style={{
-                    fontSize: 10
-                }}
-            >
-                <div>Serving Size: {serving_size}</div>
-                <div>Calories: {calories}</div>
-                <div>Total Fat:{total_fat} g</div>
-                <div>Cholesterol: {cholesterol} mg</div>
-                <div>Sodium: {sodium} mg</div>
-                <div>Total Carbs: {total_carbs} g</div>
-                <div>Total Sugars: {total_sugars} g</div>
-                <div>Protein: {protein} g</div>
-            </div>
-            {name}
-        </Box>
+            <CardHeader color="gray.700">
+                <Flex gap={5}>
+                    <Box w="50px" h="50px">
+                        <Image
+                            borderRadius="full"
+                            boxSize="50px"
+                            src={image}
+                            alt={name}
+                        />
+                    </Box>
+                    <Box>
+                        <Heading as="h3" size="sm">
+                            {name}
+                        </Heading>
+                        <Text>placeholder</Text>
+                    </Box>
+                </Flex>
+            </CardHeader>
+
+            <CardBody color="gray.500">
+                <Text>destextholder</Text>
+            </CardBody>
+
+            <Divider borderColor="gray.200" />
+
+            <CardFooter>
+                <HStack>
+                    <Button variant="ghost">Ingredients</Button>
+                    <Button variant="ghost">Nutrition</Button>
+                </HStack>
+            </CardFooter>
+        </Card>
+        // <Box
+        //     ref={drag}
+        //     style={{
+        //         opacity: isDragging ? 0.5 : 1,
+        //         fontSize: 25,
+        //         fontWeight: "bold",
+        //         cursor: "move"
+        //     }}
+        //     bg="white"
+        //     height="200px"
+        //     border="1px solid"
+        // >
+        //     <div>{name}</div>
+        //     <img src={image} width="100" height="100"></img>
+        //     <Button onClick={() => setDetailsHidden(!DetailsHidden)}>
+        //         More
+        //     </Button>
+        //     <div
+        //         hidden={DetailsHidden}
+        //         style={{
+        //             fontSize: 10
+        //         }}
+        //     >
+        //         <div>Serving Size: {serving_size}</div>
+        //         <div>Calories: {calories}</div>
+        //         <div>Total Fat:{total_fat} g</div>
+        //         <div>Cholesterol: {cholesterol} mg</div>
+        //         <div>Sodium: {sodium} mg</div>
+        //         <div>Total Carbs: {total_carbs} g</div>
+        //         <div>Total Sugars: {total_sugars} g</div>
+        //         <div>Protein: {protein} g</div>
+        //     </div>
+        //     {name}
+        // </Box>
     );
 }
 
