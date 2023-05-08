@@ -29,7 +29,7 @@ function App(): JSX.Element {
         name: "None",
         list_of_items: [
             {
-                name: "greanola bar",
+                name: "granola bar",
                 serving_size: 1,
                 calories: 100,
                 total_fat: 3,
