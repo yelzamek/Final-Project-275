@@ -110,9 +110,9 @@ function App(): JSX.Element {
                 <UserList
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
-                    mealList={mealList}
                     userList={userList}
                     setUserList={setUserList}
+                    mealList={mealList}
                     setMealList={setMealList}
                     userType={userType}
                     setUserType={setUserType}
