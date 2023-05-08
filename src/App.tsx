@@ -95,10 +95,6 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
-                <UserTypeIndicator
-                    userType={userType}
-                    setUserType={setUserType}
-                ></UserTypeIndicator>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
