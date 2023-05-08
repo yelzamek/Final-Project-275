@@ -288,28 +288,132 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         //21
-        name: "Cucumber",
-        image: "https://www.pngmart.com/files/5/Cucumbers-Transparent-PNG.png",
+        name: "Carrot",
+        image: "https://www.nicepng.com/png/detail/6-69141_single-carrot-transparent-background-carrot-png.png",
         serving_size: 1,
-        calories: 16,
+        calories: 23,
         total_fat: 0,
         cholesterol: 0,
-        sodium: 2,
-        total_carbs: 4,
-        total_sugars: 2,
-        protein: 0.6
+        sodium: 38,
+        total_carbs: 5,
+        total_sugars: 3,
+        protein: 1
     },
     {
-        //21
-        name: "Cucumber",
-        image: "https://www.pngmart.com/files/5/Cucumbers-Transparent-PNG.png",
+        //22
+        name: "Corn",
+        image: "https://image.similarpng.com/very-thumbnail/2020/08/Illustration-of-Sweet-corn-on-transparent-background-PNG.png",
         serving_size: 1,
-        calories: 16,
-        total_fat: 0,
+        calories: 88,
+        total_fat: 1.4,
         cholesterol: 0,
         sodium: 2,
-        total_carbs: 4,
+        total_carbs: 19,
+        total_sugars: 6.4,
+        protein: 3.3
+    },
+    {
+        //23
+        name: "Avocado",
+        image: "https://image.similarpng.com/very-thumbnail/2020/08/Illustration-of-Sweet-corn-on-transparent-background-PNG.png",
+        serving_size: 1,
+        calories: 88,
+        total_fat: 1.4,
+        cholesterol: 0,
+        sodium: 2,
+        total_carbs: 19,
+        total_sugars: 6.4,
+        protein: 3.3
+    },
+    {
+        //24
+        name: "Asparagus",
+        image: "https://image.similarpng.com/very-thumbnail/2020/08/Illustration-of-Sweet-corn-on-transparent-background-PNG.png",
+        serving_size: 1,
+        calories: 88,
+        total_fat: 1.4,
+        cholesterol: 0,
+        sodium: 2,
+        total_carbs: 19,
+        total_sugars: 6.4,
+        protein: 3.3
+    },
+    {
+        //25
+        name: "Ginger",
+        image: "https://image.similarpng.com/very-thumbnail/2020/08/Illustration-of-Sweet-corn-on-transparent-background-PNG.png",
+        serving_size: 1,
+        calories: 88,
+        total_fat: 1.4,
+        cholesterol: 0,
+        sodium: 2,
+        total_carbs: 19,
+        total_sugars: 6.4,
+        protein: 3.3
+    },
+    {
+        //26
+        name: "Oats",
+        image: "https://image.similarpng.com/very-thumbnail/2020/08/Illustration-of-Sweet-corn-on-transparent-background-PNG.png",
+        serving_size: 1,
+        calories: 88,
+        total_fat: 1.4,
+        cholesterol: 0,
+        sodium: 2,
+        total_carbs: 19,
+        total_sugars: 6.4,
+        protein: 3.3
+    },
+    {
+        //27
+        name: "White rice",
+        image: "https://image.similarpng.com/very-thumbnail/2020/08/Illustration-of-Sweet-corn-on-transparent-background-PNG.png",
+        serving_size: 1,
+        calories: 88,
+        total_fat: 1.4,
+        cholesterol: 0,
+        sodium: 2,
+        total_carbs: 19,
+        total_sugars: 6.4,
+        protein: 3.3
+    },
+    {
+        //28
+        name: "Black Beans",
+        image: "https://toppng.com/uploads/preview/black-beans-11525986910bdg1vn3l2b.png",
+        serving_size: 1,
+        calories: 114,
+        total_fat: 0.4,
+        cholesterol: 0,
+        sodium: 461,
+        total_carbs: 20,
+        total_sugars: 0.3,
+        protein: 8
+    },
+    {
+        //29
+        name: "Beetroot",
+        image: "https://assets.stickpng.com/images/585ea458cb11b227491c351f.png",
+        serving_size: 1,
+        calories: 43,
+        total_fat: 0.2,
+        cholesterol: 0,
+        sodium: 64,
+        total_carbs: 9.6,
+        total_sugars: 6.8,
+        protein: 1.6
+    },
+    {
+        //30
+        name: "Green Bell Pepper",
+        image: "https://assets.stickpng.com/images/585ea783cb11b227491c3538.png",
+        serving_size: 1,
+        calories: 33,
+        total_fat: 0.28,
+        cholesterol: 0,
+        sodium: 4,
+        total_carbs: 7.61,
         total_sugars: 2,
-        protein: 0.6
+        protein: 1.41
     }
 ];
