@@ -49,7 +49,7 @@ File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered
 ----------------------------|---------|----------|---------|---------|-------------------
 All files                   |       0 |        0 |       0 |       0 |                   
  src                        |       0 |      100 |       0 |       0 |                   
-  App.tsx                   |       0 |      100 |       0 |       0 | 24-32             
+  App.tsx                   |       0 |      100 |       0 |       0 | 25-33             
  src/Components             |       0 |        0 |       0 |       0 |                   
   AddUser.tsx               |       0 |        0 |       0 |       0 | 13-94             
   Centerlist.tsx            |       0 |        0 |       0 |       0 | 19-68             
@@ -75,5 +75,5 @@ All files                   |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        4.008 s
+Time:        4.43 s
 Ran all test suites.
