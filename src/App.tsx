@@ -3,7 +3,6 @@ import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
 import { Counter } from "./Components/SuperUserButton";
-import { UserSelect } from "./Components/AddUser";
 import {
     SuperUserSelectButton,
     AdminSelectButton
@@ -19,8 +18,6 @@ import { Navbar } from "./Components/NavBar";
 import { Grid } from "./Components/grid";
 import MealListUI from "./Components/MealListUI";
 //import { userListProps } from "./Interfaces/userListProps";
-//import { User } from "./Components/UserSelect";
-//import { userType, setUserType } from "./Components/UserSelect";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
@@ -69,12 +66,6 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
-                <UserSelect
-                    userType={userType}
-                    setUserType={setUserType}
-                    userList={userList}
-                    setUserList={setUserList}
-                ></UserSelect>
                 <AdminSelectButton
                     userType={userType}
                     setUserType={setUserType}
