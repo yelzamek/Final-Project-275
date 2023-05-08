@@ -1,12 +1,12 @@
 /* eslint-disable no-extra-parens */
 import React from "react";
 import { useDrop } from "react-dnd";
-import { CurrentUserProps } from "../Interfaces/currentUserProps";
-import { UserListProps } from "../Interfaces/userListProps";
+import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
+import { UserListProps } from "../Interfaces/UserListProps";
 //import { User } from "../Interfaces/UserObject";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 import { Button } from "react-bootstrap";
-import { UserTypeProps } from "../Interfaces/userTypeProps";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { User } from "../Interfaces/UserObject";
 
 export function UserList({
