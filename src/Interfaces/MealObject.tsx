@@ -142,5 +142,44 @@ export const MEAL_LIST: Meal[] = [
         total_carbs: 27,
         total_sugars: 15,
         protein: 1
+    },
+    {
+        //10
+        name: "Zucchini",
+        image: "https://media.istockphoto.com/id/1149201983/photo/fresh-whole-and-sliced-zucchini-isolated-on-white-background-from-top-view-courgette-zucchini.jpg?s=612x612&w=0&k=20&c=8r6T0Lk1iRw0mkbSCMSMKuamrFyvo0QrQD25_jiq10w=",
+        serving_size: 1,
+        calories: 55,
+        total_fat: 1,
+        cholesterol: 0,
+        sodium: 20,
+        total_carbs: 10,
+        total_sugars: 8,
+        protein: 4
+    },
+    {
+        //11
+        name: "Kale",
+        image: "https://www.pngmart.com/files/5/Kale-PNG-Transparent-Image.png",
+        serving_size: 1,
+        calories: 20,
+        total_fat: 0.47,
+        cholesterol: 6,
+        sodium: 29,
+        total_carbs: 6.71,
+        total_sugars: 4.2,
+        protein: 2.21
+    },
+    {
+        //12
+        name: "Onion",
+        image: "https://p7.hiclipart.com/preview/546/145/267/raw-foodism-organic-food-shallot-red-onion-vegetable-onion.jpg",
+        serving_size: 1,
+        calories: 44,
+        total_fat: 0.1,
+        cholesterol: 0,
+        sodium: 4,
+        total_carbs: 10,
+        total_sugars: 4.2,
+        protein: 1.1
     }
 ];
