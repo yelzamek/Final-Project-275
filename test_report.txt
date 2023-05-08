@@ -49,20 +49,18 @@ File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered
 ----------------------------|---------|----------|---------|---------|-------------------
 All files                   |       0 |        0 |       0 |       0 |                   
  src                        |       0 |      100 |       0 |       0 |                   
-  App.tsx                   |       0 |      100 |       0 |       0 | 25-33             
+  App.tsx                   |       0 |      100 |       0 |       0 | 24-32             
  src/Components             |       0 |        0 |       0 |       0 |                   
+  AddMeal.tsx               |       0 |        0 |       0 |       0 | 13-214            
   AddUser.tsx               |       0 |        0 |       0 |       0 | 13-94             
-  Centerlist.tsx            |       0 |        0 |       0 |       0 | 20-78             
+  Centerlist.tsx            |       0 |        0 |       0 |       0 | 21-168            
   Draggable.tsx             |       0 |        0 |       0 |       0 | 6-65              
-  MealItem.tsx              |       0 |        0 |       0 |       0 | 44-67             
-  MealListUI.tsx            |       0 |        0 |       0 |       0 | 11-33             
   NavBar.tsx                |       0 |      100 |       0 |       0 | 7-43              
   SuperUserButton.tsx       |       0 |        0 |       0 |       0 | 6-13              
   UserDropdown.tsx          |       0 |        0 |       0 |       0 | 17-53             
   UserList.tsx              |       0 |        0 |       0 |       0 | 24-67             
   UserTypeIndicator.tsx     |       0 |        0 |       0 |       0 | 5                 
   UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-28             
-  grid.tsx                  |       0 |      100 |       0 |       0 | 5                 
  src/Interfaces             |       0 |      100 |     100 |       0 |                   
   CurrentUserProps.ts       |       0 |        0 |       0 |       0 |                   
   MealObject.tsx            |       0 |      100 |     100 |       0 | 37                
@@ -73,5 +71,5 @@ All files                   |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.05 s
+Time:        3.451 s
 Ran all test suites.
