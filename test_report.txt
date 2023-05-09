@@ -1572,10 +1572,10 @@ FAIL src/App.test.tsx
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |    2.99 |     12.9 |    3.94 |    3.12 |                   
+All files                   |     2.9 |     12.5 |    3.89 |    3.03 |                   
  src                        |       0 |      100 |       0 |       0 |                   
   App.tsx                   |       0 |      100 |       0 |       0 | 26-34             
- src/Components             |    3.12 |     12.9 |       4 |    3.26 |                   
+ src/Components             |    3.03 |     12.5 |    3.94 |    3.16 |                   
   AddMeal.tsx               |       0 |        0 |       0 |       0 | 13-295            
   AddUser.tsx               |       0 |        0 |       0 |       0 | 13-96             
   Centerlist.tsx            |       0 |        0 |       0 |       0 | 40-149            
@@ -1583,8 +1583,8 @@ All files                   |    2.99 |     12.9 |    3.94 |    3.12 |
   NutritionTotalButton.tsx  |       0 |      100 |       0 |       0 | 6-28              
   SortFunction.tsx          |       0 |        0 |       0 |       0 | 11-47             
   SuperUserButton.tsx       |   66.66 |      100 |      50 |   66.66 | 13                
-  UserDropdown.tsx          |       0 |        0 |       0 |       0 | 17-55             
-  UserList.tsx              |       0 |        0 |       0 |       0 | 24-67             
+  UserDropdown.tsx          |       0 |        0 |       0 |       0 | 22-56             
+  UserList.tsx              |       0 |        0 |       0 |       0 | 24-73             
   UserTypeIndicator.tsx     |     100 |      100 |     100 |     100 |                   
   UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-28             
  src/Interfaces             |       0 |      100 |     100 |       0 |                   
@@ -1598,5 +1598,5 @@ All files                   |    2.99 |     12.9 |    3.94 |    3.12 |
 Test Suites: 10 failed, 10 total
 Tests:       11 failed, 3 passed, 14 total
 Snapshots:   0 total
-Time:        7.23 s
+Time:        6.079 s
 Ran all test suites.
