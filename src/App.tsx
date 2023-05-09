@@ -13,14 +13,16 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
-import { Navbar } from "./Components/NavBar";
+// import { Navbar } from "./Components/NavBar";
 //import { UserList } from "./Components/UserList";
 import { AddUser } from "./Components/AddUser";
 import { UserList } from "./Components/UserList";
 import { AddMeal } from "./Components/AddMeal";
 import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
-import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
+//import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
+import { Sidebar } from "./Components/Sidebar";
+import { ChakraProvider, List, ListItem, Text } from "@chakra-ui/react";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
@@ -34,7 +36,7 @@ function App(): JSX.Element {
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
-                <header className="header">
+                {/* <header className="header">
                     <header className="header"></header>
                     <a href="#" className="logo">
                         {" "}
@@ -50,10 +52,36 @@ function App(): JSX.Element {
                         {" "}
                         <i className="fa fa-shopping-basket"></i> grocery
                     </a>
-                </header>
-                <p className="App-header">Team 12</p>
-                <Navbar></Navbar>
-                <UserTypeIndicator
+                </header> */}
+                <p className="App-header">
+                    Balanced Bytes Team 12 by Josh,Devin,Annanya,Yasmeen & Sreya
+                    <SuperUserSelectButton
+                        userType={userType}
+                        setUserType={setUserType}
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
+                        userList={userList}
+                        setUserList={setUserList}
+                    ></SuperUserSelectButton>
+                    <AdminSelectButton
+                        userType={userType}
+                        setUserType={setUserType}
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
+                        userList={userList}
+                        setUserList={setUserList}
+                    ></AdminSelectButton>
+                    <UserDropDown
+                        userType={userType}
+                        setUserType={setUserType}
+                        userList={userList}
+                        setUserList={setUserList}
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
+                    ></UserDropDown>
+                </p>
+                {/* <Navbar></Navbar> */}
+                {/* <UserTypeIndicator
                     userType={userType}
                     setUserType={setUserType}
                 ></UserTypeIndicator>
@@ -64,53 +92,18 @@ function App(): JSX.Element {
                     setUserList={setUserList}
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
-                    mealList={mealList}
-                    setMealList={setMealList}
-                ></UserDropDown>
-                <Counter
-                    userType={userType}
-                    setUserType={setUserType}
-                ></Counter>
-                <AdminSelectButton
-                    userType={userType}
-                    setUserType={setUserType}
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
-                    userList={userList}
-                    setUserList={setUserList}
-                ></AdminSelectButton>
+                ></UserDropDown> */}
+                <p className="App-Div"></p>{" "}
                 <AddUser
                     userType={userType}
                     setUserType={setUserType}
                     userList={userList}
                     setUserList={setUserList}
                 ></AddUser>
-                <SuperUserSelectButton
-                    userType={userType}
-                    setUserType={setUserType}
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
-                    userList={userList}
-                    setUserList={setUserList}
-                ></SuperUserSelectButton>
-                <Counter
-                    userType={userType}
-                    setUserType={setUserType}
-                ></Counter>
                 <SortFunction
                     mealList={mealList}
                     setMealList={setMealList}
                 ></SortFunction>
-                <UserList
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
-                    userList={userList}
-                    setUserList={setUserList}
-                    mealList={mealList}
-                    setMealList={setMealList}
-                    userType={userType}
-                    setUserType={setUserType}
-                ></UserList>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
@@ -123,10 +116,24 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></AddMeal>
-                <NutritionalTotalButton
-                    list_of_items={currentUser.list_of_items}
-                    name={currentUser.name}
-                ></NutritionalTotalButton>
+                <Sidebar></Sidebar>
+                <p className="App-Sidebar">
+                    <ChakraProvider>
+                        <Text fontSize="xl" fontWeight="bold">
+                            Meal Log
+                        </Text>
+                        <UserList
+                            currentUser={currentUser}
+                            setCurrentUser={setCurrentUser}
+                            userList={userList}
+                            setUserList={setUserList}
+                            mealList={mealList}
+                            setMealList={setMealList}
+                            userType={userType}
+                            setUserType={setUserType}
+                        ></UserList>
+                    </ChakraProvider>
+                </p>
             </div>
         </DndProvider>
     );

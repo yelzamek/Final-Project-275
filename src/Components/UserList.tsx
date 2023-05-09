@@ -63,7 +63,10 @@ export function UserList({
             ref={drop}
             style={{
                 display: userType === "User" ? "inline-block" : "none",
-                backgroundColor: isOver ? "green" : "white"
+                backgroundColor: isOver ? "lightgray" : "white",
+                width: "300px",
+                height: "800px",
+                border: "2px solid black"
             }}
         >
             Title
