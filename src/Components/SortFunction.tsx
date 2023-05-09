@@ -1,3 +1,4 @@
+/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { MealListProps } from "../Interfaces/MealObject";
 import { Form } from "react-bootstrap";
