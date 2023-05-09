@@ -71,9 +71,17 @@ function App(): JSX.Element {
                         userList={userList}
                         setUserList={setUserList}
                     ></AdminSelectButton>
+                    <UserDropDown
+                        userType={userType}
+                        setUserType={setUserType}
+                        userList={userList}
+                        setUserList={setUserList}
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
+                    ></UserDropDown>
                 </p>
                 {/* <Navbar></Navbar> */}
-                <UserTypeIndicator
+                {/* <UserTypeIndicator
                     userType={userType}
                     setUserType={setUserType}
                 ></UserTypeIndicator>
@@ -84,21 +92,14 @@ function App(): JSX.Element {
                     setUserList={setUserList}
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
-                ></UserDropDown>
-                <Counter
-                    userType={userType}
-                    setUserType={setUserType}
-                ></Counter>
+                ></UserDropDown> */}
+                <p className="App-Div"></p>{" "}
                 <AddUser
                     userType={userType}
                     setUserType={setUserType}
                     userList={userList}
                     setUserList={setUserList}
                 ></AddUser>
-                <Counter
-                    userType={userType}
-                    setUserType={setUserType}
-                ></Counter>
                 <SortFunction
                     mealList={mealList}
                     setMealList={setMealList}

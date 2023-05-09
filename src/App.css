@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 90px;
+    height: 80px;
     padding: 20px;
     background: #fff;
     z-index: 9999;
@@ -71,10 +71,19 @@
 
 .App-Sidebar {
         position: fixed;
-        top: 45px;
+        top: 80px;
         left: 0;
         height: 100%;
         width: 325px;
         background-color: #9f7ae9;
         padding: 20px;
 }
+
+.App-Div {
+    height: 300px;
+    /* Additional styling properties */
+    background-color: lightblue;
+    color: white;
+    padding: 20px;
+    background-image: url("https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/mpx/2704722219/2023_02/1676903842822_tdy_health_8a_minno_nutrition_myths_230220_1920x1080-bkey7m.jpg");
+  }
