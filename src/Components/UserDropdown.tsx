@@ -4,14 +4,15 @@ import { Form } from "react-bootstrap";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
-import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
 import { Meal } from "../Interfaces/MealObject";
+import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
 export function UserDropDown({
     //userType,
     setUserType,
     userList,
     currentUser,
-    setCurrentUser
+    setCurrentUser,
+    setUserList
 }: UserTypeProps & UserListProps & CurrentUserProps): JSX.Element {
     function updateCurrentUser(event: React.ChangeEvent<HTMLSelectElement>) {
         event.target.value === "None"
@@ -20,25 +21,19 @@ export function UserDropDown({
         const userIndex = userList.findIndex(
             (user: User): boolean => user.name === event.target.value
         );
+        const selectedUser = userList[userIndex];
+        const copiedItems = selectedUser.list_of_items.map((meal: Meal) => ({
+            ...meal
+        }));
         setCurrentUser({
-            name: userList[userIndex].name,
-            list_of_items: [
-                ...userList[userIndex].list_of_items.map(
-                    (meal: Meal): Meal => ({
-                        name: meal.name,
-                        image: meal.image,
-                        serving_size: meal.serving_size,
-                        calories: meal.calories,
-                        total_fat: meal.total_fat,
-                        cholesterol: meal.cholesterol,
-                        sodium: meal.sodium,
-                        total_carbs: meal.total_carbs,
-                        total_sugars: meal.total_sugars,
-                        protein: meal.protein
-                    })
-                )
-            ]
+            name: selectedUser.name,
+            list_of_items: copiedItems
         });
+
+        const updatedUserList = userList.map((user: User) =>
+            user.name === selectedUser.name ? { ...selectedUser } : user
+        );
+        setUserList(updatedUserList);
     }
 
     return (
