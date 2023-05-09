@@ -69,9 +69,9 @@ export function MealDraggable({
             >
                 <CardHeader color="gray.700">
                     <Flex gap={3}>
-                        <Avatar src={image} size="lg" />
+                        <Avatar src={image} size="xl" />
                         <Box>
-                            <Heading as="h3" size="xl">
+                            <Heading as="h3" size="lg">
                                 {name}
                             </Heading>
                             <Text fontSize="sm" color="gray.500">
@@ -87,7 +87,7 @@ export function MealDraggable({
                     marginTop="0"
                 >
                     {showNutrition && (
-                        <Text whiteSpace="pre-line" fontSize="md">
+                        <Text whiteSpace="pre-line" fontSize="sm">
                             Serving Size: {serving_size}
                             {"\n"} Calories: {calories}
                             {"\n"}
@@ -99,7 +99,7 @@ export function MealDraggable({
                         </Text>
                     )}
                     {!showNutrition && (
-                        <Text whiteSpace="pre-line" fontSize="md">
+                        <Text whiteSpace="pre-line" fontSize="sm">
                             {ingredients.join("\n")}
                         </Text>
                     )}
@@ -144,7 +144,7 @@ export function CenterList({
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
             <ChakraProvider>
-                <SimpleGrid columns={4} spacing={10}>
+                <SimpleGrid columns={4} spacing={5}>
                     {mealList.map((MealObject: Meal) => (
                         <div key={MealObject.name}>
                             <MealDraggable

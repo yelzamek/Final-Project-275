@@ -1,88 +1,111 @@
+import { AdminListProps } from "../Interfaces/AdminListProps";
 import { MealListProps } from "../Interfaces/MealObject";
 import { Meal } from "../Interfaces/MealObject";
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
+import { UserListProps } from "../Interfaces/UserListProps";
+import { User } from "../Interfaces/UserObject";
 
 //Needs to add editing abilty
 
-export function AddMeal({
+export function EditMeal({
     mealList,
     setMealList,
-    userType
-}: MealListProps & UserTypeProps): JSX.Element {
+    adminList,
+    setAdminList,
+    setHidden,
+    userList,
+    setUserList,
+    name,
+    image,
+    serving_size,
+    calories,
+    total_fat,
+    cholesterol,
+    sodium,
+    total_carbs,
+    total_sugars,
+    ingredients,
+    tags,
+    protein
+}: MealListProps &
+    AdminEditHiddenProps &
+    AdminListProps &
+    UserListProps &
+    Meal): JSX.Element {
     //Setting name
-    const [newName, setName] = useState<string>("");
+    const [newName, setName] = useState<string>(name);
 
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
     }
 
     //Setting serving size
-    const [newServingSize, setServingSize] = useState<number>(-1);
+    const [newServingSize, setServingSize] = useState<number>(serving_size);
 
     function updateServingSize(event: React.ChangeEvent<HTMLInputElement>) {
         setServingSize(parseInt(event.target.value));
     }
 
     //Setting calories
-    const [newCalories, setCalories] = useState<number>(-1);
+    const [newCalories, setCalories] = useState<number>(calories);
 
     function updateCalories(event: React.ChangeEvent<HTMLInputElement>) {
         setCalories(parseInt(event.target.value));
     }
 
     //Setting total fat
-    const [newTotalFat, setTotalFat] = useState<number>(-1);
+    const [newTotalFat, setTotalFat] = useState<number>(total_fat);
 
     function updateTotalFat(event: React.ChangeEvent<HTMLInputElement>) {
         setTotalFat(parseInt(event.target.value));
     }
 
     //Setting cholesterol
-    const [newCholesterol, setCholesterol] = useState<number>(-1);
+    const [newCholesterol, setCholesterol] = useState<number>(cholesterol);
 
     function updateCholesterol(event: React.ChangeEvent<HTMLInputElement>) {
         setCholesterol(parseInt(event.target.value));
     }
 
     //Setting sodium
-    const [newSodium, setSodium] = useState<number>(-1);
+    const [newSodium, setSodium] = useState<number>(sodium);
 
     function updateSodium(event: React.ChangeEvent<HTMLInputElement>) {
         setSodium(parseInt(event.target.value));
     }
 
     //Setting total carbs
-    const [newTotalCarbs, setTotalCarbs] = useState<number>(-1);
+    const [newTotalCarbs, setTotalCarbs] = useState<number>(total_carbs);
 
     function updateTotalCarbs(event: React.ChangeEvent<HTMLInputElement>) {
         setTotalCarbs(parseInt(event.target.value));
     }
 
     //Setting total sugars
-    const [newTotalSugars, setTotalSugars] = useState<number>(-1);
+    const [newTotalSugars, setTotalSugars] = useState<number>(total_sugars);
 
     function updateTotalSugars(event: React.ChangeEvent<HTMLInputElement>) {
         setTotalSugars(parseInt(event.target.value));
     }
 
     //Setting protein
-    const [newProtein, setProtein] = useState<number>(-1);
+    const [newProtein, setProtein] = useState<number>(protein);
 
     function updateProtein(event: React.ChangeEvent<HTMLInputElement>) {
         setProtein(parseInt(event.target.value));
     }
 
     //Setting image
-    const [newImage, setImage] = useState<string>("");
+    const [newImage, setImage] = useState<string>(image);
 
     function updateImage(event: React.ChangeEvent<HTMLInputElement>) {
         setImage(event.target.value);
     }
 
     //Setting Ingrediantes
-    const [newIngredients, setIngredients] = useState<string[]>([]);
+    const [newIngredients, setIngredients] = useState<string[]>(ingredients);
 
     function updateIngredients(event: React.ChangeEvent<HTMLInputElement>) {
         const ingredients = event.target.value.split(",");
@@ -90,7 +113,7 @@ export function AddMeal({
     }
 
     //Setting Tags
-    const [selectedTags, setSelectedTags] = useState<string[]>([]);
+    const [selectedTags, setSelectedTags] = useState<string[]>(tags);
 
     function updateTags(event: React.ChangeEvent<HTMLInputElement>) {
         const tag = event.target.value;
@@ -108,7 +131,7 @@ export function AddMeal({
     }
 
     //Assigning values and creating a new meal object
-    function createMeal() {
+    function updateMeal() {
         if (
             newName !== "" &&
             newServingSize !== -1 &&
@@ -135,16 +158,36 @@ export function AddMeal({
                 ingredients: newIngredients,
                 tags: selectedTags
             };
+            const mealIndex = mealList.findIndex(
+                (meal: Meal): boolean => meal.name === name
+            );
             const copy = [...mealList];
-            copy.push(newMeal);
+            copy[mealIndex] = newMeal;
             setMealList(copy);
+
+            const adminMealIndex = adminList.findIndex(
+                (meal: Meal): boolean => meal.name === name
+            );
+            const adminCopy = [...adminList];
+            adminCopy[adminMealIndex] = newMeal;
+            setAdminList(adminCopy);
+
+            const userListCopy = userList.map((user: User) => ({
+                ...user,
+                list_of_items: user.list_of_items.map((meal: Meal) =>
+                    meal.name === name ? newMeal : meal
+                )
+            }));
+            setUserList(userListCopy);
+
+            setHidden(true);
         } else {
             console.log("Enter valid inputs");
         }
     }
 
     return (
-        <div hidden={!(userType === "superUser")}>
+        <div>
             <div>
                 <Form.Group controlId="formName">
                     <Form.Label>Name:</Form.Label>
@@ -294,7 +337,7 @@ export function AddMeal({
             </div>
 
             <div>
-                <Button onClick={() => createMeal()}>Add Item</Button>
+                <Button onClick={() => updateMeal()}>Save Changes</Button>
             </div>
         </div>
     );
