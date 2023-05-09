@@ -19,12 +19,14 @@ import { AddMeal } from "./Components/AddMeal";
 import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
+import { AdminList } from "./Components/adminList";
 import { Sidebar } from "./Components/Sidebar";
 import { ChakraProvider, Text } from "@chakra-ui/react";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
+    const [adminList, setAdminList] = useState<Meal[]>([]);
     const [currentUser, setCurrentUser] = useState<User>({
         name: "User1",
         list_of_items: []
@@ -100,6 +102,14 @@ function App(): JSX.Element {
                     userList={userList}
                     setUserList={setUserList}
                 ></AddUser>
+                <SuperUserSelectButton
+                    userType={userType}
+                    setUserType={setUserType}
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    setUserList={setUserList}
+                ></SuperUserSelectButton>
                 <SortFunction
                     mealList={mealList}
                     setMealList={setMealList}
@@ -116,24 +126,6 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></AddMeal>
-                <Sidebar></Sidebar>
-                <p className="App-Sidebar">
-                    <ChakraProvider>
-                        <Text fontSize="xl" fontWeight="bold">
-                            Meal Log
-                        </Text>
-                        <UserList
-                            currentUser={currentUser}
-                            setCurrentUser={setCurrentUser}
-                            userList={userList}
-                            setUserList={setUserList}
-                            mealList={mealList}
-                            setMealList={setMealList}
-                            userType={userType}
-                            setUserType={setUserType}
-                        ></UserList>
-                    </ChakraProvider>
-                </p>
             </div>
         </DndProvider>
     );
