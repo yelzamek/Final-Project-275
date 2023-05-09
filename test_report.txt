@@ -35,7 +35,7 @@ FAIL src/Components/Centerlist.test.tsx
           at Array.map (<anonymous>)
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
-FAIL src/Components/NavBar.test.tsx
+FAIL src/Components/UnusedFiles/NavBar.test.tsx
   ● Console
 
     console.error
@@ -76,7 +76,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:7:15)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:7:15)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -137,7 +137,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:7:15)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:7:15)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -167,7 +167,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Container.js:13:3
           at nav
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Navbar.js:39:43
-          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.tsx:7:38)
+          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.tsx:7:38)
       
       Consider adding an error boundary to your tree to customize error handling behavior.
       Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -219,7 +219,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:12:15)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:12:15)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -280,7 +280,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:12:15)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:12:15)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -310,7 +310,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Container.js:13:3
           at nav
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Navbar.js:39:43
-          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.tsx:7:38)
+          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.tsx:7:38)
       
       Consider adding an error boundary to your tree to customize error handling behavior.
       Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -362,7 +362,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:21:15)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:21:15)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -423,7 +423,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:21:15)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:21:15)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -453,7 +453,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Container.js:13:3
           at nav
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Navbar.js:39:43
-          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.tsx:7:38)
+          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.tsx:7:38)
       
       Consider adding an error boundary to your tree to customize error handling behavior.
       Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -505,7 +505,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:31:37)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:31:37)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -566,7 +566,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:31:37)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:31:37)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -596,7 +596,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Container.js:13:3
           at nav
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Navbar.js:39:43
-          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.tsx:7:38)
+          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.tsx:7:38)
       
       Consider adding an error boundary to your tree to customize error handling behavior.
       Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -648,7 +648,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:36:37)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:36:37)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -709,7 +709,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:36:37)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:36:37)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -739,7 +739,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Container.js:13:3
           at nav
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Navbar.js:39:43
-          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.tsx:7:38)
+          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.tsx:7:38)
       
       Consider adding an error boundary to your tree to customize error handling behavior.
       Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -791,7 +791,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:44:15)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:44:15)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -852,7 +852,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:44:15)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:44:15)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -882,7 +882,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Container.js:13:3
           at nav
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Navbar.js:39:43
-          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.tsx:7:38)
+          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.tsx:7:38)
       
       Consider adding an error boundary to your tree to customize error handling behavior.
       Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -934,7 +934,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:51:15)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:51:15)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -995,7 +995,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/act-compat.js:63:25
           at renderRoot (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:159:26)
           at render (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/@testing-library/react/dist/pure.js:246:10)
-          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.test.tsx:51:15)
+          at Object.<anonymous> (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.test.tsx:51:15)
           at Promise.then.completed (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:391:28)
           at new Promise (<anonymous>)
           at callAsyncCircusFn (/home/runner/work/Final-Project-275/Final-Project-275/node_modules/jest-circus/build/utils.js:316:10)
@@ -1025,7 +1025,7 @@ FAIL src/Components/NavBar.test.tsx
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Container.js:13:3
           at nav
           at /home/runner/work/Final-Project-275/Final-Project-275/node_modules/react-bootstrap/cjs/Navbar.js:39:43
-          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/NavBar.tsx:7:38)
+          at Navbar (/home/runner/work/Final-Project-275/Final-Project-275/src/Components/UnusedFiles/NavBar.tsx:7:38)
       
       Consider adding an error boundary to your tree to customize error handling behavior.
       Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -1069,7 +1069,7 @@ FAIL src/Components/NavBar.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at Object.<anonymous> (src/Components/NavBar.test.tsx:7:15)
+      at Object.<anonymous> (src/Components/UnusedFiles/NavBar.test.tsx:7:15)
 
   ● Navbar › should open the offcanvas when the About Us button is clicked
 
@@ -1101,7 +1101,7 @@ FAIL src/Components/NavBar.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at Object.<anonymous> (src/Components/NavBar.test.tsx:12:15)
+      at Object.<anonymous> (src/Components/UnusedFiles/NavBar.test.tsx:12:15)
 
   ● Navbar › should close the offcanvas when the close button is clicked
 
@@ -1133,7 +1133,7 @@ FAIL src/Components/NavBar.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at Object.<anonymous> (src/Components/NavBar.test.tsx:21:15)
+      at Object.<anonymous> (src/Components/UnusedFiles/NavBar.test.tsx:21:15)
 
   ● Navbar › should render correct Navbar text
 
@@ -1165,7 +1165,7 @@ FAIL src/Components/NavBar.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at Object.<anonymous> (src/Components/NavBar.test.tsx:31:37)
+      at Object.<anonymous> (src/Components/UnusedFiles/NavBar.test.tsx:31:37)
 
   ● Navbar › should show Offcanvas when 'About Us' button is clicked
 
@@ -1197,7 +1197,7 @@ FAIL src/Components/NavBar.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at Object.<anonymous> (src/Components/NavBar.test.tsx:36:37)
+      at Object.<anonymous> (src/Components/UnusedFiles/NavBar.test.tsx:36:37)
 
   ● Navbar › opens the offcanvas when the 'About Us' button is clicked
 
@@ -1229,7 +1229,7 @@ FAIL src/Components/NavBar.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at Object.<anonymous> (src/Components/NavBar.test.tsx:44:15)
+      at Object.<anonymous> (src/Components/UnusedFiles/NavBar.test.tsx:44:15)
 
   ● Navbar › closes the offcanvas when the close button is clicked
 
@@ -1261,7 +1261,7 @@ FAIL src/Components/NavBar.test.tsx
       at node_modules/@testing-library/react/dist/act-compat.js:63:25
       at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
       at render (node_modules/@testing-library/react/dist/pure.js:246:10)
-      at Object.<anonymous> (src/Components/NavBar.test.tsx:51:15)
+      at Object.<anonymous> (src/Components/UnusedFiles/NavBar.test.tsx:51:15)
 
 FAIL src/Components/UserDropdown.test.tsx
   ● Test suite failed to run
@@ -1575,11 +1575,10 @@ File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered
 All files                   |    2.89 |     12.5 |    3.84 |    2.97 |                   
  src                        |       0 |      100 |       0 |       0 |                   
   App.tsx                   |       0 |      100 |       0 |       0 | 26-34             
- src/Components             |    3.01 |     12.5 |    3.89 |     3.1 |                   
+ src/Components             |    1.85 |     12.5 |     2.7 |    1.91 |                   
   AddMeal.tsx               |       0 |        0 |       0 |       0 | 13-295            
   AddUser.tsx               |       0 |        0 |       0 |       0 | 13-96             
   Centerlist.tsx            |       0 |        0 |       0 |       0 | 40-149            
-  NavBar.tsx                |      50 |      100 |   33.33 |      50 | 18-43             
   NutritionTotalButton.tsx  |       0 |      100 |       0 |       0 | 6-28              
   Sidebar.tsx               |       0 |      100 |       0 |       0 | 5                 
   SortFunction.tsx          |       0 |        0 |       0 |       0 | 11-47             
@@ -1588,6 +1587,8 @@ All files                   |    2.89 |     12.5 |    3.84 |    2.97 |
   UserList.tsx              |       0 |        0 |       0 |       0 | 24-76             
   UserTypeIndicator.tsx     |     100 |      100 |     100 |     100 |                   
   UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-38             
+ src/Components/UnusedFiles |      50 |      100 |   33.33 |      50 |                   
+  NavBar.tsx                |      50 |      100 |   33.33 |      50 | 18-43             
  src/Interfaces             |       0 |      100 |     100 |       0 |                   
   CurrentUserProps.ts       |       0 |        0 |       0 |       0 |                   
   MealObject.tsx            |       0 |      100 |     100 |       0 | 41                
@@ -1599,5 +1600,5 @@ All files                   |    2.89 |     12.5 |    3.84 |    2.97 |
 Test Suites: 10 failed, 10 total
 Tests:       11 failed, 3 passed, 14 total
 Snapshots:   0 total
-Time:        8.141 s
+Time:        6.492 s
 Ran all test suites.
