@@ -64,7 +64,7 @@ export function MealDraggable({
                     cursor: "move"
                 }}
                 borderTop="8px"
-                borderColor="purple.400"
+                borderColor="green.400"
                 bg="white"
             >
                 <CardHeader color="gray.700">
