@@ -3,14 +3,19 @@ import { useDrop } from "react-dnd";
 import { Button } from "react-bootstrap";
 import { AdminListProps } from "../Interfaces/AdminListProps";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
-import React from "react";
+import { EditMeal } from "./EditMeal";
+import React, { useState } from "react";
+import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
 
 export function AdminList({
     mealList,
+    setMealList,
     userType,
     adminList,
     setAdminList
 }: MealListProps & UserTypeProps & AdminListProps): JSX.Element {
+    const [editHidden, setEditHidden] = useState<boolean>(true);
+
     function addToAdminList(name: nameProps) {
         const mealIndex = mealList.findIndex(
             (meal: Meal): boolean => meal.name === name.name
@@ -46,7 +51,36 @@ export function AdminList({
             {adminList.map((item: Meal, index: number) => (
                 <div key={index}>
                     {item.name}{" "}
-                    <Button onClick={() => RemoveItem(item, index)}>X</Button>
+                    <div>
+                        <Button onClick={() => RemoveItem(item, index)}>
+                            Remove
+                        </Button>
+                        <Button onClick={() => setEditHidden(!editHidden)}>
+                            Edit Item
+                        </Button>
+                        <div hidden={editHidden}>
+                            <EditMeal
+                                mealList={mealList}
+                                setMealList={setMealList}
+                                adminList={adminList}
+                                setAdminList={setAdminList}
+                                hidden={editHidden}
+                                setHidden={setEditHidden}
+                                name={item.name}
+                                image={item.image}
+                                serving_size={item.serving_size}
+                                calories={item.calories}
+                                total_fat={item.total_fat}
+                                cholesterol={item.cholesterol}
+                                sodium={item.sodium}
+                                total_carbs={item.total_carbs}
+                                total_sugars={item.total_sugars}
+                                protein={item.protein}
+                                tags={[...item.tags]}
+                                ingredients={[...item.ingredients]}
+                            ></EditMeal>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>
