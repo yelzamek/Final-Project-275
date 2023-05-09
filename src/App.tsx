@@ -21,7 +21,7 @@ import { AddMeal } from "./Components/AddMeal";
 import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
-
+import { Sidebar } from "./Components/Sidebar";
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
@@ -121,10 +121,7 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></AddMeal>
-                <NutritionalTotalButton
-                    list_of_items={currentUser.list_of_items}
-                    name={currentUser.name}
-                ></NutritionalTotalButton>
+                <Sidebar></Sidebar>
             </div>
         </DndProvider>
     );
