@@ -22,7 +22,7 @@ import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { Sidebar } from "./Components/Sidebar";
-import { ChakraProvider, List, ListItem } from "@chakra-ui/react";
+import { ChakraProvider, List, ListItem, Text } from "@chakra-ui/react";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
@@ -36,7 +36,7 @@ function App(): JSX.Element {
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
-                <header className="header">
+                {/* <header className="header">
                     <header className="header"></header>
                     <a href="#" className="logo">
                         {" "}
@@ -52,8 +52,8 @@ function App(): JSX.Element {
                         {" "}
                         <i className="fa fa-shopping-basket"></i> grocery
                     </a>
-                </header>
-                <p className="App-header">Team 12</p>
+                </header> */}
+                <p className="App-header">Balanced Bytes Team 12</p>
                 {/* <Navbar></Navbar> */}
                 <UserTypeIndicator
                     userType={userType}
@@ -101,16 +101,6 @@ function App(): JSX.Element {
                     mealList={mealList}
                     setMealList={setMealList}
                 ></SortFunction>
-                <UserList
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
-                    userList={userList}
-                    setUserList={setUserList}
-                    mealList={mealList}
-                    setMealList={setMealList}
-                    userType={userType}
-                    setUserType={setUserType}
-                ></UserList>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
@@ -126,11 +116,19 @@ function App(): JSX.Element {
                 <Sidebar></Sidebar>
                 <p className="App-Sidebar">
                     <ChakraProvider>
-                        <List color="white" fontSize="1.2em" spacing={4}>
-                            <ListItem>Home</ListItem>
-                            <ListItem>Profile</ListItem>
-                            <ListItem>Settings</ListItem>
-                        </List>
+                        <Text fontSize="xl" fontWeight="bold">
+                            Meal Log
+                        </Text>
+                        <UserList
+                            currentUser={currentUser}
+                            setCurrentUser={setCurrentUser}
+                            userList={userList}
+                            setUserList={setUserList}
+                            mealList={mealList}
+                            setMealList={setMealList}
+                            userType={userType}
+                            setUserType={setUserType}
+                        ></UserList>
                     </ChakraProvider>
                 </p>
             </div>
