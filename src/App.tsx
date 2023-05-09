@@ -103,14 +103,14 @@ function App(): JSX.Element {
                     userList={userList}
                     setUserList={setUserList}
                 ></AddUser>
-                <SuperUserSelectButton
+                {/* <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
                     userList={userList}
                     setUserList={setUserList}
-                ></SuperUserSelectButton>
+                ></SuperUserSelectButton> */}
                 <SortFunction
                     mealList={mealList}
                     setMealList={setMealList}
