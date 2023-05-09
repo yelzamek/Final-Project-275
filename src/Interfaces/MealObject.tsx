@@ -249,7 +249,7 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         //18
-        name: "White Rice",
+        name: "NotWHite RIce",
         image: "https://assets.stickpng.com/images/5bbc96d30bc67a02c98d958e.png",
         serving_size: 1,
         calories: 15,
