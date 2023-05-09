@@ -12,6 +12,7 @@
     transition: all 0.2s linear;
     background-color: #eee;
     padding-left: 325px;
+    top: 88px;
 }
 
 .App-logo {
@@ -33,9 +34,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    height: 90px;
+    padding: 20px;
     background: #fff;
-    border: "2px solid black";
+    z-index: 9999;
     /* background-image: url("https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/mpx/2704722219/2023_02/1676903842822_tdy_health_8a_minno_nutrition_myths_230220_1920x1080-bkey7m.jpg"); */
 }
 

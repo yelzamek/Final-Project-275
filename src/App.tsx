@@ -53,7 +53,25 @@ function App(): JSX.Element {
                         <i className="fa fa-shopping-basket"></i> grocery
                     </a>
                 </header> */}
-                <p className="App-header">Balanced Bytes Team 12</p>
+                <p className="App-header">
+                    Balanced Bytes Team 12
+                    <SuperUserSelectButton
+                        userType={userType}
+                        setUserType={setUserType}
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
+                        userList={userList}
+                        setUserList={setUserList}
+                    ></SuperUserSelectButton>
+                    <AdminSelectButton
+                        userType={userType}
+                        setUserType={setUserType}
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
+                        userList={userList}
+                        setUserList={setUserList}
+                    ></AdminSelectButton>
+                </p>
                 {/* <Navbar></Navbar> */}
                 <UserTypeIndicator
                     userType={userType}
@@ -71,28 +89,12 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
-                <AdminSelectButton
-                    userType={userType}
-                    setUserType={setUserType}
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
-                    userList={userList}
-                    setUserList={setUserList}
-                ></AdminSelectButton>
                 <AddUser
                     userType={userType}
                     setUserType={setUserType}
                     userList={userList}
                     setUserList={setUserList}
                 ></AddUser>
-                <SuperUserSelectButton
-                    userType={userType}
-                    setUserType={setUserType}
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
-                    userList={userList}
-                    setUserList={setUserList}
-                ></SuperUserSelectButton>
                 <Counter
                     userType={userType}
                     setUserType={setUserType}
