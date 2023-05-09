@@ -49,13 +49,14 @@ File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered
 ----------------------------|---------|----------|---------|---------|-------------------
 All files                   |       0 |        0 |       0 |       0 |                   
  src                        |       0 |      100 |       0 |       0 |                   
-  App.tsx                   |       0 |      100 |       0 |       0 | 25-33             
+  App.tsx                   |       0 |      100 |       0 |       0 | 26-34             
  src/Components             |       0 |        0 |       0 |       0 |                   
   AddMeal.tsx               |       0 |        0 |       0 |       0 | 13-214            
   AddUser.tsx               |       0 |        0 |       0 |       0 | 13-94             
   Centerlist.tsx            |       0 |        0 |       0 |       0 | 38-144            
   Draggable.tsx             |       0 |        0 |       0 |       0 | 6-65              
   NavBar.tsx                |       0 |      100 |       0 |       0 | 7-43              
+  NutritionTotalButton.tsx  |       0 |      100 |       0 |       0 | 6-28              
   SortFunction.tsx          |       0 |        0 |       0 |       0 | 11-47             
   SuperUserButton.tsx       |       0 |        0 |       0 |       0 | 6-13              
   UserDropdown.tsx          |       0 |        0 |       0 |       0 | 17-53             
@@ -73,5 +74,5 @@ All files                   |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.383 s
+Time:        4.231 s
 Ran all test suites.
