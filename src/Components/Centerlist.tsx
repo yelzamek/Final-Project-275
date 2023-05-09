@@ -30,8 +30,11 @@ export function MealDraggable({
     sodium,
     total_carbs,
     total_sugars,
-    protein
-}: Meal): JSX.Element {
+    protein,
+    mealList,
+    setMealList,
+    userType
+}: Meal & MealListProps & UserTypeProps): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "Meal",
         item: { name: name },
@@ -39,7 +42,14 @@ export function MealDraggable({
             isDragging: !!monitor.isDragging()
         })
     }));
-
+    function RemoveMeal(removedMeal: string) {
+        const copy = [...mealList];
+        const index = copy.findIndex(
+            (meal: Meal): boolean => meal.name === removedMeal
+        );
+        copy.splice(index, 1);
+        setMealList(copy);
+    }
     const [showNutrition, setShowNutrition] = useState<boolean>(true);
     return (
         <ChakraProvider>
@@ -106,6 +116,12 @@ export function MealDraggable({
                         >
                             Ingredients
                         </Button>
+                        <Button
+                            hidden={!(userType === "superUser")}
+                            onClick={() => RemoveMeal(name)}
+                        >
+                            Remove
+                        </Button>
                     </HStack>
                 </CardFooter>
             </Card>
@@ -116,7 +132,8 @@ export function MealDraggable({
 export function CenterList({
     mealList,
     setMealList,
-    userType
+    userType,
+    setUserType
 }: MealListProps & UserTypeProps) {
     const [sortOption, setSortOption] = useState<string>("None");
     function updateSortOption(event: React.ChangeEvent<HTMLSelectElement>) {
@@ -169,14 +186,6 @@ export function CenterList({
         "Calories: Lowest to Highest",
         "Calories: Highest to Lowest"
     ];
-
-    function RemoveMeal(removedMeal: Meal) {
-        const copy = [...mealList];
-        const index = copy.indexOf(removedMeal);
-        copy.splice(index, 1);
-        setMealList(copy);
-    }
-
     return (
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
@@ -207,12 +216,11 @@ export function CenterList({
                                 total_carbs={MealObject.total_carbs}
                                 total_sugars={MealObject.total_sugars}
                                 protein={MealObject.protein}
+                                userType={userType}
+                                setUserType={setUserType}
+                                mealList={mealList}
+                                setMealList={setMealList}
                             ></MealDraggable>
-                            <div hidden={!(userType === "superUser")}>
-                                <Button onClick={() => RemoveMeal(MealObject)}>
-                                    X
-                                </Button>
-                            </div>
                         </div>
                     ))}
                 </SimpleGrid>
