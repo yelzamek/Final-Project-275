@@ -1545,12 +1545,12 @@ FAIL src/App.test.tsx
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |    1.26 |     6.59 |     1.9 |    1.29 |                   
+All files                   |    1.26 |     6.59 |    1.92 |    1.29 |                   
  src                        |       0 |      100 |       0 |       0 |                   
   App.tsx                   |       0 |      100 |       0 |       0 | 28-37             
- src/Components             |    0.44 |     6.59 |    0.99 |    0.45 |                   
+ src/Components             |    0.44 |     6.59 |       1 |    0.45 |                   
   AddMeal.tsx               |       0 |        0 |       0 |       0 | 15-297            
-  AddUser.tsx               |       0 |        0 |       0 |       0 | 13-96             
+  AddUser.tsx               |       0 |        0 |       0 |       0 | 12-78             
   Centerlist.tsx            |       0 |        0 |       0 |       0 | 40-149            
   EditMeal.tsx              |       0 |        0 |       0 |       0 | 38-340            
   NutritionTotalButton.tsx  |       0 |        0 |       0 |       0 | 10-32             
@@ -1576,5 +1576,5 @@ All files                   |    1.26 |     6.59 |     1.9 |    1.29 |
 Test Suites: 10 failed, 10 total
 Tests:       10 failed, 1 passed, 11 total
 Snapshots:   0 total
-Time:        6.319 s
+Time:        7.071 s
 Ran all test suites.
