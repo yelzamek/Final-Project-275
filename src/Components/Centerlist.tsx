@@ -30,6 +30,8 @@ export function MealDraggable({
     sodium,
     total_carbs,
     total_sugars,
+    ingredients,
+    tags,
     protein,
     mealList,
     setMealList,
@@ -72,6 +74,9 @@ export function MealDraggable({
                             <Heading as="h3" size="xl">
                                 {name}
                             </Heading>
+                            <Text fontSize="sm" color="gray.500">
+                                {tags.join(",  ")}
+                            </Text>
                         </Box>
                     </Flex>
                 </CardHeader>
@@ -95,7 +100,7 @@ export function MealDraggable({
                     )}
                     {!showNutrition && (
                         <Text whiteSpace="pre-line" fontSize="md">
-                            Placeholder Ingrediantes text
+                            {ingredients.join("\n")}
                         </Text>
                     )}
                 </CardBody>
@@ -157,6 +162,8 @@ export function CenterList({
                                 setUserType={setUserType}
                                 mealList={mealList}
                                 setMealList={setMealList}
+                                tags={[...MealObject.tags]}
+                                ingredients={[...MealObject.ingredients]}
                             ></MealDraggable>
                         </div>
                     ))}
