@@ -336,7 +336,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
 
-            <div>
+            <div style={{ height: "400px" }}>
                 <Button onClick={() => updateMeal()}>Save Changes</Button>
             </div>
         </div>
