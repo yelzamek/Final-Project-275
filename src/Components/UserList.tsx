@@ -33,7 +33,13 @@ export function UserList({
         );
         setUserList([
             ...userList.slice(0, userIndex),
-            currentUser,
+            {
+                ...currentUser,
+                list_of_items: [
+                    ...currentUser.list_of_items,
+                    mealList[mealIndex]
+                ]
+            },
             ...userList.slice(userIndex + 1)
         ]);
     }
