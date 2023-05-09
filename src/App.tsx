@@ -121,10 +121,6 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></AddMeal>
-                <NutritionalTotalButton
-                    list_of_items={currentUser.list_of_items}
-                    name={currentUser.name}
-                ></NutritionalTotalButton>
             </div>
         </DndProvider>
     );
