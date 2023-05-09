@@ -157,6 +157,8 @@ export function CenterList({
                                 setUserType={setUserType}
                                 mealList={mealList}
                                 setMealList={setMealList}
+                                tags={[...MealObject.tags]}
+                                ingredients={[...MealObject.ingredients]}
                             ></MealDraggable>
                         </div>
                     ))}
