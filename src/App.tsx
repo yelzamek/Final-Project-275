@@ -22,6 +22,7 @@ import { SortFunction } from "./Components/SortFunction";
 import { AdminList } from "./Components/adminList";
 import { Sidebar } from "./Components/Sidebar";
 import { ChakraProvider, Text } from "@chakra-ui/react";
+import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
@@ -126,6 +127,40 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></AddMeal>
+                <Sidebar></Sidebar>
+                <p className="App-Sidebar">
+                    <ChakraProvider>
+                        <Text fontSize="xl" fontWeight="bold">
+                            Meal Log
+                        </Text>
+                        <UserList
+                            currentUser={currentUser}
+                            setCurrentUser={setCurrentUser}
+                            userList={userList}
+                            setUserList={setUserList}
+                            mealList={mealList}
+                            setMealList={setMealList}
+                            userType={userType}
+                            setUserType={setUserType}
+                        ></UserList>
+                        <NutritionalTotalButton
+                            list_of_items={currentUser.list_of_items}
+                            name={currentUser.name}
+                            userType={userType}
+                            setUserType={setUserType}
+                        ></NutritionalTotalButton>
+                        <AdminList
+                            userList={userList}
+                            setUserList={setUserList}
+                            mealList={mealList}
+                            setMealList={setMealList}
+                            userType={userType}
+                            setUserType={setUserType}
+                            adminList={adminList}
+                            setAdminList={setAdminList}
+                        ></AdminList>
+                    </ChakraProvider>
+                </p>
             </div>
         </DndProvider>
     );

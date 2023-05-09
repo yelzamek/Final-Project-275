@@ -1,3 +1,4 @@
+/* eslint-disable no-extra-parens */
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { useDrop } from "react-dnd";
 import { Button } from "react-bootstrap";
@@ -5,7 +6,7 @@ import { AdminListProps } from "../Interfaces/AdminListProps";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 import { EditMeal } from "./EditMeal";
 import React, { useState } from "react";
-import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
+//import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
 import { UserListProps } from "../Interfaces/UserListProps";
 
 export function AdminList({
@@ -47,10 +48,13 @@ export function AdminList({
             ref={drop}
             style={{
                 display:
-                    userType === ("Admin" || "superUser")
+                    userType === "Admin" || userType === "superUser"
                         ? "inline-block"
                         : "none",
-                backgroundColor: isOver ? "green" : "white"
+                backgroundColor: isOver ? "lightgray" : "white",
+                width: "300px",
+                height: "auto",
+                border: "2px solid black"
             }}
         >
             <div>Admin List:</div>

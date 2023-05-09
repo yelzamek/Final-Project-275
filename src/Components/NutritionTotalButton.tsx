@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { User } from "../Interfaces/UserObject";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
 
-export function NutritionalTotalButton({ list_of_items }: User): JSX.Element {
+export function NutritionalTotalButton({
+    list_of_items,
+    userType
+}: User & UserTypeProps): JSX.Element {
     const [isHidden, setHidden] = useState<boolean>(true);
     let servingSum = 0;
     let calorieSum = 0;
@@ -24,9 +28,13 @@ export function NutritionalTotalButton({ list_of_items }: User): JSX.Element {
     });
 
     return (
-        <div>
+        <div hidden={userType === "superUser" || userType === "Admin"}>
             <Button onClick={() => setHidden(!isHidden)}>Show Totals:</Button>
-            <div hidden={isHidden}>
+            <div
+                hidden={
+                    isHidden || userType === "superUser" || userType === "Admin"
+                }
+            >
                 <div>Servings: {servingSum}</div>
                 <div>Calories: {calorieSum}</div>
                 <div>Total Fat: {fatSum}</div>
