@@ -3,49 +3,33 @@ import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
 import { Counter } from "./Components/SuperUserButton";
-import { UserSelect } from "./Components/AddUser";
 import {
     SuperUserSelectButton,
     AdminSelectButton
 } from "./Components/UserTypeSelectButtons";
 import { User } from "./Interfaces/UserObject";
-import { DropBox } from "./Components/Draggable";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
-import { NavBar } from "./Components/NavBar";
-import {
-    ExampleDragableMealItemForTesting,
-    UserList
-} from "./Components/UserList";
-import { Box, SimpleGrid, Text } from "@chakra-ui/react";
-
+import { Navbar } from "./Components/NavBar";
+//import { UserList } from "./Components/UserList";
+import { AddUser } from "./Components/AddUser";
+import { UserList } from "./Components/UserList";
+import { AddMeal } from "./Components/AddMeal";
+import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
-//import { User } from "./Components/UserSelect";
-//import { userType, setUserType } from "./Components/UserSelect";
 
 function App(): JSX.Element {
-    const [userType, setUserType] = useState<string>("superUser");
+    const [userType, setUserType] = useState<string>("User");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
     const [currentUser, setCurrentUser] = useState<User>({
-        name: "None",
-        list_of_items: [
-            {
-                name: "greanola bar",
-                serving_size: 1,
-                calories: 100,
-                total_fat: 3,
-                cholesterol: 0,
-                sodium: 13,
-                total_carbs: 7,
-                total_sugars: 10,
-                protein: 18
-            }
-        ]
+        name: "User1",
+        list_of_items: []
     });
-    const [userList, setUserList] = useState<User[]>([currentUser]);
+    const noneUser: User = { name: "None", list_of_items: [] };
+    const [userList, setUserList] = useState<User[]>([noneUser, currentUser]);
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
@@ -67,7 +51,7 @@ function App(): JSX.Element {
                     </a>
                 </header>
                 <p className="App-header">Team 12</p>
-                {/* <NavBar></NavBar> */}
+                <Navbar></Navbar>
                 <UserTypeIndicator
                     userType={userType}
                     setUserType={setUserType}
@@ -84,39 +68,57 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
-                <UserSelect
+                <AdminSelectButton
+                    userType={userType}
+                    setUserType={setUserType}
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    setUserList={setUserList}
+                ></AdminSelectButton>
+                <AddUser
                     userType={userType}
                     setUserType={setUserType}
                     userList={userList}
                     setUserList={setUserList}
-                ></UserSelect>
-                <AdminSelectButton
-                    userType={userType}
-                    setUserType={setUserType}
-                ></AdminSelectButton>
+                ></AddUser>
                 <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    setUserList={setUserList}
                 ></SuperUserSelectButton>
                 <Counter
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
-                <UserTypeIndicator
-                    userType={userType}
-                    setUserType={setUserType}
-                ></UserTypeIndicator>
+                <SortFunction
+                    mealList={mealList}
+                    setMealList={setMealList}
+                ></SortFunction>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
                 ></CenterList>
-                <DropBox></DropBox>
-                <ExampleDragableMealItemForTesting></ExampleDragableMealItemForTesting>
+                <AddMeal
+                    mealList={mealList}
+                    setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
+                ></AddMeal>
                 <UserList
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
                     userList={userList}
                     setUserList={setUserList}
+                    mealList={mealList}
+                    setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
                 ></UserList>
             </div>
         </DndProvider>
