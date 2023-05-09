@@ -13,7 +13,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
-import { Navbar } from "./Components/NavBar";
+// import { Navbar } from "./Components/NavBar";
 //import { UserList } from "./Components/UserList";
 import { AddUser } from "./Components/AddUser";
 import { UserList } from "./Components/UserList";
@@ -21,6 +21,8 @@ import { AddMeal } from "./Components/AddMeal";
 import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
+import { Sidebar } from "./Components/Sidebar";
+import { ChakraProvider, List, ListItem } from "@chakra-ui/react";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
@@ -52,7 +54,7 @@ function App(): JSX.Element {
                     </a>
                 </header>
                 <p className="App-header">Team 12</p>
-                <Navbar></Navbar>
+                {/* <Navbar></Navbar> */}
                 <UserTypeIndicator
                     userType={userType}
                     setUserType={setUserType}
@@ -121,6 +123,16 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></AddMeal>
+                <Sidebar></Sidebar>
+                <p className="App-Sidebar">
+                    <ChakraProvider>
+                        <List color="white" fontSize="1.2em" spacing={4}>
+                            <ListItem>Home</ListItem>
+                            <ListItem>Profile</ListItem>
+                            <ListItem>Settings</ListItem>
+                        </List>
+                    </ChakraProvider>
+                </p>
             </div>
         </DndProvider>
     );
