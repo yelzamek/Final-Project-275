@@ -64,6 +64,8 @@ function App(): JSX.Element {
                     setUserList={setUserList}
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
+                    mealList={mealList}
+                    setMealList={setMealList}
                 ></UserDropDown>
                 <Counter
                     userType={userType}
