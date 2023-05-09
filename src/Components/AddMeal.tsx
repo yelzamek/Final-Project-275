@@ -81,6 +81,32 @@ export function AddMeal({
         setImage(event.target.value);
     }
 
+    //Setting Ingrediantes
+    const [newIngredients, setIngredients] = useState<string[]>([]);
+
+    function updateIngredients(event: React.ChangeEvent<HTMLInputElement>) {
+        const ingredients = event.target.value.split(",");
+        setIngredients(ingredients);
+    }
+
+    //Setting Tags
+    const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+    function updateTags(event: React.ChangeEvent<HTMLInputElement>) {
+        const tag = event.target.value;
+        const isSelected = selectedTags.includes(tag);
+        const [updatedTags, setUpdatedTags] = useState<string[]>([]);
+        if (isSelected) {
+            setUpdatedTags(
+                selectedTags.filter((selectedTag) => selectedTag !== tag)
+            );
+        } else {
+            setUpdatedTags([...selectedTags, tag]);
+        }
+
+        setSelectedTags(updatedTags);
+    }
+
     //Assigning values and creating a new meal object
     function createMeal() {
         if (
@@ -105,7 +131,9 @@ export function AddMeal({
                 total_carbs: newTotalCarbs,
                 total_sugars: newTotalSugars,
                 protein: newProtein,
-                image: newImage
+                image: newImage,
+                ingredients: newIngredients,
+                tags: selectedTags
             };
             const copy = [...mealList];
             copy.push(newMeal);
@@ -212,6 +240,59 @@ export function AddMeal({
                     ></Form.Control>
                 </Form.Group>
             </div>
+            <div>
+                <Form.Group controlId="formImage">
+                    <Form.Label>
+                        Enter Ingredientes in a comma seperated List with no
+                        spaces
+                    </Form.Label>
+                    <Form.Control
+                        value={newIngredients}
+                        onChange={updateIngredients}
+                    ></Form.Control>
+                </Form.Group>
+            </div>
+            <div>
+                <Form.Group controlId="formTags">
+                    <Form.Label>Tags:</Form.Label>
+                    <Form.Check
+                        type="radio"
+                        label="Meat-Free"
+                        value="meat-free"
+                        checked={selectedTags.includes("meat-free")}
+                        onChange={updateTags}
+                    />
+                    <Form.Check
+                        type="radio"
+                        label="Dairy-Free"
+                        value="dairy-free"
+                        checked={selectedTags.includes("dairy-free")}
+                        onChange={updateTags}
+                    />
+                    <Form.Check
+                        type="radio"
+                        label="Vegan-Friendly"
+                        value="vegan-friendly"
+                        checked={selectedTags.includes("vegan-friendly")}
+                        onChange={updateTags}
+                    />
+                    <Form.Check
+                        type="radio"
+                        label="Vegetarian"
+                        value="vegetarian"
+                        checked={selectedTags.includes("vegetarian")}
+                        onChange={updateTags}
+                    />
+                    <Form.Check
+                        type="radio"
+                        label="Gluten-Free"
+                        value="gluten-free"
+                        checked={selectedTags.includes("gluten-free")}
+                        onChange={updateTags}
+                    />
+                </Form.Group>
+            </div>
+
             <div>
                 <Button onClick={() => createMeal()}>Add Item</Button>
             </div>

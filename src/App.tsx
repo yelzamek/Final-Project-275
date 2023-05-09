@@ -65,6 +65,8 @@ function App(): JSX.Element {
                     setUserList={setUserList}
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
+                    mealList={mealList}
+                    setMealList={setMealList}
                 ></UserDropDown>
                 <AdminSelectButton
                     userType={userType}
@@ -92,6 +94,16 @@ function App(): JSX.Element {
                     mealList={mealList}
                     setMealList={setMealList}
                 ></SortFunction>
+                <UserList
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    setUserList={setUserList}
+                    mealList={mealList}
+                    setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
+                ></UserList>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
@@ -112,16 +124,6 @@ function App(): JSX.Element {
                     adminList={adminList}
                     setAdminList={setAdminList}
                 ></AdminList>
-                <UserList
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
-                    userList={userList}
-                    setUserList={setUserList}
-                    mealList={mealList}
-                    setMealList={setMealList}
-                    userType={userType}
-                    setUserType={setUserType}
-                ></UserList>
                 <NutritionalTotalButton
                     list_of_items={currentUser.list_of_items}
                     name={currentUser.name}
