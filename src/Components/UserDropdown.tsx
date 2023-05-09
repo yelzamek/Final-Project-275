@@ -4,7 +4,7 @@ import { Form } from "react-bootstrap";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
-import { Meal } from "../Interfaces/MealObject";
+import { Meal, MealListProps } from "../Interfaces/MealObject";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
 export function UserDropDown({
     //userType,
@@ -12,8 +12,12 @@ export function UserDropDown({
     userList,
     currentUser,
     setCurrentUser,
-    setUserList
-}: UserTypeProps & UserListProps & CurrentUserProps): JSX.Element {
+    setUserList,
+    mealList
+}: UserTypeProps &
+    UserListProps &
+    CurrentUserProps &
+    MealListProps): JSX.Element {
     function updateCurrentUser(event: React.ChangeEvent<HTMLSelectElement>) {
         event.target.value === "None"
             ? setUserType("superUser")
@@ -22,17 +26,21 @@ export function UserDropDown({
             (user: User): boolean => user.name === event.target.value
         );
         const selectedUser = userList[userIndex];
-        const copiedItems = selectedUser.list_of_items.map((meal: Meal) => ({
-            ...meal
-        }));
+        const copiedItems = selectedUser.list_of_items.filter((meal: Meal) =>
+            mealList.includes(meal)
+        );
+
         setCurrentUser({
             name: selectedUser.name,
             list_of_items: copiedItems
         });
 
         const updatedUserList = userList.map((user: User) =>
-            user.name === selectedUser.name ? { ...selectedUser } : user
+            user.name === selectedUser.name
+                ? { ...selectedUser, list_of_items: copiedItems }
+                : user
         );
+
         setUserList(updatedUserList);
     }
 
