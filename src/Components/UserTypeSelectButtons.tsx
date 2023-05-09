@@ -15,7 +15,7 @@ export function SuperUserSelectButton({
     }
     return (
         <Button
-            style={{ transform: "translateX(600px)" }}
+            style={{ transform: "translateX(400px)" }}
             onClick={() => changeToSuperUser()}
         >
             superUser{" "}
@@ -34,7 +34,7 @@ export function AdminSelectButton({
     }
     return (
         <Button
-            style={{ transform: "translateX(300px)" }}
+            style={{ transform: "translateX(200px)" }}
             onClick={() => changeToAdmin()}
         >
             Admin

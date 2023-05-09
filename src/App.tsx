@@ -54,7 +54,7 @@ function App(): JSX.Element {
                     </a>
                 </header> */}
                 <p className="App-header">
-                    Balanced Bytes Team 12
+                    Balanced Bytes Team 12 by Josh,Devin,Annanya,Yasmeen & Sreya
                     <SuperUserSelectButton
                         userType={userType}
                         setUserType={setUserType}
