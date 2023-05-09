@@ -13,7 +13,14 @@ export function SuperUserSelectButton({
         setCurrentUser(userList[0]);
         setUserType("superUser");
     }
-    return <Button onClick={() => changeToSuperUser()}>superUser</Button>;
+    return (
+        <Button
+            style={{ transform: "translateX(400px)" }}
+            onClick={() => changeToSuperUser()}
+        >
+            superUser{" "}
+        </Button>
+    );
 }
 
 export function AdminSelectButton({
@@ -25,5 +32,12 @@ export function AdminSelectButton({
         setCurrentUser(userList[0]);
         setUserType("Admin");
     }
-    return <Button onClick={() => changeToAdmin()}>Admin</Button>;
+    return (
+        <Button
+            style={{ transform: "translateX(200px)" }}
+            onClick={() => changeToAdmin()}
+        >
+            Admin
+        </Button>
+    );
 }
