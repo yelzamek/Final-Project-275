@@ -823,5 +823,83 @@ export const MEAL_LIST: Meal[] = [
             "chives"
         ],
         tags: ["dairy", "vegan", "vegetarian", "gluten"]
+    },
+    {
+        name: "Chicken Tenders and Fries",
+        image: "https://i.pinimg.com/originals/c2/bc/bb/c2bcbb05f7a82b38af24d97e8e26b452.jpg",
+        serving_size: 4,
+        calories: 500,
+        total_fat: 24,
+        cholesterol: 70,
+        sodium: 870,
+        total_carbs: 40,
+        total_sugars: 0,
+        protein: 30,
+        ingredients: [
+            "chicken tenders",
+            "breadcrumbs",
+            "flour",
+            "eggs",
+            "potatoes",
+            "vegetable oil",
+            "salt",
+            "pepper"
+        ],
+        tags: ["meat"]
+    },
+    {
+        name: "Butter Chicken",
+        image: "https://www.kitchensanctuary.com/wp-content/uploads/2021/04/Butter-Chicken-square-FS-34.jpg",
+        serving_size: 4,
+        calories: 420,
+        total_fat: 22,
+        cholesterol: 95,
+        sodium: 650,
+        total_carbs: 14,
+        total_sugars: 9,
+        protein: 40,
+        ingredients: [
+            "chicken breasts",
+            "yogurt",
+            "tomato sauce",
+            "heavy cream",
+            "butter",
+            "garlic",
+            "ginger",
+            "garam masala",
+            "turmeric",
+            "cumin",
+            "cayenne pepper",
+            "salt"
+        ],
+        tags: ["meat"]
+    },
+    {
+        name: "Vegetable Gyros",
+        image: "https://biancazapatka.com/wp-content/uploads/2022/05/pilz-gyros-vegan-720x1008.jpg",
+        serving_size: 4,
+        calories: 300,
+        total_fat: 12,
+        cholesterol: 0,
+        sodium: 800,
+        total_carbs: 40,
+        total_sugars: 8,
+        protein: 10,
+        ingredients: [
+            "pita bread",
+            "zucchini",
+            "yellow squash",
+            "red onion",
+            "red pepper",
+            "tzatziki sauce",
+            "olive oil",
+            "lemon juice",
+            "garlic",
+            "dill",
+            "oregano",
+            "salt",
+            "pepper"
+        ],
+        tags: ["dairy", "vegan", "vegetarian", "gluten"]
     }
 ];
