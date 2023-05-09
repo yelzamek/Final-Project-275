@@ -34,24 +34,7 @@ export function AddUser({
             ...userList.map(
                 (user: User): User => ({
                     name: user.name,
-                    list_of_items: [
-                        ...user.list_of_items.map(
-                            (meal: Meal): Meal => ({
-                                name: meal.name,
-                                image: meal.image,
-                                serving_size: meal.serving_size,
-                                calories: meal.calories,
-                                total_fat: meal.total_fat,
-                                cholesterol: meal.cholesterol,
-                                sodium: meal.sodium,
-                                total_carbs: meal.total_carbs,
-                                total_sugars: meal.total_sugars,
-                                protein: meal.protein,
-                                ingredients: meal.ingredients,
-                                tags: meal.tags
-                            })
-                        )
-                    ]
+                    list_of_items: [...user.list_of_items]
                 })
             ),
             { name: newName, list_of_items: [] }
