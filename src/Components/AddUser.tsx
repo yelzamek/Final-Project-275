@@ -46,7 +46,9 @@ export function AddUser({
                                 sodium: meal.sodium,
                                 total_carbs: meal.total_carbs,
                                 total_sugars: meal.total_sugars,
-                                protein: meal.protein
+                                protein: meal.protein,
+                                ingredients: meal.ingredients,
+                                tags: meal.tags
                             })
                         )
                     ]
