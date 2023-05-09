@@ -123,6 +123,8 @@ function App(): JSX.Element {
                     setUserType={setUserType}
                     adminList={adminList}
                     setAdminList={setAdminList}
+                    userList={userList}
+                    setUserList={setUserList}
                 ></AdminList>
                 <NutritionalTotalButton
                     list_of_items={currentUser.list_of_items}

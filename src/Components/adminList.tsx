@@ -6,14 +6,20 @@ import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 import { EditMeal } from "./EditMeal";
 import React, { useState } from "react";
 import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
+import { UserListProps } from "../Interfaces/UserListProps";
 
 export function AdminList({
     mealList,
     setMealList,
     userType,
     adminList,
-    setAdminList
-}: MealListProps & UserTypeProps & AdminListProps): JSX.Element {
+    setAdminList,
+    userList,
+    setUserList
+}: MealListProps &
+    UserTypeProps &
+    AdminListProps &
+    UserListProps): JSX.Element {
     const [editHidden, setEditHidden] = useState<boolean>(true);
 
     function addToAdminList(name: nameProps) {
@@ -66,6 +72,8 @@ export function AdminList({
                                 setAdminList={setAdminList}
                                 hidden={editHidden}
                                 setHidden={setEditHidden}
+                                userList={userList}
+                                setUserList={setUserList}
                                 name={item.name}
                                 image={item.image}
                                 serving_size={item.serving_size}

@@ -4,6 +4,8 @@ import { Meal } from "../Interfaces/MealObject";
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
+import { UserListProps } from "../Interfaces/UserListProps";
+import { User } from "../Interfaces/UserObject";
 
 //Needs to add editing abilty
 
@@ -13,6 +15,8 @@ export function EditMeal({
     adminList,
     setAdminList,
     setHidden,
+    userList,
+    setUserList,
     name,
     image,
     serving_size,
@@ -25,7 +29,11 @@ export function EditMeal({
     ingredients,
     tags,
     protein
-}: MealListProps & AdminEditHiddenProps & AdminListProps & Meal): JSX.Element {
+}: MealListProps &
+    AdminEditHiddenProps &
+    AdminListProps &
+    UserListProps &
+    Meal): JSX.Element {
     //Setting name
     const [newName, setName] = useState<string>(name);
 
@@ -163,6 +171,15 @@ export function EditMeal({
             const adminCopy = [...adminList];
             adminCopy[adminMealIndex] = newMeal;
             setAdminList(adminCopy);
+
+            const userListCopy = [...userList];
+            userListCopy.map((user: User) =>
+                user.list_of_items.map((meal: Meal) =>
+                    meal.name === name ? newMeal : meal
+                )
+            );
+            setUserList(userListCopy);
+
             setHidden(true);
         } else {
             console.log("Enter valid inputs");
