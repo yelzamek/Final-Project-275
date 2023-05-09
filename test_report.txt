@@ -1558,35 +1558,36 @@ FAIL src/App.test.tsx
 
     SyntaxError: Unexpected token 'export'
 
-       9 | } from "./Components/UserTypeSelectButtons";
-      10 | import { User } from "./Interfaces/UserObject";
-    > 11 | import { DndProvider } from "react-dnd";
+       7 | } from "./Components/UserTypeSelectButtons";
+       8 | import { User } from "./Interfaces/UserObject";
+    >  9 | import { DndProvider } from "react-dnd";
          | ^
-      12 | import { HTML5Backend } from "react-dnd-html5-backend";
-      13 | import { CenterList } from "./Components/Centerlist";
-      14 | import { MEAL_LIST } from "./Interfaces/MealObject";
+      10 | import { HTML5Backend } from "react-dnd-html5-backend";
+      11 | import { CenterList } from "./Components/Centerlist";
+      12 | import { MEAL_LIST } from "./Interfaces/MealObject";
 
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
-      at Object.<anonymous> (src/App.tsx:11:1)
+      at Object.<anonymous> (src/App.tsx:9:1)
 
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |     2.9 |     12.5 |    3.89 |    3.03 |                   
+All files                   |    2.89 |     12.5 |    3.84 |    2.97 |                   
  src                        |       0 |      100 |       0 |       0 |                   
   App.tsx                   |       0 |      100 |       0 |       0 | 26-34             
- src/Components             |    3.03 |     12.5 |    3.94 |    3.16 |                   
+ src/Components             |    3.01 |     12.5 |    3.89 |     3.1 |                   
   AddMeal.tsx               |       0 |        0 |       0 |       0 | 13-295            
   AddUser.tsx               |       0 |        0 |       0 |       0 | 13-96             
   Centerlist.tsx            |       0 |        0 |       0 |       0 | 40-149            
   NavBar.tsx                |      50 |      100 |   33.33 |      50 | 18-43             
   NutritionTotalButton.tsx  |       0 |      100 |       0 |       0 | 6-28              
+  Sidebar.tsx               |       0 |      100 |       0 |       0 | 5                 
   SortFunction.tsx          |       0 |        0 |       0 |       0 | 11-47             
   SuperUserButton.tsx       |   66.66 |      100 |      50 |   66.66 | 13                
   UserDropdown.tsx          |       0 |        0 |       0 |       0 | 22-56             
-  UserList.tsx              |       0 |        0 |       0 |       0 | 24-73             
+  UserList.tsx              |       0 |        0 |       0 |       0 | 24-76             
   UserTypeIndicator.tsx     |     100 |      100 |     100 |     100 |                   
-  UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-28             
+  UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-38             
  src/Interfaces             |       0 |      100 |     100 |       0 |                   
   CurrentUserProps.ts       |       0 |        0 |       0 |       0 |                   
   MealObject.tsx            |       0 |      100 |     100 |       0 | 41                
@@ -1598,5 +1599,5 @@ All files                   |     2.9 |     12.5 |    3.89 |    3.03 |
 Test Suites: 10 failed, 10 total
 Tests:       11 failed, 3 passed, 14 total
 Snapshots:   0 total
-Time:        6.079 s
+Time:        8.141 s
 Ran all test suites.
