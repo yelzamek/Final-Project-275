@@ -65,7 +65,7 @@ export function UserList({
                 display: userType === "User" ? "inline-block" : "none",
                 backgroundColor: isOver ? "lightgray" : "white",
                 width: "300px",
-                height: "auto",
+                height: "75%",
                 border: "2px solid black"
             }}
         >

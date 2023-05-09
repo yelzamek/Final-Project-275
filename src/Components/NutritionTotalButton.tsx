@@ -35,14 +35,12 @@ export function NutritionalTotalButton({
                     isHidden || userType === "superUser" || userType === "Admin"
                 }
             >
-                <div>Servings: {servingSum}</div>
-                <div>Calories: {calorieSum}</div>
-                <div>Total Fat: {fatSum}</div>
-                <div>Cholesterol: {cholesterolSum}</div>
-                <div>Sodium: {sodiumSum}</div>
-                <div>Total Carbohydrates: {carbSum}</div>
-                <div>Total Sugars: {sugarSum}</div>
-                <div>Protein: {proteinSum}</div>
+                <div>
+                    Servings: {servingSum}, Calories: {calorieSum}, Total Fat:{" "}
+                    {fatSum}, Cholesterol: {cholesterolSum}, Sodium: {sodiumSum}
+                    , Total Carbohydrates: {carbSum}, Total Sugars: {sugarSum},
+                    Protein: {proteinSum}
+                </div>
             </div>
         </div>
     );

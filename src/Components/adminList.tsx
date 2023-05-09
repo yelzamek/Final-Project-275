@@ -53,7 +53,7 @@ export function AdminList({
                         : "none",
                 backgroundColor: isOver ? "lightgray" : "white",
                 width: "300px",
-                height: "auto",
+                height: "75%",
                 border: "2px solid black"
             }}
         >
