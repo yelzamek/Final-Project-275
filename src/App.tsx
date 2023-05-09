@@ -15,7 +15,6 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
-<<<<<<< HEAD
 import { NavBar } from "./Components/NavBar";
 import {
     ExampleDragableMealItemForTesting,
@@ -23,10 +22,6 @@ import {
 } from "./Components/UserList";
 import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 
-=======
-import { Navbar } from "./Components/NavBar";
-import { UserList } from "./Components/UserList";
->>>>>>> 9f566e34f3a315f690ec9c05ec366503f09f7fcd
 //import { userListProps } from "./Interfaces/userListProps";
 //import { User } from "./Components/UserSelect";
 //import { userType, setUserType } from "./Components/UserSelect";
@@ -116,13 +111,12 @@ function App(): JSX.Element {
                     setMealList={setMealList}
                 ></CenterList>
                 <DropBox></DropBox>
+                <ExampleDragableMealItemForTesting></ExampleDragableMealItemForTesting>
                 <UserList
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
                     userList={userList}
                     setUserList={setUserList}
-                    mealList={mealList}
-                    setMealList={setMealList}
                 ></UserList>
             </div>
         </DndProvider>
