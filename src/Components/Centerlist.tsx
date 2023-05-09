@@ -1,7 +1,7 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { useDrag } from "react-dnd";
-import { Button, Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import {
@@ -135,72 +135,9 @@ export function CenterList({
     userType,
     setUserType
 }: MealListProps & UserTypeProps) {
-    const [sortOption, setSortOption] = useState<string>("None");
-    function updateSortOption(event: React.ChangeEvent<HTMLSelectElement>) {
-        setSortOption(event.target.value);
-        if (sortOption === "Alphabetical") {
-            const copy = [...mealList];
-            setMealList(
-                copy.sort((a, b) => a.name.localeCompare(b.name)).reverse()
-            );
-        }
-        if (sortOption === "Reverse Alphabetical") {
-            const copy = [...mealList];
-            setMealList(copy.sort((a, b) => a.name.localeCompare(b.name)));
-        }
-        if (sortOption === "Calories: Lowest to Highest") {
-            const copy = [...mealList];
-            setMealList(
-                copy
-                    .sort(function (a, b) {
-                        if (a.calories < b.calories) {
-                            return -1;
-                        }
-                        if (a.calories > b.calories) {
-                            return 1;
-                        }
-                        return 0;
-                    })
-                    .reverse()
-            );
-        }
-        if (sortOption === "Calories: Highest to Lowest") {
-            const copy = [...mealList];
-            setMealList(
-                copy.sort(function (a, b) {
-                    if (a.calories < b.calories) {
-                        return -1;
-                    }
-                    if (a.calories > b.calories) {
-                        return 1;
-                    }
-                    return 0;
-                })
-            );
-        }
-    }
-    const SORT_LIST: string[] = [
-        "None",
-        "Alphabetical",
-        "Reverse Alphabetical",
-        "Calories: Lowest to Highest",
-        "Calories: Highest to Lowest"
-    ];
     return (
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
-            <div>
-                <Form.Group controlId="sortOption">
-                    <Form.Label>Sort by:</Form.Label>
-                    <Form.Select value={sortOption} onChange={updateSortOption}>
-                        {SORT_LIST.map((chosenOption: string) => (
-                            <option key={chosenOption} value={chosenOption}>
-                                {chosenOption}
-                            </option>
-                        ))}
-                    </Form.Select>
-                </Form.Group>
-            </div>
             <ChakraProvider>
                 <SimpleGrid columns={4} spacing={10}>
                     {mealList.map((MealObject: Meal) => (

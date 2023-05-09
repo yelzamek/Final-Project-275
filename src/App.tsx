@@ -18,6 +18,7 @@ import { Navbar } from "./Components/NavBar";
 import { AddUser } from "./Components/AddUser";
 import { UserList } from "./Components/UserList";
 import { AddMeal } from "./Components/AddMeal";
+import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
 
 function App(): JSX.Element {
@@ -93,6 +94,10 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></Counter>
+                <SortFunction
+                    mealList={mealList}
+                    setMealList={setMealList}
+                ></SortFunction>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
