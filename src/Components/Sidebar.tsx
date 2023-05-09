@@ -1,4 +1,4 @@
-import { ChakraProvider, List, ListItem, ListIcon } from "@chakra-ui/react";
+import { ChakraProvider, List, ListItem } from "@chakra-ui/react";
 import React from "react";
 
 export function Sidebar() {

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
-import { UserTypeIndicator } from "./Components/UserTypeIndicator";
-import { Counter } from "./Components/SuperUserButton";
 import {
     SuperUserSelectButton,
     AdminSelectButton
@@ -22,7 +20,7 @@ import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { Sidebar } from "./Components/Sidebar";
-import { ChakraProvider, List, ListItem, Text } from "@chakra-ui/react";
+import { ChakraProvider, Text } from "@chakra-ui/react";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
@@ -72,6 +70,8 @@ function App(): JSX.Element {
                         setUserList={setUserList}
                     ></AdminSelectButton>
                     <UserDropDown
+                        mealList={mealList}
+                        setMealList={setMealList}
                         userType={userType}
                         setUserType={setUserType}
                         userList={userList}
