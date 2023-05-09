@@ -172,12 +172,12 @@ export function EditMeal({
             adminCopy[adminMealIndex] = newMeal;
             setAdminList(adminCopy);
 
-            const userListCopy = [...userList];
-            userListCopy.map((user: User) =>
-                user.list_of_items.map((meal: Meal) =>
+            const userListCopy = userList.map((user: User) => ({
+                ...user,
+                list_of_items: user.list_of_items.map((meal: Meal) =>
                     meal.name === name ? newMeal : meal
                 )
-            );
+            }));
             setUserList(userListCopy);
 
             setHidden(true);
