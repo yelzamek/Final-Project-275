@@ -34,7 +34,9 @@ export function UserDropDown({
                         sodium: meal.sodium,
                         total_carbs: meal.total_carbs,
                         total_sugars: meal.total_sugars,
-                        protein: meal.protein
+                        protein: meal.protein,
+                        tags: [...meal.tags],
+                        ingredients: [...meal.ingredients]
                     })
                 )
             ]
