@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
 import { UserTypeIndicator } from "./Components/UserTypeIndicator";
-import { Counter } from "./Components/SuperUserButton";
 import {
     SuperUserSelectButton,
     AdminSelectButton
@@ -21,10 +20,12 @@ import { AddMeal } from "./Components/AddMeal";
 import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
 import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
+import { AdminList } from "./Components/adminList";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
+    const [adminList, setAdminList] = useState<Meal[]>([]);
     const [currentUser, setCurrentUser] = useState<User>({
         name: "User1",
         list_of_items: []
@@ -65,10 +66,6 @@ function App(): JSX.Element {
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
                 ></UserDropDown>
-                <Counter
-                    userType={userType}
-                    setUserType={setUserType}
-                ></Counter>
                 <AdminSelectButton
                     userType={userType}
                     setUserType={setUserType}
@@ -91,10 +88,6 @@ function App(): JSX.Element {
                     userList={userList}
                     setUserList={setUserList}
                 ></SuperUserSelectButton>
-                <Counter
-                    userType={userType}
-                    setUserType={setUserType}
-                ></Counter>
                 <SortFunction
                     mealList={mealList}
                     setMealList={setMealList}
@@ -111,6 +104,14 @@ function App(): JSX.Element {
                     userType={userType}
                     setUserType={setUserType}
                 ></AddMeal>
+                <AdminList
+                    mealList={mealList}
+                    setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
+                    adminList={adminList}
+                    setAdminList={setAdminList}
+                ></AdminList>
                 <UserList
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
