@@ -9,6 +9,7 @@ export function SortFunction({
     setMealList
 }: MealListProps): JSX.Element {
     const [sortOption, setSortOption] = useState<string>("Alphabetical");
+    const [tagFilter, setTagFilter] = useState<string>("All");
     const SORT_LIST: string[] = [
         "Alphabetical",
         "Reverse Alphabetical",
@@ -38,6 +39,17 @@ export function SortFunction({
             setMealList(copy.sort((a, b) => b.calories - a.calories));
         }
     }
+    function updateTagFilter(event: React.ChangeEvent<HTMLSelectElement>) {
+        setTagFilter(event.target.value);
+        const selected = event.target.value;
+        if (selected === "All") {
+            setMealList(MEAL_LIST);
+        } else {
+            setMealList(
+                MEAL_LIST.filter((meal) => meal.tags.includes(selected))
+            );
+        }
+    }
     return (
         <div>
             <Form.Group controlId="sortOption">
@@ -50,6 +62,60 @@ export function SortFunction({
                     ))}
                 </Form.Select>
             </Form.Group>
+            <Form.Group controlId="tagFilter">
+                <Form.Label>Filter by tag:</Form.Label>
+                <Form.Select value={tagFilter} onChange={updateTagFilter}>
+                    <option key="All" value="All">
+                        All
+                    </option>
+                    <option key="Gluten" value="Gluten">
+                        Gluten
+                    </option>
+                    <option key="Vegetarian" value="Vegetarian">
+                        Vegetarian
+                    </option>
+                    <option key="Vegan" value="Vegan">
+                        Vegan
+                    </option>
+                    <option key="Meat" value="Meat">
+                        Meat
+                    </option>
+                </Form.Select>
+            </Form.Group>
         </div>
     );
 }
+/*  return (
+        <div>
+            <Form.Group controlId="sortOption">
+                <Form.Label>Sort by:</Form.Label>
+                <Form.Select value={sortOption} onChange={updateSortOption}>
+                    {SORT_LIST.map((chosenOption: string) => (
+                        <option key={chosenOption} value={chosenOption}>
+                            {chosenOption}
+                        </option>
+                    ))}
+                </Form.Select>
+            </Form.Group>
+            <Form.Group controlId="tagFilter">
+        <Form.Label>Filter by tag:</Form.Label>
+        <Form.Select value={tagFilter} onChange={updateTagFilter}>
+          <option key="All" value="All">
+            All
+          </option>
+          <option key="Gluten" value="Gluten">
+            Gluten
+          </option>
+          <option key="Vegetarian" value="Vegetarian">
+            Vegetarian
+          </option>
+          <option key="Vegan" value="Vegan">
+            Vegan
+          </option>
+          <option key="Meat" value="Meat">
+            Meat
+          </option>
+        </div>
+    );
+}
+ */
