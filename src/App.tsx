@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import { UserDropDown } from "./Components/UserDropdown";
-import { UserTypeIndicator } from "./Components/UserTypeIndicator";
-import { Counter } from "./Components/SuperUserButton";
-import { UserSelect } from "./Components/AddUser";
 import {
     SuperUserSelectButton,
     AdminSelectButton
@@ -14,17 +11,23 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
-import { Navbar } from "./Components/NavBar";
+// import { Navbar } from "./Components/NavBar";
 //import { UserList } from "./Components/UserList";
-import { Grid } from "./Components/grid";
-import MealListUI from "./Components/MealListUI";
+import { AddUser } from "./Components/AddUser";
+import { UserList } from "./Components/UserList";
+import { AddMeal } from "./Components/AddMeal";
+import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
-//import { User } from "./Components/UserSelect";
-//import { userType, setUserType } from "./Components/UserSelect";
+//import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
+import { AdminList } from "./Components/adminList";
+import { Sidebar } from "./Components/Sidebar";
+import { ChakraProvider, Text } from "@chakra-ui/react";
+import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
+    const [adminList, setAdminList] = useState<Meal[]>([]);
     const [currentUser, setCurrentUser] = useState<User>({
         name: "User1",
         list_of_items: []
@@ -34,7 +37,7 @@ function App(): JSX.Element {
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
-                <header className="header">
+                {/* <header className="header">
                     <header className="header"></header>
                     <a href="#" className="logo">
                         {" "}
@@ -50,10 +53,38 @@ function App(): JSX.Element {
                         {" "}
                         <i className="fa fa-shopping-basket"></i> grocery
                     </a>
-                </header>
-                <p className="App-header">Team 12</p>
-                <Navbar></Navbar>
-                <UserTypeIndicator
+                </header> */}
+                <p className="App-header">
+                    Balanced Bytes Team 12 by Josh,Devin,Annanya,Yasmeen & Sreya
+                    <SuperUserSelectButton
+                        userType={userType}
+                        setUserType={setUserType}
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
+                        userList={userList}
+                        setUserList={setUserList}
+                    ></SuperUserSelectButton>
+                    <AdminSelectButton
+                        userType={userType}
+                        setUserType={setUserType}
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
+                        userList={userList}
+                        setUserList={setUserList}
+                    ></AdminSelectButton>
+                    <UserDropDown
+                        mealList={mealList}
+                        setMealList={setMealList}
+                        userType={userType}
+                        setUserType={setUserType}
+                        userList={userList}
+                        setUserList={setUserList}
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
+                    ></UserDropDown>
+                </p>
+                {/* <Navbar></Navbar> */}
+                {/* <UserTypeIndicator
                     userType={userType}
                     setUserType={setUserType}
                 ></UserTypeIndicator>
@@ -64,52 +95,72 @@ function App(): JSX.Element {
                     setUserList={setUserList}
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
-                ></UserDropDown>
-                <Counter
-                    userType={userType}
-                    setUserType={setUserType}
-                ></Counter>
-                <UserSelect
+                ></UserDropDown> */}
+                <p className="App-Div"></p>{" "}
+                <AddUser
                     userType={userType}
                     setUserType={setUserType}
                     userList={userList}
                     setUserList={setUserList}
-                ></UserSelect>
-                <AdminSelectButton
+                ></AddUser>
+                {/* <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}
                     currentUser={currentUser}
                     setCurrentUser={setCurrentUser}
                     userList={userList}
                     setUserList={setUserList}
-                ></AdminSelectButton>
-                <SuperUserSelectButton
-                    userType={userType}
-                    setUserType={setUserType}
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
-                    userList={userList}
-                    setUserList={setUserList}
-                ></SuperUserSelectButton>
-                <Counter
-                    userType={userType}
-                    setUserType={setUserType}
-                ></Counter>
+                ></SuperUserSelectButton> */}
+                <SortFunction
+                    mealList={mealList}
+                    setMealList={setMealList}
+                ></SortFunction>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
+                    userType={userType}
+                    setUserType={setUserType}
                 ></CenterList>
-                {/*
-                <UserList
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
+                <AddMeal
                     mealList={mealList}
-                    userList={userList}
-                    setUserList={setUserList}
                     setMealList={setMealList}
-    ></UserList> */}
-                <Grid></Grid>
-                <MealListUI mealData={MEAL_LIST}></MealListUI>
+                    userType={userType}
+                    setUserType={setUserType}
+                ></AddMeal>
+                <Sidebar></Sidebar>
+                <p className="App-Sidebar">
+                    <ChakraProvider>
+                        <Text fontSize="xl" fontWeight="bold">
+                            Meal Log
+                        </Text>
+                        <UserList
+                            currentUser={currentUser}
+                            setCurrentUser={setCurrentUser}
+                            userList={userList}
+                            setUserList={setUserList}
+                            mealList={mealList}
+                            setMealList={setMealList}
+                            userType={userType}
+                            setUserType={setUserType}
+                        ></UserList>
+                        <NutritionalTotalButton
+                            list_of_items={currentUser.list_of_items}
+                            name={currentUser.name}
+                            userType={userType}
+                            setUserType={setUserType}
+                        ></NutritionalTotalButton>
+                        <AdminList
+                            userList={userList}
+                            setUserList={setUserList}
+                            mealList={mealList}
+                            setMealList={setMealList}
+                            userType={userType}
+                            setUserType={setUserType}
+                            adminList={adminList}
+                            setAdminList={setAdminList}
+                        ></AdminList>
+                    </ChakraProvider>
+                </p>
             </div>
         </DndProvider>
     );

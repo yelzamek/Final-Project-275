@@ -33,7 +33,13 @@ export function UserList({
         );
         setUserList([
             ...userList.slice(0, userIndex),
-            currentUser,
+            {
+                ...currentUser,
+                list_of_items: [
+                    ...currentUser.list_of_items,
+                    mealList[mealIndex]
+                ]
+            },
             ...userList.slice(userIndex + 1)
         ]);
     }
@@ -57,7 +63,10 @@ export function UserList({
             ref={drop}
             style={{
                 display: userType === "User" ? "inline-block" : "none",
-                backgroundColor: isOver ? "green" : "white"
+                backgroundColor: isOver ? "lightgray" : "white",
+                width: "300px",
+                height: "75%",
+                border: "2px solid black"
             }}
         >
             Title
