@@ -51,10 +51,28 @@ export function AddUser({
                                 tags: meal.tags
                             })
                         )
+                    ],
+                    list_of_favorites: [
+                        ...user.list_of_favorites.map(
+                            (meal: Meal): Meal => ({
+                                name: meal.name,
+                                image: meal.image,
+                                serving_size: meal.serving_size,
+                                calories: meal.calories,
+                                total_fat: meal.total_fat,
+                                cholesterol: meal.cholesterol,
+                                sodium: meal.sodium,
+                                total_carbs: meal.total_carbs,
+                                total_sugars: meal.total_sugars,
+                                protein: meal.protein,
+                                ingredients: meal.ingredients,
+                                tags: meal.tags
+                            })
+                        )
                     ]
                 })
             ),
-            { name: newName, list_of_items: [] }
+            { name: newName, list_of_items: [], list_of_favorites: [] }
         ]);
         setWorking(false);
         setNewName("Type New User Name Here");

@@ -30,9 +30,14 @@ function App(): JSX.Element {
     const [adminList, setAdminList] = useState<Meal[]>([]);
     const [currentUser, setCurrentUser] = useState<User>({
         name: "User1",
-        list_of_items: []
+        list_of_items: [],
+        list_of_favorites: []
     });
-    const noneUser: User = { name: "None", list_of_items: [] };
+    const noneUser: User = {
+        name: "None",
+        list_of_items: [],
+        list_of_favorites: []
+    };
     const [userList, setUserList] = useState<User[]>([noneUser, currentUser]);
     return (
         <DndProvider backend={HTML5Backend}>
@@ -120,6 +125,10 @@ function App(): JSX.Element {
                     setMealList={setMealList}
                     userType={userType}
                     setUserType={setUserType}
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser}
+                    userList={userList}
+                    setUserList={setUserList}
                 ></CenterList>
                 <AddMeal
                     mealList={mealList}
@@ -145,6 +154,7 @@ function App(): JSX.Element {
                         ></UserList>
                         <NutritionalTotalButton
                             list_of_items={currentUser.list_of_items}
+                            list_of_favorites={currentUser.list_of_favorites}
                             name={currentUser.name}
                             userType={userType}
                             setUserType={setUserType}

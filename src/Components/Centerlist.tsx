@@ -1,9 +1,11 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { useDrag } from "react-dnd";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
+import { UserListProps } from "../Interfaces/UserListProps";
 import {
     Box,
     SimpleGrid,
@@ -35,8 +37,15 @@ export function MealDraggable({
     protein,
     mealList,
     setMealList,
-    userType
-}: Meal & MealListProps & UserTypeProps): JSX.Element {
+    userType,
+    currentUser,
+    userList,
+    setUserList
+}: Meal &
+    MealListProps &
+    UserTypeProps &
+    CurrentUserProps &
+    UserListProps): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "Meal",
         item: { name: name },
@@ -53,6 +62,27 @@ export function MealDraggable({
         setMealList(copy);
     }
     const [showNutrition, setShowNutrition] = useState<boolean>(true);
+
+    function updateFavorites(event: React.ChangeEvent<HTMLInputElement>) {
+        const index = userList.findIndex(
+            (object) => object.name === currentUser.name
+        );
+        const copy = [...userList];
+        const clistIndex = mealList.findIndex(
+            (object) => object.name === event.target.value
+        );
+        if (event.target.checked === true) {
+            copy[index].list_of_favorites.push(mealList[clistIndex]);
+            setUserList(copy);
+        } else if (event.target.checked === false) {
+            const mealIndex = copy[index].list_of_favorites.findIndex(
+                (object) => object.name === event.target.value
+            );
+            copy[index].list_of_favorites.splice(mealIndex, 1);
+            setUserList(copy);
+        }
+    }
+
     return (
         <ChakraProvider>
             <Card
@@ -127,6 +157,13 @@ export function MealDraggable({
                         >
                             Remove
                         </Button>
+                        <Form.Check
+                            type="checkbox"
+                            id="fav-check"
+                            label="Favorite"
+                            value={name}
+                            onChange={updateFavorites}
+                        />
                     </HStack>
                 </CardFooter>
             </Card>
@@ -138,8 +175,12 @@ export function CenterList({
     mealList,
     setMealList,
     userType,
-    setUserType
-}: MealListProps & UserTypeProps) {
+    setUserType,
+    currentUser,
+    setCurrentUser,
+    userList,
+    setUserList
+}: MealListProps & UserTypeProps & UserListProps & CurrentUserProps) {
     return (
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
@@ -164,6 +205,10 @@ export function CenterList({
                                 setMealList={setMealList}
                                 tags={[...MealObject.tags]}
                                 ingredients={[...MealObject.ingredients]}
+                                userList={userList}
+                                setUserList={setUserList}
+                                currentUser={currentUser}
+                                setCurrentUser={setCurrentUser}
                             ></MealDraggable>
                         </div>
                     ))}
