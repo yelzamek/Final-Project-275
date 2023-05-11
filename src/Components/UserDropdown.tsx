@@ -29,10 +29,14 @@ export function UserDropDown({
         const copiedItems = selectedUser.list_of_items.filter((meal: Meal) =>
             mealList.includes(meal)
         );
+        const copiedFavorites = selectedUser.list_of_favorites.filter(
+            (meal: Meal) => mealList.includes(meal)
+        );
 
         setCurrentUser({
             name: selectedUser.name,
-            list_of_items: copiedItems
+            list_of_items: copiedItems,
+            list_of_favorites: copiedFavorites
         });
 
         const updatedUserList = userList.map((user: User) =>

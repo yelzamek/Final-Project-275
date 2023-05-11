@@ -33,10 +33,11 @@ export function AddUser({
             ...userList.map(
                 (user: User): User => ({
                     name: user.name,
-                    list_of_items: [...user.list_of_items]
+                    list_of_items: [...user.list_of_items],
+                    list_of_favorites: [...user.list_of_favorites]
                 })
             ),
-            { name: newName, list_of_items: [] }
+            { name: newName, list_of_items: [], list_of_favorites: [] }
         ]);
         setWorking(false);
         setNewName("Type New User Name Here");

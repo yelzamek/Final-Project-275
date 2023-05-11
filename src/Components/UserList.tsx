@@ -26,7 +26,8 @@ export function UserList({
         );
         setCurrentUser({
             name: currentUser.name,
-            list_of_items: [...currentUser.list_of_items, mealList[mealIndex]]
+            list_of_items: [...currentUser.list_of_items, mealList[mealIndex]],
+            list_of_favorites: [...currentUser.list_of_favorites]
         });
         const userIndex = userList.findIndex(
             (user: User): boolean => user.name === currentUser.name
@@ -45,10 +46,18 @@ export function UserList({
     }
     function RemoveItem(item: Meal, index: number) {
         const updatedList = [...currentUser.list_of_items];
+        const updatedFavList = [...currentUser.list_of_favorites];
+        if (currentUser.list_of_favorites.includes(item)) {
+            const favIndex = currentUser.list_of_favorites.findIndex(
+                (object) => object === item
+            );
+            updatedFavList.splice(favIndex, 1);
+        }
         updatedList.splice(index, 1);
         setCurrentUser({
             name: currentUser.name,
-            list_of_items: updatedList
+            list_of_items: updatedList,
+            list_of_favorites: updatedFavList
         });
     }
     const [{ isOver }, drop] = useDrop({

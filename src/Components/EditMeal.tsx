@@ -176,6 +176,9 @@ export function EditMeal({
                 ...user,
                 list_of_items: user.list_of_items.map((meal: Meal) =>
                     meal.name === name ? newMeal : meal
+                ),
+                list_of_favorites: user.list_of_favorites.map((meal: Meal) =>
+                    meal.name === name ? newMeal : meal
                 )
             }));
             setUserList(userListCopy);
