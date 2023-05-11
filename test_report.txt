@@ -1545,14 +1545,15 @@ FAIL src/App.test.tsx
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |    1.26 |     6.59 |    1.92 |    1.29 |                   
+All files                   |    1.21 |     6.18 |    1.88 |    1.24 |                   
  src                        |       0 |      100 |       0 |       0 |                   
-  App.tsx                   |       0 |      100 |       0 |       0 | 28-37             
- src/Components             |    0.44 |     6.59 |       1 |    0.45 |                   
+  App.tsx                   |       0 |      100 |       0 |       0 | 29-39             
+ src/Components             |    0.42 |     6.18 |    0.98 |    0.43 |                   
   AddMeal.tsx               |       0 |        0 |       0 |       0 | 15-297            
   AddUser.tsx               |       0 |        0 |       0 |       0 | 12-78             
   Centerlist.tsx            |       0 |        0 |       0 |       0 | 40-149            
   EditMeal.tsx              |       0 |        0 |       0 |       0 | 38-340            
+  FilterButtons.tsx         |       0 |        0 |       0 |       0 | 12-22             
   NutritionTotalButton.tsx  |       0 |        0 |       0 |       0 | 10-32             
   Sidebar.tsx               |       0 |      100 |       0 |       0 | 5                 
   SortFunction.tsx          |       0 |        0 |       0 |       0 | 11-47             
@@ -1567,6 +1568,7 @@ All files                   |    1.26 |     6.59 |    1.92 |    1.29 |
   AdminEditHiddenProps.ts   |       0 |        0 |       0 |       0 |                   
   AdminListProps.ts         |       0 |        0 |       0 |       0 |                   
   CurrentUserProps.ts       |       0 |        0 |       0 |       0 |                   
+  FilterChoices.ts          |       0 |        0 |       0 |       0 |                   
   MealObject.tsx            |       0 |      100 |     100 |       0 | 41                
   SortOptionsProps.ts       |       0 |        0 |       0 |       0 |                   
   UserListProps.ts          |       0 |        0 |       0 |       0 |                   
@@ -1576,5 +1578,5 @@ All files                   |    1.26 |     6.59 |    1.92 |    1.29 |
 Test Suites: 10 failed, 10 total
 Tests:       10 failed, 1 passed, 11 total
 Snapshots:   0 total
-Time:        7.071 s
+Time:        5.8 s
 Ran all test suites.
