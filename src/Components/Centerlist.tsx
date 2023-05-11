@@ -96,15 +96,16 @@ export function MealDraggable({
                 borderTop="8px"
                 borderColor="green.400"
                 bg="white"
+                size="md"
             >
                 <CardHeader color="gray.700">
                     <Flex gap={3}>
-                        <Avatar src={image} size="xl" />
+                        <Avatar src={image} size="2xl" />
                         <Box>
-                            <Heading as="h3" size="lg">
+                            <Heading as="h3" size="md">
                                 {name}
                             </Heading>
-                            <Text fontSize="sm" color="gray.500">
+                            <Text fontSize="xs" color="gray.500">
                                 {tags.join(",  ")}
                             </Text>
                         </Box>
