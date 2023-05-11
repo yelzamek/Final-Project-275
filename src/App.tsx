@@ -23,11 +23,13 @@ import { AdminList } from "./Components/adminList";
 import { Sidebar } from "./Components/Sidebar";
 import { ChakraProvider, Text } from "@chakra-ui/react";
 import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
+import { FilterChoices } from "./Components/FilterButtons";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
     const [mealList, setMealList] = useState<Meal[]>(MEAL_LIST);
     const [adminList, setAdminList] = useState<Meal[]>([]);
+    const [filterChoices, setFilterChoices] = useState<string[]>([]);
     const [currentUser, setCurrentUser] = useState<User>({
         name: "User1",
         list_of_items: []
@@ -115,6 +117,12 @@ function App(): JSX.Element {
                     mealList={mealList}
                     setMealList={setMealList}
                 ></SortFunction>
+                <FilterChoices
+                    filterChoices={filterChoices}
+                    setFilterChoices={setFilterChoices}
+                    userType={userType}
+                    setUserType={setUserType}
+                ></FilterChoices>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}
