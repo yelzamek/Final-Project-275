@@ -19,8 +19,11 @@ import {
     HStack,
     Divider,
     ChakraProvider,
-    Avatar
+    Avatar,
+    WrapItem,
+    Wrap
 } from "@chakra-ui/react";
+import { User } from "../Interfaces/UserObject";
 
 export function MealDraggable({
     name,
@@ -139,33 +142,76 @@ export function MealDraggable({
                 <Divider borderColor="gray.200" />
 
                 <CardFooter>
-                    <HStack>
-                        <Button
-                            variant={showNutrition ? "primary" : "ghost"}
-                            onClick={() => setShowNutrition(true)}
-                        >
-                            Nutrition
-                        </Button>
-                        <Button
-                            variant={!showNutrition ? "primary" : "ghost"}
-                            onClick={() => setShowNutrition(false)}
-                        >
-                            Ingredients
-                        </Button>
-                        <Button
-                            hidden={!(userType === "superUser")}
-                            onClick={() => RemoveMeal(name)}
-                        >
-                            Remove
-                        </Button>
-                        <Form.Check
-                            type="checkbox"
-                            id="fav-check"
-                            label="Favorite"
-                            value={name}
-                            onChange={updateFavorites}
-                        />
-                    </HStack>
+                    <Flex direction="column" align="center" justify="center">
+                        <Wrap spacing={1}>
+                            <WrapItem>
+                                <Button
+                                    variant={
+                                        showNutrition ? "primary" : "ghost"
+                                    }
+                                    onClick={() => setShowNutrition(true)}
+                                >
+                                    Nutrition
+                                </Button>
+                            </WrapItem>
+                            <WrapItem>
+                                <Button
+                                    variant={
+                                        !showNutrition ? "primary" : "ghost"
+                                    }
+                                    onClick={() => setShowNutrition(false)}
+                                >
+                                    Ingredients
+                                </Button>
+                            </WrapItem>
+                            <WrapItem>
+                                <Button
+                                    hidden={!(userType === "superUser")}
+                                    onClick={() => RemoveMeal(name)}
+                                >
+                                    Remove
+                                </Button>
+                            </WrapItem>
+                            <WrapItem>
+                                <Form.Check
+                                    hidden={userType === "superUser"}
+                                    type="checkbox"
+                                    id="fav-check"
+                                    label={
+                                        userType === "superUser"
+                                            ? undefined
+                                            : "Favorite"
+                                    }
+                                    value={name}
+                                    onChange={updateFavorites}
+                                />
+                                <Text
+                                    fontSize="md"
+                                    noOfLines={2}
+                                    display="block"
+                                    textAlign="left"
+                                    marginTop="5%"
+                                >
+                                    Amount in User Lists:{" "}
+                                    {userList.reduce(
+                                        (count: number, user: User) =>
+                                            user.list_of_items.reduce(
+                                                (
+                                                    perUserCount: number,
+                                                    meal: Meal
+                                                ) =>
+                                                    perUserCount +
+                                                    (meal.name === name
+                                                        ? 1
+                                                        : 0),
+                                                0
+                                            ) + count,
+                                        0
+                                    )}
+                                </Text>
+                            </WrapItem>
+                        </Wrap>
+                    </Flex>
                 </CardFooter>
             </Card>
         </ChakraProvider>
