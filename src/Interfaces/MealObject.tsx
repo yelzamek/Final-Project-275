@@ -904,7 +904,7 @@ export const MEAL_LIST: Meal[] = [
     },
     {
         name: "Falafel Wrap",
-        image: "https://www.jessicagavin.com/wp-content/uploads/2018/04/falafel-wrap-10-1200.jpg",
+        image: "https://cdn.doordash.com/media/photosV2/73416a0c-1094-4337-ae27-6dcf4c7d421e-retina-large.jpeg",
         serving_size: 4,
         calories: 320,
         total_fat: 10,
