@@ -45,14 +45,16 @@ export function AddUser({
         setNewName("Type New User Name Here");
     }
     function updateUserList(newName: string) {
-        const alreadyInList: boolean = userList.some(
-            (user: User): boolean => user.name === newName
-        );
-        const isBlank: boolean = newName.trim().length === 0;
-        const ErrorType: string = isBlank ? "blank" : "alreadyInList";
-        alreadyInList || isBlank
-            ? displayError(ErrorType)
-            : updateUserListHelper(newName);
+        if (working) {
+            const alreadyInList: boolean = userList.some(
+                (user: User): boolean => user.name === newName
+            );
+            const isBlank: boolean = newName.trim().length === 0;
+            const ErrorType: string = isBlank ? "blank" : "alreadyInList";
+            alreadyInList || isBlank
+                ? displayError(ErrorType)
+                : updateUserListHelper(newName);
+        }
     }
     return (
         <div

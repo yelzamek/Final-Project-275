@@ -5,11 +5,13 @@ import "./UsersWithItemPopup.css";
 import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
 import { Meal, nameProps } from "../Interfaces/MealObject";
+import { UserTypeProps } from "../Interfaces/UserTypeProps";
 
 export function PopUp({
     userList,
-    name
-}: UserListProps & nameProps): JSX.Element {
+    name,
+    userType
+}: UserListProps & nameProps & UserTypeProps): JSX.Element {
     const [showPopup, setShowPopup] = useState(false);
 
     const handleOpenPopup = () => {
@@ -21,7 +23,7 @@ export function PopUp({
     };
 
     return (
-        <div>
+        <div hidden={!(userType === "superUser")}>
             <Button id="openPopup" onClick={handleOpenPopup}>
                 Open Popup
             </Button>

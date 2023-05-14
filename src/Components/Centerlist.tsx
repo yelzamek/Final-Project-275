@@ -43,7 +43,8 @@ export function MealDraggable({
     userType,
     currentUser,
     userList,
-    setUserList
+    setUserList,
+    setUserType
 }: Meal &
     MealListProps &
     UserTypeProps &
@@ -217,6 +218,8 @@ export function MealDraggable({
                                     userList={userList}
                                     setUserList={setUserList}
                                     name={name}
+                                    userType={userType}
+                                    setUserType={setUserType}
                                 ></PopUp>
                             </WrapItem>
                         </Wrap>
