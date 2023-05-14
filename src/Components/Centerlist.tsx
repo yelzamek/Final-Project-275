@@ -16,7 +16,6 @@ import {
     CardHeader,
     CardBody,
     CardFooter,
-    HStack,
     Divider,
     ChakraProvider,
     Avatar,
@@ -188,7 +187,11 @@ export function MealDraggable({
                                 <Text
                                     fontSize="md"
                                     noOfLines={2}
-                                    display="block"
+                                    display={
+                                        userType === "superUser"
+                                            ? "block"
+                                            : "none"
+                                    }
                                     textAlign="left"
                                     marginTop="5%"
                                 >
