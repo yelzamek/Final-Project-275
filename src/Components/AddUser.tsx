@@ -12,10 +12,11 @@ export function AddUser({
     const [newName, setNewName] = useState<string>("Type New User Name Here");
     const [working, setWorking] = useState<boolean>(false);
     const [error, setError] = useState<boolean>(false);
-    function displayError() {
+    const [errorBlank, setErrorBlank] = useState<boolean>(false);
+    function displayError(ErrorType: string) {
         setWorking(false);
         setNewName("Type New User Name Here");
-        setError(true);
+        ErrorType === "alreadyInList" ? setError(true) : setErrorBlank(true);
     }
     function updateNewName(event: React.ChangeEvent<HTMLInputElement>) {
         working ? setNewName(event.target.value) : undefined;
@@ -24,6 +25,7 @@ export function AddUser({
         setNewName("");
         setWorking(true);
         setError(false);
+        setErrorBlank(false);
     }
     function startWorking() {
         working ? undefined : startWorkingHelper();
@@ -46,7 +48,11 @@ export function AddUser({
         const alreadyInList: boolean = userList.some(
             (user: User): boolean => user.name === newName
         );
-        alreadyInList ? displayError() : updateUserListHelper(newName);
+        const isBlank: boolean = newName.trim().length === 0;
+        const ErrorType: string = isBlank ? "blank" : "alreadyInList";
+        alreadyInList || isBlank
+            ? displayError(ErrorType)
+            : updateUserListHelper(newName);
     }
     return (
         <div
@@ -57,6 +63,11 @@ export function AddUser({
             {error && (
                 <div style={{ color: "red", fontWeight: "bold" }}>
                     Please provide a unique User Name
+                </div>
+            )}
+            {errorBlank && (
+                <div style={{ color: "red", fontWeight: "bold" }}>
+                    Please provide a not Blank User Name
                 </div>
             )}
             <Form.Group
