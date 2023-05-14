@@ -23,6 +23,7 @@ import {
     Wrap
 } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
+import { PopUp } from "./UsersWithItemPopup";
 
 export function MealDraggable({
     name,
@@ -212,6 +213,11 @@ export function MealDraggable({
                                         0
                                     )}
                                 </Text>
+                                <PopUp
+                                    userList={userList}
+                                    setUserList={setUserList}
+                                    name={name}
+                                ></PopUp>
                             </WrapItem>
                         </Wrap>
                     </Flex>

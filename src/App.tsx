@@ -111,7 +111,6 @@ function App(): JSX.Element {
                     userList={userList}
                     setUserList={setUserList}
                 ></AddUser>
-                <PopUp></PopUp>
                 {/* <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}

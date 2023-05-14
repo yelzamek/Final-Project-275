@@ -2,8 +2,14 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./UsersWithItemPopup.css";
+import { UserListProps } from "../Interfaces/UserListProps";
+import { User } from "../Interfaces/UserObject";
+import { Meal, nameProps } from "../Interfaces/MealObject";
 
-export function PopUp(): JSX.Element {
+export function PopUp({
+    userList,
+    name
+}: UserListProps & nameProps): JSX.Element {
     const [showPopup, setShowPopup] = useState(false);
 
     const handleOpenPopup = () => {
@@ -23,11 +29,21 @@ export function PopUp(): JSX.Element {
             {showPopup && (
                 <div id="popupOverlay" className="show">
                     <div id="popupContent">
-                        <h2>Popup Content</h2>
-                        <p>This is a popup.</p>
-                        <button id="closePopup" onClick={handleClosePopup}>
+                        <h2>
+                            {"User's"} with {name} in their List
+                        </h2>
+                        <p>
+                            {userList.map((user: User) =>
+                                user.list_of_items.map((meal: Meal) =>
+                                    meal.name === name ? (
+                                        <div>{user.name}</div>
+                                    ) : undefined
+                                )
+                            )}
+                        </p>
+                        <Button id="closePopup" onClick={handleClosePopup}>
                             Close
-                        </button>
+                        </Button>
                     </div>
                 </div>
             )}
