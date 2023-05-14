@@ -24,6 +24,7 @@ import { Sidebar } from "./Components/Sidebar";
 import { ChakraProvider, Text } from "@chakra-ui/react";
 import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { FilterChoices } from "./Components/FilterButtons";
+import { PopUp } from "./Components/UsersWithItemPopup";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
@@ -110,6 +111,7 @@ function App(): JSX.Element {
                     userList={userList}
                     setUserList={setUserList}
                 ></AddUser>
+                <PopUp></PopUp>
                 {/* <SuperUserSelectButton
                     userType={userType}
                     setUserType={setUserType}
