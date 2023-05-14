@@ -901,5 +901,57 @@ export const MEAL_LIST: Meal[] = [
             "pepper"
         ],
         tags: ["dairy", "vegan", "vegetarian", "gluten"]
+    },
+    {
+        name: "Falafel Wrap",
+        image: "https://www.jessicagavin.com/wp-content/uploads/2018/04/falafel-wrap-10-1200.jpg",
+        serving_size: 4,
+        calories: 320,
+        total_fat: 10,
+        cholesterol: 0,
+        sodium: 700,
+        total_carbs: 45,
+        total_sugars: 5,
+        protein: 15,
+        ingredients: [
+            "falafel",
+            "whole wheat wrap",
+            "cucumber",
+            "tomatoes",
+            "red onion",
+            "tahini sauce",
+            "lemon juice",
+            "garlic",
+            "salt",
+            "pepper"
+        ],
+        tags: ["vegan", "vegetarian", "gluten-free"]
+    },
+
+    {
+        name: "Grilled Vegetable Bowl",
+        image: "https://dishingouthealth.com/wp-content/uploads/2021/02/RoastedVeggieGlowBowls_Square.jpg",
+        serving_size: 4,
+        calories: 280,
+        total_fat: 8,
+        cholesterol: 0,
+        sodium: 420,
+        total_carbs: 45,
+        total_sugars: 10,
+        protein: 10,
+        ingredients: [
+            "quinoa",
+            "grilled zucchini",
+            "grilled yellow squash",
+            "grilled red onion",
+            "grilled red pepper",
+            "avocado",
+            "cilantro",
+            "lime juice",
+            "olive oil",
+            "salt",
+            "pepper"
+        ],
+        tags: ["vegan", "vegetarian", "gluten-free"]
     }
 ];
