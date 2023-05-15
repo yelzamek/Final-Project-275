@@ -51,13 +51,7 @@ export const MEAL_LIST: Meal[] = [
         total_sugars: 0,
         protein: 31,
         ingredients: ["chicken breast", "olive oil", "salt", "pepper"],
-        tags: [
-            "meat-free",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["dairy-free", "gluten-free"]
     },
 
     {
@@ -111,13 +105,7 @@ export const MEAL_LIST: Meal[] = [
             "mayonnaise",
             "ketchup"
         ],
-        tags: [
-            "meat-free",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten"
-        ]
+        tags: ["meat-free", "dairy-free", "vegan", "vegetarian", "gluten-free"]
     },
 
     {
@@ -132,7 +120,7 @@ export const MEAL_LIST: Meal[] = [
         total_sugars: 0,
         protein: 50,
         ingredients: ["salmon fillets", "olive oil", "salt", "pepper"],
-        tags: ["meat-free", "dairy-free", "vegan", "vegetarian", "gluten-free"]
+        tags: ["dairy-free", "gluten-free"]
     },
     {
         name: "Greek Salad",
@@ -157,13 +145,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: [
-            "meat-free",
-            "dairy",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["meat-free", "vegetarian", "gluten-free"]
     },
     {
         name: "Tofu Stir-Fry",
@@ -215,9 +197,7 @@ export const MEAL_LIST: Meal[] = [
             "potatoes"
         ],
         tags: [
-            "meat",
             "dairy-free",
-            "vegan-friendly",
             "vegetarian",
             "gluten-free"
         ]
@@ -243,12 +223,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "red pepper flakes"
         ],
-        tags: [
-            "meat-free",
-            "dairy",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
+        tags: ["gluten-free"
         ]
     },
     {
@@ -272,7 +247,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["meat", "dairy", "vegan-friendly", "vegetarian", "gluten"]
+        tags: ["gluten-free"]
     },
     {
         name: "Beef and Broccoli Stir-Fry",
@@ -296,10 +271,7 @@ export const MEAL_LIST: Meal[] = [
             "rice"
         ],
         tags: [
-            "meat",
             "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
             "gluten-free"
         ]
     },
@@ -322,7 +294,7 @@ export const MEAL_LIST: Meal[] = [
             "lettuce",
             "tomato"
         ],
-        tags: ["meat", "dairy-free", "vegan-friendly", "vegetarian", "gluten"]
+        tags: ["dairy-free", "gluten"]
     },
     {
         name: "Beef Tacos",
@@ -344,7 +316,7 @@ export const MEAL_LIST: Meal[] = [
             "shredded cheese",
             "sour cream"
         ],
-        tags: ["meat", "dairy", "vegan-friendly", "vegetarian", "gluten"]
+        tags: ["gluten-free"]
     },
     {
         name: "Vegetarian Chili",
