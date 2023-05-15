@@ -51,13 +51,7 @@ export const MEAL_LIST: Meal[] = [
         total_sugars: 0,
         protein: 31,
         ingredients: ["chicken breast", "olive oil", "salt", "pepper"],
-        tags: [
-            "meat-free",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["dairy-free", "gluten-free"]
     },
 
     {
@@ -111,13 +105,7 @@ export const MEAL_LIST: Meal[] = [
             "mayonnaise",
             "ketchup"
         ],
-        tags: [
-            "meat-free",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten"
-        ]
+        tags: ["meat-free", "dairy-free", "vegan", "vegetarian", "gluten-free"]
     },
 
     {
@@ -132,7 +120,7 @@ export const MEAL_LIST: Meal[] = [
         total_sugars: 0,
         protein: 50,
         ingredients: ["salmon fillets", "olive oil", "salt", "pepper"],
-        tags: ["meat-free", "dairy-free", "vegan", "vegetarian", "gluten-free"]
+        tags: ["dairy-free", "gluten-free"]
     },
     {
         name: "Greek Salad",
@@ -157,13 +145,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: [
-            "meat-free",
-            "dairy",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["meat-free", "vegetarian", "gluten-free"]
     },
     {
         name: "Tofu Stir-Fry",
@@ -214,13 +196,7 @@ export const MEAL_LIST: Meal[] = [
             "bay leaves",
             "potatoes"
         ],
-        tags: [
-            "meat",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["dairy-free", "vegetarian", "gluten-free"]
     },
     {
         name: "Shrimp Scampi",
@@ -243,13 +219,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "red pepper flakes"
         ],
-        tags: [
-            "meat-free",
-            "dairy",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["gluten-free"]
     },
     {
         name: "Chicken Alfredo",
@@ -272,7 +242,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["meat", "dairy", "vegan-friendly", "vegetarian", "gluten"]
+        tags: ["gluten-free"]
     },
     {
         name: "Beef and Broccoli Stir-Fry",
@@ -295,13 +265,7 @@ export const MEAL_LIST: Meal[] = [
             "vegetable oil",
             "rice"
         ],
-        tags: [
-            "meat",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["dairy-free", "gluten-free"]
     },
     {
         name: "BBQ Chicken Sandwiches",
@@ -322,7 +286,7 @@ export const MEAL_LIST: Meal[] = [
             "lettuce",
             "tomato"
         ],
-        tags: ["meat", "dairy-free", "vegan-friendly", "vegetarian", "gluten"]
+        tags: ["dairy-free", "gluten"]
     },
     {
         name: "Beef Tacos",
@@ -344,7 +308,7 @@ export const MEAL_LIST: Meal[] = [
             "shredded cheese",
             "sour cream"
         ],
-        tags: ["meat", "dairy", "vegan-friendly", "vegetarian", "gluten"]
+        tags: ["gluten-free"]
     },
     {
         name: "Vegetarian Chili",
@@ -391,13 +355,7 @@ export const MEAL_LIST: Meal[] = [
             "paprika",
             "eggs"
         ],
-        tags: [
-            "meat-free",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["meat-free", "dairy-free", "vegetarian", "gluten-free"]
     },
     {
         name: "Chicken Fajitas",
@@ -423,7 +381,7 @@ export const MEAL_LIST: Meal[] = [
             "pepper",
             "tortillas"
         ],
-        tags: ["meat", "dairy-free", "vegan-friendly", "vegetarian", "gluten"]
+        tags: ["dairy-free", "gluten-free"]
     },
     {
         name: "Caprese Salad",
@@ -443,13 +401,7 @@ export const MEAL_LIST: Meal[] = [
             "olive oil",
             "balsamic vinegar"
         ],
-        tags: [
-            "dairy",
-            "meat-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["meat-free", "vegan", "vegetarian", "gluten-free"]
     },
     {
         name: "Chicken Caesar Salad",
@@ -469,7 +421,7 @@ export const MEAL_LIST: Meal[] = [
             "parmesan cheese",
             "croutons"
         ],
-        tags: ["meat", "dairy", "vegan-friendly", "vegetarian", "gluten"]
+        tags: ["gluten-free"]
     },
     {
         name: "Minestrone Soup",
@@ -519,13 +471,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "black pepper"
         ],
-        tags: [
-            "meat",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["dairy-free", "gluten-free"]
     },
     {
         name: "Baked Salmon",
@@ -545,13 +491,7 @@ export const MEAL_LIST: Meal[] = [
             "lemon juice",
             "dill"
         ],
-        tags: [
-            "meat",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["dairy-free", "gluten-free"]
     },
     {
         name: "Beef Stir Fry",
@@ -573,13 +513,7 @@ export const MEAL_LIST: Meal[] = [
             "hoisin sauce",
             "sesame oil"
         ],
-        tags: [
-            "meat",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["dairy-free", "gluten-free"]
     },
     {
         name: "Sweet Potato Black Bean Bowl",
@@ -604,7 +538,7 @@ export const MEAL_LIST: Meal[] = [
             "pepper",
             "rice"
         ],
-        tags: ["vegan", "vegetarian", "dairy-free", "gluten-free", "protein"]
+        tags: ["vegan", "vegetarian", "dairy-free", "gluten-free", "meat-free"]
     },
     {
         name: "Shrimp Tacos",
@@ -629,13 +563,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "black pepper"
         ],
-        tags: [
-            "seafood",
-            "dairy-free",
-            "vegan-friendly",
-            "vegetarian",
-            "gluten-free"
-        ]
+        tags: ["dairy-free", "gluten-free"]
     },
     {
         name: "Spaghetti Carbonara",
@@ -657,7 +585,7 @@ export const MEAL_LIST: Meal[] = [
             "heavy cream",
             "black pepper"
         ],
-        tags: ["meat", "dairy", "gluten"]
+        tags: ["gluten-free"]
     },
     {
         name: "Vegan Bowl",
@@ -680,7 +608,7 @@ export const MEAL_LIST: Meal[] = [
             "hummus",
             "tahini dressing"
         ],
-        tags: ["vegan", "vegetarian", "gluten"]
+        tags: ["meat-free", "vegan", "vegetarian", "gluten-free"]
     },
     {
         name: "Vegan Lentil Stew",
@@ -707,7 +635,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "black pepper"
         ],
-        tags: ["vegan", "vegetarian", "gluten"]
+        tags: ["meat-free", "vegan", "vegetarian", "gluten-free"]
     },
     {
         name: "Vegan Cauliflower Fried Rice",
@@ -730,7 +658,7 @@ export const MEAL_LIST: Meal[] = [
             "sesame oil",
             "green onion"
         ],
-        tags: ["vegan", "vegetarian", "gluten"]
+        tags: ["meat-free", "vegan", "vegetarian", "gluten-free"]
     },
     {
         name: "Vegan Lentil Shepherd's Pie",
@@ -757,7 +685,7 @@ export const MEAL_LIST: Meal[] = [
             "black pepper",
             "mashed potatoes"
         ],
-        tags: ["vegan", "vegetarian", "gluten"]
+        tags: ["meat-free", "vegan", "vegetarian", "gluten", "dairy-free"]
     },
     {
         name: "Gluten-Free Pizza",
@@ -774,11 +702,10 @@ export const MEAL_LIST: Meal[] = [
             "gluten-free pizza crust",
             "tomato sauce",
             "mozzarella cheese",
-            "pepperoni",
             "green peppers",
             "onion"
         ],
-        tags: ["gluten-free", "meat", "dairy"]
+        tags: ["gluten-free", "meat-free", "vegetarian"]
     },
     {
         name: "Potato Salad",
@@ -801,7 +728,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["dairy"]
+        tags: ["vegetarian"]
     },
     {
         name: "Baked Potatoes",
@@ -822,7 +749,7 @@ export const MEAL_LIST: Meal[] = [
             "sour cream",
             "chives"
         ],
-        tags: ["dairy", "vegan", "vegetarian", "gluten"]
+        tags: ["vegetarian", "gluten-free"]
     },
     {
         name: "Chicken Tenders and Fries",
@@ -845,7 +772,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["meat"]
+        tags: ["gluten-free"]
     },
     {
         name: "Butter Chicken",
@@ -872,7 +799,7 @@ export const MEAL_LIST: Meal[] = [
             "cayenne pepper",
             "salt"
         ],
-        tags: ["meat"]
+        tags: ["gluten-free"]
     },
     {
         name: "Vegetable Gyros",
@@ -900,6 +827,58 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["dairy", "vegan", "vegetarian", "gluten"]
+        tags: ["meat-free", "vegan", "vegetarian", "gluten-free"]
+    },
+    {
+        name: "Falafel Wrap",
+        image: "https://cdn.doordash.com/media/photosV2/73416a0c-1094-4337-ae27-6dcf4c7d421e-retina-large.jpeg",
+        serving_size: 4,
+        calories: 320,
+        total_fat: 10,
+        cholesterol: 0,
+        sodium: 700,
+        total_carbs: 45,
+        total_sugars: 5,
+        protein: 15,
+        ingredients: [
+            "falafel",
+            "whole wheat wrap",
+            "cucumber",
+            "tomatoes",
+            "red onion",
+            "tahini sauce",
+            "lemon juice",
+            "garlic",
+            "salt",
+            "pepper"
+        ],
+        tags: ["meat-free", "vegan", "vegetarian", "gluten-free"]
+    },
+
+    {
+        name: "Grilled Vegetable Bowl",
+        image: "https://dishingouthealth.com/wp-content/uploads/2021/02/RoastedVeggieGlowBowls_Square.jpg",
+        serving_size: 4,
+        calories: 280,
+        total_fat: 8,
+        cholesterol: 0,
+        sodium: 420,
+        total_carbs: 45,
+        total_sugars: 10,
+        protein: 10,
+        ingredients: [
+            "quinoa",
+            "grilled zucchini",
+            "grilled yellow squash",
+            "grilled red onion",
+            "grilled red pepper",
+            "avocado",
+            "cilantro",
+            "lime juice",
+            "olive oil",
+            "salt",
+            "pepper"
+        ],
+        tags: ["meat-free", "vegan", "vegetarian", "gluten-free"]
     }
 ];
