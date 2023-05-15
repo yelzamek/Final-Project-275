@@ -6,6 +6,7 @@ import { MealListProps, Meal } from "../Interfaces/MealObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
 import { UserListProps } from "../Interfaces/UserListProps";
+import { FilterChoicesProps } from "../Interfaces/FilterChoices";
 import {
     Box,
     SimpleGrid,
@@ -157,13 +158,19 @@ export function MealDraggable({
                         >
                             Remove
                         </Button>
-                        <Form.Check
-                            type="checkbox"
-                            id="fav-check"
-                            label="Favorite"
-                            value={name}
-                            onChange={updateFavorites}
-                        />
+                        <span
+                            hidden={
+                                userType === "superUser" || userType === "Admin"
+                            }
+                        >
+                            <Form.Check
+                                type="checkbox"
+                                id="fav-check"
+                                label="Favorite"
+                                value={name}
+                                onChange={updateFavorites}
+                            />
+                        </span>
                     </HStack>
                 </CardFooter>
             </Card>
@@ -179,15 +186,27 @@ export function CenterList({
     currentUser,
     setCurrentUser,
     userList,
-    setUserList
-}: MealListProps & UserTypeProps & UserListProps & CurrentUserProps) {
+    setUserList,
+    filterChoices
+}: MealListProps &
+    UserTypeProps &
+    UserListProps &
+    CurrentUserProps &
+    FilterChoicesProps) {
     return (
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
             <ChakraProvider>
                 <SimpleGrid columns={4} spacing={5}>
                     {mealList.map((MealObject: Meal) => (
-                        <div key={MealObject.name}>
+                        <div
+                            key={MealObject.name}
+                            hidden={
+                                !filterChoices.every((choice) =>
+                                    MealObject.tags.includes(choice)
+                                )
+                            }
+                        >
                             <MealDraggable
                                 name={MealObject.name}
                                 image={MealObject.image}

@@ -70,6 +70,8 @@ function App(): JSX.Element {
                         setCurrentUser={setCurrentUser}
                         userList={userList}
                         setUserList={setUserList}
+                        filterChoices={filterChoices}
+                        setFilterChoices={setFilterChoices}
                     ></SuperUserSelectButton>
                     <AdminSelectButton
                         userType={userType}
@@ -78,6 +80,8 @@ function App(): JSX.Element {
                         setCurrentUser={setCurrentUser}
                         userList={userList}
                         setUserList={setUserList}
+                        filterChoices={filterChoices}
+                        setFilterChoices={setFilterChoices}
                     ></AdminSelectButton>
                     <UserDropDown
                         mealList={mealList}
@@ -137,6 +141,8 @@ function App(): JSX.Element {
                     setCurrentUser={setCurrentUser}
                     userList={userList}
                     setUserList={setUserList}
+                    filterChoices={filterChoices}
+                    setFilterChoices={setFilterChoices}
                 ></CenterList>
                 <AddMeal
                     mealList={mealList}

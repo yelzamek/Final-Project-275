@@ -26,21 +26,21 @@ export function FilterChoices({
                     type="checkbox"
                     id="meat-free-check"
                     label="Meat-Free"
-                    value="Meat-Free"
+                    value="meat-free"
                     onChange={updateFilterChoices}
                 />
                 <Form.Check
                     type="checkbox"
                     id="dairy-free-check"
                     label="Dairy-Free"
-                    value="Dairy-Free"
+                    value="dairy-free"
                     onChange={updateFilterChoices}
                 />
                 <Form.Check
                     type="checkbox"
                     id="gluten-free-check"
                     label="Gluten-Free"
-                    value="Gluten-Free"
+                    value="gluten-free"
                     onChange={updateFilterChoices}
                 />
                 <Form.Check
@@ -54,7 +54,7 @@ export function FilterChoices({
                     type="checkbox"
                     id="vegan-check"
                     label="Vegan"
-                    value="Vegan"
+                    value="vegan"
                     onChange={updateFilterChoices}
                 />
                 <span hidden={userType === "superUser" || userType === "Admin"}>
@@ -63,6 +63,7 @@ export function FilterChoices({
                         id="favorites-check"
                         label="Favorites"
                         value="Favorites"
+                        checked={filterChoices.includes("Favorites")}
                         onChange={updateFilterChoices}
                     />
                 </span>
