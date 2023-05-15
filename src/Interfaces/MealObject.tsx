@@ -749,7 +749,7 @@ export const MEAL_LIST: Meal[] = [
             "sour cream",
             "chives"
         ],
-        tags: ["dairy", "vegan", "vegetarian", "gluten"]
+        tags:   {"vegetarian", "gluten-free"]
     },
     {
         name: "Chicken Tenders and Fries",
@@ -772,7 +772,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["meat"]
+        tags: ["gluten-free"]
     },
     {
         name: "Butter Chicken",
@@ -799,7 +799,7 @@ export const MEAL_LIST: Meal[] = [
             "cayenne pepper",
             "salt"
         ],
-        tags: ["meat"]
+        tags: ["gluten-free"]
     },
     {
         name: "Vegetable Gyros",
@@ -827,7 +827,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["dairy", "vegan", "vegetarian", "gluten"]
+        tags: ["meat-free", "vegan", "vegetarian", "gluten-free"]
     },
     {
         name: "Falafel Wrap",
@@ -852,7 +852,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["vegan", "vegetarian", "gluten-free"]
+        tags: ["meat-free","vegan", "vegetarian", "gluten-free"]
     },
 
     {
@@ -879,6 +879,6 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["vegan", "vegetarian", "gluten-free"]
+        tags: ["meat-free","vegan", "vegetarian", "gluten-free"]
     }
 ];
