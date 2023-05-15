@@ -749,7 +749,7 @@ export const MEAL_LIST: Meal[] = [
             "sour cream",
             "chives"
         ],
-        tags:   {"vegetarian", "gluten-free"]
+        tags: ["vegetarian", "gluten-free"]
     },
     {
         name: "Chicken Tenders and Fries",
@@ -852,7 +852,7 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["meat-free","vegan", "vegetarian", "gluten-free"]
+        tags: ["meat-free", "vegan", "vegetarian", "gluten-free"]
     },
 
     {
@@ -879,6 +879,6 @@ export const MEAL_LIST: Meal[] = [
             "salt",
             "pepper"
         ],
-        tags: ["meat-free","vegan", "vegetarian", "gluten-free"]
+        tags: ["meat-free", "vegan", "vegetarian", "gluten-free"]
     }
 ];
