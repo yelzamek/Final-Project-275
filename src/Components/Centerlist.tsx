@@ -122,7 +122,7 @@ export function MealDraggable({
                     marginTop="0"
                 >
                     {showNutrition && (
-                        <Box maxH="200px" overflowY="scroll">
+                        <Box maxH="100px" maxW="200px" overflowY="scroll">
                             <Text whiteSpace="pre-line" fontSize="sm">
                                 Serving Size: {serving_size}
                                 {"\n"} Calories: {calories}
@@ -136,7 +136,7 @@ export function MealDraggable({
                         </Box>
                     )}
                     {!showNutrition && (
-                        <Box maxH="200px" overflowY="scroll">
+                        <Box maxH="200px" maxW="200px" overflowY="scroll">
                             <Text whiteSpace="pre-line" fontSize="sm">
                                 {ingredients.join("\n")}
                             </Text>
