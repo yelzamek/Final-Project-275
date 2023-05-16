@@ -101,6 +101,7 @@ export function MealDraggable({
                 borderColor="green.400"
                 bg="white"
                 size="md"
+                maxH="500px"
             >
                 <CardHeader color="gray.700">
                     <Flex gap={3}>
@@ -116,14 +117,15 @@ export function MealDraggable({
                     </Flex>
                 </CardHeader>
 
-                <CardBody
-                    color="gray.500"
-                    style={{ columnCount: 2 }}
-                    marginTop="0"
-                >
+                <CardBody color="gray.500" marginTop="0">
                     {showNutrition && (
-                        <Box maxH="100px" maxW="200px" overflowY="scroll">
-                            <Text whiteSpace="pre-line" fontSize="sm">
+                        <Box maxH="100px" overflowY="scroll">
+                            <Text
+                                whiteSpace="pre-line"
+                                fontSize="sm"
+                                style={{ columnCount: 2 }}
+                                maxH="100px"
+                            >
                                 Serving Size: {serving_size}
                                 {"\n"} Calories: {calories}
                                 {"\n"} Total Fat: {total_fat}
@@ -136,8 +138,12 @@ export function MealDraggable({
                         </Box>
                     )}
                     {!showNutrition && (
-                        <Box maxH="200px" maxW="200px" overflowY="scroll">
-                            <Text whiteSpace="pre-line" fontSize="sm">
+                        <Box maxH="100px" overflowY="scroll">
+                            <Text
+                                whiteSpace="pre-line"
+                                fontSize="sm"
+                                style={{ columnCount: 2 }}
+                            >
                                 {ingredients.join("\n")}
                             </Text>
                         </Box>
