@@ -246,6 +246,7 @@ export function CenterList({
     UserListProps &
     CurrentUserProps &
     FilterChoicesProps) {
+    const favIndex = filterChoices.indexOf("Favorites");
     return (
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
@@ -255,9 +256,19 @@ export function CenterList({
                         <div
                             key={MealObject.name}
                             hidden={
-                                !filterChoices.every((choice) =>
-                                    MealObject.tags.includes(choice)
-                                )
+                                (filterChoices.includes("Favorites") &&
+                                    !currentUser.list_of_favorites.includes(
+                                        MealObject
+                                    ) &&
+                                    !filterChoices
+                                        .splice(favIndex, 1)
+                                        .every((choice) =>
+                                            MealObject.tags.includes(choice)
+                                        )) ||
+                                (!filterChoices.includes("Favorites") &&
+                                    !filterChoices.every((choice) =>
+                                        MealObject.tags.includes(choice)
+                                    ))
                             }
                         >
                             <MealDraggable
