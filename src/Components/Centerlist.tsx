@@ -20,7 +20,8 @@ import {
     ChakraProvider,
     Avatar,
     WrapItem,
-    Wrap
+    Wrap,
+    extendTheme
 } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
 import { PopUp } from "./UsersWithItemPopup";
