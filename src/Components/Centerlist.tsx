@@ -171,6 +171,8 @@ export function MealDraggable({
                                     variant={
                                         showNutrition ? "primary" : "ghost"
                                     }
+                                    // colorScheme={
+                                    //    showNutrition ? "blue" : "gray"
                                     onClick={() => setShowNutrition(true)}
                                 >
                                     Nutrition
