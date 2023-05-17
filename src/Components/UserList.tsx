@@ -59,6 +59,18 @@ export function UserList({
             list_of_items: updatedList,
             list_of_favorites: updatedFavList
         });
+        const userIndex = userList.findIndex(
+            (user: User): boolean => user.name === currentUser.name
+        );
+        setUserList([
+            ...userList.slice(0, userIndex),
+            {
+                ...currentUser,
+                list_of_items: updatedList,
+                list_of_favorites: updatedFavList
+            },
+            ...userList.slice(userIndex + 1)
+        ]);
     }
     const [{ isOver }, drop] = useDrop({
         accept: "Meal",
