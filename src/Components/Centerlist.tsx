@@ -246,7 +246,25 @@ export function CenterList({
     UserListProps &
     CurrentUserProps &
     FilterChoicesProps) {
-    const favIndex = filterChoices.indexOf("Favorites");
+    function displayable(MealObject: Meal) {
+        if (filterChoices.includes("Favorites")) {
+            const favIndex = filterChoices.indexOf("Favorites");
+            const filterWithoutFavorites = [...filterChoices];
+            filterWithoutFavorites.splice(favIndex, 1);
+            if (currentUser.list_of_favorites.includes(MealObject)) {
+                return !filterWithoutFavorites.every((choice) =>
+                    MealObject.tags.includes(choice)
+                );
+            } else {
+                return true;
+            }
+        } else {
+            return !filterChoices.every((choice) =>
+                MealObject.tags.includes(choice)
+            );
+        }
+    }
+
     return (
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
@@ -255,21 +273,7 @@ export function CenterList({
                     {mealList.map((MealObject: Meal) => (
                         <div
                             key={MealObject.name}
-                            hidden={
-                                (filterChoices.includes("Favorites") &&
-                                    !currentUser.list_of_favorites.includes(
-                                        MealObject
-                                    ) &&
-                                    !filterChoices
-                                        .splice(favIndex, 1)
-                                        .every((choice) =>
-                                            MealObject.tags.includes(choice)
-                                        )) ||
-                                (!filterChoices.includes("Favorites") &&
-                                    !filterChoices.every((choice) =>
-                                        MealObject.tags.includes(choice)
-                                    ))
-                            }
+                            hidden={displayable(MealObject)}
                         >
                             <MealDraggable
                                 name={MealObject.name}
