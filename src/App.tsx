@@ -41,9 +41,10 @@ function App(): JSX.Element {
         list_of_favorites: []
     };
     const [userList, setUserList] = useState<User[]>([noneUser, currentUser]);
+    const [pointerEventsEnabled, setPointerEventsEnabled] = useState(true);
     return (
         <DndProvider backend={HTML5Backend}>
-            <div className="App">
+            <div className={pointerEventsEnabled ? "App" : "App-NoPointer"}>
                 {/* <header className="header">
                     <header className="header"></header>
                     <a href="#" className="logo">
@@ -137,6 +138,8 @@ function App(): JSX.Element {
                     setCurrentUser={setCurrentUser}
                     userList={userList}
                     setUserList={setUserList}
+                    pointerEventsEnabled={pointerEventsEnabled}
+                    setPointerEventsEnabled={setPointerEventsEnabled}
                 ></CenterList>
                 <AddMeal
                     mealList={mealList}

@@ -7,20 +7,25 @@ import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
 import { Meal, nameProps } from "../Interfaces/MealObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { PointerProps } from "../Interfaces/PointerProps";
 
 export function PopUp({
     userList,
     name,
-    userType
-}: UserListProps & nameProps & UserTypeProps): JSX.Element {
+    userType,
+    pointerEventsEnabled,
+    setPointerEventsEnabled
+}: UserListProps & nameProps & UserTypeProps & PointerProps): JSX.Element {
     const [showPopup, setShowPopup] = useState(false);
 
     const handleOpenPopup = () => {
         setShowPopup(true);
+        setPointerEventsEnabled(false);
     };
 
     const handleClosePopup = () => {
         setShowPopup(false);
+        setPointerEventsEnabled(true);
     };
 
     return (
