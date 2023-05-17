@@ -1,7 +1,7 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { useDrag } from "react-dnd";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
@@ -21,7 +21,9 @@ import {
     Avatar,
     WrapItem,
     Wrap,
-    extendTheme
+    Button,
+    extendTheme,
+    theme
 } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
 import { PopUp } from "./UsersWithItemPopup";
@@ -67,6 +69,12 @@ export function MealDraggable({
         setMealList(copy);
     }
     const [showNutrition, setShowNutrition] = useState<boolean>(true);
+    const theme = extendTheme({
+        colors: {
+          brand: {
+            100: "#63ab74",
+        },
+    })
 
     function updateFavorites(event: React.ChangeEvent<HTMLInputElement>) {
         const index = userList.findIndex(
@@ -175,8 +183,9 @@ export function MealDraggable({
                         <Wrap spacing={1}>
                             <WrapItem>
                                 <Button
+                                    colorScheme="#63ab74"
                                     variant={
-                                        showNutrition ? "primary" : "ghost"
+                                        showNutrition ? "outline" : "ghost"
                                     }
                                     // colorScheme={
                                     //    showNutrition ? "blue" : "gray"
@@ -273,7 +282,7 @@ export function CenterList({
     return (
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
-            <ChakraProvider>
+            <ChakraProvider theme={theme}>
                 <SimpleGrid columns={4} spacing={5}>
                     {mealList.map((MealObject: Meal) => (
                         <div key={MealObject.name}>
