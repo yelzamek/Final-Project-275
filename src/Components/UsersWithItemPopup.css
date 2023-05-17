@@ -9,11 +9,15 @@
   display: none;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
+  z-index: 9998;
 }
 
 #popupContent {
   background-color: #fff;
   padding: 20px;
+  z-index: 9999;
+  pointer-events: auto;
 }
 
 #popupOverlay.show {
