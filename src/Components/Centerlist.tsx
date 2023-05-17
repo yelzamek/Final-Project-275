@@ -21,9 +21,7 @@ import {
     Avatar,
     WrapItem,
     Wrap,
-    Button,
-    extendTheme,
-    theme
+    Button
 } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
 import { PopUp } from "./UsersWithItemPopup";
@@ -69,12 +67,6 @@ export function MealDraggable({
         setMealList(copy);
     }
     const [showNutrition, setShowNutrition] = useState<boolean>(true);
-    const theme = extendTheme({
-        colors: {
-          brand: {
-            100: "#63ab74",
-        },
-    })
 
     function updateFavorites(event: React.ChangeEvent<HTMLInputElement>) {
         const index = userList.findIndex(
@@ -183,12 +175,10 @@ export function MealDraggable({
                         <Wrap spacing={1}>
                             <WrapItem>
                                 <Button
-                                    colorScheme="#63ab74"
+                                    colorScheme="green"
                                     variant={
                                         showNutrition ? "outline" : "ghost"
                                     }
-                                    // colorScheme={
-                                    //    showNutrition ? "blue" : "gray"
                                     onClick={() => setShowNutrition(true)}
                                 >
                                     Nutrition
@@ -196,8 +186,9 @@ export function MealDraggable({
                             </WrapItem>
                             <WrapItem>
                                 <Button
+                                    colorScheme="green"
                                     variant={
-                                        !showNutrition ? "primary" : "ghost"
+                                        !showNutrition ? "outline" : "ghost"
                                     }
                                     onClick={() => setShowNutrition(false)}
                                 >
@@ -206,6 +197,7 @@ export function MealDraggable({
                             </WrapItem>
                             <WrapItem>
                                 <Button
+                                    colorScheme="green"
                                     hidden={!(userType === "superUser")}
                                     onClick={() => RemoveMeal(name)}
                                 >
@@ -282,7 +274,7 @@ export function CenterList({
     return (
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
-            <ChakraProvider theme={theme}>
+            <ChakraProvider>
                 <SimpleGrid columns={4} spacing={5}>
                     {mealList.map((MealObject: Meal) => (
                         <div key={MealObject.name}>
