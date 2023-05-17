@@ -13,7 +13,6 @@ export function PopUp({
     userList,
     name,
     userType,
-    pointerEventsEnabled,
     setPointerEventsEnabled
 }: UserListProps & nameProps & UserTypeProps & PointerProps): JSX.Element {
     const [showPopup, setShowPopup] = useState(false);
