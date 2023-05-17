@@ -1,3 +1,5 @@
+/* eslint-disable no-extra-parens */
+/* eslint-disable indent */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import { MealListProps } from "../Interfaces/MealObject";
@@ -5,6 +7,7 @@ import { Meal } from "../Interfaces/MealObject";
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { Checkbox, Stack } from "@chakra-ui/react";
 
 //Needs to add editing abilty
 
@@ -96,16 +99,14 @@ export function AddMeal({
     //Setting Tags
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-    function updateTags(event: React.ChangeEvent<HTMLInputElement>) {
-        const tag = event.target.value;
-        const isSelected = selectedTags.includes(tag);
-        const [updatedTags, setUpdatedTags] = useState<string[]>([]);
-        if (isSelected) {
-            setUpdatedTags(
-                selectedTags.filter((selectedTag) => selectedTag !== tag)
+    function updateTags(tag: string) {
+        let updatedTags: string[];
+        if (selectedTags.includes(tag)) {
+            updatedTags = selectedTags.filter(
+                (selectedTag) => selectedTag !== tag
             );
         } else {
-            setUpdatedTags([...selectedTags, tag]);
+            updatedTags = [...selectedTags, tag];
         }
 
         setSelectedTags(updatedTags);
@@ -257,47 +258,38 @@ export function AddMeal({
                     ></Form.Control>
                 </Form.Group>
             </div>
-            <div>
-                <Form.Group controlId="formTags">
-                    <Form.Label>Tags:</Form.Label>
-                    <Form.Check
-                        type="radio"
-                        label="Meat-Free"
-                        value="meat-free"
-                        checked={selectedTags.includes("meat-free")}
-                        onChange={updateTags}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Dairy-Free"
-                        value="dairy-free"
-                        checked={selectedTags.includes("dairy-free")}
-                        onChange={updateTags}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Vegan-Friendly"
-                        value="vegan-friendly"
-                        checked={selectedTags.includes("vegan-friendly")}
-                        onChange={updateTags}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Vegetarian"
-                        value="vegetarian"
-                        checked={selectedTags.includes("vegetarian")}
-                        onChange={updateTags}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Gluten-Free"
-                        value="gluten-free"
-                        checked={selectedTags.includes("gluten-free")}
-                        onChange={updateTags}
-                    />
-                </Form.Group>
-            </div>
-
+            <Stack spacing={40} direction="row">
+                <Checkbox
+                    colorScheme="green"
+                    onChange={() => updateTags("Meat-Free")}
+                >
+                    Meat-Free
+                </Checkbox>
+                <Checkbox
+                    colorScheme="green"
+                    onChange={() => updateTags("dairy-free")}
+                >
+                    Dairy-free
+                </Checkbox>
+                <Checkbox
+                    colorScheme="green"
+                    onChange={() => updateTags("vegan-friendly")}
+                >
+                    Vegan-friendly
+                </Checkbox>
+                <Checkbox
+                    colorScheme="green"
+                    onChange={() => updateTags("vegetarian")}
+                >
+                    Vegetarian
+                </Checkbox>
+                <Checkbox
+                    colorScheme="green"
+                    onChange={() => updateTags("gluten-free")}
+                >
+                    Gluten-free
+                </Checkbox>
+            </Stack>
             <div>
                 <Button onClick={() => createMeal()}>Add Item</Button>
             </div>
