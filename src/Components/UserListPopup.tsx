@@ -1,7 +1,7 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import "./UsersWithItemPopup.css";
+import "./UserListPopup.css";
 import { Meal, nameProps } from "../Interfaces/MealObject";
 import { MealListProps } from "../Interfaces/MealObject";
 
