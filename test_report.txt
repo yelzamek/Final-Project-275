@@ -1545,24 +1545,24 @@ FAIL src/App.test.tsx
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |    1.05 |     4.72 |    1.63 |    1.07 |                   
- src                        |       0 |      100 |       0 |       0 |                   
-  App.tsx                   |       0 |      100 |       0 |       0 | 29-44             
- src/Components             |    0.36 |     4.72 |    0.84 |    0.37 |                   
-  AddMeal.tsx               |       0 |        0 |       0 |       0 | 17-302            
+All files                   |       1 |     5.04 |    1.55 |    1.03 |                   
+ src                        |       0 |        0 |       0 |       0 |                   
+  App.tsx                   |       0 |        0 |       0 |       0 | 29-45             
+ src/Components             |    0.35 |     5.12 |     0.8 |    0.36 |                   
+  AddMeal.tsx               |       0 |        0 |       0 |       0 | 20-293            
   AddUser.tsx               |       0 |        0 |       0 |       0 | 12-92             
   AdminListComponent.tsx    |       0 |        0 |       0 |       0 | 24-68             
-  Centerlist.tsx            |       0 |        0 |       0 |       0 | 54-280            
+  Centerlist.tsx            |       0 |        0 |       0 |       0 | 58-294            
   EditMeal.tsx              |       0 |        0 |       0 |       0 | 38-343            
   FilterButtons.tsx         |       0 |        0 |       0 |       0 | 12-22             
   NutritionTotalButton.tsx  |       0 |        0 |       0 |       0 | 10-32             
   Sidebar.tsx               |       0 |      100 |       0 |       0 | 5                 
   SortFunction.tsx          |       0 |        0 |       0 |       0 | 11-47             
   UserDropdown.tsx          |       0 |        0 |       0 |       0 | 22-60             
-  UserList.tsx              |       0 |        0 |       0 |       0 | 24-85             
+  UserList.tsx              |       0 |        0 |       0 |       0 | 24-97             
   UserTypeIndicator.tsx     |     100 |      100 |     100 |     100 |                   
   UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-38             
-  UsersWithItemPopup.tsx    |       0 |        0 |       0 |       0 | 15-40             
+  UsersWithItemPopup.tsx    |       0 |        0 |       0 |       0 | 18-45             
  src/Components/UnusedFiles |      50 |      100 |   33.33 |      50 |                   
   NavBar.tsx                |      50 |      100 |   33.33 |      50 | 18-43             
  src/Interfaces             |       0 |      100 |     100 |       0 |                   
@@ -1571,6 +1571,7 @@ All files                   |    1.05 |     4.72 |    1.63 |    1.07 |
   CurrentUserProps.ts       |       0 |        0 |       0 |       0 |                   
   FilterChoices.ts          |       0 |        0 |       0 |       0 |                   
   MealObject.tsx            |       0 |      100 |     100 |       0 | 41                
+  PointerProps.ts           |       0 |        0 |       0 |       0 |                   
   SortOptionsProps.ts       |       0 |        0 |       0 |       0 |                   
   UserListProps.ts          |       0 |        0 |       0 |       0 |                   
   UserObject.tsx            |       0 |        0 |       0 |       0 |                   
@@ -1579,5 +1580,5 @@ All files                   |    1.05 |     4.72 |    1.63 |    1.07 |
 Test Suites: 10 failed, 10 total
 Tests:       10 failed, 1 passed, 11 total
 Snapshots:   0 total
-Time:        8.947 s
+Time:        6.544 s
 Ran all test suites.
