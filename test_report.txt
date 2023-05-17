@@ -1545,12 +1545,13 @@ FAIL src/App.test.tsx
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |    1.06 |      4.8 |    1.66 |    1.08 |                   
+All files                   |    1.05 |     4.72 |    1.63 |    1.07 |                   
  src                        |       0 |      100 |       0 |       0 |                   
   App.tsx                   |       0 |      100 |       0 |       0 | 29-44             
- src/Components             |    0.37 |      4.8 |    0.86 |    0.37 |                   
-  AddMeal.tsx               |       0 |        0 |       0 |       0 | 15-297            
+ src/Components             |    0.36 |     4.72 |    0.84 |    0.37 |                   
+  AddMeal.tsx               |       0 |        0 |       0 |       0 | 17-302            
   AddUser.tsx               |       0 |        0 |       0 |       0 | 12-92             
+  AdminListComponent.tsx    |       0 |        0 |       0 |       0 | 24-68             
   Centerlist.tsx            |       0 |        0 |       0 |       0 | 54-280            
   EditMeal.tsx              |       0 |        0 |       0 |       0 | 38-343            
   FilterButtons.tsx         |       0 |        0 |       0 |       0 | 12-22             
@@ -1562,7 +1563,6 @@ All files                   |    1.06 |      4.8 |    1.66 |    1.08 |
   UserTypeIndicator.tsx     |     100 |      100 |     100 |     100 |                   
   UserTypeSelectButtons.tsx |       0 |      100 |       0 |       0 | 13-38             
   UsersWithItemPopup.tsx    |       0 |        0 |       0 |       0 | 15-40             
-  adminList.tsx             |       0 |        0 |       0 |       0 | 24-68             
  src/Components/UnusedFiles |      50 |      100 |   33.33 |      50 |                   
   NavBar.tsx                |      50 |      100 |   33.33 |      50 | 18-43             
  src/Interfaces             |       0 |      100 |     100 |       0 |                   
@@ -1579,5 +1579,5 @@ All files                   |    1.06 |      4.8 |    1.66 |    1.08 |
 Test Suites: 10 failed, 10 total
 Tests:       10 failed, 1 passed, 11 total
 Snapshots:   0 total
-Time:        8.973 s
+Time:        8.947 s
 Ran all test suites.
