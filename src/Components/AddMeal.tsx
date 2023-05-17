@@ -19,63 +19,67 @@ export function AddMeal({
     //Setting name
     const [newName, setName] = useState<string>("");
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
+        setErrorName(false);
         setName(event.target.value);
     }
-
+    const [errorName, setErrorName] = useState<boolean>(false);
     function alreadyInList(name: string): boolean {
+        setErrorName(
+            mealList.some((meal: Meal): boolean => meal.name === newName)
+        );
         return mealList.some((meal: Meal): boolean => meal.name === newName);
     }
     //Setting serving size
-    const [newServingSize, setServingSize] = useState<number>(-1);
+    const [newServingSize, setServingSize] = useState<number>(0);
 
     function updateServingSize(event: React.ChangeEvent<HTMLInputElement>) {
         setServingSize(parseInt(event.target.value));
     }
 
     //Setting calories
-    const [newCalories, setCalories] = useState<number>(-1);
+    const [newCalories, setCalories] = useState<number>(0);
 
     function updateCalories(event: React.ChangeEvent<HTMLInputElement>) {
         setCalories(parseInt(event.target.value));
     }
 
     //Setting total fat
-    const [newTotalFat, setTotalFat] = useState<number>(-1);
+    const [newTotalFat, setTotalFat] = useState<number>(0);
 
     function updateTotalFat(event: React.ChangeEvent<HTMLInputElement>) {
         setTotalFat(parseInt(event.target.value));
     }
 
     //Setting cholesterol
-    const [newCholesterol, setCholesterol] = useState<number>(-1);
+    const [newCholesterol, setCholesterol] = useState<number>(0);
 
     function updateCholesterol(event: React.ChangeEvent<HTMLInputElement>) {
         setCholesterol(parseInt(event.target.value));
     }
 
     //Setting sodium
-    const [newSodium, setSodium] = useState<number>(-1);
+    const [newSodium, setSodium] = useState<number>(0);
 
     function updateSodium(event: React.ChangeEvent<HTMLInputElement>) {
         setSodium(parseInt(event.target.value));
     }
 
     //Setting total carbs
-    const [newTotalCarbs, setTotalCarbs] = useState<number>(-1);
+    const [newTotalCarbs, setTotalCarbs] = useState<number>(0);
 
     function updateTotalCarbs(event: React.ChangeEvent<HTMLInputElement>) {
         setTotalCarbs(parseInt(event.target.value));
     }
 
     //Setting total sugars
-    const [newTotalSugars, setTotalSugars] = useState<number>(-1);
+    const [newTotalSugars, setTotalSugars] = useState<number>(0);
 
     function updateTotalSugars(event: React.ChangeEvent<HTMLInputElement>) {
         setTotalSugars(parseInt(event.target.value));
     }
 
     //Setting protein
-    const [newProtein, setProtein] = useState<number>(-1);
+    const [newProtein, setProtein] = useState<number>(0);
 
     function updateProtein(event: React.ChangeEvent<HTMLInputElement>) {
         setProtein(parseInt(event.target.value));
@@ -114,18 +118,8 @@ export function AddMeal({
 
     //Assigning values and creating a new meal object
     function createMeal() {
-        if (
-            newName !== "" &&
-            newServingSize !== -1 &&
-            newCalories !== -1 &&
-            newTotalFat !== -1 &&
-            newCholesterol !== -1 &&
-            newSodium !== -1 &&
-            newTotalCarbs !== -1 &&
-            newTotalSugars !== -1 &&
-            newProtein !== -1 &&
-            newImage !== ""
-        ) {
+        const allow = alreadyInList(newName);
+        if (!allow) {
             const newMeal: Meal = {
                 name: newName,
                 serving_size: newServingSize,
@@ -151,11 +145,15 @@ export function AddMeal({
     return (
         <div hidden={!(userType === "superUser")}>
             <div>
+                {errorName && (
+                    <div style={{ color: "red", fontWeight: "bold" }}>
+                        Please Enter A Unique Meal Name
+                    </div>
+                )}
                 <Form.Group controlId="formName">
                     <Form.Label>Name:</Form.Label>
                     <Form.Control value={newName} onChange={updateName} />
                 </Form.Group>
-                {alreadyInList(newName) ? <span> "error"</span> : <span></span>}
             </div>
             <div>
                 <Form.Group controlId="formServingSize">
@@ -258,6 +256,7 @@ export function AddMeal({
                     ></Form.Control>
                 </Form.Group>
             </div>
+            <div>Select Tags:</div>
             <Stack spacing={40} direction="row">
                 <Checkbox
                     colorScheme="green"
