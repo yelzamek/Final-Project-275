@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
@@ -6,20 +7,24 @@ import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
 import { Meal, nameProps } from "../Interfaces/MealObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import { PointerProps } from "../Interfaces/PointerProps";
 
 export function PopUp({
     userList,
     name,
-    userType
-}: UserListProps & nameProps & UserTypeProps): JSX.Element {
+    userType,
+    setPointerEventsEnabled
+}: UserListProps & nameProps & UserTypeProps & PointerProps): JSX.Element {
     const [showPopup, setShowPopup] = useState(false);
 
     const handleOpenPopup = () => {
         setShowPopup(true);
+        setPointerEventsEnabled(false);
     };
 
     const handleClosePopup = () => {
         setShowPopup(false);
+        setPointerEventsEnabled(true);
     };
 
     return (
@@ -36,11 +41,11 @@ export function PopUp({
                         </h2>
                         <p>
                             {userList.map((user: User) =>
-                                user.list_of_items.map((meal: Meal) =>
-                                    meal.name === name ? (
-                                        <div>{user.name}</div>
-                                    ) : undefined
-                                )
+                                user.list_of_items.some(
+                                    (meal: Meal) => meal.name === name
+                                ) ? (
+                                    <div key={user.name}>{user.name}</div>
+                                ) : null
                             )}
                         </p>
                         <Button id="closePopup" onClick={handleClosePopup}>

@@ -25,6 +25,7 @@ import {
 } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
 import { PopUp } from "./UsersWithItemPopup";
+import { PointerProps } from "../Interfaces/PointerProps";
 
 export function MealDraggable({
     name,
@@ -45,12 +46,15 @@ export function MealDraggable({
     currentUser,
     userList,
     setUserList,
-    setUserType
+    setUserType,
+    pointerEventsEnabled,
+    setPointerEventsEnabled
 }: Meal &
     MealListProps &
     UserTypeProps &
     CurrentUserProps &
-    UserListProps): JSX.Element {
+    UserListProps &
+    PointerProps): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "Meal",
         item: { name: name },
@@ -251,6 +255,10 @@ export function MealDraggable({
                                     name={name}
                                     userType={userType}
                                     setUserType={setUserType}
+                                    setPointerEventsEnabled={
+                                        setPointerEventsEnabled
+                                    }
+                                    pointerEventsEnabled={pointerEventsEnabled}
                                 ></PopUp>
                             </WrapItem>
                         </Wrap>
@@ -269,8 +277,14 @@ export function CenterList({
     currentUser,
     setCurrentUser,
     userList,
-    setUserList
-}: MealListProps & UserTypeProps & UserListProps & CurrentUserProps) {
+    setUserList,
+    pointerEventsEnabled,
+    setPointerEventsEnabled
+}: MealListProps &
+    UserTypeProps &
+    UserListProps &
+    CurrentUserProps &
+    PointerProps) {
     return (
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
@@ -299,6 +313,10 @@ export function CenterList({
                                 setUserList={setUserList}
                                 currentUser={currentUser}
                                 setCurrentUser={setCurrentUser}
+                                setPointerEventsEnabled={
+                                    setPointerEventsEnabled
+                                }
+                                pointerEventsEnabled={pointerEventsEnabled}
                             ></MealDraggable>
                         </div>
                     ))}
