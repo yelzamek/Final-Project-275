@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
 import { MealListProps } from "../Interfaces/MealObject";
 import { Meal } from "../Interfaces/MealObject";
 import React, { useState } from "react";
@@ -13,11 +15,13 @@ export function AddMeal({
 }: MealListProps & UserTypeProps): JSX.Element {
     //Setting name
     const [newName, setName] = useState<string>("");
-
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
     }
 
+    function alreadyInList(name: string): boolean {
+        return mealList.some((meal: Meal): boolean => meal.name === newName);
+    }
     //Setting serving size
     const [newServingSize, setServingSize] = useState<number>(-1);
 
@@ -150,6 +154,7 @@ export function AddMeal({
                     <Form.Label>Name:</Form.Label>
                     <Form.Control value={newName} onChange={updateName} />
                 </Form.Group>
+                {alreadyInList(newName) ? <span> "error"</span> : <span></span>}
             </div>
             <div>
                 <Form.Group controlId="formServingSize">

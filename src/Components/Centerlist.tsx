@@ -1,7 +1,7 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { useDrag } from "react-dnd";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
@@ -20,7 +20,8 @@ import {
     ChakraProvider,
     Avatar,
     WrapItem,
-    Wrap
+    Wrap,
+    Button
 } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
 import { PopUp } from "./UsersWithItemPopup";
@@ -101,6 +102,7 @@ export function MealDraggable({
                 borderColor="green.400"
                 bg="white"
                 size="md"
+                maxH="500px"
             >
                 <CardHeader color="gray.700">
                     <Flex gap={3}>
@@ -116,12 +118,38 @@ export function MealDraggable({
                     </Flex>
                 </CardHeader>
 
-                <CardBody
-                    color="gray.500"
-                    style={{ columnCount: 2 }}
-                    marginTop="0"
-                >
+                <CardBody color="gray.500" marginTop="0">
                     {showNutrition && (
+                        <Box maxH="100px" overflowY="scroll">
+                            <Text
+                                whiteSpace="pre-line"
+                                fontSize="sm"
+                                style={{ columnCount: 2 }}
+                                maxH="100px"
+                            >
+                                Serving Size: {serving_size}
+                                {"\n"} Calories: {calories}
+                                {"\n"} Total Fat: {total_fat}
+                                {"\n"} Cholesterol: {cholesterol} mg
+                                {"\n"} Sodium: {sodium} mg
+                                {"\n"} Total Carbs: {total_carbs} g{"\n"} Total
+                                Sugars: {total_sugars} g{"\n"} Protein:{" "}
+                                {protein} g
+                            </Text>
+                        </Box>
+                    )}
+                    {!showNutrition && (
+                        <Box maxH="100px" overflowY="scroll">
+                            <Text
+                                whiteSpace="pre-line"
+                                fontSize="sm"
+                                style={{ columnCount: 2 }}
+                            >
+                                {ingredients.join("\n")}
+                            </Text>
+                        </Box>
+                    )}
+                    {/* {showNutrition && (
                         <Text whiteSpace="pre-line" fontSize="sm">
                             Serving Size: {serving_size}
                             {"\n"} Calories: {calories}
@@ -137,7 +165,7 @@ export function MealDraggable({
                         <Text whiteSpace="pre-line" fontSize="sm">
                             {ingredients.join("\n")}
                         </Text>
-                    )}
+                    )} */}
                 </CardBody>
 
                 <Divider borderColor="gray.200" />
@@ -147,8 +175,9 @@ export function MealDraggable({
                         <Wrap spacing={1}>
                             <WrapItem>
                                 <Button
+                                    colorScheme="green"
                                     variant={
-                                        showNutrition ? "primary" : "ghost"
+                                        showNutrition ? "outline" : "ghost"
                                     }
                                     onClick={() => setShowNutrition(true)}
                                 >
@@ -157,8 +186,9 @@ export function MealDraggable({
                             </WrapItem>
                             <WrapItem>
                                 <Button
+                                    colorScheme="green"
                                     variant={
-                                        !showNutrition ? "primary" : "ghost"
+                                        !showNutrition ? "outline" : "ghost"
                                     }
                                     onClick={() => setShowNutrition(false)}
                                 >
@@ -167,6 +197,7 @@ export function MealDraggable({
                             </WrapItem>
                             <WrapItem>
                                 <Button
+                                    colorScheme="green"
                                     hidden={!(userType === "superUser")}
                                     onClick={() => RemoveMeal(name)}
                                 >
