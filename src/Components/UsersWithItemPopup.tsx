@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
@@ -36,11 +37,11 @@ export function PopUp({
                         </h2>
                         <p>
                             {userList.map((user: User) =>
-                                user.list_of_items.map((meal: Meal) =>
-                                    meal.name === name ? (
-                                        <div>{user.name}</div>
-                                    ) : undefined
-                                )
+                                user.list_of_items.some(
+                                    (meal: Meal) => meal.name === name
+                                ) ? (
+                                    <div key={user.name}>{user.name}</div>
+                                ) : null
                             )}
                         </p>
                         <Button id="closePopup" onClick={handleClosePopup}>
