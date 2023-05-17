@@ -19,7 +19,7 @@ import { AddMeal } from "./Components/AddMeal";
 import { SortFunction } from "./Components/SortFunction";
 //import { userListProps } from "./Interfaces/userListProps";
 //import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
-import { AdminList } from "./Components/adminList";
+import { AdminList } from "./Components/AdminList";
 import { Sidebar } from "./Components/Sidebar";
 import { ChakraProvider, Text } from "@chakra-ui/react";
 import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
