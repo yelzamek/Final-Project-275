@@ -184,6 +184,7 @@ export function MealDraggable({
                                         showNutrition ? "outline" : "ghost"
                                     }
                                     onClick={() => setShowNutrition(true)}
+                                    size="sm"
                                 >
                                     Nutrition
                                 </Button>
@@ -195,6 +196,7 @@ export function MealDraggable({
                                         !showNutrition ? "outline" : "ghost"
                                     }
                                     onClick={() => setShowNutrition(false)}
+                                    size="sm"
                                 >
                                     Ingredients
                                 </Button>
@@ -202,10 +204,12 @@ export function MealDraggable({
                             <WrapItem>
                                 <Button
                                     colorScheme="green"
+                                    size="sm"
                                     hidden={!(userType === "superUser")}
                                     onClick={() => RemoveMeal(name)}
+                                    top="13%"
                                 >
-                                    Remove
+                                    X
                                 </Button>
                             </WrapItem>
                             <WrapItem>

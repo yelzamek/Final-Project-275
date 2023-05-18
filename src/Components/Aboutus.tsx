@@ -1,20 +1,11 @@
-/* eslint-disable indent */
-/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { Button, ChakraProvider } from "@chakra-ui/react";
-import "./UsersWithItemPopup.css";
-import { UserListProps } from "../Interfaces/UserListProps";
-import { User } from "../Interfaces/UserObject";
-import { Meal, nameProps } from "../Interfaces/MealObject";
-import { UserTypeProps } from "../Interfaces/UserTypeProps";
+import "./Aboutus.css";
 import { PointerProps } from "../Interfaces/PointerProps";
 
-export function PopUp({
-    userList,
-    name,
-    userType,
+export function Aboutus({
     setPointerEventsEnabled
-}: UserListProps & nameProps & UserTypeProps & PointerProps): JSX.Element {
+}: PointerProps): JSX.Element {
     const [showPopup, setShowPopup] = useState(false);
 
     const handleOpenPopup = () => {
@@ -28,31 +19,25 @@ export function PopUp({
     };
 
     return (
-        <div hidden={!(userType === "superUser")}>
+        <div>
             <ChakraProvider>
                 <Button
-                    id="openPopup"
+                    style={{ transform: "translateX(100px)" }}
+                    id="About Us"
+                    variant={"outline"}
                     onClick={handleOpenPopup}
                     colorScheme="green"
                 >
-                    Open Popup
+                    About us
                 </Button>
             </ChakraProvider>
 
             {showPopup && (
                 <div id="popupOverlay" className="show">
                     <div id="popupContent">
-                        <h2>
-                            {"User's"} with {name} in their List
-                        </h2>
                         <p>
-                            {userList.map((user: User) =>
-                                user.list_of_items.some(
-                                    (meal: Meal) => meal.name === name
-                                ) ? (
-                                    <div key={user.name}>{user.name}</div>
-                                ) : null
-                            )}
+                            Made by Team 12: Annanya, Josh, Devin, Sreya and
+                            Yasmeen!
                         </p>
                         <Button id="closePopup" onClick={handleClosePopup}>
                             Close
