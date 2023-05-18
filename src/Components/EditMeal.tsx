@@ -7,8 +7,6 @@ import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
 import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
 
-//Needs to add editing abilty
-
 export function EditMeal({
     mealList,
     setMealList,

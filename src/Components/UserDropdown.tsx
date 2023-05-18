@@ -7,7 +7,6 @@ import { User } from "../Interfaces/UserObject";
 import { Meal, MealListProps } from "../Interfaces/MealObject";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
 export function UserDropDown({
-    //userType,
     setUserType,
     userList,
     currentUser,

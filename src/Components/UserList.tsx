@@ -3,7 +3,6 @@ import React from "react";
 import { useDrop } from "react-dnd";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
 import { UserListProps } from "../Interfaces/UserListProps";
-//import { User } from "../Interfaces/UserObject";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 import { Button } from "react-bootstrap";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
