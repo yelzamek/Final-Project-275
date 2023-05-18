@@ -6,7 +6,6 @@ import { AdminListProps } from "../Interfaces/AdminListProps";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 import { EditMeal } from "./EditMeal";
 import React, { useState } from "react";
-//import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
 import { UserListProps } from "../Interfaces/UserListProps";
 
 export function AdminList({
