@@ -516,7 +516,7 @@ export const MEAL_LIST: Meal[] = [
         tags: ["dairy-free", "gluten-free"]
     },
     {
-        name: "Sweet Potato Black Bean Bowl",
+        name: "Sweet Potato Bean Bowl",
         image: "https://www.skinnytaste.com/wp-content/uploads/2022/02/Roasted-Sweet-Potato-and-Chipotle-Black-Bean-Bowls-7-2.jpg",
         serving_size: 2,
         calories: 420,
@@ -538,7 +538,7 @@ export const MEAL_LIST: Meal[] = [
             "pepper",
             "rice"
         ],
-        tags: ["vegan", "vegetarian", "dairy-free", "gluten-free", "meat-free"]
+        tags: ["vegan", "vegetarian", "dairy-free", "meat-free"]
     },
     {
         name: "Shrimp Tacos",
