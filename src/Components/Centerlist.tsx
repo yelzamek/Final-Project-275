@@ -150,10 +150,10 @@ export function MealDraggable({
                             >
                                 Serving Size: {serving_size}
                                 {"\n"} Calories: {calories}
-                                {"\n"} Total Fat: {total_fat}
-                                {"\n"} Cholesterol: {cholesterol} mg
+                                {"\n"} Fat: {total_fat}
+                                {"\n"} Chol: {cholesterol} mg
                                 {"\n"} Sodium: {sodium} mg
-                                {"\n"} Total Carbs: {total_carbs} g{"\n"} Total
+                                {"\n"} Carbs: {total_carbs} g{"\n"}
                                 Sugars: {total_sugars} g{"\n"} Protein:{" "}
                                 {protein} g
                             </Text>
