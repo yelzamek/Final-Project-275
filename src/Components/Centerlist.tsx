@@ -1,5 +1,5 @@
 /* eslint-disable no-extra-parens */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDrag } from "react-dnd";
 import { Button, Form } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
@@ -45,7 +45,8 @@ export function MealDraggable({
     currentUser,
     userList,
     setUserList,
-    setUserType
+    setUserType,
+    setCurrentUser
 }: Meal &
     MealListProps &
     UserTypeProps &
@@ -66,28 +67,40 @@ export function MealDraggable({
         copy.splice(index, 1);
         setMealList(copy);
     }
-    const [showNutrition, setShowNutrition] = useState<boolean>(true);
+    const [isFavorite, setIsFavorite] = useState<boolean>(
+        currentUser.list_of_favorites.some((meal: Meal) => meal.name === name)
+    );
+    function toggleFavorite() {
+        setIsFavorite(!isFavorite);
+        const updatedUser = { ...currentUser };
+        const favoriteIndex = updatedUser.list_of_favorites.findIndex(
+            (meal) => meal.name === name
+        );
 
-    function updateFavorites(event: React.ChangeEvent<HTMLInputElement>) {
-        const index = userList.findIndex(
-            (object) => object.name === currentUser.name
-        );
-        const copy = [...userList];
-        const clistIndex = mealList.findIndex(
-            (object) => object.name === event.target.value
-        );
-        if (event.target.checked === true) {
-            copy[index].list_of_favorites.push(mealList[clistIndex]);
-            setUserList(copy);
-        } else if (event.target.checked === false) {
-            const mealIndex = copy[index].list_of_favorites.findIndex(
-                (object) => object.name === event.target.value
-            );
-            copy[index].list_of_favorites.splice(mealIndex, 1);
-            setUserList(copy);
+        if (!isFavorite) {
+            if (favoriteIndex === -1) {
+                updatedUser.list_of_favorites.push(
+                    mealList[
+                        mealList.findIndex((meal: Meal) => meal.name === name)
+                    ]
+                );
+            }
+        } else {
+            if (favoriteIndex !== -1) {
+                updatedUser.list_of_favorites.splice(favoriteIndex, 1);
+            }
         }
-    }
 
+        setCurrentUser(updatedUser);
+    }
+    const [showNutrition, setShowNutrition] = useState<boolean>(true);
+    useEffect(() => {
+        setIsFavorite(
+            currentUser.list_of_favorites.some(
+                (meal: Meal) => meal.name === name
+            )
+        );
+    }, [currentUser, name]);
     return (
         <ChakraProvider>
             <Card
@@ -185,12 +198,8 @@ export function MealDraggable({
                                             : "Favorite"
                                     }
                                     value={name}
-                                    checked={
-                                        currentUser.list_of_favorites.findIndex(
-                                            (element) => element.name === name
-                                        ) !== -1
-                                    }
-                                    onChange={updateFavorites}
+                                    checked={isFavorite}
+                                    onChange={toggleFavorite}
                                 />
                                 <Text
                                     fontSize="md"
