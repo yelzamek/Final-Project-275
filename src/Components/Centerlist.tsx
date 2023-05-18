@@ -107,6 +107,7 @@ export function MealDraggable({
                 bg="white"
                 size="md"
                 maxH="500px"
+                minH="500px"
             >
                 <CardHeader color="gray.700">
                     <Flex gap={3}>
@@ -207,7 +208,6 @@ export function MealDraggable({
                                     size="sm"
                                     hidden={!(userType === "superUser")}
                                     onClick={() => RemoveMeal(name)}
-                                    top="13%"
                                 >
                                     X
                                 </Button>
@@ -235,8 +235,9 @@ export function MealDraggable({
                                     }
                                     textAlign="left"
                                     marginTop="5%"
+                                    style={{ paddingRight: "1rem" }}
                                 >
-                                    Amount in User Lists:{" "}
+                                    Amount in Lists:{" "}
                                     {userList.reduce(
                                         (count: number, user: User) =>
                                             user.list_of_items.reduce(
