@@ -46,11 +46,13 @@ function App(): JSX.Element {
         <DndProvider backend={HTML5Backend}>
             <div className={pointerEventsEnabled ? "App" : "App-NoPointer"}>
                 <div className="App-header">
-                    <Box>
+                    <Box textAlign="center">
                         <Text
                             fontSize="2xl"
                             fontWeight="bold"
                             color="green.500"
+                            mt={4}
+                            mb={2}
                         >
                             Balanced Bytes
                         </Text>
