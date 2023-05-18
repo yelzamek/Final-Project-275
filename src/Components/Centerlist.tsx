@@ -92,6 +92,14 @@ export function MealDraggable({
         }
 
         setCurrentUser(updatedUser);
+        const userIndex = userList.findIndex(
+            (user: User): boolean => user.name === currentUser.name
+        );
+        setUserList([
+            ...userList.slice(0, userIndex),
+            updatedUser,
+            ...userList.slice(userIndex + 1)
+        ]);
     }
     const [showNutrition, setShowNutrition] = useState<boolean>(true);
     useEffect(() => {
