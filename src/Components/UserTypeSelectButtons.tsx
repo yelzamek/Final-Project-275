@@ -43,7 +43,7 @@ export function AdminSelectButton({
             <Button
                 colorScheme="green"
                 variant={userType != "Admin" ? "outline" : "solid"}
-                style={{ transform: "translateX(200px)" }}
+                style={{ transform: "translateX(250px)" }}
                 onClick={() => changeToAdmin()}
             >
                 Admin

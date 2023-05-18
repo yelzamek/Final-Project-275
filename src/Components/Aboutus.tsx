@@ -22,6 +22,7 @@ export function Aboutus({
         <div>
             <ChakraProvider>
                 <Button
+                    style={{ transform: "translateX(100px)" }}
                     id="About Us"
                     onClick={handleOpenPopup}
                     colorScheme="green"
