@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, ChakraProvider } from "@chakra-ui/react";
 import "./UsersWithItemPopup.css";
 import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
@@ -29,9 +29,15 @@ export function PopUp({
 
     return (
         <div hidden={!(userType === "superUser")}>
-            <Button id="openPopup" onClick={handleOpenPopup}>
-                Open Popup
-            </Button>
+            <ChakraProvider>
+                <Button
+                    id="openPopup"
+                    onClick={handleOpenPopup}
+                    colorScheme="green"
+                >
+                    Open Popup
+                </Button>
+            </ChakraProvider>
 
             {showPopup && (
                 <div id="popupOverlay" className="show">
