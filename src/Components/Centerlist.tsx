@@ -109,7 +109,7 @@ export function MealDraggable({
                 maxH="500px"
                 minH="500px"
             >
-                <CardHeader color="gray.700">
+                <CardHeader maxH="200px" color="gray.700">
                     <Flex gap={3}>
                         <Avatar src={image} size="2xl" />
                         <Box>
@@ -123,14 +123,30 @@ export function MealDraggable({
                     </Flex>
                 </CardHeader>
 
-                <CardBody color="gray.500" marginTop="0">
+                <CardBody
+                    color="gray.500"
+                    marginTop="0"
+                    maxH="150"
+                    style={{
+                        paddingLeft: "2px",
+                        paddingRight: "2px",
+                        margin: "0"
+                    }}
+                >
                     {showNutrition && (
                         <Box maxH="100px" overflowY="scroll">
                             <Text
                                 whiteSpace="pre-line"
                                 fontSize="sm"
-                                style={{ columnCount: 2 }}
+                                style={{
+                                    columnCount: 2,
+                                    columnGap: "7px",
+                                    paddingLeft: "2px",
+                                    paddingRight: "2px",
+                                    margin: "0"
+                                }}
                                 maxH="100px"
+                                overflowX="hidden"
                             >
                                 Serving Size: {serving_size}
                                 {"\n"} Calories: {calories}
@@ -175,7 +191,7 @@ export function MealDraggable({
 
                 <Divider borderColor="gray.200" />
 
-                <CardFooter>
+                <CardFooter maxH="150px">
                     <Flex direction="column" align="center" justify="center">
                         <Wrap spacing={1}>
                             <WrapItem>
