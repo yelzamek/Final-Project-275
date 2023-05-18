@@ -45,24 +45,7 @@ function App(): JSX.Element {
     return (
         <DndProvider backend={HTML5Backend}>
             <div className={pointerEventsEnabled ? "App" : "App-NoPointer"}>
-                {/* <header className="header">
-                    <header className="header"></header>
-                    <a href="#" className="logo">
-                        {" "}
-                        <i className="fa fa-shopping-basket"></i>
-                    </a>
-                    <nav className="NavBar">
-                        <a href="#Home"> Home</a>
-                        <a href="#About Us"> About Us</a>
-                    </nav>
-                    <div className="icons"></div>
-                    <div className="fa fa-bars" id="menu-btn"></div>
-                    <a href="#" className="logo">
-                        {" "}
-                        <i className="fa fa-shopping-basket"></i> grocery
-                    </a>
-                </header> */}
-                <p className="App-header">
+                <div className="App-header">
                     Balanced Bytes Team 12 by Josh,Devin,Annanya,Yasmeen & Sreya
                     <SuperUserSelectButton
                         userType={userType}
@@ -90,7 +73,7 @@ function App(): JSX.Element {
                         currentUser={currentUser}
                         setCurrentUser={setCurrentUser}
                     ></UserDropDown>
-                </p>
+                </div>
                 {/* <Navbar></Navbar> */}
                 {/* <UserTypeIndicator
                     userType={userType}
