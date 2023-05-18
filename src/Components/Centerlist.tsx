@@ -185,6 +185,11 @@ export function MealDraggable({
                                             : "Favorite"
                                     }
                                     value={name}
+                                    checked={
+                                        currentUser.list_of_favorites.findIndex(
+                                            (element) => element.name === name
+                                        ) !== -1
+                                    }
                                     onChange={updateFavorites}
                                 />
                                 <Text
