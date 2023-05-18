@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+import { Button, ChakraProvider } from "@chakra-ui/react";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import React from "react";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
@@ -14,12 +14,15 @@ export function SuperUserSelectButton({
         setUserType("superUser");
     }
     return (
-        <Button
-            style={{ transform: "translateX(400px)" }}
-            onClick={() => changeToSuperUser()}
-        >
-            superUser{" "}
-        </Button>
+        <ChakraProvider>
+            <Button
+                colorScheme="green"
+                style={{ transform: "translateX(400px)" }}
+                onClick={() => changeToSuperUser()}
+            >
+                superUser{" "}
+            </Button>
+        </ChakraProvider>
     );
 }
 
@@ -33,11 +36,14 @@ export function AdminSelectButton({
         setUserType("Admin");
     }
     return (
-        <Button
-            style={{ transform: "translateX(200px)" }}
-            onClick={() => changeToAdmin()}
-        >
-            Admin
-        </Button>
+        <ChakraProvider>
+            <Button
+                colorScheme="green"
+                style={{ transform: "translateX(200px)" }}
+                onClick={() => changeToAdmin()}
+            >
+                Admin
+            </Button>
+        </ChakraProvider>
     );
 }
