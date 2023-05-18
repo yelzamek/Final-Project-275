@@ -1,4 +1,4 @@
-#popupOverlay {
+#itemPopupOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,17 +8,13 @@
     display: none;
     justify-content: center;
     align-items: center;
-    pointer-events: none;
-    z-index: 9998;
 }
 
-#popupContent {
+#itemPopupContent {
     background-color: #fff;
     padding: 20px;
-    z-index: 9999;
-    pointer-events: auto;
 }
 
-#popupOverlay.show {
+#itemPopupOverlay.show {
     display: flex;
 }

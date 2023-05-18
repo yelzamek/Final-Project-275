@@ -1,7 +1,7 @@
 /* eslint-disable no-extra-parens */
 import React, { useEffect, useState } from "react";
 import { useDrag } from "react-dnd";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
@@ -21,10 +21,12 @@ import {
     ChakraProvider,
     Avatar,
     WrapItem,
-    Wrap
+    Wrap,
+    Button
 } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
 import { PopUp } from "./UsersWithItemPopup";
+import { PointerProps } from "../Interfaces/PointerProps";
 
 export function MealDraggable({
     name,
@@ -46,12 +48,16 @@ export function MealDraggable({
     userList,
     setUserList,
     setUserType,
+    pointerEventsEnabled,
+    setPointerEventsEnabled,
+    setUserType,
     setCurrentUser
 }: Meal &
     MealListProps &
     UserTypeProps &
     CurrentUserProps &
-    UserListProps): JSX.Element {
+    UserListProps &
+    PointerProps): JSX.Element {
     const [{ isDragging }, drag] = useDrag(() => ({
         type: "Meal",
         item: { name: name },
@@ -123,14 +129,18 @@ export function MealDraggable({
                 borderColor="green.400"
                 bg="white"
                 size="md"
+                maxH="500px"
             >
                 <CardHeader color="gray.700">
                     <Flex gap={3}>
                         <Avatar src={image} size="2xl" />
+                        <Avatar src={image} size="2xl" />
                         <Box>
+                            <Heading as="h3" size="md">
                             <Heading as="h3" size="md">
                                 {name}
                             </Heading>
+                            <Text fontSize="xs" color="gray.500">
                             <Text fontSize="xs" color="gray.500">
                                 {tags.join(",  ")}
                             </Text>
@@ -138,12 +148,38 @@ export function MealDraggable({
                     </Flex>
                 </CardHeader>
 
-                <CardBody
-                    color="gray.500"
-                    style={{ columnCount: 2 }}
-                    marginTop="0"
-                >
+                <CardBody color="gray.500" marginTop="0">
                     {showNutrition && (
+                        <Box maxH="100px" overflowY="scroll">
+                            <Text
+                                whiteSpace="pre-line"
+                                fontSize="sm"
+                                style={{ columnCount: 2 }}
+                                maxH="100px"
+                            >
+                                Serving Size: {serving_size}
+                                {"\n"} Calories: {calories}
+                                {"\n"} Total Fat: {total_fat}
+                                {"\n"} Cholesterol: {cholesterol} mg
+                                {"\n"} Sodium: {sodium} mg
+                                {"\n"} Total Carbs: {total_carbs} g{"\n"} Total
+                                Sugars: {total_sugars} g{"\n"} Protein:{" "}
+                                {protein} g
+                            </Text>
+                        </Box>
+                    )}
+                    {!showNutrition && (
+                        <Box maxH="100px" overflowY="scroll">
+                            <Text
+                                whiteSpace="pre-line"
+                                fontSize="sm"
+                                style={{ columnCount: 2 }}
+                            >
+                                {ingredients.join("\n")}
+                            </Text>
+                        </Box>
+                    )}
+                    {/* {showNutrition && (
                         <Text whiteSpace="pre-line" fontSize="sm">
                             Serving Size: {serving_size}
                             {"\n"} Calories: {calories}
@@ -159,7 +195,7 @@ export function MealDraggable({
                         <Text whiteSpace="pre-line" fontSize="sm">
                             {ingredients.join("\n")}
                         </Text>
-                    )}
+                    )} */}
                 </CardBody>
 
                 <Divider borderColor="gray.200" />
@@ -169,30 +205,37 @@ export function MealDraggable({
                         <Wrap spacing={1}>
                             <WrapItem>
                                 <Button
+                                    colorScheme="green"
                                     variant={
-                                        showNutrition ? "primary" : "ghost"
+                                        showNutrition ? "outline" : "ghost"
                                     }
                                     onClick={() => setShowNutrition(true)}
+                                    size="sm"
                                 >
                                     Nutrition
                                 </Button>
                             </WrapItem>
                             <WrapItem>
                                 <Button
+                                    colorScheme="green"
                                     variant={
-                                        !showNutrition ? "primary" : "ghost"
+                                        !showNutrition ? "outline" : "ghost"
                                     }
                                     onClick={() => setShowNutrition(false)}
+                                    size="sm"
                                 >
                                     Ingredients
                                 </Button>
                             </WrapItem>
                             <WrapItem>
                                 <Button
+                                    colorScheme="green"
+                                    size="sm"
                                     hidden={!(userType === "superUser")}
                                     onClick={() => RemoveMeal(name)}
+                                    top="13%"
                                 >
-                                    Remove
+                                    X
                                 </Button>
                             </WrapItem>
                             <WrapItem>
@@ -206,8 +249,7 @@ export function MealDraggable({
                                             : "Favorite"
                                     }
                                     value={name}
-                                    checked={isFavorite}
-                                    onChange={toggleFavorite}
+                                    onChange={updateFavorites}
                                 />
                                 <Text
                                     fontSize="md"
@@ -243,6 +285,10 @@ export function MealDraggable({
                                     name={name}
                                     userType={userType}
                                     setUserType={setUserType}
+                                    setPointerEventsEnabled={
+                                        setPointerEventsEnabled
+                                    }
+                                    pointerEventsEnabled={pointerEventsEnabled}
                                 ></PopUp>
                             </WrapItem>
                         </Wrap>
@@ -262,12 +308,18 @@ export function CenterList({
     setCurrentUser,
     userList,
     setUserList,
-    filterChoices
+    filterChoices,
+    pointerEventsEnabled,
+    setPointerEventsEnabled
 }: MealListProps &
+   
     UserTypeProps &
+   
     UserListProps &
+   
     CurrentUserProps &
-    FilterChoicesProps) {
+    FilterChoicesProps &
+    PointerProps) {
     function displayable(MealObject: Meal) {
         if (filterChoices.includes("Favorites")) {
             const favIndex = filterChoices.indexOf("Favorites");
@@ -318,6 +370,10 @@ export function CenterList({
                                 setUserList={setUserList}
                                 currentUser={currentUser}
                                 setCurrentUser={setCurrentUser}
+                                setPointerEventsEnabled={
+                                    setPointerEventsEnabled
+                                }
+                                pointerEventsEnabled={pointerEventsEnabled}
                             ></MealDraggable>
                         </div>
                     ))}

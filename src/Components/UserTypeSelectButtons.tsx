@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+import { Button, ChakraProvider } from "@chakra-ui/react";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import React from "react";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
@@ -10,7 +10,8 @@ export function SuperUserSelectButton({
     setCurrentUser,
     userList,
     filterChoices,
-    setFilterChoices
+    setFilterChoices,
+    userType
 }: UserTypeProps &
     CurrentUserProps &
     UserListProps &
@@ -26,12 +27,16 @@ export function SuperUserSelectButton({
         }
     }
     return (
-        <Button
-            style={{ transform: "translateX(400px)" }}
-            onClick={() => changeToSuperUser()}
-        >
-            superUser{" "}
-        </Button>
+        <ChakraProvider>
+            <Button
+                colorScheme="green"
+                variant={userType != "superUser" ? "outline" : "solid"}
+                style={{ transform: "translateX(400px)" }}
+                onClick={() => changeToSuperUser()}
+            >
+                superUser{" "}
+            </Button>
+        </ChakraProvider>
     );
 }
 
@@ -40,7 +45,8 @@ export function AdminSelectButton({
     setCurrentUser,
     userList,
     filterChoices,
-    setFilterChoices
+    setFilterChoices,
+    userType
 }: UserTypeProps &
     CurrentUserProps &
     UserListProps &
@@ -56,11 +62,15 @@ export function AdminSelectButton({
         }
     }
     return (
-        <Button
-            style={{ transform: "translateX(200px)" }}
-            onClick={() => changeToAdmin()}
-        >
-            Admin
-        </Button>
+        <ChakraProvider>
+            <Button
+                colorScheme="green"
+                variant={userType != "Admin" ? "outline" : "solid"}
+                style={{ transform: "translateX(250px)" }}
+                onClick={() => changeToAdmin()}
+            >
+                Admin
+            </Button>
+        </ChakraProvider>
     );
 }

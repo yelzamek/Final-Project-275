@@ -13,6 +13,23 @@
     background-color: #eee;
     padding-left: 325px;
     top: 88px;
+    pointer-events: auto;
+}
+
+.App-NoPointer {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box outline none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+    background-color: #eee;
+    padding-left: 325px;
+    top: 88px;
+    pointer-events: none;
 }
 
 .App-logo {
@@ -28,6 +45,7 @@
 
 .App-header {
     position: fixed;
+    white-space: pre-wrap;
     top: 0;
     left: 0;
     right: 0;
@@ -37,9 +55,8 @@
     height: 80px;
     padding: 20px;
     background: #fff;
-    z-index: 9999;
-    /* background-image: url("https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/mpx/2704722219/2023_02/1676903842822_tdy_health_8a_minno_nutrition_myths_230220_1920x1080-bkey7m.jpg"); */
-}
+    z-index: 9999; 
+  }
 
 .App-link {
     color: #0ce27e;

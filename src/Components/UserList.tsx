@@ -8,11 +8,13 @@ import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 import { Button } from "react-bootstrap";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { User } from "../Interfaces/UserObject";
+import { ItemPopUp } from "./UserListPopup";
 
 export function UserList({
     currentUser,
     setCurrentUser,
     mealList,
+    setMealList,
     userType,
     userList,
     setUserList
@@ -59,6 +61,18 @@ export function UserList({
             list_of_items: updatedList,
             list_of_favorites: updatedFavList
         });
+        const userIndex = userList.findIndex(
+            (user: User): boolean => user.name === currentUser.name
+        );
+        setUserList([
+            ...userList.slice(0, userIndex),
+            {
+                ...currentUser,
+                list_of_items: updatedList,
+                list_of_favorites: updatedFavList
+            },
+            ...userList.slice(userIndex + 1)
+        ]);
     }
     const [{ isOver }, drop] = useDrop({
         accept: "Meal",
@@ -83,6 +97,11 @@ export function UserList({
                 <div key={index}>
                     {item.name}{" "}
                     <Button onClick={() => RemoveItem(item, index)}>X</Button>
+                    <ItemPopUp
+                        name={item.name}
+                        mealList={mealList}
+                        setMealList={setMealList}
+                    ></ItemPopUp>
                 </div>
             ))}
         </div>
