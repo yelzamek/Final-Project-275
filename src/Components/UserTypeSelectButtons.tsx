@@ -22,7 +22,7 @@ export function SuperUserSelectButton({
                 style={{ transform: "translateX(400px)" }}
                 onClick={() => changeToSuperUser()}
             >
-                superUser{" "}
+                Super User{" "}
             </Button>
         </ChakraProvider>
     );
