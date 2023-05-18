@@ -7,7 +7,8 @@ import { UserListProps } from "../Interfaces/UserListProps";
 export function SuperUserSelectButton({
     setUserType,
     setCurrentUser,
-    userList
+    userList,
+    userType
 }: UserTypeProps & CurrentUserProps & UserListProps): JSX.Element {
     function changeToSuperUser() {
         setCurrentUser(userList[0]);
@@ -17,6 +18,7 @@ export function SuperUserSelectButton({
         <ChakraProvider>
             <Button
                 colorScheme="green"
+                variant={userType != "superUser" ? "outline" : "solid"}
                 style={{ transform: "translateX(400px)" }}
                 onClick={() => changeToSuperUser()}
             >
@@ -29,7 +31,8 @@ export function SuperUserSelectButton({
 export function AdminSelectButton({
     setUserType,
     setCurrentUser,
-    userList
+    userList,
+    userType
 }: UserTypeProps & CurrentUserProps & UserListProps): JSX.Element {
     function changeToAdmin() {
         setCurrentUser(userList[0]);
@@ -39,6 +42,7 @@ export function AdminSelectButton({
         <ChakraProvider>
             <Button
                 colorScheme="green"
+                variant={userType != "Admin" ? "outline" : "solid"}
                 style={{ transform: "translateX(200px)" }}
                 onClick={() => changeToAdmin()}
             >

@@ -202,10 +202,12 @@ export function MealDraggable({
                             <WrapItem>
                                 <Button
                                     colorScheme="green"
+                                    size="sm"
                                     hidden={!(userType === "superUser")}
                                     onClick={() => RemoveMeal(name)}
+                                    top="13%"
                                 >
-                                    Remove
+                                    X
                                 </Button>
                             </WrapItem>
                             <WrapItem>
