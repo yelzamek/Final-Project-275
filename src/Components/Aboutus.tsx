@@ -1,4 +1,3 @@
-/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { Button, ChakraProvider } from "@chakra-ui/react";
 import "./Aboutus.css";
@@ -25,7 +24,6 @@ export function Aboutus({
                 <Button
                     style={{ transform: "translateX(100px)" }}
                     id="About Us"
-                    variant={"outline"}
                     onClick={handleOpenPopup}
                     colorScheme="green"
                 >
