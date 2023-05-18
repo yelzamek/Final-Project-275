@@ -1545,15 +1545,15 @@ FAIL src/App.test.tsx
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |    0.95 |     4.72 |    1.47 |    0.98 |                   
+All files                   |    0.88 |     4.37 |     1.4 |     0.9 |                   
  src                        |       0 |        0 |       0 |       0 |                   
   App.tsx                   |       0 |        0 |       0 |       0 | 30-46             
- src/Components             |    0.33 |      4.8 |    0.75 |    0.34 |                   
+ src/Components             |     0.3 |     4.44 |    0.72 |    0.31 |                   
   Aboutus.tsx               |       0 |        0 |       0 |       0 | 10-22             
   AddMeal.tsx               |       0 |        0 |       0 |       0 | 20-293            
   AddUser.tsx               |       0 |        0 |       0 |       0 | 12-92             
   AdminListComponent.tsx    |       0 |        0 |       0 |       0 | 24-68             
-  Centerlist.tsx            |       0 |        0 |       0 |       0 | 58-298            
+  Centerlist.tsx            |       0 |        0 |       0 |       0 | 60-344            
   EditMeal.tsx              |       0 |        0 |       0 |       0 | 38-343            
   FilterButtons.tsx         |       0 |        0 |       0 |       0 | 12-22             
   NutritionTotalButton.tsx  |       0 |        0 |       0 |       0 | 10-32             
@@ -1563,7 +1563,7 @@ All files                   |    0.95 |     4.72 |    1.47 |    0.98 |
   UserList.tsx              |       0 |        0 |       0 |       0 | 26-99             
   UserListPopup.tsx         |       0 |        0 |       0 |       0 | 12-24             
   UserTypeIndicator.tsx     |     100 |      100 |     100 |     100 |                   
-  UserTypeSelectButtons.tsx |       0 |        0 |       0 |       0 | 14-47             
+  UserTypeSelectButtons.tsx |       0 |        0 |       0 |       0 | 20-70             
   UsersWithItemPopup.tsx    |       0 |        0 |       0 |       0 | 18-51             
  src/Components/UnusedFiles |      50 |      100 |   33.33 |      50 |                   
   NavBar.tsx                |      50 |      100 |   33.33 |      50 | 18-43             
@@ -1582,5 +1582,5 @@ All files                   |    0.95 |     4.72 |    1.47 |    0.98 |
 Test Suites: 10 failed, 10 total
 Tests:       10 failed, 1 passed, 11 total
 Snapshots:   0 total
-Time:        9.433 s
+Time:        8.316 s
 Ran all test suites.
