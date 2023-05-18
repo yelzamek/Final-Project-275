@@ -50,14 +50,14 @@ function App(): JSX.Element {
                         <Text
                             fontSize="2xl"
                             fontWeight="bold"
-                            color="green.500"
+                            colorScheme="green"
                             mt={4}
                             mb={2}
                         >
                             Balanced Bytes
                         </Text>
                         <Text fontSize="lg" color="gray.500">
-                            Team 12 by Josh, Devin, Annanya, Yasmeen & Sreya
+                            Your one stop shop for all things nutriton!
                         </Text>
                     </Box>
                     <SuperUserSelectButton
