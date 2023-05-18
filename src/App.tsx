@@ -21,7 +21,7 @@ import { SortFunction } from "./Components/SortFunction";
 //import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { AdminList } from "./Components/AdminListComponent";
 import { Sidebar } from "./Components/Sidebar";
-import { Box, ChakraProvider, Text } from "@chakra-ui/react";
+import { Box, ChakraProvider, Flex, Text } from "@chakra-ui/react";
 import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { FilterChoices } from "./Components/FilterButtons";
 import { Aboutus } from "./Components/Aboutus";
@@ -47,16 +47,18 @@ function App(): JSX.Element {
         <DndProvider backend={HTML5Backend}>
             <div className={pointerEventsEnabled ? "App" : "App-NoPointer"}>
                 <div className="App-header">
-                    <Box>
+                    <Box textAlign="center" bg="white">
                         <Text
                             fontSize="2xl"
                             fontWeight="bold"
-                            color="green.500"
+                            colorScheme="green"
+                            mt={4}
+                            mb={2}
                         >
                             Balanced Bytes
                         </Text>
                         <Text fontSize="lg" color="gray.500">
-                            Team 12 by Josh, Devin, Annanya, Yasmeen & Sreya
+                            Your one stop shop for all things nutriton!
                         </Text>
                     </Box>
                     <SuperUserSelectButton
@@ -102,16 +104,23 @@ function App(): JSX.Element {
                     userList={userList}
                     setUserList={setUserList}
                 ></AddUser>
-                <SortFunction
-                    mealList={mealList}
-                    setMealList={setMealList}
-                ></SortFunction>
-                <FilterChoices
-                    filterChoices={filterChoices}
-                    setFilterChoices={setFilterChoices}
-                    userType={userType}
-                    setUserType={setUserType}
-                ></FilterChoices>
+                <Flex
+                    style={{
+                        alignItems: "center",
+                        justifyContent: "flex-start"
+                    }}
+                >
+                    <SortFunction
+                        mealList={mealList}
+                        setMealList={setMealList}
+                    ></SortFunction>
+                    <FilterChoices
+                        filterChoices={filterChoices}
+                        setFilterChoices={setFilterChoices}
+                        userType={userType}
+                        setUserType={setUserType}
+                    ></FilterChoices>
+                </Flex>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}

@@ -129,8 +129,9 @@ export function MealDraggable({
                 bg="white"
                 size="md"
                 maxH="500px"
+                minH="500px"
             >
-                <CardHeader color="gray.700">
+                <CardHeader maxH="200px" color="gray.700">
                     <Flex gap={3}>
                         <Avatar src={image} size="2xl" />
                         <Box>
@@ -146,21 +147,37 @@ export function MealDraggable({
                     </Flex>
                 </CardHeader>
 
-                <CardBody color="gray.500" marginTop="0">
+                <CardBody
+                    color="gray.500"
+                    marginTop="0"
+                    maxH="150"
+                    style={{
+                        paddingLeft: "2px",
+                        paddingRight: "2px",
+                        margin: "0"
+                    }}
+                >
                     {showNutrition && (
                         <Box maxH="100px" overflowY="scroll">
                             <Text
                                 whiteSpace="pre-line"
                                 fontSize="sm"
-                                style={{ columnCount: 2 }}
+                                style={{
+                                    columnCount: 2,
+                                    columnGap: "7px",
+                                    paddingLeft: "2px",
+                                    paddingRight: "2px",
+                                    margin: "0"
+                                }}
                                 maxH="100px"
+                                overflowX="hidden"
                             >
                                 Serving Size: {serving_size}
                                 {"\n"} Calories: {calories}
-                                {"\n"} Total Fat: {total_fat}
-                                {"\n"} Cholesterol: {cholesterol} mg
+                                {"\n"} Fat: {total_fat}
+                                {"\n"} Chol: {cholesterol} mg
                                 {"\n"} Sodium: {sodium} mg
-                                {"\n"} Total Carbs: {total_carbs} g{"\n"} Total
+                                {"\n"} Carbs: {total_carbs} g{"\n"}
                                 Sugars: {total_sugars} g{"\n"} Protein:{" "}
                                 {protein} g
                             </Text>
@@ -177,28 +194,11 @@ export function MealDraggable({
                             </Text>
                         </Box>
                     )}
-                    {/* {showNutrition && (
-                        <Text whiteSpace="pre-line" fontSize="sm">
-                            Serving Size: {serving_size}
-                            {"\n"} Calories: {calories}
-                            {"\n"}
-                            Total Fat: {total_fat}
-                            {"\n"} Cholesterol: {cholesterol} mg{"\n"} Sodium:{" "}
-                            {sodium} mg{"\n"} Total Carbs: {total_carbs} g{"\n"}{" "}
-                            Total Sugars: {total_sugars} g{"\n"} Protein:{" "}
-                            {protein} g{"\n"}
-                        </Text>
-                    )}
-                    {!showNutrition && (
-                        <Text whiteSpace="pre-line" fontSize="sm">
-                            {ingredients.join("\n")}
-                        </Text>
-                    )} */}
                 </CardBody>
 
                 <Divider borderColor="gray.200" />
 
-                <CardFooter>
+                <CardFooter maxH="150px">
                     <Flex direction="column" align="center" justify="center">
                         <Wrap spacing={1}>
                             <WrapItem>
@@ -231,7 +231,6 @@ export function MealDraggable({
                                     size="sm"
                                     hidden={!(userType === "superUser")}
                                     onClick={() => RemoveMeal(name)}
-                                    top="13%"
                                 >
                                     X
                                 </Button>
@@ -260,8 +259,9 @@ export function MealDraggable({
                                     }
                                     textAlign="left"
                                     marginTop="5%"
+                                    style={{ paddingRight: "1rem" }}
                                 >
-                                    Amount in User Lists:{" "}
+                                    Amount in Lists:{" "}
                                     {userList.reduce(
                                         (count: number, user: User) =>
                                             user.list_of_items.reduce(

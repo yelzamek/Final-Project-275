@@ -30,11 +30,11 @@ export function SuperUserSelectButton({
         <ChakraProvider>
             <Button
                 colorScheme="green"
-                variant={userType != "superUser" ? "outline" : "solid"}
+                variant={userType !== "superUser" ? "solid" : undefined}
                 style={{ transform: "translateX(400px)" }}
                 onClick={() => changeToSuperUser()}
             >
-                superUser{" "}
+                Super User{" "}
             </Button>
         </ChakraProvider>
     );
@@ -65,8 +65,8 @@ export function AdminSelectButton({
         <ChakraProvider>
             <Button
                 colorScheme="green"
-                variant={userType != "Admin" ? "outline" : "solid"}
-                style={{ transform: "translateX(250px)" }}
+                variant={userType !== "Admin" ? "solid" : undefined}
+                style={{ transform: "translateX(200px)" }}
                 onClick={() => changeToAdmin()}
             >
                 Admin

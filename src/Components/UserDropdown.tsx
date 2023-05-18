@@ -50,7 +50,10 @@ export function UserDropDown({
 
     return (
         <div>
-            <Form.Group controlId="userList">
+            <Form.Group
+                controlId="userList"
+                style={{ backgroundColor: "white" }}
+            >
                 <Form.Label>Select your user</Form.Label>
                 <Form.Select
                     value={currentUser.name}

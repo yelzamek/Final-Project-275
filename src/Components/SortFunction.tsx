@@ -39,7 +39,10 @@ export function SortFunction({
         }
     }
     return (
-        <div>
+        <div
+            className="sort-function-container"
+            style={{ position: "absolute", top: 100, marginLeft: "10%" }}
+        >
             <Form.Group controlId="sortOption">
                 <Form.Label>Sort by:</Form.Label>
                 <Form.Select value={sortOption} onChange={updateSortOption}>

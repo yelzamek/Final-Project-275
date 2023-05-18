@@ -34,6 +34,7 @@ export function PopUp({
                     id="openPopup"
                     onClick={handleOpenPopup}
                     colorScheme="green"
+                    size="sm"
                 >
                     Open Popup
                 </Button>

@@ -19,55 +19,111 @@ export function FilterChoices({
             setFilterChoices(copy);
         }
     }
+
     return (
-        <div>
-            <span>
-                <Form.Check
-                    type="checkbox"
-                    id="meat-free-check"
-                    label="Meat-Free"
-                    value="meat-free"
-                    onChange={updateFilterChoices}
-                />
-                <Form.Check
-                    type="checkbox"
-                    id="dairy-free-check"
-                    label="Dairy-Free"
-                    value="dairy-free"
-                    onChange={updateFilterChoices}
-                />
-                <Form.Check
-                    type="checkbox"
-                    id="gluten-free-check"
-                    label="Gluten-Free"
-                    value="gluten-free"
-                    onChange={updateFilterChoices}
-                />
-                <Form.Check
-                    type="checkbox"
-                    id="vegitarian-check"
-                    label="Vegetarian"
-                    value="vegetarian"
-                    onChange={updateFilterChoices}
-                />
-                <Form.Check
-                    type="checkbox"
-                    id="vegan-check"
-                    label="Vegan"
-                    value="vegan"
-                    onChange={updateFilterChoices}
-                />
-                <span hidden={userType === "superUser" || userType === "Admin"}>
+        <div
+            style={{
+                position: "absolute",
+                top: 125,
+                display: "flex",
+                marginLeft: "30%"
+            }}
+        >
+            <div>
+                <div
+                    className="sort-function-container"
+                    style={{ display: "inline-flex" }}
+                >
+                    <span style={{ marginRight: "10px" }}>Filter by:</span>{" "}
                     <Form.Check
                         type="checkbox"
-                        id="favorites-check"
-                        label="Favorites"
-                        value="Favorites"
-                        checked={filterChoices.includes("Favorites")}
+                        id="meat-free-check"
+                        label="Meat-Free"
+                        value="Meat-Free"
                         onChange={updateFilterChoices}
                     />
-                </span>
-            </span>
+                    <Form.Check
+                        type="checkbox"
+                        id="dairy-free-check"
+                        label="Dairy-Free"
+                        value="dairy-free"
+                        onChange={updateFilterChoices}
+                    />
+                    <Form.Check
+                        type="checkbox"
+                        id="gluten-free-check"
+                        label="Gluten-Free"
+                        value="gluten-free"
+                        onChange={updateFilterChoices}
+                    />
+                    <Form.Check
+                        type="checkbox"
+                        id="vegitarian-check"
+                        label="Vegetarian"
+                        value="vegetarian"
+                        onChange={updateFilterChoices}
+                    />
+                    <Form.Check
+                        type="checkbox"
+                        id="vegan-check"
+                        label="Vegan"
+                        value="vegan"
+                        onChange={updateFilterChoices}
+                    />
+                    <span
+                        hidden={
+                            userType === "superUser" || userType === "Admin"
+                        }
+                    >
+                        <Form.Check
+                            type="checkbox"
+                            id="favorites-check"
+                            label="Favorites"
+                            value="Favorites"
+                            checked={filterChoices.includes("Favorites")}
+                            onChange={updateFilterChoices}
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            id="dairy-free-check"
+                            label="Dairy-Free"
+                            value="Dairy-Free"
+                            onChange={updateFilterChoices}
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            id="gluten-free-check"
+                            label="Gluten-Free"
+                            value="Gluten-Free"
+                            onChange={updateFilterChoices}
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            id="vegitarian-check"
+                            label="Vegetarian"
+                            value="vegetarian"
+                            onChange={updateFilterChoices}
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            id="vegan-check"
+                            label="Vegan"
+                            value="Vegan"
+                            onChange={updateFilterChoices}
+                        />
+                    </span>
+                </div>
+            </div>
+
+            <div hidden={userType === "superUser" || userType === "Admin"}>
+                <Form.Check
+                    type="checkbox"
+                    id="favorites-check"
+                    label="Favorites"
+                    value="Favorites"
+                    onChange={updateFilterChoices}
+                />
+            </div>
         </div>
     );
 }
