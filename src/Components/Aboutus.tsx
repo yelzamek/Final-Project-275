@@ -26,12 +26,13 @@ export function Aboutus({
                     id="About Us"
                     onClick={handleOpenPopup}
                     colorScheme="green"
+                    variant={"outline"}
                 >
                     About us
                 </Button>
             </ChakraProvider>
 
-            {showPopup && 
+            {showPopup && (
                 <div id="popupOverlay" className="show">
                     <div id="popupContent">
                         <p>
@@ -43,7 +44,7 @@ export function Aboutus({
                         </Button>
                     </div>
                 </div>
-            }
+            )}
         </div>
     );
 }
