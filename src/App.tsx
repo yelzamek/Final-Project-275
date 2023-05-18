@@ -21,7 +21,7 @@ import { SortFunction } from "./Components/SortFunction";
 //import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { AdminList } from "./Components/AdminListComponent";
 import { Sidebar } from "./Components/Sidebar";
-import { ChakraProvider, Text } from "@chakra-ui/react";
+import { Box, ChakraProvider, Text } from "@chakra-ui/react";
 import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { FilterChoices } from "./Components/FilterButtons";
 
@@ -46,7 +46,18 @@ function App(): JSX.Element {
         <DndProvider backend={HTML5Backend}>
             <div className={pointerEventsEnabled ? "App" : "App-NoPointer"}>
                 <div className="App-header">
-                    Balanced Bytes Team 12 by Josh,Devin,Annanya,Yasmeen & Sreya
+                    <Box>
+                        <Text
+                            fontSize="2xl"
+                            fontWeight="bold"
+                            color="green.500"
+                        >
+                            Balanced Bytes
+                        </Text>
+                        <Text fontSize="lg" color="gray.500">
+                            Team 12 by Josh, Devin, Annanya, Yasmeen & Sreya
+                        </Text>
+                    </Box>
                     <SuperUserSelectButton
                         userType={userType}
                         setUserType={setUserType}
@@ -75,18 +86,6 @@ function App(): JSX.Element {
                     ></UserDropDown>
                 </div>
                 {/* <Navbar></Navbar> */}
-                {/* <UserTypeIndicator
-                    userType={userType}
-                    setUserType={setUserType}
-                ></UserTypeIndicator>
-                <UserDropDown
-                    userType={userType}
-                    setUserType={setUserType}
-                    userList={userList}
-                    setUserList={setUserList}
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
-                ></UserDropDown> */}
                 <p className="App-Div"></p>{" "}
                 <AddUser
                     userType={userType}
@@ -94,14 +93,6 @@ function App(): JSX.Element {
                     userList={userList}
                     setUserList={setUserList}
                 ></AddUser>
-                {/* <SuperUserSelectButton
-                    userType={userType}
-                    setUserType={setUserType}
-                    currentUser={currentUser}
-                    setCurrentUser={setCurrentUser}
-                    userList={userList}
-                    setUserList={setUserList}
-                ></SuperUserSelectButton> */}
                 <SortFunction
                     mealList={mealList}
                     setMealList={setMealList}
