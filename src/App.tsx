@@ -11,14 +11,10 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { CenterList } from "./Components/Centerlist";
 import { MEAL_LIST } from "./Interfaces/MealObject";
 import { Meal } from "./Interfaces/MealObject";
-// import { Navbar } from "./Components/NavBar";
-//import { UserList } from "./Components/UserList";
 import { AddUser } from "./Components/AddUser";
 import { UserList } from "./Components/UserList";
 import { AddMeal } from "./Components/AddMeal";
 import { SortFunction } from "./Components/SortFunction";
-//import { userListProps } from "./Interfaces/userListProps";
-//import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { AdminList } from "./Components/AdminListComponent";
 import { Sidebar } from "./Components/Sidebar";
 import { Box, ChakraProvider, Flex, Text } from "@chakra-ui/react";
@@ -96,7 +92,6 @@ function App(): JSX.Element {
                         setCurrentUser={setCurrentUser}
                     ></UserDropDown>
                 </div>
-                {/* <Navbar></Navbar> */}
                 <p className="App-Div"></p>{" "}
                 <AddUser
                     userType={userType}
