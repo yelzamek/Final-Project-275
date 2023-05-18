@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, ChakraProvider } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 
@@ -29,7 +29,14 @@ export function NutritionalTotalButton({
 
     return (
         <div hidden={userType === "superUser" || userType === "Admin"}>
-            <Button onClick={() => setHidden(!isHidden)}>Show Totals:</Button>
+            <ChakraProvider>
+                <Button
+                    colorScheme="whatsapp"
+                    onClick={() => setHidden(!isHidden)}
+                >
+                    Show Totals:
+                </Button>
+            </ChakraProvider>
             <div
                 hidden={
                     isHidden || userType === "superUser" || userType === "Admin"

@@ -1,9 +1,10 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, ChakraProvider } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { UserListProps } from "../Interfaces/UserListProps";
+import { Form } from "react-bootstrap";
 export function AddUser({
     userType,
     userList,
@@ -90,7 +91,14 @@ export function AddUser({
                     onChange={updateNewName}
                 />
             </Form.Group>
-            <Button onClick={() => updateUserList(newName)}>Add User</Button>
+            <ChakraProvider>
+                <Button
+                    colorScheme="green"
+                    onClick={() => updateUserList(newName)}
+                >
+                    Add User
+                </Button>
+            </ChakraProvider>
             {userList.map((user: User) => (
                 <div key={user.name}>{user.name}</div>
             ))}
