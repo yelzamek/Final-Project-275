@@ -21,7 +21,7 @@ import { SortFunction } from "./Components/SortFunction";
 //import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { AdminList } from "./Components/AdminListComponent";
 import { Sidebar } from "./Components/Sidebar";
-import { Box, ChakraProvider, Text } from "@chakra-ui/react";
+import { Box, ChakraProvider, Flex, Text } from "@chakra-ui/react";
 import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { FilterChoices } from "./Components/FilterButtons";
 
@@ -95,16 +95,23 @@ function App(): JSX.Element {
                     userList={userList}
                     setUserList={setUserList}
                 ></AddUser>
-                <SortFunction
-                    mealList={mealList}
-                    setMealList={setMealList}
-                ></SortFunction>
-                <FilterChoices
-                    filterChoices={filterChoices}
-                    setFilterChoices={setFilterChoices}
-                    userType={userType}
-                    setUserType={setUserType}
-                ></FilterChoices>
+                <Flex
+                    style={{
+                        alignItems: "center",
+                        justifyContent: "flex-start"
+                    }}
+                >
+                    <SortFunction
+                        mealList={mealList}
+                        setMealList={setMealList}
+                    ></SortFunction>
+                    <FilterChoices
+                        filterChoices={filterChoices}
+                        setFilterChoices={setFilterChoices}
+                        userType={userType}
+                        setUserType={setUserType}
+                    ></FilterChoices>
+                </Flex>
                 <CenterList
                     mealList={mealList}
                     setMealList={setMealList}

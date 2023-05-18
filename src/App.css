@@ -105,23 +105,3 @@
     padding: 20px;
     /* background-image: url("https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/mpx/2704722219/2023_02/1676903842822_tdy_health_8a_minno_nutrition_myths_230220_1920x1080-bkey7m.jpg"); */
   }
-
-.sort-function-container {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: -210px;
-    margin-left: 10px;
-  }
-  /* .filter-container {
-    display: flex;
-    justify-content: flex-end;
-    top: 0;
-    right: 0;
-  } */
-  
-  .filter-container > div {
-    display: flex-end;
-    align-items: center;
-    margin-top: -210px;
-    margin-left: 10px;
-  }

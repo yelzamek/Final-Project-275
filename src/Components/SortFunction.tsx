@@ -1,3 +1,4 @@
+/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { MealListProps } from "../Interfaces/MealObject";
 import { Form } from "react-bootstrap";
@@ -38,7 +39,7 @@ export function SortFunction({
         }
     }
     return (
-        <div className="sort-function-container">
+        <div className="sort-function-container" style={{ marginLeft: "10%" }}>
             <Form.Group controlId="sortOption">
                 <Form.Label>Sort by:</Form.Label>
                 <Form.Select value={sortOption} onChange={updateSortOption}>

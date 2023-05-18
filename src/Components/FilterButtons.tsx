@@ -21,7 +21,7 @@ export function FilterChoices({
     }
 
     return (
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", marginLeft: "10%" }}>
             <div className="filter-container">
                 <div style={{ display: "inline-flex" }}>
                     <span style={{ marginRight: "10px" }}>Filter by:</span>{" "}
