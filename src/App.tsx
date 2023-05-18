@@ -24,6 +24,7 @@ import { Sidebar } from "./Components/Sidebar";
 import { Box, ChakraProvider, Text } from "@chakra-ui/react";
 import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { FilterChoices } from "./Components/FilterButtons";
+import { Aboutus } from "./Components/Aboutus";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
@@ -74,6 +75,10 @@ function App(): JSX.Element {
                         userList={userList}
                         setUserList={setUserList}
                     ></AdminSelectButton>
+                    <Aboutus
+                        setPointerEventsEnabled={setPointerEventsEnabled}
+                        pointerEventsEnabled={pointerEventsEnabled}
+                    />
                     <UserDropDown
                         mealList={mealList}
                         setMealList={setMealList}
