@@ -112,12 +112,7 @@
     color: white;
 }
 .sort-function-container {
-    margin-left: 10px;
     display: flex;
-    margin-top:-210px;
-}
-.filter-container{
-    margin-left: 10px;
-    display: flex;
-    margin-top:-210px
+    top: -300px;
+    align-items: flex-start;
 }

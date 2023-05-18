@@ -21,7 +21,14 @@ export function FilterChoices({
     }
 
     return (
-        <div style={{ display: "flex", marginLeft: "10%" }}>
+        <div
+            style={{
+                position: "absolute",
+                top: 125,
+                display: "flex",
+                marginLeft: "30%"
+            }}
+        >
             <div>
                 <div
                     className="sort-function-container"

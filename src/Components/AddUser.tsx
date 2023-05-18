@@ -59,7 +59,10 @@ export function AddUser({
     return (
         <div
             style={{
-                display: userType === "superUser" ? "inLine-block" : "none"
+                display: userType === "superUser" ? "inLine-block" : "none",
+                top: 175,
+                position: "absolute",
+                marginLeft: -150
             }}
         >
             {error && (
