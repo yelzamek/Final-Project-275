@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./UserListPopup.css";
-import { Meal, nameProps } from "../Interfaces/MealObject";
+import { nameProps } from "../Interfaces/MealObject";
 import { MealListProps } from "../Interfaces/MealObject";
 
 export function ItemPopUp({
