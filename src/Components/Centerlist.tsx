@@ -1,11 +1,12 @@
 /* eslint-disable no-extra-parens */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDrag } from "react-dnd";
 import { Form } from "react-bootstrap";
 import { MealListProps, Meal } from "../Interfaces/MealObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
 import { UserListProps } from "../Interfaces/UserListProps";
+import { FilterChoicesProps } from "../Interfaces/FilterChoices";
 import {
     Box,
     SimpleGrid,
@@ -46,9 +47,10 @@ export function MealDraggable({
     currentUser,
     userList,
     setUserList,
-    setUserType,
     pointerEventsEnabled,
-    setPointerEventsEnabled
+    setPointerEventsEnabled,
+    setUserType,
+    setCurrentUser
 }: Meal &
     MealListProps &
     UserTypeProps &
@@ -70,28 +72,48 @@ export function MealDraggable({
         copy.splice(index, 1);
         setMealList(copy);
     }
-    const [showNutrition, setShowNutrition] = useState<boolean>(true);
+    const [isFavorite, setIsFavorite] = useState<boolean>(
+        currentUser.list_of_favorites.some((meal: Meal) => meal.name === name)
+    );
+    function toggleFavorite() {
+        setIsFavorite(!isFavorite);
+        const updatedUser = { ...currentUser };
+        const favoriteIndex = updatedUser.list_of_favorites.findIndex(
+            (meal) => meal.name === name
+        );
 
-    function updateFavorites(event: React.ChangeEvent<HTMLInputElement>) {
-        const index = userList.findIndex(
-            (object) => object.name === currentUser.name
-        );
-        const copy = [...userList];
-        const clistIndex = mealList.findIndex(
-            (object) => object.name === event.target.value
-        );
-        if (event.target.checked === true) {
-            copy[index].list_of_favorites.push(mealList[clistIndex]);
-            setUserList(copy);
-        } else if (event.target.checked === false) {
-            const mealIndex = copy[index].list_of_favorites.findIndex(
-                (object) => object.name === event.target.value
-            );
-            copy[index].list_of_favorites.splice(mealIndex, 1);
-            setUserList(copy);
+        if (!isFavorite) {
+            if (favoriteIndex === -1) {
+                updatedUser.list_of_favorites.push(
+                    mealList[
+                        mealList.findIndex((meal: Meal) => meal.name === name)
+                    ]
+                );
+            }
+        } else {
+            if (favoriteIndex !== -1) {
+                updatedUser.list_of_favorites.splice(favoriteIndex, 1);
+            }
         }
-    }
 
+        setCurrentUser(updatedUser);
+        const userIndex = userList.findIndex(
+            (user: User): boolean => user.name === currentUser.name
+        );
+        setUserList([
+            ...userList.slice(0, userIndex),
+            updatedUser,
+            ...userList.slice(userIndex + 1)
+        ]);
+    }
+    const [showNutrition, setShowNutrition] = useState<boolean>(true);
+    useEffect(() => {
+        setIsFavorite(
+            currentUser.list_of_favorites.some(
+                (meal: Meal) => meal.name === name
+            )
+        );
+    }, [currentUser, name]);
     return (
         <ChakraProvider>
             <Card
@@ -113,9 +135,11 @@ export function MealDraggable({
                     <Flex gap={3}>
                         <Avatar src={image} size="2xl" />
                         <Box>
+                            <Heading as="h3" size="md"></Heading>
                             <Heading as="h3" size="md">
                                 {name}
                             </Heading>
+                            <Text fontSize="xs" color="gray.500"></Text>
                             <Text fontSize="xs" color="gray.500">
                                 {tags.join(",  ")}
                             </Text>
@@ -222,7 +246,8 @@ export function MealDraggable({
                                             : "Favorite"
                                     }
                                     value={name}
-                                    onChange={updateFavorites}
+                                    checked={isFavorite}
+                                    onChange={toggleFavorite}
                                 />
                                 <Text
                                     fontSize="md"
@@ -282,20 +307,44 @@ export function CenterList({
     setCurrentUser,
     userList,
     setUserList,
+    filterChoices,
     pointerEventsEnabled,
     setPointerEventsEnabled
 }: MealListProps &
     UserTypeProps &
     UserListProps &
     CurrentUserProps &
+    FilterChoicesProps &
     PointerProps) {
+    function displayable(MealObject: Meal) {
+        if (filterChoices.includes("Favorites")) {
+            const favIndex = filterChoices.indexOf("Favorites");
+            const filterWithoutFavorites = [...filterChoices];
+            filterWithoutFavorites.splice(favIndex, 1);
+            if (currentUser.list_of_favorites.includes(MealObject)) {
+                return !filterWithoutFavorites.every((choice) =>
+                    MealObject.tags.includes(choice)
+                );
+            } else {
+                return true;
+            }
+        } else {
+            return !filterChoices.every((choice) =>
+                MealObject.tags.includes(choice)
+            );
+        }
+    }
+
     return (
         <div style={{ padding: "20px" }}>
             <div>Center List</div>
             <ChakraProvider>
                 <SimpleGrid columns={4} spacing={5}>
                     {mealList.map((MealObject: Meal) => (
-                        <div key={MealObject.name}>
+                        <div
+                            key={MealObject.name}
+                            hidden={displayable(MealObject)}
+                        >
                             <MealDraggable
                                 name={MealObject.name}
                                 image={MealObject.image}

@@ -8,11 +8,13 @@ import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 import { Button } from "react-bootstrap";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { User } from "../Interfaces/UserObject";
+import { ItemPopUp } from "./UserListPopup";
 
 export function UserList({
     currentUser,
     setCurrentUser,
     mealList,
+    setMealList,
     userType,
     userList,
     setUserList
@@ -95,6 +97,11 @@ export function UserList({
                 <div key={index}>
                     {item.name}{" "}
                     <Button onClick={() => RemoveItem(item, index)}>X</Button>
+                    <ItemPopUp
+                        name={item.name}
+                        mealList={mealList}
+                        setMealList={setMealList}
+                    ></ItemPopUp>
                 </div>
             ))}
         </div>

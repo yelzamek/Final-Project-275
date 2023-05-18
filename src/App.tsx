@@ -24,6 +24,7 @@ import { Sidebar } from "./Components/Sidebar";
 import { Box, ChakraProvider, Flex, Text } from "@chakra-ui/react";
 import { NutritionalTotalButton } from "./Components/NutritionTotalButton";
 import { FilterChoices } from "./Components/FilterButtons";
+import { Aboutus } from "./Components/Aboutus";
 
 function App(): JSX.Element {
     const [userType, setUserType] = useState<string>("User");
@@ -67,6 +68,8 @@ function App(): JSX.Element {
                         setCurrentUser={setCurrentUser}
                         userList={userList}
                         setUserList={setUserList}
+                        filterChoices={filterChoices}
+                        setFilterChoices={setFilterChoices}
                     ></SuperUserSelectButton>
                     <AdminSelectButton
                         userType={userType}
@@ -75,7 +78,13 @@ function App(): JSX.Element {
                         setCurrentUser={setCurrentUser}
                         userList={userList}
                         setUserList={setUserList}
+                        filterChoices={filterChoices}
+                        setFilterChoices={setFilterChoices}
                     ></AdminSelectButton>
+                    <Aboutus
+                        setPointerEventsEnabled={setPointerEventsEnabled}
+                        pointerEventsEnabled={pointerEventsEnabled}
+                    />
                     <UserDropDown
                         mealList={mealList}
                         setMealList={setMealList}
@@ -121,6 +130,8 @@ function App(): JSX.Element {
                     setCurrentUser={setCurrentUser}
                     userList={userList}
                     setUserList={setUserList}
+                    filterChoices={filterChoices}
+                    setFilterChoices={setFilterChoices}
                     pointerEventsEnabled={pointerEventsEnabled}
                     setPointerEventsEnabled={setPointerEventsEnabled}
                 ></CenterList>
