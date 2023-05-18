@@ -31,16 +31,19 @@ export function Aboutus({
                 </Button>
             </ChakraProvider>
 
-            {showPopup && (
+            {showPopup && 
                 <div id="popupOverlay" className="show">
                     <div id="popupContent">
-                        <p>This is the popup content.</p>
+                        <p>
+                            Made by Team 12: Annanya, Josh, Devin, Sreya and
+                            Yasmeen!
+                        </p>
                         <Button id="closePopup" onClick={handleClosePopup}>
                             Close
                         </Button>
                     </div>
                 </div>
-            )}
+            }
         </div>
     );
 }
