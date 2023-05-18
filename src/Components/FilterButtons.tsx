@@ -22,8 +22,11 @@ export function FilterChoices({
 
     return (
         <div style={{ display: "flex", marginLeft: "10%" }}>
-            <div className="filter-container">
-                <div style={{ display: "inline-flex" }}>
+            <div>
+                <div
+                    className="sort-function-container"
+                    style={{ display: "inline-flex" }}
+                >
                     <span style={{ marginRight: "10px" }}>Filter by:</span>{" "}
                     <Form.Check
                         type="checkbox"
