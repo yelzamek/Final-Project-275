@@ -184,6 +184,7 @@ export function MealDraggable({
                                         showNutrition ? "outline" : "ghost"
                                     }
                                     onClick={() => setShowNutrition(true)}
+                                    size="sm"
                                 >
                                     Nutrition
                                 </Button>
@@ -195,6 +196,7 @@ export function MealDraggable({
                                         !showNutrition ? "outline" : "ghost"
                                     }
                                     onClick={() => setShowNutrition(false)}
+                                    size="sm"
                                 >
                                     Ingredients
                                 </Button>
