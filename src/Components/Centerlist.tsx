@@ -47,7 +47,6 @@ export function MealDraggable({
     currentUser,
     userList,
     setUserList,
-    setUserType,
     pointerEventsEnabled,
     setPointerEventsEnabled,
     setUserType,
@@ -134,13 +133,12 @@ export function MealDraggable({
                 <CardHeader color="gray.700">
                     <Flex gap={3}>
                         <Avatar src={image} size="2xl" />
-                        <Avatar src={image} size="2xl" />
                         <Box>
-                            <Heading as="h3" size="md">
+                            <Heading as="h3" size="md"></Heading>
                             <Heading as="h3" size="md">
                                 {name}
                             </Heading>
-                            <Text fontSize="xs" color="gray.500">
+                            <Text fontSize="xs" color="gray.500"></Text>
                             <Text fontSize="xs" color="gray.500">
                                 {tags.join(",  ")}
                             </Text>
@@ -249,7 +247,8 @@ export function MealDraggable({
                                             : "Favorite"
                                     }
                                     value={name}
-                                    onChange={updateFavorites}
+                                    checked={isFavorite}
+                                    onChange={toggleFavorite}
                                 />
                                 <Text
                                     fontSize="md"
@@ -312,11 +311,8 @@ export function CenterList({
     pointerEventsEnabled,
     setPointerEventsEnabled
 }: MealListProps &
-   
     UserTypeProps &
-   
     UserListProps &
-   
     CurrentUserProps &
     FilterChoicesProps &
     PointerProps) {
