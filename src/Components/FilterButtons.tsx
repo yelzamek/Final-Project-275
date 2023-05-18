@@ -22,42 +22,45 @@ export function FilterChoices({
 
     return (
         <div style={{ display: "flex" }}>
-            <div style={{ display: "inline-flex" }}>
-                <Form.Check
-                    type="checkbox"
-                    id="meat-free-check"
-                    label="Meat-Free"
-                    value="Meat-Free"
-                    onChange={updateFilterChoices}
-                />
-                <Form.Check
-                    type="checkbox"
-                    id="dairy-free-check"
-                    label="Dairy-Free"
-                    value="Dairy-Free"
-                    onChange={updateFilterChoices}
-                />
-                <Form.Check
-                    type="checkbox"
-                    id="gluten-free-check"
-                    label="Gluten-Free"
-                    value="Gluten-Free"
-                    onChange={updateFilterChoices}
-                />
-                <Form.Check
-                    type="checkbox"
-                    id="vegitarian-check"
-                    label="Vegetarian"
-                    value="vegetarian"
-                    onChange={updateFilterChoices}
-                />
-                <Form.Check
-                    type="checkbox"
-                    id="vegan-check"
-                    label="Vegan"
-                    value="Vegan"
-                    onChange={updateFilterChoices}
-                />
+            <div className="filter-container">
+                <div style={{ display: "inline-flex" }}>
+                    <span style={{ marginRight: "10px" }}>Filter by:</span>{" "}
+                    <Form.Check
+                        type="checkbox"
+                        id="meat-free-check"
+                        label="Meat-Free"
+                        value="Meat-Free"
+                        onChange={updateFilterChoices}
+                    />
+                    <Form.Check
+                        type="checkbox"
+                        id="dairy-free-check"
+                        label="Dairy-Free"
+                        value="Dairy-Free"
+                        onChange={updateFilterChoices}
+                    />
+                    <Form.Check
+                        type="checkbox"
+                        id="gluten-free-check"
+                        label="Gluten-Free"
+                        value="Gluten-Free"
+                        onChange={updateFilterChoices}
+                    />
+                    <Form.Check
+                        type="checkbox"
+                        id="vegitarian-check"
+                        label="Vegetarian"
+                        value="vegetarian"
+                        onChange={updateFilterChoices}
+                    />
+                    <Form.Check
+                        type="checkbox"
+                        id="vegan-check"
+                        label="Vegan"
+                        value="Vegan"
+                        onChange={updateFilterChoices}
+                    />
+                </div>
             </div>
 
             <div hidden={userType === "superUser" || userType === "Admin"}>
