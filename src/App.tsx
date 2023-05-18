@@ -66,6 +66,8 @@ function App(): JSX.Element {
                         setCurrentUser={setCurrentUser}
                         userList={userList}
                         setUserList={setUserList}
+                        filterChoices={filterChoices}
+                        setFilterChoices={setFilterChoices}
                     ></SuperUserSelectButton>
                     <AdminSelectButton
                         userType={userType}
@@ -74,6 +76,8 @@ function App(): JSX.Element {
                         setCurrentUser={setCurrentUser}
                         userList={userList}
                         setUserList={setUserList}
+                        filterChoices={filterChoices}
+                        setFilterChoices={setFilterChoices}
                     ></AdminSelectButton>
                     <Aboutus
                         setPointerEventsEnabled={setPointerEventsEnabled}
@@ -117,6 +121,8 @@ function App(): JSX.Element {
                     setCurrentUser={setCurrentUser}
                     userList={userList}
                     setUserList={setUserList}
+                    filterChoices={filterChoices}
+                    setFilterChoices={setFilterChoices}
                     pointerEventsEnabled={pointerEventsEnabled}
                     setPointerEventsEnabled={setPointerEventsEnabled}
                 ></CenterList>

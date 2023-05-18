@@ -1,25 +1,24 @@
-
 #popupOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-  z-index: 9998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 9998;
 }
 
 #popupContent {
-  background-color: #fff;
-  padding: 20px;
-  z-index: 9999;
-  pointer-events: auto;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 9999;
+    pointer-events: auto;
 }
 
 #popupOverlay.show {
-  display: flex;
+    display: flex;
 }
