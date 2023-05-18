@@ -170,23 +170,6 @@ export function MealDraggable({
                             </Text>
                         </Box>
                     )}
-                    {/* {showNutrition && (
-                        <Text whiteSpace="pre-line" fontSize="sm">
-                            Serving Size: {serving_size}
-                            {"\n"} Calories: {calories}
-                            {"\n"}
-                            Total Fat: {total_fat}
-                            {"\n"} Cholesterol: {cholesterol} mg{"\n"} Sodium:{" "}
-                            {sodium} mg{"\n"} Total Carbs: {total_carbs} g{"\n"}{" "}
-                            Total Sugars: {total_sugars} g{"\n"} Protein:{" "}
-                            {protein} g{"\n"}
-                        </Text>
-                    )}
-                    {!showNutrition && (
-                        <Text whiteSpace="pre-line" fontSize="sm">
-                            {ingredients.join("\n")}
-                        </Text>
-                    )} */}
                 </CardBody>
 
                 <Divider borderColor="gray.200" />
