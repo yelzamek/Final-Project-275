@@ -317,24 +317,24 @@ FAIL src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |    0.27 |     4.19 |    0.66 |    0.27 |                   
+All files                    |    0.25 |     4.13 |    0.61 |    0.25 |                   
  src                         |       0 |        0 |       0 |       0 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 26-42             
- src/Components              |    0.28 |     4.25 |    0.66 |    0.28 |                   
+ src/Components              |    0.25 |     4.19 |    0.62 |    0.26 |                   
   Aboutus.tsx                |       0 |        0 |       0 |       0 | 10-22             
   AddMeal.tsx                |       0 |        0 |       0 |       0 | 18-291            
   AddUser.tsx                |       0 |        0 |       0 |       0 | 13-103            
-  AdminListComponent.tsx     |       0 |        0 |       0 |       0 | 23-74             
+  AdminListComponent.tsx     |       0 |        0 |       0 |       0 | 27-71             
   Centerlist.tsx             |       0 |        0 |       0 |       0 | 60-344            
-  EditMeal.tsx               |       0 |        0 |       0 |       0 | 36-341            
+  EditMeal.tsx               |       0 |        0 |       0 |       0 | 47-415            
   FilterButtons.tsx          |       0 |        0 |       0 |       0 | 12-23             
   NutritionTotalButton.tsx   |       0 |        0 |       0 |       0 | 10-35             
   Sidebar.tsx                |       0 |      100 |       0 |       0 | 5                 
   SortFunction.tsx           |       0 |        0 |       0 |       0 | 11-50             
   SubsituteIngrediantesP.tsx |       0 |        0 |       0 |       0 | 25-110            
   UserDropdown.tsx           |       0 |        0 |       0 |       0 | 21-62             
-  UserList.tsx               |       0 |        0 |       0 |       0 | 25-102            
-  UserListPopup.tsx          |       0 |        0 |       0 |       0 | 12-24             
+  UserList.tsx               |       0 |        0 |       0 |       0 | 25-113            
+  UserListPopup.tsx          |       0 |        0 |       0 |       0 | 20-114            
   UserTypeIndicator.tsx      |     100 |      100 |     100 |     100 |                   
   UserTypeSelectButtons.tsx  |       0 |        0 |       0 |       0 | 20-70             
   UsersWithItemPopup.tsx     |       0 |        0 |       0 |       0 | 18-52             
@@ -353,5 +353,5 @@ All files                    |    0.27 |     4.19 |    0.66 |    0.27 |
 Test Suites: 9 failed, 9 total
 Tests:       3 failed, 1 passed, 4 total
 Snapshots:   0 total
-Time:        6.286 s
+Time:        6.519 s
 Ran all test suites.
