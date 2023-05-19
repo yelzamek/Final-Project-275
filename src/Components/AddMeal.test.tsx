@@ -1,100 +1,82 @@
-/*import React from "react";
-//import { fireEvent, render, screen } from "@testing-library/react";
+import React from "react";
+import { render, fireEvent } from "@testing-library/react";
 import { AddMeal } from "./AddMeal";
-import "@testing-library/jest-dom/extend-expect";
-//import { Meal } from "../Interfaces/MealObject";
-//import { shallow } from "enzyme";
-import { fireEvent, render } from "@testing-library/react";
 
-describe("AddMeal", () => {
-    const mealList = [
-        {
-            name: "Test Meal",
-            serving_size: 1,
-            calories: 100,
-            total_fat: 10,
-            cholesterol: 20,
-            sodium: 30,
-            total_carbs: 40,
-            total_sugars: 50,
-            protein: 60,
-            image: "test.jpg"
-        },
-        {
-            name: "Test Meal",
-            serving_size: 2,
-            calories: 200,
-            total_fat: 10,
-            cholesterol: 30,
-            sodium: -1,
-            total_carbs: 40,
-            total_sugars: 10,
-            protein: 20,
-            image: "https://testimage.com"
-        }
-    ];
-    const setMealList = jest.fn();
-    const userType = "superUser";*/
+test("AddMeal updates name input correctly", () => {
+    const setMealListMock = jest.fn();
+    const setUserType = jest.fn();
+    const { getByLabelText } = render(
+        <AddMeal
+            mealList={[]}
+            setMealList={setMealListMock}
+            userType=""
+            setUserType={setUserType}
+        />
+    );
+    const nameInput = getByLabelText("Name:");
+    fireEvent.change(nameInput, { target: { value: "New Meal" } });
+    expect(nameInput).toHaveValue("New Meal");
+});
+test("AddMeal updates serving size input correctly", () => {
+    const setMealListMock = jest.fn();
+    const setUserType = jest.fn();
+    const { getByLabelText } = render(
+        <AddMeal
+            mealList={[]}
+            setMealList={setMealListMock}
+            userType=""
+            setUserType={setUserType}
+        />
+    );
+    const servingSizeInput = getByLabelText("Serving Size:");
+    fireEvent.change(servingSizeInput, { target: { value: 2 } });
+    expect(servingSizeInput).toHaveValue(2);
+});
 
-//it("adds a new meal to the mealList state when createMeal is called", () => {
-// Create a mock meal object
-/*const mockMeal = {
-            name: "test meal",
-            serving_size: 1,
-            calories: 100,
-            total_fat: 10,
-            cholesterol: 20,
-            sodium: 30,
-            total_carbs: 40,
-            total_sugars: 50,
-            protein: 60,
-            image: "test.jpg"
-        };*/
-// Set the state values to the mock meal values
-//});
-/*
-    it("should create a new meal object", () => {
-        const { getByLabelText } = render(
-            <AddMeal
-                mealList={mealList}
-                setMealList={setMealList}
-                userType={userType}
-                setUserType={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
-            />
-        );
+test("AddMeal updates calories input correctly", () => {
+    const setMealListMock = jest.fn();
+    const setUserType = jest.fn();
+    const { getByLabelText } = render(
+        <AddMeal
+            mealList={[]}
+            setMealList={setMealListMock}
+            userType=""
+            setUserType={setUserType}
+        />
+    );
+    const caloriesInput = getByLabelText("Calories:");
+    fireEvent.change(caloriesInput, { target: { value: 500 } });
+    expect(caloriesInput).toHaveValue(500);
+});
 
-        fireEvent.change(getByLabelText("Name:"), {
-            target: { value: "Test Meal" }
-        });
-        fireEvent.change(getByLabelText("Serving Size:"), {
-            target: { value: "1" }
-        });
-        fireEvent.change(getByLabelText("Calories:"), {
-            target: { value: "100" }
-        });
-        fireEvent.change(getByLabelText("Total Fat:"), {
-            target: { value: "10" }
-        });
-        fireEvent.change(getByLabelText("Cholesterol:"), {
-            target: { value: "20" }
-        });
-        fireEvent.change(getByLabelText("Sodium:"), {
-            target: { value: "30" }
-        });
-        fireEvent.change(getByLabelText("Total Carbs:"), {
-            target: { value: "40" }
-        });
-        fireEvent.change(getByLabelText("Total Sugars:"), {
-            target: { value: "50" }
-        });
-        fireEvent.change(getByLabelText("Protein:"), {
-            target: { value: "60" }
-        });
-        fireEvent.change(getByLabelText("Image:"), {
-            target: { value: "test.jpg" }
-        });
-    });
-});*/
-export {};
+test("AddMeal updates cholesterol input correctly", () => {
+    const setMealListMock = jest.fn();
+    const setUserType = jest.fn();
+    const { getByLabelText } = render(
+        <AddMeal
+            mealList={[]}
+            setMealList={setMealListMock}
+            userType=""
+            setUserType={setUserType}
+        />
+    );
+    const cholesterolInput = getByLabelText("Cholesterol:");
+    fireEvent.change(cholesterolInput, { target: { value: 20 } });
+    expect(cholesterolInput).toHaveValue(20);
+});
+
+test("AddMeal updates total sugars input correctly", () => {
+    const setMealListMock = jest.fn();
+    const setUserType = jest.fn();
+    const { getByLabelText } = render(
+        <AddMeal
+            mealList={[]}
+            setMealList={setMealListMock}
+            userType=""
+            setUserType={setUserType}
+        />
+    );
+    const sugarsInput = getByLabelText("Total Sugars:");
+    fireEvent.change(sugarsInput, { target: { value: 20 } });
+    expect(sugarsInput).toHaveValue(20);
+});
