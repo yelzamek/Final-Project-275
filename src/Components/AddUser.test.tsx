@@ -1,63 +1,92 @@
-/*import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import { UserSelect } from "./AddUser";
+import React from "react";
+import { fireEvent, render } from "@testing-library/react";
+import { AddUser } from "./AddUser";
+//import { User } from "../Interfaces/UserObject";
 
-describe("UserSelect", () => {
-    const userList = [
-        { name: "User 1", list_of_items: [] },
-        { name: "User 2", list_of_items: [] }
-    ];
+test("renders AddUser component without errors", () => {
+    const setUserType = jest.fn();
     const setUserList = jest.fn();
-    const userType = "superUser";
-
-    it("renders without crashing", () => {
-        render(
-            <UserSelect
-                userType={userType}
-                userList={userList}
-                setUserList={setUserList}
-                setUserType={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
-            />
-        );
-    });
-
-    it("updates the new user name when the input value changes", () => {
-        const { getByLabelText } = render(
-            <UserSelect
-                userType={userType}
-                userList={userList}
-                setUserList={setUserList}
-                setUserType={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
-            />
-        );
-        const input = getByLabelText("Enter New Users Name:");
-        fireEvent.change(input, { target: { value: "New User" } });
-        expect(input.appendChild).toBe("New User");
-    });
-
-    it("adds a new user to the list when the Add User button is clicked", () => {
-        const { getByText } = render(
-            <UserSelect
-                userType={userType}
-                userList={userList}
-                setUserList={setUserList}
-                setUserType={function (): void {
-                    throw new Error("Function not implemented.");
-                }}
-            />
-        );
-        const input = getByText("Add User");
-        fireEvent.click(input);
-        expect(setUserList).toHaveBeenCalledTimes(1);
-        expect(setUserList).toHaveBeenCalledWith([
-            ...userList,
-            { name: "", list_of_items: [] }
-        ]);
-    });
+    render(
+        <AddUser
+            userType=""
+            setUserType={setUserType}
+            userList={[]}
+            setUserList={setUserList}
+        />
+    );
 });
-*/
-export {};
+test("AddUser calls RemoveUser with the correct user name when X button is clicked", () => {
+    const mockSetUserType = jest.fn();
+    const mockSetUserList = jest.fn();
+    const { getByText } = render(
+        <AddUser
+            userType=""
+            setUserType={mockSetUserType}
+            userList={[
+                {
+                    name: "John Doe",
+                    list_of_items: [],
+                    list_of_favorites: []
+                }
+            ]}
+            setUserList={mockSetUserList}
+        />
+    );
+
+    const removeUserButton = getByText("X");
+
+    fireEvent.click(removeUserButton);
+
+    expect(mockSetUserList).toHaveBeenCalledWith([]);
+});
+test("adduser displays error message when a blank user name is entered", () => {
+    const setUserType = jest.fn();
+    const setUserList = jest.fn();
+    const { getByText } = render(
+        <AddUser
+            userType=""
+            setUserType={setUserType}
+            userList={[]}
+            setUserList={setUserList}
+        />
+    );
+
+    const addUserButton = getByText("Add User");
+
+    fireEvent.click(addUserButton);
+
+    expect(() => {
+        getByText("Please provide a not Blank User Name");
+    }).toThrow();
+
+    expect(setUserList).not.toHaveBeenCalled();
+});
+test("adduser displays error message when a duplicate user name is entered", () => {
+    const setUserType = jest.fn();
+    const setUserList = jest.fn();
+    const userList = [
+        { name: "John Doe", list_of_items: [], list_of_favorites: [] }
+        // Add other user objects as needed for testing duplicate names
+    ];
+
+    const { getByText, getByLabelText } = render(
+        <AddUser
+            userType=""
+            setUserType={setUserType}
+            userList={userList}
+            setUserList={setUserList}
+        />
+    );
+
+    const userNameInput = getByLabelText("Enter New Users Name:");
+    const addUserButton = getByText("Add User");
+
+    fireEvent.change(userNameInput, { target: { value: "John Doe" } });
+    fireEvent.click(addUserButton);
+
+    expect(() => {
+        getByText("Please provide a unique User Name");
+    }).toThrow();
+
+    expect(setUserList).not.toHaveBeenCalled();
+});
