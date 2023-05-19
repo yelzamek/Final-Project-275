@@ -1,6 +1,6 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
-import { Button, ChakraProvider } from "@chakra-ui/react";
+import { Button, ChakraProvider, Flex } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { UserListProps } from "../Interfaces/UserListProps";
@@ -57,6 +57,15 @@ export function AddUser({
                 : updateUserListHelper(newName);
         }
     }
+    function RemoveUser(name: string) {
+        const userIndex = userList.findIndex(
+            (user: User) => user.name === name
+        );
+        const updatedUsers = userList
+            .slice(0, userIndex)
+            .concat(userList.slice(userIndex + 1));
+        setUserList(updatedUsers);
+    }
     return (
         <div
             style={{
@@ -100,7 +109,18 @@ export function AddUser({
                 </Button>
             </ChakraProvider>
             {userList.map((user: User) => (
-                <div key={user.name}>{user.name}</div>
+                <Flex key={user.name} style={{ paddingLeft: "40%" }}>
+                    <div>{user.name}</div>
+                    <ChakraProvider key={user.name}>
+                        <Button
+                            colorScheme="green"
+                            size="sm"
+                            onClick={() => RemoveUser(user.name)}
+                        >
+                            X
+                        </Button>
+                    </ChakraProvider>
+                </Flex>
             ))}
         </div>
     );
