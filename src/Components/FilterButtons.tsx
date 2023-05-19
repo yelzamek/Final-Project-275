@@ -39,7 +39,7 @@ export function FilterChoices({
                         type="checkbox"
                         id="meat-free-check"
                         label="Meat-Free"
-                        value="Meat-Free"
+                        value="meat-free"
                         onChange={updateFilterChoices}
                     />
                     <Form.Check

@@ -54,9 +54,10 @@
     justify-content: space-between;
     height: 80px;
     padding: 20px;
-    z-index: 9999; 
-    background-image: url("https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/mpx/2704722219/2023_02/1676903842822_tdy_health_8a_minno_nutrition_myths_230220_1920x1080-bkey7m.jpg")
-  }
+    z-index: 9999;
+    background-image: url("https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/mpx/2704722219/2023_02/1676903842822_tdy_health_8a_minno_nutrition_myths_230220_1920x1080-bkey7m.jpg");
+    background-repeat: no-repeat;
+}
 
 .App-link {
     color: #0ce27e;
@@ -87,25 +88,25 @@
 }
 
 .App-Sidebar {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        height: 100%;
-        width: 325px;
-        background-color: #63ab74;
-        padding: 20px;
-        overflow-y: auto;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: 100%;
+    width: 325px;
+    background-color: #63ab74;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 .App-Div {
     height: 300px;
     color: white;
     padding: 20px;
-  }
-  .App-header Text {
+}
+.App-header Text {
     background-color: green;
     display: inline;
-    padding: 0 5px; 
+    padding: 0 5px;
     color: white;
 }
 .sort-function-container {

@@ -356,7 +356,7 @@ export function EditMeal({
                                                         "Meat-Free"
                                                     )}
                                                     onChange={() =>
-                                                        updateTags("Meat-Free")
+                                                        updateTags("meat-free")
                                                     }
                                                 >
                                                     Meat-Free

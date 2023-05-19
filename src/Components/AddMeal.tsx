@@ -258,7 +258,7 @@ export function AddMeal({
             <Stack spacing={40} direction="row">
                 <Checkbox
                     colorScheme="green"
-                    onChange={() => updateTags("Meat-Free")}
+                    onChange={() => updateTags("meat-free")}
                 >
                     Meat-Free
                 </Checkbox>
