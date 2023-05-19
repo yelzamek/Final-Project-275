@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { AdminListProps } from "../Interfaces/AdminListProps";
 import { MealListProps } from "../Interfaces/MealObject";
 import { Meal } from "../Interfaces/MealObject";
