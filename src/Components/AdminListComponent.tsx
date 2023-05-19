@@ -1,12 +1,11 @@
 /* eslint-disable no-extra-parens */
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { useDrop } from "react-dnd";
-import { Button } from "react-bootstrap";
+import { Button } from "@chakra-ui/react";
 import { AdminListProps } from "../Interfaces/AdminListProps";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
 import { EditMeal } from "./EditMeal";
 import React, { useState } from "react";
-//import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
 import { UserListProps } from "../Interfaces/UserListProps";
 import { PointerProps } from "../Interfaces/PointerProps";
 
@@ -66,7 +65,11 @@ export function AdminList({
                 <div key={index}>
                     {item.name}{" "}
                     <div>
-                        <Button onClick={() => RemoveItem(item, index)}>
+                        <Button
+                            colorScheme="green"
+                            size="sm"
+                            onClick={() => RemoveItem(item, index)}
+                        >
                             Remove
                         </Button>
                         <div>

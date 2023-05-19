@@ -25,7 +25,6 @@ export function Aboutus({
                 <Button
                     style={{ transform: "translateX(100px)" }}
                     id="About Us"
-                    variant={"outline"}
                     onClick={handleOpenPopup}
                     colorScheme="green"
                 >

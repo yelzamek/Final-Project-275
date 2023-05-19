@@ -1,6 +1,6 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, ChakraProvider, Form } from "@chakra-ui/react";
 import "./UserListPopup.css";
 import { nameProps } from "../Interfaces/MealObject";
 import { MealListProps } from "../Interfaces/MealObject";
@@ -83,10 +83,16 @@ export function ItemPopUp({
     }
 
     return (
-        <div>
-            <Button id="itemOpenPopup" onClick={handleOpenPopup}>
-                More Details
-            </Button>
+        <ChakraProvider>
+            <div>
+                <Button
+                    colorScheme="green"
+                    size="sm"
+                    id="itemOpenPopup"
+                    onClick={handleOpenPopup}
+                >
+                    Details
+                </Button>
 
             {showPopup && (
                 <div id="itemPopupOverlay" className="show">

@@ -16,8 +16,6 @@ import {
     CheckboxGroup
 } from "@chakra-ui/react";
 
-//Needs to add editing abilty
-
 export function EditMeal({
     mealList,
     setMealList,

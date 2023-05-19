@@ -83,46 +83,8 @@ export function FilterChoices({
                             checked={filterChoices.includes("Favorites")}
                             onChange={updateFilterChoices}
                         />
-                        <Form.Check
-                            type="checkbox"
-                            id="dairy-free-check"
-                            label="Dairy-Free"
-                            value="Dairy-Free"
-                            onChange={updateFilterChoices}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            id="gluten-free-check"
-                            label="Gluten-Free"
-                            value="Gluten-Free"
-                            onChange={updateFilterChoices}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            id="vegitarian-check"
-                            label="Vegetarian"
-                            value="vegetarian"
-                            onChange={updateFilterChoices}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            id="vegan-check"
-                            label="Vegan"
-                            value="Vegan"
-                            onChange={updateFilterChoices}
-                        />
                     </span>
                 </div>
-            </div>
-
-            <div hidden={userType === "superUser" || userType === "Admin"}>
-                <Form.Check
-                    type="checkbox"
-                    id="favorites-check"
-                    label="Favorites"
-                    value="Favorites"
-                    onChange={updateFilterChoices}
-                />
             </div>
         </div>
     );

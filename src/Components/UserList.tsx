@@ -3,9 +3,8 @@ import React from "react";
 import { useDrop } from "react-dnd";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
 import { UserListProps } from "../Interfaces/UserListProps";
-//import { User } from "../Interfaces/UserObject";
 import { Meal, MealListProps, nameProps } from "../Interfaces/MealObject";
-import { Button } from "react-bootstrap";
+import { Button, ChakraProvider, Flex } from "@chakra-ui/react";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { User } from "../Interfaces/UserObject";
 import { ItemPopUp } from "./UserListPopup";
@@ -93,32 +92,41 @@ export function UserList({
         })
     });
     return (
-        <div
-            ref={drop}
-            style={{
-                display: userType === "User" ? "inline-block" : "none",
-                backgroundColor: isOver ? "lightgray" : "white",
-                width: "300px",
-                height: "75%",
-                border: "2px solid black"
-            }}
-        >
-            Title
-            {currentUser.list_of_items.map((item: Meal, index: number) => (
-                <div key={index}>
-                    {item.name}{" "}
-                    <Button onClick={() => RemoveItem(item, index)}>X</Button>
-                    <ItemPopUp
-                        name={item.name}
-                        mealList={mealList}
-                        setMealList={setMealList}
-                        currentUser={currentUser}
-                        setCurrentUser={setCurrentUser}
-                        userList={userList}
-                        setUserList={setUserList}
-                    ></ItemPopUp>
-                </div>
-            ))}
-        </div>
+        <ChakraProvider>
+            <div
+                ref={drop}
+                style={{
+                    display: userType === "User" ? "inline-block" : "none",
+                    backgroundColor: isOver ? "lightgray" : "white",
+                    width: "300px",
+                    height: "75%",
+                    border: "2px solid black"
+                }}
+            >
+                {currentUser.list_of_items.map((item: Meal, index: number) => (
+                    <div key={index} style={{ paddingLeft: "10%" }}>
+                        <Flex alignItems="center">
+                            {item.name}
+                            <Button
+                                colorScheme="green"
+                                size="sm"
+                                onClick={() => RemoveItem(item, index)}
+                            >
+                                X
+                            </Button>
+                            <ItemPopUp
+                                name={item.name}
+                                mealList={mealList}
+                                setMealList={setMealList}
+                                currentUser={currentUser}
+                                setCurrentUser={setCurrentUser}
+                                userList={userList}
+                                setUserList={setUserList}
+                            />
+                        </Flex>
+                    </div>
+                ))}
+            </div>
+        </ChakraProvider>
     );
 }

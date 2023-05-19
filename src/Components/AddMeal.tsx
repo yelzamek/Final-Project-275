@@ -9,8 +9,6 @@ import { Form, Button } from "react-bootstrap";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { Checkbox, Stack } from "@chakra-ui/react";
 
-//Needs to add editing abilty
-
 export function AddMeal({
     mealList,
     setMealList,
