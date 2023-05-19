@@ -14,6 +14,17 @@ FAIL src/Components/UserList.test.tsx
           at Array.map (<anonymous>)
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
+FAIL src/Components/AdminListComponent.test.tsx
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
+
 PASS src/Components/Aboutus.test.tsx
 FAIL src/Components/Centerlist.test.tsx
   ● Test suite failed to run
@@ -39,6 +50,7 @@ FAIL src/Components/UserDropdown.test.tsx
           at Array.map (<anonymous>)
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
+PASS src/Components/SortFunction.test.tsx
 FAIL src/Components/UserTypeSelectButtons.test.tsx
   ● Test suite failed to run
 
@@ -103,6 +115,72 @@ FAIL src/App.test.tsx
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
       at Object.<anonymous> (src/App.tsx:9:1)
 
+FAIL src/Components/Sidebar.test.tsx
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
+
+FAIL src/Components/UsersWithItemPopup.test.tsx
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
+
+FAIL src/Components/EditMeal.test.tsx
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
+
+FAIL src/Components/NutritionTotalButton.test.tsx
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
+
+FAIL src/Components/UserListPopup.test.tsx
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
+
+FAIL src/Components/SubsituteIngrediantesP.test.tsx
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
+
 FAIL src/Components/UnusedFiles/UserTypeIndicator.test.tsx
   ● Test suite failed to run
 
@@ -117,10 +195,10 @@ FAIL src/Components/UnusedFiles/UserTypeIndicator.test.tsx
 -----------------------------|---------|----------|---------|---------|--------------------------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                          
 -----------------------------|---------|----------|---------|---------|--------------------------------------------
-All files                    |   11.66 |     9.35 |   11.58 |   11.89 |                                            
+All files                    |    12.9 |     9.35 |    12.8 |   13.16 |                                            
  src                         |       0 |        0 |       0 |       0 |                                            
   App.tsx                    |       0 |        0 |       0 |       0 | 26-42                                      
- src/Components              |   11.95 |     9.48 |   11.65 |    12.2 |                                            
+ src/Components              |   12.97 |     9.48 |   12.88 |   13.24 |                                            
   Aboutus.tsx                |     100 |      100 |     100 |     100 |                                            
   AddMeal.tsx                |   40.81 |    16.66 |      25 |   41.66 | 25-28,48,62,69,83,90,97-98,106-139,261-291 
   AddUser.tsx                |   43.75 |    29.16 |   53.33 |   43.75 | 18-20,26-46,50-55,90                       
@@ -130,7 +208,7 @@ All files                    |   11.66 |     9.35 |   11.58 |   11.89 |
   FilterButtons.tsx          |   55.55 |       50 |     100 |   55.55 | 16-19                                      
   NutritionTotalButton.tsx   |       0 |        0 |       0 |       0 | 10-35                                      
   Sidebar.tsx                |       0 |      100 |       0 |       0 | 5                                          
-  SortFunction.tsx           |       0 |        0 |       0 |       0 | 11-50                                      
+  SortFunction.tsx           |   16.66 |        0 |   28.57 |      20 | 19-38                                      
   SubsituteIngrediantesP.tsx |       0 |        0 |       0 |       0 | 25-110                                     
   UserDropdown.tsx           |       0 |        0 |       0 |       0 | 21-62                                      
   UserList.tsx               |       0 |        0 |       0 |       0 | 25-113                                     
@@ -139,20 +217,20 @@ All files                    |   11.66 |     9.35 |   11.58 |   11.89 |
   UsersWithItemPopup.tsx     |       0 |        0 |       0 |       0 | 18-52                                      
  src/Components/UnusedFiles  |       0 |        0 |       0 |       0 |                                            
   UserTypeIndicator.tsx      |       0 |        0 |       0 |       0 |                                            
- src/Interfaces              |       0 |      100 |     100 |       0 |                                            
+ src/Interfaces              |     100 |      100 |     100 |     100 |                                            
   AdminEditHiddenProps.ts    |       0 |        0 |       0 |       0 |                                            
   AdminListProps.ts          |       0 |        0 |       0 |       0 |                                            
   CurrentUserProps.ts        |       0 |        0 |       0 |       0 |                                            
   FilterChoices.ts           |       0 |        0 |       0 |       0 |                                            
-  MealObject.tsx             |       0 |      100 |     100 |       0 | 41                                         
+  MealObject.tsx             |     100 |      100 |     100 |     100 |                                            
   PointerProps.ts            |       0 |        0 |       0 |       0 |                                            
   SortOptionsProps.ts        |       0 |        0 |       0 |       0 |                                            
   UserListProps.ts           |       0 |        0 |       0 |       0 |                                            
   UserObject.tsx             |       0 |        0 |       0 |       0 |                                            
   UserTypeProps.ts           |       0 |        0 |       0 |       0 |                                            
 -----------------------------|---------|----------|---------|---------|--------------------------------------------
-Test Suites: 7 failed, 4 passed, 11 total
-Tests:       19 passed, 19 total
+Test Suites: 14 failed, 5 passed, 19 total
+Tests:       20 passed, 20 total
 Snapshots:   0 total
-Time:        11.669 s
+Time:        10.456 s
 Ran all test suites.
