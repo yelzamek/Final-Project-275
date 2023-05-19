@@ -337,7 +337,6 @@ export function CenterList({
 
     return (
         <div style={{ padding: "20px" }}>
-            <div>Center List</div>
             <ChakraProvider>
                 <SimpleGrid columns={4} spacing={5}>
                     {mealList.map((MealObject: Meal) => (

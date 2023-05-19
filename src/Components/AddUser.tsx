@@ -1,6 +1,6 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
-import { Button, ChakraProvider, Flex } from "@chakra-ui/react";
+import { Button, ChakraProvider, Flex, Stack } from "@chakra-ui/react";
 import { User } from "../Interfaces/UserObject";
 import { UserTypeProps } from "../Interfaces/UserTypeProps";
 import { UserListProps } from "../Interfaces/UserListProps";
@@ -108,20 +108,22 @@ export function AddUser({
                     Add User
                 </Button>
             </ChakraProvider>
-            {userList.map((user: User) => (
-                <Flex key={user.name} style={{ paddingLeft: "40%" }}>
-                    <div>{user.name}</div>
-                    <ChakraProvider key={user.name}>
-                        <Button
-                            colorScheme="green"
-                            size="sm"
-                            onClick={() => RemoveUser(user.name)}
-                        >
-                            X
-                        </Button>
-                    </ChakraProvider>
-                </Flex>
-            ))}
+            <Stack spacing={0} direction="row">
+                {userList.map((user: User) => (
+                    <Flex key={user.name} style={{ paddingLeft: "1%" }}>
+                        <div>{user.name}</div>
+                        <ChakraProvider key={user.name}>
+                            <Button
+                                colorScheme="green"
+                                size="sm"
+                                onClick={() => RemoveUser(user.name)}
+                            >
+                                X
+                            </Button>
+                        </ChakraProvider>
+                    </Flex>
+                ))}
+            </Stack>
         </div>
     );
 }
