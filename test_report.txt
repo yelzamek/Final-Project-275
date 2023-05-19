@@ -141,9 +141,9 @@ All files                    |       0 |        0 |       0 |       0 |
  src/Components              |       0 |        0 |       0 |       0 |                   
   Aboutus.tsx                |       0 |        0 |       0 |       0 | 10-22             
   AddMeal.tsx                |       0 |        0 |       0 |       0 | 18-291            
-  AddUser.tsx                |       0 |        0 |       0 |       0 | 13-118            
+  AddUser.tsx                |       0 |        0 |       0 |       0 | 13-119            
   AdminListComponent.tsx     |       0 |        0 |       0 |       0 | 27-71             
-  Centerlist.tsx             |       0 |        0 |       0 |       0 | 60-344            
+  Centerlist.tsx             |       0 |        0 |       0 |       0 | 60-343            
   EditMeal.tsx               |       0 |        0 |       0 |       0 | 47-415            
   FilterButtons.tsx          |       0 |        0 |       0 |       0 | 12-23             
   NutritionTotalButton.tsx   |       0 |        0 |       0 |       0 | 10-35             
@@ -172,5 +172,5 @@ All files                    |       0 |        0 |       0 |       0 |
 Test Suites: 9 failed, 9 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        8.438 s
+Time:        7.519 s
 Ran all test suites.
