@@ -8,6 +8,7 @@ import { EditMeal } from "./EditMeal";
 import React, { useState } from "react";
 //import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
 import { UserListProps } from "../Interfaces/UserListProps";
+import { PointerProps } from "../Interfaces/PointerProps";
 
 export function AdminList({
     mealList,
@@ -16,11 +17,14 @@ export function AdminList({
     adminList,
     setAdminList,
     userList,
-    setUserList
+    setUserList,
+    setPointerEventsEnabled,
+    pointerEventsEnabled
 }: MealListProps &
     UserTypeProps &
     AdminListProps &
-    UserListProps): JSX.Element {
+    UserListProps &
+    PointerProps): JSX.Element {
     const [editHidden, setEditHidden] = useState<boolean>(true);
 
     function addToAdminList(name: nameProps) {
@@ -65,10 +69,7 @@ export function AdminList({
                         <Button onClick={() => RemoveItem(item, index)}>
                             Remove
                         </Button>
-                        <Button onClick={() => setEditHidden(!editHidden)}>
-                            Edit Item
-                        </Button>
-                        <div hidden={editHidden}>
+                        <div>
                             <EditMeal
                                 mealList={mealList}
                                 setMealList={setMealList}
@@ -90,6 +91,10 @@ export function AdminList({
                                 protein={item.protein}
                                 tags={[...item.tags]}
                                 ingredients={[...item.ingredients]}
+                                setPointerEventsEnabled={
+                                    setPointerEventsEnabled
+                                }
+                                pointerEventsEnabled={pointerEventsEnabled}
                             ></EditMeal>
                         </div>
                     </div>

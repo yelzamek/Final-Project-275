@@ -6,6 +6,15 @@ import { Form, Button } from "react-bootstrap";
 import { AdminEditHiddenProps } from "../Interfaces/AdminEditHiddenProps";
 import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
+import "./EditItemPopup.css";
+import { PointerProps } from "../Interfaces/PointerProps";
+import {
+    Grid,
+    GridItem,
+    Checkbox,
+    ChakraProvider,
+    CheckboxGroup
+} from "@chakra-ui/react";
 
 //Needs to add editing abilty
 
@@ -14,7 +23,6 @@ export function EditMeal({
     setMealList,
     adminList,
     setAdminList,
-    setHidden,
     userList,
     setUserList,
     name,
@@ -28,12 +36,25 @@ export function EditMeal({
     total_sugars,
     ingredients,
     tags,
-    protein
+    protein,
+    setPointerEventsEnabled
 }: MealListProps &
     AdminEditHiddenProps &
     AdminListProps &
     UserListProps &
-    Meal): JSX.Element {
+    Meal &
+    PointerProps): JSX.Element {
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handleOpenPopup = () => {
+        setShowPopup(true);
+        //setPointerEventsEnabled(false);
+    };
+
+    const handleClosePopup = () => {
+        setShowPopup(false);
+        setPointerEventsEnabled(true);
+    };
     //Setting name
     const [newName, setName] = useState<string>(name);
 
@@ -115,16 +136,14 @@ export function EditMeal({
     //Setting Tags
     const [selectedTags, setSelectedTags] = useState<string[]>(tags);
 
-    function updateTags(event: React.ChangeEvent<HTMLInputElement>) {
-        const tag = event.target.value;
-        const isSelected = selectedTags.includes(tag);
-        const [updatedTags, setUpdatedTags] = useState<string[]>([]);
-        if (isSelected) {
-            setUpdatedTags(
-                selectedTags.filter((selectedTag) => selectedTag !== tag)
+    function updateTags(tag: string) {
+        let updatedTags: string[];
+        if (selectedTags.includes(tag)) {
+            updatedTags = selectedTags.filter(
+                (selectedTag) => selectedTag !== tag
             );
         } else {
-            setUpdatedTags([...selectedTags, tag]);
+            updatedTags = [...selectedTags, tag];
         }
 
         setSelectedTags(updatedTags);
@@ -182,8 +201,6 @@ export function EditMeal({
                 )
             }));
             setUserList(userListCopy);
-
-            setHidden(true);
         } else {
             console.log("Enter valid inputs");
         }
@@ -192,155 +209,228 @@ export function EditMeal({
     return (
         <div>
             <div>
-                <Form.Group controlId="formEditName">
-                    <Form.Label>Name:</Form.Label>
-                    <Form.Control value={newName} onChange={updateName} />
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditServingSize">
-                    <Form.Label>Serving Size:</Form.Label>
-                    <Form.Control
-                        value={newServingSize}
-                        onChange={updateServingSize}
-                        type="number"
-                    />
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditCalories">
-                    <Form.Label>Calories:</Form.Label>
-                    <Form.Control
-                        value={newCalories}
-                        onChange={updateCalories}
-                        type="number"
-                    />
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditTotalFat">
-                    <Form.Label>Total Fat:</Form.Label>
-                    <Form.Control
-                        value={newTotalFat}
-                        onChange={updateTotalFat}
-                        type="number"
-                    ></Form.Control>
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditCholesterol">
-                    <Form.Label>Cholesterol:</Form.Label>
-                    <Form.Control
-                        value={newCholesterol}
-                        onChange={updateCholesterol}
-                        type="number"
-                    ></Form.Control>
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditSodium">
-                    <Form.Label>Total Fat:</Form.Label>
-                    <Form.Control
-                        value={newSodium}
-                        onChange={updateSodium}
-                        type="number"
-                    ></Form.Control>
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditTotalCarbs">
-                    <Form.Label>Total Carbohydrates:</Form.Label>
-                    <Form.Control
-                        value={newTotalCarbs}
-                        onChange={updateTotalCarbs}
-                        type="number"
-                    ></Form.Control>
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditTotalSugars">
-                    <Form.Label>Total Sugars:</Form.Label>
-                    <Form.Control
-                        value={newTotalSugars}
-                        onChange={updateTotalSugars}
-                        type="number"
-                    ></Form.Control>
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditProtein">
-                    <Form.Label>Protein:</Form.Label>
-                    <Form.Control
-                        value={newProtein}
-                        onChange={updateProtein}
-                        type="number"
-                    ></Form.Control>
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditImage">
-                    <Form.Label>Image Link:</Form.Label>
-                    <Form.Control
-                        value={newImage}
-                        onChange={updateImage}
-                    ></Form.Control>
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditIngredients">
-                    <Form.Label>
-                        Enter Ingredientes in a comma seperated List with no
-                        spaces
-                    </Form.Label>
-                    <Form.Control
-                        value={newIngredients}
-                        onChange={updateIngredients}
-                    ></Form.Control>
-                </Form.Group>
-            </div>
-            <div>
-                <Form.Group controlId="formEditTags">
-                    <Form.Label>Tags:</Form.Label>
-                    <Form.Check
-                        type="radio"
-                        label="Meat-Free"
-                        value="meat-free"
-                        checked={selectedTags.includes("meat-free")}
-                        onChange={updateTags}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Dairy-Free"
-                        value="dairy-free"
-                        checked={selectedTags.includes("dairy-free")}
-                        onChange={updateTags}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Vegan-Friendly"
-                        value="vegan-friendly"
-                        checked={selectedTags.includes("vegan-friendly")}
-                        onChange={updateTags}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Vegetarian"
-                        value="vegetarian"
-                        checked={selectedTags.includes("vegetarian")}
-                        onChange={updateTags}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Gluten-Free"
-                        value="gluten-free"
-                        checked={selectedTags.includes("gluten-free")}
-                        onChange={updateTags}
-                    />
-                </Form.Group>
-            </div>
+                <Button id="editOpenPopup" onClick={handleOpenPopup}>
+                    Edit
+                </Button>
+                {showPopup && (
+                    <div id="editPopupOverlay" className="show">
+                        <div id="editPopupContent">
+                            <ChakraProvider>
+                                <Grid
+                                    templateColumns="repeat(2, 1fr)"
+                                    gap={4}
+                                    className="edit-popup-content"
+                                >
+                                    <GridItem>
+                                        <div>
+                                            <Form.Group controlId="formEditName">
+                                                <Form.Label>Name:</Form.Label>
+                                                <Form.Control
+                                                    value={newName}
+                                                    onChange={updateName}
+                                                />
+                                            </Form.Group>
+                                        </div>
+                                        <div>
+                                            <Form.Group controlId="formEditServingSize">
+                                                <Form.Label>
+                                                    Serving Size:
+                                                </Form.Label>
+                                                <Form.Control
+                                                    value={newServingSize}
+                                                    onChange={updateServingSize}
+                                                    type="number"
+                                                />
+                                            </Form.Group>
+                                        </div>
+                                        <div>
+                                            <Form.Group controlId="formEditCalories">
+                                                <Form.Label>
+                                                    Calories:
+                                                </Form.Label>
+                                                <Form.Control
+                                                    value={newCalories}
+                                                    onChange={updateCalories}
+                                                    type="number"
+                                                />
+                                            </Form.Group>
+                                        </div>
+                                        <div>
+                                            <Form.Group controlId="formEditTotalFat">
+                                                <Form.Label>
+                                                    Total Fat:
+                                                </Form.Label>
+                                                <Form.Control
+                                                    value={newTotalFat}
+                                                    onChange={updateTotalFat}
+                                                    type="number"
+                                                ></Form.Control>
+                                            </Form.Group>
+                                        </div>
+                                        <div>
+                                            <Form.Group controlId="formEditCholesterol">
+                                                <Form.Label>
+                                                    Cholesterol:
+                                                </Form.Label>
+                                                <Form.Control
+                                                    value={newCholesterol}
+                                                    onChange={updateCholesterol}
+                                                    type="number"
+                                                ></Form.Control>
+                                            </Form.Group>
+                                        </div>
+                                        <div>
+                                            <Form.Group controlId="formEditSodium">
+                                                <Form.Label>Sodium:</Form.Label>
+                                                <Form.Control
+                                                    value={newSodium}
+                                                    onChange={updateSodium}
+                                                    type="number"
+                                                ></Form.Control>
+                                            </Form.Group>
+                                        </div>
+                                        <div>
+                                            <Form.Group controlId="formEditTotalCarbs">
+                                                <Form.Label>
+                                                    Total Carbohydrates:
+                                                </Form.Label>
+                                                <Form.Control
+                                                    value={newTotalCarbs}
+                                                    onChange={updateTotalCarbs}
+                                                    type="number"
+                                                ></Form.Control>
+                                            </Form.Group>
+                                        </div>
+                                    </GridItem>
+                                    <GridItem>
+                                        <div>
+                                            <Form.Group controlId="formEditTotalSugars">
+                                                <Form.Label>
+                                                    Total Sugars:
+                                                </Form.Label>
+                                                <Form.Control
+                                                    value={newTotalSugars}
+                                                    onChange={updateTotalSugars}
+                                                    type="number"
+                                                ></Form.Control>
+                                            </Form.Group>
+                                        </div>
+                                        <div>
+                                            <Form.Group controlId="formEditProtein">
+                                                <Form.Label>
+                                                    Protein:
+                                                </Form.Label>
+                                                <Form.Control
+                                                    value={newProtein}
+                                                    onChange={updateProtein}
+                                                    type="number"
+                                                ></Form.Control>
+                                            </Form.Group>
+                                        </div>
+                                        <div>
+                                            <Form.Group controlId="formEditImage">
+                                                <Form.Label>
+                                                    Image Link:
+                                                </Form.Label>
+                                                <Form.Control
+                                                    value={newImage}
+                                                    onChange={updateImage}
+                                                ></Form.Control>
+                                            </Form.Group>
+                                        </div>
+                                        <Form.Group controlId="formEditIngredients">
+                                            <Form.Label>
+                                                Enter ingredients in a comma
+                                                seperated list with no spaces:
+                                            </Form.Label>
+                                            <Form.Control
+                                                value={newIngredients}
+                                                onChange={updateIngredients}
+                                            ></Form.Control>
+                                        </Form.Group>
+                                        <div>
+                                            <CheckboxGroup>
+                                                <Checkbox
+                                                    colorScheme="green"
+                                                    isChecked={selectedTags.includes(
+                                                        "Meat-Free"
+                                                    )}
+                                                    onChange={() =>
+                                                        updateTags("Meat-Free")
+                                                    }
+                                                >
+                                                    Meat-Free
+                                                </Checkbox>
+                                                <Checkbox
+                                                    colorScheme="green"
+                                                    isChecked={selectedTags.includes(
+                                                        "dairy-free"
+                                                    )}
+                                                    onChange={() =>
+                                                        updateTags("dairy-free")
+                                                    }
+                                                >
+                                                    Dairy-free
+                                                </Checkbox>
+                                                <Checkbox
+                                                    colorScheme="green"
+                                                    isChecked={selectedTags.includes(
+                                                        "vegan"
+                                                    )}
+                                                    onChange={() =>
+                                                        updateTags("vegan")
+                                                    }
+                                                >
+                                                    Vegan-friendly
+                                                </Checkbox>
+                                                <Checkbox
+                                                    colorScheme="green"
+                                                    isChecked={selectedTags.includes(
+                                                        "vegetarian"
+                                                    )}
+                                                    onChange={() =>
+                                                        updateTags("vegetarian")
+                                                    }
+                                                >
+                                                    Vegetarian
+                                                </Checkbox>
+                                                <Checkbox
+                                                    colorScheme="green"
+                                                    isChecked={selectedTags.includes(
+                                                        "gluten-free"
+                                                    )}
+                                                    onChange={() =>
+                                                        updateTags(
+                                                            "gluten-free"
+                                                        )
+                                                    }
+                                                >
+                                                    Gluten-free
+                                                </Checkbox>
+                                            </CheckboxGroup>
+                                        </div>
 
-            <div style={{ height: "400px" }}>
-                <Button onClick={() => updateMeal()}>Save Changes</Button>
+                                        <div>
+                                            <Button
+                                                onClick={() => updateMeal()}
+                                            >
+                                                Save Changes
+                                            </Button>
+                                        </div>
+                                        <div>
+                                            <Button
+                                                id="editClosePopup"
+                                                onClick={handleClosePopup}
+                                            >
+                                                Close
+                                            </Button>
+                                        </div>
+                                    </GridItem>
+                                </Grid>
+                            </ChakraProvider>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

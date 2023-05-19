@@ -173,6 +173,8 @@ function App(): JSX.Element {
                             setUserType={setUserType}
                             adminList={adminList}
                             setAdminList={setAdminList}
+                            pointerEventsEnabled={pointerEventsEnabled}
+                            setPointerEventsEnabled={setPointerEventsEnabled}
                         ></AdminList>
                     </ChakraProvider>
                 </p>
