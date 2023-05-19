@@ -26,6 +26,7 @@ FAIL src/Components/Centerlist.test.tsx
           at Array.map (<anonymous>)
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
+PASS src/Components/AddUser.test.tsx
 PASS src/Components/AddMeal.test.tsx
 FAIL src/Components/UserDropdown.test.tsx
   ● Test suite failed to run
@@ -39,17 +40,6 @@ FAIL src/Components/UserDropdown.test.tsx
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
 FAIL src/Components/UserTypeSelectButtons.test.tsx
-  ● Test suite failed to run
-
-    Your test suite must contain at least one test.
-
-      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
-      at node_modules/@jest/core/build/TestScheduler.js:316:17
-      at node_modules/emittery/index.js:260:13
-          at Array.map (<anonymous>)
-      at Emittery.emit (node_modules/emittery/index.js:258:23)
-
-FAIL src/Components/AddUser.test.tsx
   ● Test suite failed to run
 
     Your test suite must contain at least one test.
@@ -127,13 +117,13 @@ FAIL src/Components/UnusedFiles/UserTypeIndicator.test.tsx
 -----------------------------|---------|----------|---------|---------|--------------------------------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                          
 -----------------------------|---------|----------|---------|---------|--------------------------------------------
-All files                    |    8.18 |     4.31 |     6.7 |    8.35 |                                            
+All files                    |   11.66 |     9.35 |   11.58 |   11.89 |                                            
  src                         |       0 |        0 |       0 |       0 |                                            
   App.tsx                    |       0 |        0 |       0 |       0 | 26-42                                      
- src/Components              |    8.39 |     4.37 |    6.74 |    8.57 |                                            
+ src/Components              |   11.95 |     9.48 |   11.65 |    12.2 |                                            
   Aboutus.tsx                |     100 |      100 |     100 |     100 |                                            
   AddMeal.tsx                |   40.81 |    16.66 |      25 |   41.66 | 25-28,48,62,69,83,90,97-98,106-139,261-291 
-  AddUser.tsx                |       0 |        0 |       0 |       0 | 13-119                                     
+  AddUser.tsx                |   43.75 |    29.16 |   53.33 |   43.75 | 18-20,26-46,50-55,90                       
   AdminListComponent.tsx     |       0 |        0 |       0 |       0 | 27-71                                      
   Centerlist.tsx             |       0 |        0 |       0 |       0 | 60-343                                     
   EditMeal.tsx               |       0 |        0 |       0 |       0 | 47-415                                     
@@ -161,8 +151,8 @@ All files                    |    8.18 |     4.31 |     6.7 |    8.35 |
   UserObject.tsx             |       0 |        0 |       0 |       0 |                                            
   UserTypeProps.ts           |       0 |        0 |       0 |       0 |                                            
 -----------------------------|---------|----------|---------|---------|--------------------------------------------
-Test Suites: 8 failed, 3 passed, 11 total
-Tests:       15 passed, 15 total
+Test Suites: 7 failed, 4 passed, 11 total
+Tests:       19 passed, 19 total
 Snapshots:   0 total
-Time:        10.24 s
+Time:        11.669 s
 Ran all test suites.
