@@ -270,7 +270,7 @@ export function AddMeal({
                 </Checkbox>
                 <Checkbox
                     colorScheme="green"
-                    onChange={() => updateTags("vegan-friendly")}
+                    onChange={() => updateTags("vegan")}
                 >
                     Vegan-friendly
                 </Checkbox>
