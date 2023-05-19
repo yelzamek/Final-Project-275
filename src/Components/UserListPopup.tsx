@@ -1,12 +1,13 @@
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
-import { Button, ChakraProvider, Form } from "@chakra-ui/react";
+import { Button, ChakraProvider } from "@chakra-ui/react";
 import "./UserListPopup.css";
 import { nameProps } from "../Interfaces/MealObject";
 import { MealListProps } from "../Interfaces/MealObject";
 import { CurrentUserProps } from "../Interfaces/CurrentUserProps";
 import { UserListProps } from "../Interfaces/UserListProps";
 import { User } from "../Interfaces/UserObject";
+import { Form } from "react-bootstrap";
 
 export function ItemPopUp({
     name,
@@ -94,63 +95,77 @@ export function ItemPopUp({
                     Details
                 </Button>
 
-            {showPopup && (
-                <div id="itemPopupOverlay" className="show">
-                    <div id="itemPopupContent">
-                        <h2>{name}</h2>
-                        <div>
+                {showPopup && (
+                    <div id="itemPopupOverlay" className="show">
+                        <div id="itemPopupContent">
+                            <h2>{name}</h2>
                             <div>
-                                <Form.Group controlId="servingSizeChanger">
-                                    <Form.Label>Servings:</Form.Label>
-                                    <Form.Control
-                                        value={newServingSize}
-                                        onChange={updateServingSize}
-                                        type="number"
-                                    ></Form.Control>
-                                </Form.Group>
+                                <div>
+                                    <Form.Group controlId="servingSizeChanger">
+                                        <Form.Label>Servings:</Form.Label>
+                                        <Form.Control
+                                            value={newServingSize}
+                                            onChange={updateServingSize}
+                                            type="number"
+                                        ></Form.Control>
+                                    </Form.Group>
+                                </div>
+                                <Button
+                                    onClick={() => updateObject(newServingSize)}
+                                >
+                                    Save Changes
+                                </Button>
+                                <div>
+                                    Calories:{" "}
+                                    {currentUser.list_of_items[index].calories}
+                                </div>
+                                <div>
+                                    Total Fat:{" "}
+                                    {currentUser.list_of_items[index].total_fat}
+                                </div>
+                                <div>
+                                    Cholesterol:{" "}
+                                    {
+                                        currentUser.list_of_items[index]
+                                            .cholesterol
+                                    }{" "}
+                                    mg
+                                </div>
+                                <div>
+                                    Sodium:{" "}
+                                    {currentUser.list_of_items[index].sodium} mg
+                                </div>
+                                <div>
+                                    Total Carbs:{" "}
+                                    {
+                                        currentUser.list_of_items[index]
+                                            .total_carbs
+                                    }{" "}
+                                    g
+                                </div>
+                                <div>
+                                    Total Sugars:{" "}
+                                    {
+                                        currentUser.list_of_items[index]
+                                            .total_sugars
+                                    }{" "}
+                                    g
+                                </div>
+                                <div>
+                                    Protein:{" "}
+                                    {currentUser.list_of_items[index].protein} g
+                                </div>
                             </div>
                             <Button
-                                onClick={() => updateObject(newServingSize)}
+                                id="itemClosePopup"
+                                onClick={handleClosePopup}
                             >
-                                Save Changes
+                                Close
                             </Button>
-                            <div>
-                                Calories:{" "}
-                                {currentUser.list_of_items[index].calories}
-                            </div>
-                            <div>
-                                Total Fat:{" "}
-                                {currentUser.list_of_items[index].total_fat}
-                            </div>
-                            <div>
-                                Cholesterol:{" "}
-                                {currentUser.list_of_items[index].cholesterol}{" "}
-                                mg
-                            </div>
-                            <div>
-                                Sodium:{" "}
-                                {currentUser.list_of_items[index].sodium} mg
-                            </div>
-                            <div>
-                                Total Carbs:{" "}
-                                {currentUser.list_of_items[index].total_carbs} g
-                            </div>
-                            <div>
-                                Total Sugars:{" "}
-                                {currentUser.list_of_items[index].total_sugars}{" "}
-                                g
-                            </div>
-                            <div>
-                                Protein:{" "}
-                                {currentUser.list_of_items[index].protein} g
-                            </div>
                         </div>
-                        <Button id="itemClosePopup" onClick={handleClosePopup}>
-                            Close
-                        </Button>
                     </div>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
+        </ChakraProvider>
     );
 }
