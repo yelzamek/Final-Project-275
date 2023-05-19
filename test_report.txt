@@ -24,6 +24,7 @@ FAIL src/Components/AddMeal.test.tsx
           at Array.map (<anonymous>)
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
+PASS src/Components/Aboutus.test.tsx
 FAIL src/Components/Centerlist.test.tsx
   ● Test suite failed to run
 
@@ -135,11 +136,11 @@ FAIL src/Components/UnusedFiles/UserTypeIndicator.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |       0 |        0 |       0 |       0 |                   
+All files                    |    1.98 |     1.43 |    1.82 |    2.02 |                   
  src                         |       0 |        0 |       0 |       0 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 26-42             
- src/Components              |       0 |        0 |       0 |       0 |                   
-  Aboutus.tsx                |       0 |        0 |       0 |       0 | 10-22             
+ src/Components              |    2.03 |     1.45 |    1.84 |    2.07 |                   
+  Aboutus.tsx                |     100 |      100 |     100 |     100 |                   
   AddMeal.tsx                |       0 |        0 |       0 |       0 | 18-291            
   AddUser.tsx                |       0 |        0 |       0 |       0 | 13-119            
   AdminListComponent.tsx     |       0 |        0 |       0 |       0 | 27-71             
@@ -169,8 +170,8 @@ All files                    |       0 |        0 |       0 |       0 |
   UserObject.tsx             |       0 |        0 |       0 |       0 |                   
   UserTypeProps.ts           |       0 |        0 |       0 |       0 |                   
 -----------------------------|---------|----------|---------|---------|-------------------
-Test Suites: 9 failed, 9 total
-Tests:       0 total
+Test Suites: 9 failed, 1 passed, 10 total
+Tests:       5 passed, 5 total
 Snapshots:   0 total
-Time:        8.679 s
+Time:        6.75 s
 Ran all test suites.
