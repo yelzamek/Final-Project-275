@@ -55,6 +55,6 @@ describe("UserTypeSelectButtons", () => {
             expect(setCurrentUserMock).toHaveBeenCalledWith(userList[0]);
         });
     });
-});
-*/
+});*/
+
 export {};
