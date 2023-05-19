@@ -14,17 +14,6 @@ FAIL src/Components/UserList.test.tsx
           at Array.map (<anonymous>)
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
-FAIL src/Components/AddMeal.test.tsx
-  ● Test suite failed to run
-
-    Your test suite must contain at least one test.
-
-      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
-      at node_modules/@jest/core/build/TestScheduler.js:316:17
-      at node_modules/emittery/index.js:260:13
-          at Array.map (<anonymous>)
-      at Emittery.emit (node_modules/emittery/index.js:258:23)
-
 PASS src/Components/Aboutus.test.tsx
 FAIL src/Components/Centerlist.test.tsx
   ● Test suite failed to run
@@ -37,6 +26,7 @@ FAIL src/Components/Centerlist.test.tsx
           at Array.map (<anonymous>)
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
+PASS src/Components/AddMeal.test.tsx
 FAIL src/Components/UserDropdown.test.tsx
   ● Test suite failed to run
 
@@ -134,45 +124,45 @@ FAIL src/Components/UnusedFiles/UserTypeIndicator.test.tsx
           at Array.map (<anonymous>)
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
------------------------------|---------|----------|---------|---------|-------------------
-File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
------------------------------|---------|----------|---------|---------|-------------------
-All files                    |    3.22 |     3.59 |    3.04 |    3.29 |                   
- src                         |       0 |        0 |       0 |       0 |                   
-  App.tsx                    |       0 |        0 |       0 |       0 | 26-42             
- src/Components              |     3.3 |     3.64 |    3.06 |    3.37 |                   
-  Aboutus.tsx                |     100 |      100 |     100 |     100 |                   
-  AddMeal.tsx                |       0 |        0 |       0 |       0 | 18-291            
-  AddUser.tsx                |       0 |        0 |       0 |       0 | 13-119            
-  AdminListComponent.tsx     |       0 |        0 |       0 |       0 | 27-71             
-  Centerlist.tsx             |       0 |        0 |       0 |       0 | 60-343            
-  EditMeal.tsx               |       0 |        0 |       0 |       0 | 47-415            
-  FilterButtons.tsx          |   55.55 |       50 |     100 |   55.55 | 16-19             
-  NutritionTotalButton.tsx   |       0 |        0 |       0 |       0 | 10-35             
-  Sidebar.tsx                |       0 |      100 |       0 |       0 | 5                 
-  SortFunction.tsx           |       0 |        0 |       0 |       0 | 11-50             
-  SubsituteIngrediantesP.tsx |       0 |        0 |       0 |       0 | 25-110            
-  UserDropdown.tsx           |       0 |        0 |       0 |       0 | 21-62             
-  UserList.tsx               |       0 |        0 |       0 |       0 | 25-113            
-  UserListPopup.tsx          |       0 |        0 |       0 |       0 | 20-114            
-  UserTypeSelectButtons.tsx  |       0 |        0 |       0 |       0 | 20-70             
-  UsersWithItemPopup.tsx     |       0 |        0 |       0 |       0 | 18-52             
- src/Components/UnusedFiles  |       0 |        0 |       0 |       0 |                   
-  UserTypeIndicator.tsx      |       0 |        0 |       0 |       0 |                   
- src/Interfaces              |       0 |      100 |     100 |       0 |                   
-  AdminEditHiddenProps.ts    |       0 |        0 |       0 |       0 |                   
-  AdminListProps.ts          |       0 |        0 |       0 |       0 |                   
-  CurrentUserProps.ts        |       0 |        0 |       0 |       0 |                   
-  FilterChoices.ts           |       0 |        0 |       0 |       0 |                   
-  MealObject.tsx             |       0 |      100 |     100 |       0 | 41                
-  PointerProps.ts            |       0 |        0 |       0 |       0 |                   
-  SortOptionsProps.ts        |       0 |        0 |       0 |       0 |                   
-  UserListProps.ts           |       0 |        0 |       0 |       0 |                   
-  UserObject.tsx             |       0 |        0 |       0 |       0 |                   
-  UserTypeProps.ts           |       0 |        0 |       0 |       0 |                   
------------------------------|---------|----------|---------|---------|-------------------
-Test Suites: 9 failed, 2 passed, 11 total
-Tests:       10 passed, 10 total
+-----------------------------|---------|----------|---------|---------|--------------------------------------------
+File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                          
+-----------------------------|---------|----------|---------|---------|--------------------------------------------
+All files                    |    8.18 |     4.31 |     6.7 |    8.35 |                                            
+ src                         |       0 |        0 |       0 |       0 |                                            
+  App.tsx                    |       0 |        0 |       0 |       0 | 26-42                                      
+ src/Components              |    8.39 |     4.37 |    6.74 |    8.57 |                                            
+  Aboutus.tsx                |     100 |      100 |     100 |     100 |                                            
+  AddMeal.tsx                |   40.81 |    16.66 |      25 |   41.66 | 25-28,48,62,69,83,90,97-98,106-139,261-291 
+  AddUser.tsx                |       0 |        0 |       0 |       0 | 13-119                                     
+  AdminListComponent.tsx     |       0 |        0 |       0 |       0 | 27-71                                      
+  Centerlist.tsx             |       0 |        0 |       0 |       0 | 60-343                                     
+  EditMeal.tsx               |       0 |        0 |       0 |       0 | 47-415                                     
+  FilterButtons.tsx          |   55.55 |       50 |     100 |   55.55 | 16-19                                      
+  NutritionTotalButton.tsx   |       0 |        0 |       0 |       0 | 10-35                                      
+  Sidebar.tsx                |       0 |      100 |       0 |       0 | 5                                          
+  SortFunction.tsx           |       0 |        0 |       0 |       0 | 11-50                                      
+  SubsituteIngrediantesP.tsx |       0 |        0 |       0 |       0 | 25-110                                     
+  UserDropdown.tsx           |       0 |        0 |       0 |       0 | 21-62                                      
+  UserList.tsx               |       0 |        0 |       0 |       0 | 25-113                                     
+  UserListPopup.tsx          |       0 |        0 |       0 |       0 | 20-114                                     
+  UserTypeSelectButtons.tsx  |       0 |        0 |       0 |       0 | 20-70                                      
+  UsersWithItemPopup.tsx     |       0 |        0 |       0 |       0 | 18-52                                      
+ src/Components/UnusedFiles  |       0 |        0 |       0 |       0 |                                            
+  UserTypeIndicator.tsx      |       0 |        0 |       0 |       0 |                                            
+ src/Interfaces              |       0 |      100 |     100 |       0 |                                            
+  AdminEditHiddenProps.ts    |       0 |        0 |       0 |       0 |                                            
+  AdminListProps.ts          |       0 |        0 |       0 |       0 |                                            
+  CurrentUserProps.ts        |       0 |        0 |       0 |       0 |                                            
+  FilterChoices.ts           |       0 |        0 |       0 |       0 |                                            
+  MealObject.tsx             |       0 |      100 |     100 |       0 | 41                                         
+  PointerProps.ts            |       0 |        0 |       0 |       0 |                                            
+  SortOptionsProps.ts        |       0 |        0 |       0 |       0 |                                            
+  UserListProps.ts           |       0 |        0 |       0 |       0 |                                            
+  UserObject.tsx             |       0 |        0 |       0 |       0 |                                            
+  UserTypeProps.ts           |       0 |        0 |       0 |       0 |                                            
+-----------------------------|---------|----------|---------|---------|--------------------------------------------
+Test Suites: 8 failed, 3 passed, 11 total
+Tests:       15 passed, 15 total
 Snapshots:   0 total
-Time:        7.726 s
+Time:        10.24 s
 Ran all test suites.
