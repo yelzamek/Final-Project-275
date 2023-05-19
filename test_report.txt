@@ -68,199 +68,6 @@ FAIL src/Components/AddUser.test.tsx
           at Array.map (<anonymous>)
       at Emittery.emit (node_modules/emittery/index.js:258:23)
 
-FAIL src/Components/UserTypeIndicator.test.tsx
-  ● UserTypeIndicator › should render a red box for superUser
-
-    TestingLibraryElementError: Found multiple elements by: [data-testid="colored-box"]
-
-    Here are the matching elements:
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<div[39m
-      [33mdata-testid[39m=[32m"colored-box"[39m
-      [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-    [36m/>[39m
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<div[39m
-      [33mdata-testid[39m=[32m"colored-box"[39m
-      [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: blue; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-    [36m/>[39m
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<div[39m
-      [33mdata-testid[39m=[32m"colored-box"[39m
-      [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: green; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-    [36m/>[39m
-
-    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"colored-box"[39m
-            [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-          [36m/>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"colored-box"[39m
-            [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: blue; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-          [36m/>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"colored-box"[39m
-            [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: green; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-          [36m/>[39m
-          [36m<div>[39m
-            [0msuperUser[0m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      13 |             />
-      14 |         );
-    > 15 |         const coloredBox = getByTestId("colored-box");
-         |                            ^
-      16 |         expect(coloredBox).toHaveStyle("background-color: red");
-      17 |     });
-      18 |     it("should render a blue box for Admin", () => {
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
-      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
-      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/Components/UserTypeIndicator.test.tsx:15:28)
-
-  ● UserTypeIndicator › should render a blue box for Admin
-
-    TestingLibraryElementError: Found multiple elements by: [data-testid="colored-box"]
-
-    Here are the matching elements:
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<div[39m
-      [33mdata-testid[39m=[32m"colored-box"[39m
-      [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-    [36m/>[39m
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<div[39m
-      [33mdata-testid[39m=[32m"colored-box"[39m
-      [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: blue; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-    [36m/>[39m
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<div[39m
-      [33mdata-testid[39m=[32m"colored-box"[39m
-      [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: green; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-    [36m/>[39m
-
-    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"colored-box"[39m
-            [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-          [36m/>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"colored-box"[39m
-            [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: blue; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-          [36m/>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"colored-box"[39m
-            [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: green; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-          [36m/>[39m
-          [36m<div>[39m
-            [0mAdmin[0m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      25 |             />
-      26 |         );
-    > 27 |         const coloredBox = getByTestId("colored-box");
-         |                            ^
-      28 |         expect(coloredBox).toHaveStyle("background-color: blue");
-      29 |     });
-      30 |     it("should render a green box for User", () => {
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
-      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
-      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/Components/UserTypeIndicator.test.tsx:27:28)
-
-  ● UserTypeIndicator › should render a green box for User
-
-    TestingLibraryElementError: Found multiple elements by: [data-testid="colored-box"]
-
-    Here are the matching elements:
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<div[39m
-      [33mdata-testid[39m=[32m"colored-box"[39m
-      [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-    [36m/>[39m
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<div[39m
-      [33mdata-testid[39m=[32m"colored-box"[39m
-      [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: blue; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-    [36m/>[39m
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<div[39m
-      [33mdata-testid[39m=[32m"colored-box"[39m
-      [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: green; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-    [36m/>[39m
-
-    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"colored-box"[39m
-            [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-          [36m/>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"colored-box"[39m
-            [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: blue; display: none; vertical-align: bottom; margin-left: 5px;"[39m
-          [36m/>[39m
-          [36m<div[39m
-            [33mdata-testid[39m=[32m"colored-box"[39m
-            [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: green; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-          [36m/>[39m
-          [36m<div>[39m
-            [0mUser[0m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      37 |             />
-      38 |         );
-    > 39 |         const coloredBox = getByTestId("colored-box");
-         |                            ^
-      40 |         expect(coloredBox).toHaveStyle("background-color: green");
-      41 |     });
-      42 |     it("should render the user type text", () => {
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
-      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
-      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/Components/UserTypeIndicator.test.tsx:39:28)
-
 FAIL src/Components/UnusedFiles/SuperUserButton.test.tsx
   ● Test suite failed to run
 
@@ -314,16 +121,27 @@ FAIL src/App.test.tsx
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
       at Object.<anonymous> (src/App.tsx:9:1)
 
+FAIL src/Components/UnusedFiles/UserTypeIndicator.test.tsx
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
+
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |    0.25 |     4.13 |    0.61 |    0.25 |                   
+All files                    |       0 |        0 |       0 |       0 |                   
  src                         |       0 |        0 |       0 |       0 |                   
   App.tsx                    |       0 |        0 |       0 |       0 | 26-42             
- src/Components              |    0.25 |     4.19 |    0.62 |    0.26 |                   
+ src/Components              |       0 |        0 |       0 |       0 |                   
   Aboutus.tsx                |       0 |        0 |       0 |       0 | 10-22             
   AddMeal.tsx                |       0 |        0 |       0 |       0 | 18-291            
-  AddUser.tsx                |       0 |        0 |       0 |       0 | 13-103            
+  AddUser.tsx                |       0 |        0 |       0 |       0 | 13-118            
   AdminListComponent.tsx     |       0 |        0 |       0 |       0 | 27-71             
   Centerlist.tsx             |       0 |        0 |       0 |       0 | 60-344            
   EditMeal.tsx               |       0 |        0 |       0 |       0 | 47-415            
@@ -335,9 +153,10 @@ All files                    |    0.25 |     4.13 |    0.61 |    0.25 |
   UserDropdown.tsx           |       0 |        0 |       0 |       0 | 21-62             
   UserList.tsx               |       0 |        0 |       0 |       0 | 25-113            
   UserListPopup.tsx          |       0 |        0 |       0 |       0 | 20-114            
-  UserTypeIndicator.tsx      |     100 |      100 |     100 |     100 |                   
   UserTypeSelectButtons.tsx  |       0 |        0 |       0 |       0 | 20-70             
   UsersWithItemPopup.tsx     |       0 |        0 |       0 |       0 | 18-52             
+ src/Components/UnusedFiles  |       0 |        0 |       0 |       0 |                   
+  UserTypeIndicator.tsx      |       0 |        0 |       0 |       0 |                   
  src/Interfaces              |       0 |      100 |     100 |       0 |                   
   AdminEditHiddenProps.ts    |       0 |        0 |       0 |       0 |                   
   AdminListProps.ts          |       0 |        0 |       0 |       0 |                   
@@ -351,7 +170,7 @@ All files                    |    0.25 |     4.13 |    0.61 |    0.25 |
   UserTypeProps.ts           |       0 |        0 |       0 |       0 |                   
 -----------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 9 failed, 9 total
-Tests:       3 failed, 1 passed, 4 total
+Tests:       0 total
 Snapshots:   0 total
-Time:        6.985 s
+Time:        8.438 s
 Ran all test suites.
