@@ -26,9 +26,23 @@ export function UserList({
         const mealIndex = mealList.findIndex(
             (meal: Meal): boolean => meal.name === name.name
         );
+        const newMeal: Meal = {
+            name: mealList[mealIndex].name,
+            serving_size: mealList[mealIndex].serving_size,
+            calories: mealList[mealIndex].calories,
+            total_fat: mealList[mealIndex].total_fat,
+            cholesterol: mealList[mealIndex].cholesterol,
+            sodium: mealList[mealIndex].sodium,
+            total_carbs: mealList[mealIndex].total_carbs,
+            total_sugars: mealList[mealIndex].total_sugars,
+            protein: mealList[mealIndex].protein,
+            image: mealList[mealIndex].image,
+            ingredients: [...mealList[mealIndex].ingredients],
+            tags: [...mealList[mealIndex].tags]
+        };
         setCurrentUser({
             name: currentUser.name,
-            list_of_items: [...currentUser.list_of_items, mealList[mealIndex]],
+            list_of_items: [...currentUser.list_of_items, newMeal],
             list_of_favorites: [...currentUser.list_of_favorites]
         });
         const userIndex = userList.findIndex(
@@ -38,10 +52,7 @@ export function UserList({
             ...userList.slice(0, userIndex),
             {
                 ...currentUser,
-                list_of_items: [
-                    ...currentUser.list_of_items,
-                    mealList[mealIndex]
-                ]
+                list_of_items: [...currentUser.list_of_items, newMeal]
             },
             ...userList.slice(userIndex + 1)
         ]);
@@ -101,6 +112,10 @@ export function UserList({
                         name={item.name}
                         mealList={mealList}
                         setMealList={setMealList}
+                        currentUser={currentUser}
+                        setCurrentUser={setCurrentUser}
+                        userList={userList}
+                        setUserList={setUserList}
                     ></ItemPopUp>
                 </div>
             ))}

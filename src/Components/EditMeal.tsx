@@ -192,13 +192,13 @@ export function EditMeal({
     return (
         <div>
             <div>
-                <Form.Group controlId="formName">
+                <Form.Group controlId="formEditName">
                     <Form.Label>Name:</Form.Label>
                     <Form.Control value={newName} onChange={updateName} />
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formServingSize">
+                <Form.Group controlId="formEditServingSize">
                     <Form.Label>Serving Size:</Form.Label>
                     <Form.Control
                         value={newServingSize}
@@ -208,7 +208,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formCalories">
+                <Form.Group controlId="formEditCalories">
                     <Form.Label>Calories:</Form.Label>
                     <Form.Control
                         value={newCalories}
@@ -218,7 +218,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formTotalFat">
+                <Form.Group controlId="formEditTotalFat">
                     <Form.Label>Total Fat:</Form.Label>
                     <Form.Control
                         value={newTotalFat}
@@ -228,7 +228,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formCholesterol">
+                <Form.Group controlId="formEditCholesterol">
                     <Form.Label>Cholesterol:</Form.Label>
                     <Form.Control
                         value={newCholesterol}
@@ -238,7 +238,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formSodium">
+                <Form.Group controlId="formEditSodium">
                     <Form.Label>Total Fat:</Form.Label>
                     <Form.Control
                         value={newSodium}
@@ -248,7 +248,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formTotalCarbs">
+                <Form.Group controlId="formEditTotalCarbs">
                     <Form.Label>Total Carbohydrates:</Form.Label>
                     <Form.Control
                         value={newTotalCarbs}
@@ -258,7 +258,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formTotalSugars">
+                <Form.Group controlId="formEditTotalSugars">
                     <Form.Label>Total Sugars:</Form.Label>
                     <Form.Control
                         value={newTotalSugars}
@@ -268,7 +268,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formProtein">
+                <Form.Group controlId="formEditProtein">
                     <Form.Label>Protein:</Form.Label>
                     <Form.Control
                         value={newProtein}
@@ -278,7 +278,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formImage">
+                <Form.Group controlId="formEditImage">
                     <Form.Label>Image Link:</Form.Label>
                     <Form.Control
                         value={newImage}
@@ -287,7 +287,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formIngredients">
+                <Form.Group controlId="formEditIngredients">
                     <Form.Label>
                         Enter Ingredientes in a comma seperated List with no
                         spaces
@@ -299,7 +299,7 @@ export function EditMeal({
                 </Form.Group>
             </div>
             <div>
-                <Form.Group controlId="formTags">
+                <Form.Group controlId="formEditTags">
                     <Form.Label>Tags:</Form.Label>
                     <Form.Check
                         type="radio"
